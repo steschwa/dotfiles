@@ -1,0 +1,37 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = true
+
+format = """
+$directory\
+$git_branch\
+$golang\
+$nodejs\
+$python\
+$sudo\
+$fill\
+$status\
+$cmd_duration\
+$time
+$character
+"""
+
+[cmd_duration]
+min_time = 1_000
+format = " [$duration]($style) "
+
+[fill]
+symbol = " "
+
+[git_branch]
+symbol = ""
+format = "[$symbol $branch]($style) "
+
+[status]
+disabled = false
+symbol = "status"
+style = "bg:red bold"
+format = "[ $symbol $status ]($style) "
+
+[time]
+disabled = false
