@@ -25,17 +25,15 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
-vim.api.nvim_create_autocmd("WinEnter", {
+vim.api.nvim_create_autocmd({ "WinEnter", "BufWinEnter" }, {
     group = augroup("show_cursorline_active_win"),
     callback = function()
-        local win_id = vim.api.nvim_get_current_win()
-        vim.wo[win_id].cursorline = true
+        vim.wo.cursorline = true
     end,
 })
 vim.api.nvim_create_autocmd("WinLeave", {
     group = augroup("hide_cursorline_inactive_win"),
     callback = function()
-        local win_id = vim.api.nvim_get_current_win()
-        vim.wo[win_id].cursorline = false
+        vim.wo.cursorline = false
     end,
 })
