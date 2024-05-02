@@ -1,3 +1,11 @@
+--- @param index number
+local function select(index)
+    return {
+        string.format("<leader>%d", index),
+        string.format("<cmd>Grapple select index=%d<cr>", index),
+    }
+end
+
 return {
     "cbochs/grapple.nvim",
     dependencies = {
@@ -13,10 +21,11 @@ return {
         },
         {
             "<leader>m",
-            function()
-                require("grapple").toggle_tags()
-            end,
+            "<cmd>Grapple toggle_tags<cr>",
         },
+        select(1),
+        select(2),
+        select(3),
     },
     opts = {
         icons = true,
