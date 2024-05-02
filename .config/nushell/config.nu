@@ -9,7 +9,6 @@ $env.config.cursor_shape.vi_insert = 'line'
 $env.config.cursor_shape.vi_normal = 'block'
 $env.config.menus = ($env.config.menus | each {|m| $m | update marker '' })
 $env.config.table.index_mode = 'always'
-$env.config.table.abbreviated_row_count = 100
 
 $env.config.history.max_size = 1_000
 $env.config.history.file_format = "sqlite"
