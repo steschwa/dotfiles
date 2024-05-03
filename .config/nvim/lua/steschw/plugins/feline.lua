@@ -55,6 +55,7 @@ function M:get_separator_right(params)
     }
 end
 
+--- @return string
 local function filename_quickfix()
     local res = vim.fn.getqflist({
         title = true,
@@ -69,6 +70,21 @@ end
 
 local function filename_help()
     return " Help "
+end
+
+--- @return string
+local function filename_oil()
+    local dir = require("oil").get_current_dir()
+    if dir == nil then
+        return " Oil "
+    end
+    dir = vim.fn.fnamemodify(dir, ":.")
+
+    if dir == "" then
+        return " CWD-ROOT "
+    end
+
+    return string.format(" %s ", dir)
 end
 
 local function filename_buf()
@@ -94,17 +110,7 @@ function M:component_filename()
             elseif ft == "help" then
                 return filename_help()
             elseif ft == "oil" then
-                local dir = require("oil").get_current_dir()
-                if dir == nil then
-                    return " Oil "
-                end
-                dir = vim.fn.fnamemodify(dir, ":.")
-
-                if dir == "" then
-                    return " CWD-ROOT "
-                end
-
-                return string.format(" %s ", dir)
+                return filename_oil()
             end
 
             return filename_buf()
