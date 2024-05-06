@@ -1,5 +1,6 @@
 local utils_diagnostics = require("steschw.utils.diagnostics")
 local utils_path = require("steschw.utils.path")
+local utils_hl = require("steschw.utils.hl")
 
 local s = vim.diagnostic.severity
 
@@ -21,19 +22,14 @@ end
 
 --- @return string
 function M:get_bg()
-    local c = require("nord.colors").palette
-
-    -- slightly darker c.polar_night.bright
-    local darker_bright = "#323946"
-
-    return self.active and c.polar_night.bright or darker_bright
+    return self.active and utils_hl.get_bg("FelineActive") or utils_hl.get_bg("FelineInactive")
 end
 
---- @class SeparatorParams
+--- @class steschw.feline.SeparatorParams
 --- @field inset? boolean
 --- @field color string
 
---- @param params SeparatorParams
+--- @param params steschw.feline.SeparatorParams
 function M:get_separator_left(params)
     return {
         str = "",
@@ -44,7 +40,7 @@ function M:get_separator_left(params)
     }
 end
 
---- @param params SeparatorParams
+--- @param params steschw.feline.SeparatorParams
 function M:get_separator_right(params)
     return {
         str = "",
@@ -97,10 +93,10 @@ local function filename_buf()
 end
 
 function M:component_filename()
-    local c = require("nord.colors").palette
-
-    local bg = self.active and c.frost.artic_ocean or c.polar_night.brightest
-    local fg = c.snow_storm.origin
+    local bg = self.active and utils_hl.get_bg("FelineFilenameActive")
+        or utils_hl.get_bg("FelineFilenameInactive")
+    local fg = self.active and utils_hl.get_fg("FelineFilenameActive")
+        or utils_hl.get_fg("FelineFilenameInactive")
 
     return {
         provider = function()
@@ -124,10 +120,10 @@ function M:component_filename()
 end
 
 function M:component_lazy_updates()
-    local c = require("nord.colors").palette
-
-    local bg = c.frost.polar_water
-    local fg = c.polar_night.origin
+    local bg = self.active and utils_hl.get_bg("FelineLazyUpdatesActive")
+        or utils_hl.get_bg("FelineLazyUpdatesInactive")
+    local fg = self.active and utils_hl.get_fg("FelineLazyUpdatesActive")
+        or utils_hl.get_fg("FelineLazyUpdatesInactive")
 
     --- @return string
     local function provider()
@@ -154,10 +150,10 @@ function M:component_lazy_updates()
 end
 
 function M:component_search_count()
-    local c = require("nord.colors").palette
-
-    local bg = c.frost.ice
-    local fg = c.polar_night.origin
+    local bg = self.active and utils_hl.get_bg("FelineSearchCountActive")
+        or utils_hl.get_bg("FelineSearchCountInactive")
+    local fg = self.active and utils_hl.get_fg("FelineSearchCountActive")
+        or utils_hl.get_fg("FelineSearchCountInactive")
 
     --- @return string
     local function provider()
@@ -197,10 +193,10 @@ function M:component_search_count()
 end
 
 function M:component_file_changes()
-    local c = require("nord.colors").palette
-
-    local bg = c.snow_storm.origin
-    local fg = c.polar_night.origin
+    local bg = self.active and utils_hl.get_bg("FelineFileChangesActive")
+        or utils_hl.get_bg("FelineFileChangesInactive")
+    local fg = self.active and utils_hl.get_fg("FelineFileChangesActive")
+        or utils_hl.get_fg("FelineFileChangesInactive")
 
     --- @return string
     local function provider()
@@ -231,8 +227,6 @@ end
 
 --- @param severity number
 function M:component_diagnostics(severity)
-    local c = require("nord.colors").palette
-
     local function provider()
         local sign = utils_diagnostics.get_sign_by_severity(severity)
         local sign_prefix = vim.trim(sign and sign.text or "")
@@ -246,10 +240,10 @@ function M:component_diagnostics(severity)
     end
 
     local fg = ({
-        [vim.diagnostic.severity.ERROR] = c.aurora.red,
-        [vim.diagnostic.severity.WARN] = c.aurora.yellow,
-        [vim.diagnostic.severity.INFO] = c.frost.ice,
-        [vim.diagnostic.severity.HINT] = c.frost.artic_water,
+        [vim.diagnostic.severity.ERROR] = utils_hl.get_fg("DiagnosticError"),
+        [vim.diagnostic.severity.WARN] = utils_hl.get_fg("DiagnosticWarn"),
+        [vim.diagnostic.severity.INFO] = utils_hl.get_fg("DiagnosticInfo"),
+        [vim.diagnostic.severity.HINT] = utils_hl.get_fg("DiagnosticHint"),
     })[severity]
 
     return {
@@ -267,10 +261,10 @@ function M:component_diagnostics(severity)
 end
 
 function M:component_grapple()
-    local c = require("nord.colors").palette
-
-    local bg = c.frost.artic_water
-    local fg = c.polar_night.origin
+    local bg = self.active and utils_hl.get_bg("FelineGrappleActive")
+        or utils_hl.get_bg("FelineGrappleInactive")
+    local fg = self.active and utils_hl.get_fg("FelineGrappleActive")
+        or utils_hl.get_fg("FelineGrappleInactive")
 
     local function provider()
         local g = require("grapple")
@@ -297,10 +291,10 @@ function M:component_grapple()
 end
 
 function M:component_qf()
-    local c = require("nord.colors").palette
-
-    local bg = self.active and c.frost.artic_water or c.polar_night.bright
-    local fg = self.active and c.polar_night.origin or c.snow_storm.origin
+    local bg = self.active and utils_hl.get_bg("FelineQfActive")
+        or utils_hl.get_bg("FelineQfInactive")
+    local fg = self.active and utils_hl.get_fg("FelineQfActive")
+        or utils_hl.get_fg("FelineQfInactive")
 
     --- @return string
     local function provider()
@@ -341,7 +335,7 @@ end
 
 return {
     "freddiehaddad/feline.nvim",
-    deps = { "gbprod/nord.nvim", "cbochs/grapple.nvim" },
+    deps = { "cbochs/grapple.nvim" },
     init = function()
         vim.api.nvim_create_autocmd("User", {
             pattern = "LazyCheck",

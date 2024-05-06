@@ -61,6 +61,21 @@ return {
                 hl["MiniHipatternsFixme"] =     { bg = c.aurora.red, fg = c.snow_storm.origin }
                 hl["MiniHipatternsTestme"] =    { bg = c.aurora.purple, fg = c.polar_night.origin }
                 hl["MiniHipatternsRemoveme"] =  { bg = c.aurora.orange, fg = c.polar_night.origin }
+
+                hl["FelineActive"] =              { bg = c.polar_night.bright }
+                hl["FelineInactive"] =            { bg = "#323946" } -- slightly darker c.polar_night.bright
+                hl["FelineFilenameActive"] =      { bg = c.frost.artic_ocean, fg = c.snow_storm.origin }
+                hl["FelineFilenameInactive"] =    { bg = c.polar_night.brightest, fg = c.snow_storm.origin }
+                hl["FelineLazyUpdatesActive"] =   { bg = c.frost.polar_water, fg = c.polar_night.origin }
+                hl["FelineLazyUpdatesInactive"] = { bg = c.frost.polar_water, fg = c.polar_night.origin }
+                hl["FelineSearchCountActive"] =   { bg = c.frost.ice, fg = c.polar_night.origin }
+                hl["FelineSearchCountInactive"] = { bg = c.frost.ice, fg = c.polar_night.origin }
+                hl["FelineFileChangesActive"] =   { bg = c.snow_storm.origin, fg = c.polar_night.origin }
+                hl["FelineFileChangesInactive"] = { bg = c.snow_storm.origin, fg = c.polar_night.origin }
+                hl["FelineGrappleActive"] =       { bg = c.frost.artic_water, fg = c.polar_night.origin }
+                hl["FelineGrappleInactive"] =     { bg = c.frost.artic_water, fg = c.polar_night.origin }
+                hl["FelineQfActive"] =            { bg = c.frost.artic_water, fg = c.polar_night.origin }
+                hl["FelineQfInactive"] =          { bg = c.polar_night.bright, fg = c.snow_storm.origin }
                 -- stylua: ignore end
             end,
         })
