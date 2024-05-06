@@ -20,3 +20,5 @@ alias dcdown = docker compose down
 alias isup = ping 1.1
 
 alias jq = jq --indent 4
+
+alias http = python3 -m http.server 8080 --bind 127.0.0.1
