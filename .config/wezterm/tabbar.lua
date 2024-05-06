@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local palette = require("colors")
+local Palette = require("colors")
 
 local TAB_ICON = ""
 
@@ -19,19 +19,19 @@ function M.setup()
 	wezterm.on("format-tab-title", function(tab, _, panes, _, hover)
 		local title = tab_title(tab)
 
-		local bg = palette.polar_night.nord1
-		local fg = palette.snow_storm.nord4
+		local bg = Palette.tabbar.inactive_bg
+		local fg = Palette.tabbar.inactive_fg
 
 		if tab.is_active then
-			bg = palette.aurora.nord15
-			fg = palette.polar_night.nord0
+			bg = Palette.tabbar.active_bg
+			fg = Palette.tabbar.active_fg
 		end
 
 		local items = {}
 
 		if tab.tab_index > 0 then
 			table.insert(items, { Background = { Color = bg } })
-			table.insert(items, { Foreground = { Color = palette.polar_night.nord0 } })
+			table.insert(items, { Foreground = { Color = Palette.titlebar_bg } })
 			table.insert(items, { Text = TAB_ICON })
 		end
 
@@ -53,7 +53,7 @@ function M.setup()
 			table.insert(items, { Text = panes_text })
 		end
 
-		table.insert(items, { Background = { Color = palette.transparent } })
+		table.insert(items, { Background = { Color = "rgba(0,0,0,0)" } })
 		table.insert(items, { Foreground = { Color = bg } })
 		table.insert(items, { Text = TAB_ICON })
 

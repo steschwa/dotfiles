@@ -1,5 +1,5 @@
 local wezterm = require("wezterm")
-local palette = require("colors")
+local Palette = require("colors")
 
 local M = {}
 
@@ -26,13 +26,13 @@ function M.setup(config)
 	}
 
 	config.window_frame = {
-		active_titlebar_bg = palette.polar_night.nord0,
-		inactive_titlebar_bg = palette.polar_night.nord0,
+		active_titlebar_bg = Palette.titlebar_bg,
+		inactive_titlebar_bg = Palette.titlebar_bg,
 	}
 
 	config.colors = {
 		tab_bar = {
-			background = palette.transparent,
+			background = "rgba(0,0,0,0)",
 		},
 	}
 	config.use_fancy_tab_bar = false
