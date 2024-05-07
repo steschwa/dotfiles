@@ -4,8 +4,7 @@ local Palette = require("colors")
 local M = {}
 
 function M.setup(config)
-	-- config.color_scheme = "nord"
-	config.color_scheme = "rose-pine"
+	config.color_scheme = "nord"
 	config.font = wezterm.font("JetBrainsMono Nerd Font")
 	config.font_size = 15
 

@@ -9,8 +9,7 @@
 --- @field active_bg string
 --- @field active_fg string
 
--- local P = require("colors.nord")
-local P = require("colors.rose-pine")
+local P = require("colors.nord")
 
 --- @type steschwa.ColorPalette
 local M = {
