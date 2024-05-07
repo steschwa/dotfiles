@@ -1,6 +1,5 @@
 export-env {
     let fzf_opts = [
-        "--preview='bat --color=always --style=numbers --theme=Nord {}'"
         "--border=none"
         "--info=hidden"
         "--margin=0"
@@ -18,6 +17,7 @@ export-env {
         $"--color=prompt:($env.COLORS.nord.aurora.nord15)"
         $"--color=pointer:($env.COLORS.nord.aurora.nord14)"
         "--color=gutter:-1"
+        "--preview='bat --color=always --style=numbers --theme=Nord {}'"
         "--bind 'start:hide-preview'"
         "--bind 'ctrl-p:toggle-preview'"
         "--bind 'ctrl-e:execute(nvim {})'"
