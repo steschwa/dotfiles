@@ -46,6 +46,9 @@ opt.writebackup = false
 opt.splitkeep = "cursor"
 
 vim.filetype.add({
+    filename = {
+        [".ignore"] = "conf",
+    },
     extension = {
         env = "sh",
         hurl = "hurl",
