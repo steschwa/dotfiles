@@ -2,12 +2,17 @@
 --- @field transparent string
 --- @field titlebar_bg string
 --- @field tabbar steschwa.ColorPaletteTabbar
+--- @field right_status steschwa.ColorPaletteRightStatus
 
 --- @class steschwa.ColorPaletteTabbar
 --- @field inactive_bg string
 --- @field inactive_fg string
 --- @field active_bg string
 --- @field active_fg string
+--
+--- @class steschwa.ColorPaletteRightStatus
+--- @field bg string
+--- @field fg string
 
 local P = require("colors.nord")
 
@@ -16,6 +21,7 @@ local M = {
 	transparent = "rgba(0,0,0,0)",
 	titlebar_bg = P.titlebar_bg,
 	tabbar = P.tabbar,
+	right_status = P.right_status,
 }
 
 return M

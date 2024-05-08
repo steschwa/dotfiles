@@ -91,6 +91,13 @@ function M.setup(config)
 			action = act.ActivateTabRelative(1),
 		},
 
+		-- copy mode
+		{
+			key = "c",
+			mods = "LEADER",
+			action = act.ActivateCopyMode,
+		},
+
 		-- TODO: removeme once `config.disable_default_key_bindings = true` is used
 		{
 			key = "-",

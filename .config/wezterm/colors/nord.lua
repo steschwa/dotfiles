@@ -37,4 +37,10 @@ Nord.tabbar = {
 	active_fg = Nord.palette.polar_night.nord0,
 }
 
+--- @type steschwa.ColorPaletteRightStatus
+Nord.right_status = {
+	bg = Nord.palette.aurora.nord13,
+	fg = Nord.palette.polar_night.nord0,
+}
+
 return Nord
