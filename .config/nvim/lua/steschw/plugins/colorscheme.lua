@@ -32,6 +32,7 @@ return {
                 hl["TelescopeNormal"] =         { link = "FloatNormal" }
                 hl["TelescopeBorder"] =         { link = "FloatBorder" }
                 hl["TelescopeTitle"] =          { link = "Title" }
+                -- NOTE: prompt input line uses "CursorLine" highlight group
                 hl["TelescopePromptNormal"] =   { bg = c.polar_night.bright }
                 hl["TelescopePromptBorder"] =   { bg = c.polar_night.bright, fg = c.polar_night.bright }
                 hl["TelescopePromptTitle"] =    { bg = c.polar_night.bright, fg = c.polar_night.light }

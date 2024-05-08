@@ -90,5 +90,4 @@ keymap("n", "<C-f>", function()
 end)
 keymap("n", "<leader>l", "<cmd>Lazy<cr>")
 
--- TODO: repeat movements with , and ;
--- https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+keymap("n", "<leader>i", "<cmd>edit .ignore<cr>")

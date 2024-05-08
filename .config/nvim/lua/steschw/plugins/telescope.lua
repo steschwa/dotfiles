@@ -28,6 +28,12 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         event = "VeryLazy",
+        dependencies = {
+            {
+                "nvim-telescope/telescope-fzf-native.nvim",
+                build = "make",
+            },
+        },
         config = function()
             local telescope = require("telescope")
             local actions = require("telescope.actions")
@@ -90,12 +96,5 @@ return {
                 },
             })
         end,
-    },
-    {
-        "nvim-telescope/telescope-fzf-native.nvim",
-        build = "make",
-        dependencies = {
-            "nvim-telescope/telescope.nvim",
-        },
     },
 }
