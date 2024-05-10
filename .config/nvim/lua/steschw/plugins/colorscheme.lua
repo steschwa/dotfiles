@@ -8,6 +8,7 @@ return {
             borders = true,
             diff = { mode = "fg" },
             errors = { mode = "bg" },
+            search = { theme = "vim" },
             on_highlights = function(hl, c)
                 local custom = {
                     gray0 = "#292e38",
