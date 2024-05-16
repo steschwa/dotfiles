@@ -4,7 +4,6 @@ keymap({ "n", "v" }, "`", "^")
 
 keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "<C-d>", "<C-d>zz")
-keymap("n", "-", "<cmd>Oil<cr>")
 
 -- clear search with <esc>
 keymap({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
