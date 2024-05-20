@@ -7,27 +7,21 @@ return {
         event = { "BufReadPost", "BufNewFile" },
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            "windwp/nvim-ts-autotag",
             "nushell/tree-sitter-nu",
         },
         config = function()
             local configs = require("nvim-treesitter.configs")
 
-            ---@diagnostic disable-next-line: missing-fields
+            --- @diagnostic disable-next-line: missing-fields
             configs.setup({
                 sync_install = false,
                 highlight = {
                     enable = true,
                     additional_vim_regex_highlighting = false,
                 },
-                -- TODO: investigate what this does
                 indent = {
                     enable = true,
                     disable = { "yaml" },
-                },
-                autotag = {
-                    enable = true,
-                    enable_close_on_slash = false,
                 },
                 textobjects = {
                     swap = {
@@ -63,12 +57,15 @@ return {
     },
     {
         "JoosepAlviste/nvim-ts-context-commentstring",
-        dependencies = { "nvim-treesitter/nvim-treesitter" },
         config = function()
             vim.g.skip_ts_context_commentstring_module = true
 
-            ---@diagnostic disable-next-line: missing-parameter
+            --- @diagnostic disable-next-line: missing-parameter
             require("ts_context_commentstring").setup()
         end,
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        config = true,
     },
 }
