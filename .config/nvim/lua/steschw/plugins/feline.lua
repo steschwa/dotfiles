@@ -343,6 +343,12 @@ return {
                 vim.cmd("redrawstatus!")
             end,
         })
+
+        vim.api.nvim_create_autocmd("DiagnosticChanged", {
+            callback = function()
+                vim.cmd("redrawstatus!")
+            end,
+        })
     end,
     config = function()
         local f = require("feline")
