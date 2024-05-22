@@ -19,22 +19,23 @@ local function provider_severity(item)
     })[severity]
 
     return {
-        text = string.format("%s ", severity_name:sub(1, 4):upper()),
+        text = string.format("%s", severity_name:sub(1, 4):upper()),
         hl = hl,
     }
 end
 
 local function provider_lnum(item)
-    local lnum = item.line_start or item.line_end
+    local lnum = item.lnum or item.end_lnum
 
     return {
-        text = string.format(" %s", lnum),
+        text = tostring(lnum),
         hl = "Comment",
     }
 end
 
 local function provider_filename(item)
-    local filename = vim.fn.fnamemodify(item.filepath, ":t")
+    local path = vim.fn.bufname(item.bufnr)
+    local filename = vim.fn.fnamemodify(path, ":t")
 
     return {
         text = filename,
@@ -48,52 +49,23 @@ local function provider_text(item)
     end
 
     return {
-        text = string.format("  %s", vim.trim(item.text)),
+        text = vim.trim(item.text),
         hl = "FixmeText",
     }
-end
-
---- @param cols number[]
-local function expand_columns(cols)
-    return function(line_builders)
-        --- @type number[]
-        local line_width = {}
-        local max_col_width = 0
-
-        for i, line_builder in ipairs(line_builders) do
-            local cols_width = 0
-
-            for _, column in ipairs(cols) do
-                local component = line_builder:at(column)
-                if component ~= nil then
-                    cols_width = cols_width + #component.text
-                end
-            end
-
-            line_width[i] = cols_width
-            max_col_width = math.max(max_col_width, cols_width)
-        end
-
-        local insert_after_index = cols[#cols] + 1
-
-        for i, line_builder in ipairs(line_builders) do
-            local padding = max_col_width - line_width[i]
-
-            line_builder:add({
-                text = string.rep(" ", padding),
-            }, insert_after_index)
-        end
-    end
 end
 
 return {
     dir = "/Volumes/Projekte/fixme.nvim",
     event = "VeryLazy",
-    enabled = true,
     config = function()
         require("fixme").setup({
             selectors = {
                 {
+                    columns = {
+                        { provider_severity },
+                        { provider_filename, provider_lnum },
+                        { provider_text },
+                    },
                     use = function(qf_id)
                         local context = vim.fn.getqflist({
                             id = qf_id,
@@ -102,24 +74,16 @@ return {
 
                         return context == "diagnostics"
                     end,
-                    providers = {
-                        provider_severity,
-                        provider_filename,
-                        provider_lnum,
-                        provider_text,
-                    },
-                    layout = expand_columns({ 1, 2, 3 }),
                 },
                 {
-                    providers = {
-                        provider_filename,
-                        provider_lnum,
-                        provider_text,
+                    columns = {
+                        { provider_filename, provider_lnum },
+                        { provider_text },
                     },
-                    layout = expand_columns({ 1, 2 }),
                 },
             },
-            column_separator = "  ",
+            column_separator = " ╎ ",
+            cell_separator = " ",
         })
     end,
 }

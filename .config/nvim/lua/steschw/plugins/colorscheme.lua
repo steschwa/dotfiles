@@ -56,6 +56,7 @@ return {
                 hl["FixmeSeverityHint"] =       { fg = c.frost.artic_water }
                 hl["FixmeFilepath"] =           { link = "Directory" }
                 hl["FixmeText"] =               { fg = c.snow_storm.origin }
+                hl["FixmeColumnSeparator"] =    { link = "Comment" }
                 hl["QuickFixLine"] =            { bg = c.polar_night.brighter }
 
                 hl["MiniHipatternsTodo"] =      { bg = c.frost.ice, fg = c.polar_night.origin }
