@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     { import = "steschw.plugins" },
     { import = "steschw.plugins.lang" },
+    { import = "steschw.plugins.colorschemes" },
 }, {
     defaults = {
         lazy = false,
