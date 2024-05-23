@@ -14,12 +14,12 @@ return {
             relative = "cursor",
             mappings = {
                 n = {
-                    ["<Esc>"] = "Close",
-                    ["<CR>"] = "Confirm",
+                    ["<esc>"] = "Close",
+                    ["<cr>"] = "Confirm",
                 },
                 i = {
-                    ["<C-q>"] = "Close",
-                    ["<CR>"] = "Confirm",
+                    ["<c-q>"] = "Close",
+                    ["<cr>"] = "Confirm",
                 },
             },
         },
@@ -33,11 +33,11 @@ return {
             },
             mappings = {
                 n = {
-                    ["<Esc>"] = "Close",
-                    ["<CR>"] = "Confirm",
+                    ["<esc>"] = "Close",
+                    ["<cr>"] = "Confirm",
                 },
                 i = {
-                    ["<C-q>"] = "Close",
+                    ["<c-q>"] = "Close",
                 },
             },
         },

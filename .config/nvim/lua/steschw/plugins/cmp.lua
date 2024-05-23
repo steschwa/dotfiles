@@ -1,3 +1,5 @@
+local CMP_BORDER = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
+
 return {
     {
         "hrsh7th/nvim-cmp",
@@ -17,21 +19,21 @@ return {
             local ls = require("luasnip")
             local lspkind = require("lspkind")
 
-            local function jump(dir)
-                return function(fallback)
-                    if cmp.visible() then
-                        if dir == 1 then
-                            cmp.select_next_item()
-                        else
-                            cmp.select_prev_item()
-                        end
-                    elseif ls.locally_jumpable(dir) then
-                        ls.jump(dir)
-                    else
-                        fallback()
-                    end
-                end
-            end
+            -- local function jump(dir)
+            --     return function(fallback)
+            --         if cmp.visible() then
+            --             if dir == 1 then
+            --                 cmp.select_next_item()
+            --             else
+            --                 cmp.select_prev_item()
+            --             end
+            --         elseif ls.locally_jumpable(dir) then
+            --             ls.jump(dir)
+            --         else
+            --             fallback()
+            --         end
+            --     end
+            -- end
 
             cmp.setup({
                 snippet = {
@@ -42,11 +44,11 @@ return {
                 mapping = {
                     ["<c-k>"] = cmp.mapping.select_prev_item(),
                     ["<c-j>"] = cmp.mapping.select_next_item(),
+                    ["<tab>"] = cmp.mapping.select_prev_item(),
+                    ["<s-tab>"] = cmp.mapping.select_next_item(),
+
                     ["<c-u>"] = cmp.mapping.scroll_docs(-5),
                     ["<c-d>"] = cmp.mapping.scroll_docs(5),
-
-                    ["<tab>"] = cmp.mapping(jump(1), { "i", "s" }),
-                    ["<s-tab>"] = cmp.mapping(jump(-1), { "i", "s" }),
 
                     ["<c-space>"] = cmp.mapping.complete(),
                     ["<esc>"] = cmp.mapping.abort(),
@@ -67,10 +69,12 @@ return {
                 }),
                 window = {
                     completion = cmp.config.window.bordered({
-                        winhighlight = "Normal:CmpNormal,CursorLine:CmpCursorLine,Search:None",
+                        winhighlight = "Normal:CmpNormal,CursorLine:CmpCursorLine,Search:None,FloatBorder:CmpBorder",
+                        border = CMP_BORDER,
                     }),
                     documentation = cmp.config.window.bordered({
                         winhighlight = "Normal:CmpDocsNormal,FloatBorder:CmpDocsBorder",
+                        border = CMP_BORDER,
                     }),
                 },
             })
@@ -82,6 +86,8 @@ return {
         config = function()
             local ls = require("luasnip")
             ls.setup()
+
+            -- TODO: set keymaps
 
             ls.add_snippets("typescriptreact", require("steschw.plugins.snippets.typescriptreact"))
             ls.add_snippets("typescript", require("steschw.plugins.snippets.typescript"))

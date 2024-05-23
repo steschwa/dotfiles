@@ -356,9 +356,6 @@ return {
         local active_factory = M:new(true)
         local inactive_factory = M:new(false)
 
-        -- TODO: git hunks component
-        -- TODO: maybe git changes component
-
         local components = {
             active = {
                 {
@@ -390,11 +387,6 @@ return {
 
         f.setup({
             components = components,
-            disable = {
-                filetypes = {
-                    "^NvimTree$",
-                },
-            },
             force_inactive = {},
         })
     end,

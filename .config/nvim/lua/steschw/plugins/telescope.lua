@@ -45,6 +45,11 @@ return {
                     prompt_prefix = " ",
                     selection_caret = " ",
                     multi_icon = " ",
+                    borderchars = {
+                        preview = { " ", " ", "▁", " ", " ", " ", "▁", "▁" },
+                        results = { " ", " ", "▁", " ", " ", " ", "▁", "▁" },
+                        prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
+                    },
                     vimgrep_arguments = rg_cmd,
                     path_display = function(_, path)
                         return utils_path.format_path_peak(path)
