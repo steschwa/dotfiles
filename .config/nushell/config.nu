@@ -8,10 +8,11 @@ $env.config.edit_mode = 'vi'
 $env.config.cursor_shape.vi_insert = 'line'
 $env.config.cursor_shape.vi_normal = 'block'
 $env.config.menus = ($env.config.menus | each {|m| $m | update marker '' })
+$env.config.rm.always_trash = true
 $env.config.table.index_mode = 'always'
 
 $env.config.history.max_size = 1_000
-$env.config.history.file_format = "sqlite"
+$env.config.history.file_format = 'sqlite'
 $env.config.history.isolation = true
 
 let fnm_hook = {||
