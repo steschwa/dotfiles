@@ -14,7 +14,8 @@
 --- @field bg string
 --- @field fg string
 
-local P = require("colors.nord")
+-- local P = require("colors.nord")
+local P = require("colors.rose-pine")
 
 --- @type steschwa.ColorPalette
 local M = {
