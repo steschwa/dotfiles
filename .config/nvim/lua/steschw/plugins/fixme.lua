@@ -1,25 +1,23 @@
 local function provider_severity(item)
-    local placeholder = string.rep(" ", 6)
-
     local severity = vim.diagnostic.severity[item.type]
     if not severity then
-        return { text = placeholder }
+        return { text = "" }
     end
 
     local severity_name = vim.diagnostic.severity[severity]
     if type(severity_name) ~= "string" or severity_name == "" then
-        return { text = placeholder }
+        return { text = "" }
     end
 
     local hl = ({
-        [vim.diagnostic.severity.ERROR] = "FixmeSeverityError",
-        [vim.diagnostic.severity.WARN] = "FixmeSeverityWarn",
-        [vim.diagnostic.severity.INFO] = "FixmeSeverityInfo",
-        [vim.diagnostic.severity.HINT] = "FixmeSeverityHint",
+        [vim.diagnostic.severity.ERROR] = "DiagnosticError",
+        [vim.diagnostic.severity.WARN] = "DiagnosticWarn",
+        [vim.diagnostic.severity.INFO] = "DiagnosticInfo",
+        [vim.diagnostic.severity.HINT] = "DiagnosticHint",
     })[severity]
 
     return {
-        text = string.format("%s", severity_name:sub(1, 4):upper()),
+        text = string.format("%s", severity_name:upper()),
         hl = hl,
     }
 end
@@ -82,7 +80,7 @@ return {
                     },
                 },
             },
-            column_separator = " ╎ ",
+            column_separator = " | ",
             cell_separator = " ",
         })
     end,

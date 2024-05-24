@@ -207,7 +207,7 @@ function M:component_file_changes()
         end
 
         if buf_info[1].changed == 1 then
-            return " ● "
+            return " ●"
         end
 
         return ""

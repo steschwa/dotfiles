@@ -49,10 +49,6 @@ return {
                 hl["CmpDocsNormal"] =           { link = "FloatNormalLight" }
                 hl["CmpDocsBorder"] =           { link = "FloatBorderLight" }
 
-                hl["FixmeSeverityError"] =      { fg = c.aurora.red }
-                hl["FixmeSeverityWarn"] =       { fg = c.aurora.yellow }
-                hl["FixmeSeverityInfo"] =       { fg = c.frost.ice }
-                hl["FixmeSeverityHint"] =       { fg = c.frost.artic_water }
                 hl["FixmeFilepath"] =           { link = "Directory" }
                 hl["FixmeText"] =               { fg = c.snow_storm.origin }
                 hl["FixmeColumnSeparator"] =    { link = "Comment" }
