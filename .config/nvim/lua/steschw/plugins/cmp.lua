@@ -1,3 +1,5 @@
+local keymap = require("steschw.utils.keys").keymap
+
 local CMP_BORDER = { "🭽", "▔", "🭾", "▕", "🭿", "▁", "🭼", "▏" }
 
 return {
@@ -18,22 +20,6 @@ return {
             local cmp = require("cmp")
             local ls = require("luasnip")
             local lspkind = require("lspkind")
-
-            -- local function jump(dir)
-            --     return function(fallback)
-            --         if cmp.visible() then
-            --             if dir == 1 then
-            --                 cmp.select_next_item()
-            --             else
-            --                 cmp.select_prev_item()
-            --             end
-            --         elseif ls.locally_jumpable(dir) then
-            --             ls.jump(dir)
-            --         else
-            --             fallback()
-            --         end
-            --     end
-            -- end
 
             cmp.setup({
                 snippet = {
@@ -87,12 +73,22 @@ return {
             local ls = require("luasnip")
             ls.setup()
 
-            -- TODO: set keymaps
-
             ls.add_snippets("typescriptreact", require("steschw.plugins.snippets.typescriptreact"))
             ls.add_snippets("typescript", require("steschw.plugins.snippets.typescript"))
             ls.add_snippets("scss", require("steschw.plugins.snippets.scss"))
             ls.add_snippets("html", require("steschw.plugins.snippets.html"))
+
+            --- @param dir 1 | -1
+            local function jump(dir)
+                return function()
+                    if ls.locally_jumpable(dir) then
+                        ls.jump(dir)
+                    end
+                end
+            end
+
+            keymap("i", "<c-n>", jump(1))
+            keymap("i", "<c-p>", jump(-1))
         end,
     },
 }
