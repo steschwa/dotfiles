@@ -3,7 +3,7 @@ alias vim = nvim
 alias python = python3
 alias copy = pbcopy
 alias paste = pbpaste
-alias bat = bat --theme=Nord --style numbers
+alias bat = bat --theme=base16 --style numbers
 
 alias gs = git status
 alias gd = git diff HEAD

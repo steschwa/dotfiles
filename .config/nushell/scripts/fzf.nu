@@ -21,7 +21,7 @@ export-env {
         $"--color=prompt:($colors.prompt)"
         $"--color=pointer:($colors.pointer)"
         "--color=gutter:-1"
-        "--preview='bat --color=always --style=numbers --theme=Nord {}'"
+        "--preview='bat --color=always --style=numbers --theme=base16 {}'"
         "--bind 'start:hide-preview'"
         "--bind 'ctrl-p:toggle-preview'"
         "--bind 'ctrl-e:execute(nvim {})'"
