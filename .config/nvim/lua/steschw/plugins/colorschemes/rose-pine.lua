@@ -51,7 +51,7 @@ return {
                 FixmeFilepath =             { fg = "text" },
                 FixmeText =                 { fg = "subtle" },
                 FixmeColumnSeparator =      { fg = "overlay" },
-                QuickFixLine =              { fg = "rose" },
+                QuickFixLine =              { bg = "highlight_med" },
 
                 MiniHipatternsTodo =        { bg = "pine", fg = "text" },
                 MiniHipatternsRefactor =    { bg = "foam", fg = "highlight_low" },
