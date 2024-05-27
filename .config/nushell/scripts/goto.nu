@@ -5,7 +5,7 @@ export def --env main [] {
         '/Volumes/Projekte/case-studies/': 1
         '/Volumes/Projekte/FarmAct/': 1
         '/Volumes/Projekte/doxspring/': 1
-        '/Volumes/Projekte/hsa/ss-24': 1
+        '/Volumes/Projekte/hsa/ss-24/softwaresysteme': 1
     }
 
     mut dirs = []
