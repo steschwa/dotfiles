@@ -32,6 +32,10 @@ function M.setup(config)
 	}
 
 	config.colors = {
+		-- rose-pine moon muted
+		selection_bg = "#6e6a86",
+		-- rose-pine moon text
+		selection_fg = "#e0def4",
 		tab_bar = {
 			background = "rgba(0,0,0,0)",
 		},
