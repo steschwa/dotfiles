@@ -7,6 +7,7 @@ alias bat = bat --theme=Nord --style numbers
 
 alias gs = git status
 alias gd = git diff HEAD
+alias gc = git commit -m
 alias yup = yadm commit -m 'build(nvim): update plugins'
 
 alias cd.. = cd ..
