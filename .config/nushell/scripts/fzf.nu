@@ -1,4 +1,8 @@
 export-env {
+    use ../themes/rose_pine.nu fzf
+
+    let colors = (fzf)
+
     let fzf_opts = [
         "--border=none"
         "--info=hidden"
@@ -9,13 +13,13 @@ export-env {
         "--pointer='󰅂'"
         "--prompt='󰄾 '"
         "--color=bg:-1"
-        $"--color=fg:($env.COLORS.nord.snow_storm.nord4)"
-        $"--color=hl:($env.COLORS.nord.frost.nord8)"
-        $"--color=fg+:($env.COLORS.nord.snow_storm.nord6)"
-        $"--color=bg+:($env.COLORS.nord.polar_night.nord1)"
-        $"--color=hl+:($env.COLORS.nord.frost.nord8)"
-        $"--color=prompt:($env.COLORS.nord.aurora.nord15)"
-        $"--color=pointer:($env.COLORS.nord.aurora.nord14)"
+        $"--color=fg:($colors.fg)"
+        $"--color=hl:($colors.hl)"
+        $"--color=fg+:($colors.fg_line)"
+        $"--color=bg+:($colors.bg_line)"
+        $"--color=hl+:($colors.hl_line)"
+        $"--color=prompt:($colors.prompt)"
+        $"--color=pointer:($colors.pointer)"
         "--color=gutter:-1"
         "--preview='bat --color=always --style=numbers --theme=Nord {}'"
         "--bind 'start:hide-preview'"

@@ -1,5 +1,4 @@
-$env.COLORS = {}
-$env.COLORS.nord = {
+const palette = {
     polar_night: {
         nord0: "#2e3440",
         nord1: "#3B4252",
@@ -24,4 +23,18 @@ $env.COLORS.nord = {
         nord14: "#A3BE8C"
         nord15: "#B48EAD"
     }
+}
+
+export def fzf [] {
+    mut fzf_colors = {}
+
+    $fzf_colors.fg = $palette.snow_storm.nord4
+    $fzf_colors.hl = $palette.frost.nord8
+    $fzf_colors.fg_line = $palette.snow_storm.nord6
+    $fzf_colors.bg_line = $palette.polar_night.nord1
+    $fzf_colors.hl_line = $palette.frost.nord8
+    $fzf_colors.prompt = $palette.aurora.nord15
+    $fzf_colors.pointer = $palette.aurora.nord14
+
+    return $fzf_colors
 }

@@ -1,7 +1,6 @@
 use std ['path add']
 
 source-env ~/.config/nushell/default/env.nu
-source-env ~/.config/nushell/colors.nu
 
 # USER CONFIG
 
