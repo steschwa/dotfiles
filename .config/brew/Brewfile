@@ -19,4 +19,4 @@ brew "starship"
 brew "rsteube/tap/carapace"
 
 cask "wezterm"
-cask "font-inconsolata-nerd-font"
+cask "font-iosevka-nerd-font"
