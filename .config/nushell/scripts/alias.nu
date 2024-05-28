@@ -5,10 +5,15 @@ alias copy = pbcopy
 alias paste = pbpaste
 alias bat = bat --theme=base16 --style numbers
 
+# git
 alias gs = git status
 alias gd = git diff HEAD
 alias gc = git commit -m
+
+# yadm
 alias yup = yadm commit -m 'build(nvim): update plugins'
+alias yc = yadm commit -m
+alias ys = yadm status
 
 alias cd.. = cd ..
 alias .. = cd ..
