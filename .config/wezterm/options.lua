@@ -6,8 +6,9 @@ local M = {}
 function M.setup(config)
 	-- config.color_scheme = "nord"
 	config.color_scheme = "rose-pine-moon"
-	config.font = wezterm.font("JetBrainsMono Nerd Font")
-	config.font_size = 15
+	-- config.font = wezterm.font("JetBrainsMono Nerd Font")
+	config.font = wezterm.font("Iosevka Nerd Font")
+	config.font_size = 16
 
 	config.default_prog = {
 		"/opt/homebrew/bin/nu",
