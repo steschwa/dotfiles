@@ -18,7 +18,7 @@ $character
 
 [cmd_duration]
 min_time = 1_000
-format = " [$duration]($style) "
+format = "[$duration]($style) "
 
 [fill]
 symbol = " "
@@ -30,8 +30,12 @@ format = "[$symbol $branch]($style) "
 [status]
 disabled = false
 symbol = "status"
-style = "bg:red bold"
+style = "bg:red fg:black"
 format = "[ $symbol $status ]($style) "
 
 [time]
 disabled = false
+
+[character]
+success_symbol = '[\$](green)'
+error_symbol = '[\$](red)'
