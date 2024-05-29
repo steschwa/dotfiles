@@ -61,7 +61,7 @@ function M.setup(config)
 		{
 			key = "w",
 			mods = "CMD",
-			action = act.CloseCurrentPane({ confirm = false }),
+			action = act.CloseCurrentPane({ confirm = true }),
 		},
 
 		-- tabs
