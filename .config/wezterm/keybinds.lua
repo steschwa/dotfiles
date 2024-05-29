@@ -58,6 +58,11 @@ function M.setup(config)
 			mods = "CMD|SHIFT",
 			action = act.AdjustPaneSize({ "Right", 10 }),
 		},
+		{
+			key = "w",
+			mods = "CMD",
+			action = act.CloseCurrentPane({ confirm = false }),
+		},
 
 		-- tabs
 		{
