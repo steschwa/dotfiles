@@ -1,3 +1,7 @@
+[logging]
+enabled = true
+path = "/tmp/diffv.log"
+
 [colors]
 border = "#393552" # overlay
 
