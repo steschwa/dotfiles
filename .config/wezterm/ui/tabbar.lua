@@ -42,10 +42,12 @@ function M.setup()
 		table.insert(items, { Text = string.format(" %d %s ", tab.tab_index + 1, tab_title(tab)) })
 
 		if tab.is_active and #panes > 1 then
-			local panes_text = ""
+			local panes_status_chars = {}
 			for _, pane in ipairs(panes) do
-				panes_text = panes_text .. (pane.is_active and "" or "")
+				table.insert(panes_status_chars, (pane.is_active and "" or ""))
 			end
+
+			local panes_text = table.concat(panes_status_chars, "")
 
 			table.insert(items, { Text = panes_text })
 		end
