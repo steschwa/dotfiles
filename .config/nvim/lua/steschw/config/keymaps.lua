@@ -1,3 +1,5 @@
+-- :h key-notation
+
 local keymap = require("steschw.utils.keys").keymap
 
 keymap({ "n", "v" }, "`", "^")

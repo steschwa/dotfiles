@@ -6,16 +6,6 @@ local M = {}
 function M.setup(config)
 	config.leader = { key = "p", mods = "CMD" }
 
-	-- what do i need?
-	-- 1. create tab: ctrl+t
-	-- 2. switch tab cmd+[1-9]
-	-- 3. search cmd+f
-	-- 3.1 jump to next match ctrl+j
-	-- 3.2 jump to previous match ctrl+k
-	-- 3.3 clear search ctrl+w
-	-- 3.4 cancel search cmd+f / escape
-	-- 4. copy mode https://wezfurlong.org/wezterm/copymode.html#key-assignments
-
 	config.keys = {
 		{
 			key = "r",
