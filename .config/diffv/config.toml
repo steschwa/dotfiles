@@ -2,18 +2,33 @@
 enabled = true
 path = "/tmp/diffv.log"
 
+# rose-pine moon
+[colors.palette]
+overlay = "#393552"
+surface = "#2a273f"
+subtle = "#908caa"
+text = "#e0def4"
+gold = "#f6c177"
+rose = "#ea9a97"
+love = "#eb6f92"
+foam = "#9ccfd8"
+iris = "#c4a7e7"
+highlight_med = "#44415a"
+
 [colors]
-border = "#393552" # overlay
+border = "$overlay"
+border_active = "$rose"
 
 [colors.files_list]
-item_fg = "#e0def4" # text
-item_active_fg = "#f6c177" # gold
+stats_fg = "$text"
+item_fg = "$text"
+item_active_fg = "$gold"
 
 [colors.diff]
-navigation_fg = "#f6c177" # gold
-hunk_fg = "#c4a7e7" # iris
-hunk_bg = "#44415a" # highlight_med
-line_added_fg = "#9ccfd8" # foam
-line_deleted_fg = "#eb6f92" # love
-line_unmodified_fg = "#908caa" # subtle
-line_filler_bg = "#2a273f" # surface
+stats_fg = "$text"
+hunk_fg = "$iris"
+hunk_bg = "$highlight_med"
+line_added_fg = "$foam"
+line_deleted_fg = "$love"
+line_unmodified_fg = "$subtle"
+line_filler_bg = "$surface"
