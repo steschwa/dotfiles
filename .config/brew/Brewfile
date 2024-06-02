@@ -17,6 +17,7 @@ brew "openjdk"
 brew "ripgrep"
 brew "starship"
 brew "rsteube/tap/carapace"
+brew "tree"
 
 cask "wezterm"
 cask "font-iosevka-nerd-font"

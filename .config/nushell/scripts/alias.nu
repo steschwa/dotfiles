@@ -4,6 +4,7 @@ alias python = python3
 alias copy = pbcopy
 alias paste = pbpaste
 alias bat = bat --theme=base16 --style numbers
+alias tree = tree --gitignore -C
 
 # git
 alias gs = git status
