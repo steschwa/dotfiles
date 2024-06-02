@@ -36,8 +36,8 @@ function M.setup(config)
 
 		-- panes
 		{ key = "d", mods = "CMD", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-		{ key = "n", mods = "CMD", action = act.ActivatePaneDirection("Left") },
-		{ key = "p", mods = "CMD", action = act.ActivatePaneDirection("Right") },
+		{ key = "h", mods = "CMD|SHIFT", action = act.ActivatePaneDirection("Left") },
+		{ key = "l", mods = "CMD|SHIFT", action = act.ActivatePaneDirection("Right") },
 		{ key = "=", mods = "CMD|SHIFT", action = act.AdjustPaneSize({ "Left", 10 }) },
 		{ key = "-", mods = "CMD|SHIFT", action = act.AdjustPaneSize({ "Right", 10 }) },
 		{ key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = true }) },
@@ -45,8 +45,8 @@ function M.setup(config)
 		-- tabs
 		{ key = "LeftArrow", mods = "CMD", action = act.MoveTabRelative(-1) },
 		{ key = "RightArrow", mods = "CMD", action = act.MoveTabRelative(1) },
-		{ key = "h", mods = "CMD|SHIFT", action = act.ActivateTabRelative(-1) },
-		{ key = "l", mods = "CMD|SHIFT", action = act.ActivateTabRelative(1) },
+		{ key = "h", mods = "CMD", action = act.ActivateTabRelative(-1) },
+		{ key = "l", mods = "CMD", action = act.ActivateTabRelative(1) },
 
 		-- copy mode
 		{ key = "c", mods = "LEADER", action = act.ActivateCopyMode },
@@ -63,6 +63,28 @@ function M.setup(config)
 			action = act.DisableDefaultAssignment,
 		},
 	}
+
+	-- local copy_mode = wezterm.gui.default_key_tables().copy_mode
+	-- local copy_mode_keybinds = {
+	-- 	{
+	-- 		key = "z",
+	-- 		mods = "NONE",
+	-- 		action = act.CopyMode({ MoveBackwardZoneOfType = "Output" }),
+	-- 	},
+	-- 	{
+	-- 		key = "z",
+	-- 		mods = "ALT",
+	-- 		action = act.CopyMode({ MoveForwardZoneOfType = "Prompt" }),
+	-- 	},
+	-- }
+	--
+	-- for _, keybind in ipairs(copy_mode_keybinds) do
+	-- 	table.insert(copy_mode, keybind)
+	-- end
+	--
+	-- config.key_tables = {
+	-- 	copy_mode = copy_mode,
+	-- }
 end
 
 return M
