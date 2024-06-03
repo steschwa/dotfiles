@@ -1,4 +1,4 @@
-[logging]
+[SearchbarColorslogging]
 enabled = true
 path = "/tmp/diffv.log"
 
@@ -12,20 +12,22 @@ gold = "#f6c177"
 rose = "#ea9a97"
 love = "#eb6f92"
 foam = "#9ccfd8"
+pine = "#3e8fb0"
 iris = "#c4a7e7"
 highlight_med = "#44415a"
 
 [colors]
 border = "$overlay"
 border_active = "$rose"
+counter_fg = "$text"
 
 [colors.files_list]
-stats_fg = "$text"
 item_fg = "$text"
 item_active_fg = "$gold"
+search_prompt_fg = "$subtle"
 
 [colors.diff]
-stats_fg = "$text"
+file_name_fg = "$text"
 hunk_fg = "$iris"
 hunk_bg = "$highlight_med"
 line_added_fg = "$foam"
