@@ -18,6 +18,7 @@ brew "ripgrep"
 brew "starship"
 brew "rsteube/tap/carapace"
 brew "tree"
+brew "mrkai77/cask/loop"
 
 cask "wezterm"
 cask "font-iosevka-nerd-font"
