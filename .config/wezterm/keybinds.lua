@@ -49,7 +49,7 @@ function M.setup(config)
 		{ key = "l", mods = "CMD", action = act.ActivateTabRelative(1) },
 
 		-- copy mode
-		{ key = "c", mods = "LEADER", action = act.ActivateCopyMode },
+		{ key = "y", mods = "CMD", action = act.ActivateCopyMode },
 
 		-- TODO: removeme once `config.disable_default_key_bindings = true` is used
 		{
