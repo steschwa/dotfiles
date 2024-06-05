@@ -16,9 +16,12 @@ end
 local M = {}
 
 function M.setup()
-	wezterm.on("format-tab-title", function(tab, _, panes, _, hover)
+	wezterm.on("format-tab-title", function(tab, _, _, _, hover)
 		local bg = Palette.tabbar.inactive_bg
 		local fg = Palette.tabbar.inactive_fg
+
+		local mux_tab = wezterm.mux.get_tab(tab.tab_id)
+		local panes = mux_tab:panes_with_info()
 
 		if tab.is_active then
 			bg = Palette.tabbar.active_bg
@@ -41,7 +44,7 @@ function M.setup()
 		table.insert(items, { Foreground = { Color = fg } })
 		table.insert(items, { Text = string.format(" %d %s ", tab.tab_index + 1, tab_title(tab)) })
 
-		if tab.is_active and #panes > 1 then
+		if #panes > 1 then
 			local panes_status_chars = {}
 			for _, pane in ipairs(panes) do
 				table.insert(panes_status_chars, (pane.is_active and "" or ""))
