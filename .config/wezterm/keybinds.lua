@@ -64,27 +64,32 @@ function M.setup(config)
 		},
 	}
 
-	-- local copy_mode = wezterm.gui.default_key_tables().copy_mode
-	-- local copy_mode_keybinds = {
-	-- 	{
-	-- 		key = "z",
-	-- 		mods = "NONE",
-	-- 		action = act.CopyMode({ MoveBackwardZoneOfType = "Output" }),
-	-- 	},
-	-- 	{
-	-- 		key = "z",
-	-- 		mods = "ALT",
-	-- 		action = act.CopyMode({ MoveForwardZoneOfType = "Prompt" }),
-	-- 	},
-	-- }
-	--
-	-- for _, keybind in ipairs(copy_mode_keybinds) do
-	-- 	table.insert(copy_mode, keybind)
-	-- end
-	--
-	-- config.key_tables = {
-	-- 	copy_mode = copy_mode,
-	-- }
+	local copy_mode = wezterm.gui.default_key_tables().copy_mode
+	local copy_mode_keybinds = {
+		{
+			key = "p",
+			mods = "CTRL",
+			action = act.CopyMode({ MoveBackwardZoneOfType = "Output" }),
+		},
+		{
+			key = "n",
+			mods = "CTRL",
+			action = act.CopyMode({ MoveForwardZoneOfType = "Output" }),
+		},
+		{
+			key = "z",
+			mods = "NONE",
+			action = act.CopyMode({ SetSelectionMode = "SemanticZone" }),
+		},
+	}
+
+	for _, keybind in ipairs(copy_mode_keybinds) do
+		table.insert(copy_mode, keybind)
+	end
+
+	config.key_tables = {
+		copy_mode = copy_mode,
+	}
 end
 
 return M
