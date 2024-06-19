@@ -62,9 +62,6 @@ end)
 keymap("n", "gs", function()
     require("steschw.utils.formatting").format_write()
 end)
-keymap("n", "gf", function()
-    require("steschw.utils.formatting").format()
-end)
 
 -- linting
 keymap("n", "gl", function()
