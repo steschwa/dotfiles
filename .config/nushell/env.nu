@@ -10,6 +10,8 @@ $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.PATH = ($env.PATH | split row (char esep))
 $env.CONFIG_DIR = ($env.HOME | path join '.config')
 
+# $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
+
 $env.GOPATH = ($env.HOME | path join 'go')
 $env.GOBIN = ($env.GOPATH | path join 'bin')
 $env.EDITOR = 'nvim'

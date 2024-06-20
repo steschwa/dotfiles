@@ -1,0 +1,5 @@
+name: fq
+description: firestore query tool
+parsing: disabled
+completion:
+    positionalany: ["$carapace.bridge.Carapace([fq])"]
