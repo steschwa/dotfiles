@@ -27,12 +27,19 @@ local fd_cmd = {
 return {
     {
         "nvim-telescope/telescope.nvim",
-        event = "VeryLazy",
         dependencies = {
             {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make",
             },
+        },
+        keys = {
+            { "<leader>p", "<cmd>Telescope find_files<cr>" },
+            { "<leader>f", "<cmd>Telescope live_grep<cr>" },
+            { "<leader>h", "<cmd>Telescope help_tags<cr>" },
+            { "<leader>b", "<cmd>Telescope buffers<cr>" },
+            { "<leader>s", "<cmd>Telescope lsp_document_symbols<cr>" },
+            { "<leader><leader>", "<cmd>Telescope pickers<cr>" },
         },
         config = function()
             local telescope = require("telescope")

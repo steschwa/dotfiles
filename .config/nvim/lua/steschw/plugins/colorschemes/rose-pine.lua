@@ -54,12 +54,6 @@ return {
                 FixmeColumnSeparator =      { fg = "overlay" },
                 QuickFixLine =              { bg = "highlight_med" },
 
-                MiniHipatternsTodo =        { bg = "pine", fg = "text" },
-                MiniHipatternsRefactor =    { bg = "foam", fg = "highlight_low" },
-                MiniHipatternsFixme =       { bg = "love", fg = "highlight_low" },
-                MiniHipatternsTestme =      { bg = "iris", fg = "highlight_low" },
-                MiniHipatternsRemoveme =    { bg = "rose", fg = "highlight_low" },
-
                 FelineActive =              { bg = "overlay" },
                 FelineInactive =            { bg = "surface" },
                 FelineFilenameActive =      { bg = "pine", fg = "text" },

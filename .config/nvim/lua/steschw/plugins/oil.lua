@@ -3,11 +3,9 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
+    lazy = false,
     keys = {
-        {
-            "-",
-            "<cmd>Oil<cr>",
-        },
+        { "-", "<cmd>Oil<cr>" },
     },
     opts = {
         default_file_explorer = true,

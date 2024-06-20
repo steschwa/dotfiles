@@ -11,9 +11,6 @@ function M.set(buf)
     keymap("n", "gH", vim.diagnostic.open_float, { buffer = buf })
     keymap("n", "gR", vim.lsp.buf.rename, { buffer = buf })
     keymap("n", "ga", vim.lsp.buf.code_action, { buffer = buf })
-
-    local telescope = require("telescope.builtin")
-    keymap("n", "<leader>s", telescope.lsp_document_symbols, { buffer = buf })
 end
 
 function M.diagnostics()
