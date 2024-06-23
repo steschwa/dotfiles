@@ -42,6 +42,7 @@ keymap("v", "p", '"_dP')
 
 -- buffers
 keymap("n", "<tab>", "<cmd>b#<cr>")
+keymap("n", "<C-i>", "<C-i>")
 
 -- diagnostics
 keymap("n", "[d", function()
