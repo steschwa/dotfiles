@@ -24,6 +24,7 @@ keymap("n", "Q", "@q")
 -- windows
 keymap("n", "wl", "<C-w>v")
 keymap("n", "wc", "<C-w>q")
+keymap("n", "wj", "<C-w><C-S>")
 keymap("n", "<C-h>", "<C-w>h")
 keymap("n", "<C-j>", "<C-w>j")
 keymap("n", "<C-k>", "<C-w>k")
