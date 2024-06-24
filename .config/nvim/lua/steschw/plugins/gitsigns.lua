@@ -2,7 +2,7 @@ local sign = "▎"
 
 return {
     "lewis6991/gitsigns.nvim",
-    event = { "BufEnter" },
+    event = "BufEnter",
     keys = {
         { "gb", "<cmd>Gitsigns blame_line<cr>" },
         { "gp", "<cmd>Gitsigns preview_hunk<cr>" },
