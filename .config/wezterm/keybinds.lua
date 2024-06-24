@@ -36,8 +36,11 @@ function M.setup(config)
 
 		-- panes
 		{ key = "d", mods = "CMD", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+		{ key = "d", mods = "CMD|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 		{ key = "h", mods = "CMD|SHIFT", action = act.ActivatePaneDirection("Left") },
 		{ key = "l", mods = "CMD|SHIFT", action = act.ActivatePaneDirection("Right") },
+		{ key = "j", mods = "CMD|SHIFT", action = act.ActivatePaneDirection("Down") },
+		{ key = "k", mods = "CMD|SHIFT", action = act.ActivatePaneDirection("Up") },
 		{ key = "=", mods = "CMD|SHIFT", action = act.AdjustPaneSize({ "Left", 10 }) },
 		{ key = "-", mods = "CMD|SHIFT", action = act.AdjustPaneSize({ "Right", 10 }) },
 		{ key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = true }) },
