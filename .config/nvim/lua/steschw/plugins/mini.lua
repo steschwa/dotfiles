@@ -2,6 +2,7 @@ return {
     {
         "echasnovski/mini.comment",
         version = "*",
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "JoosepAlviste/nvim-ts-context-commentstring",
         },
@@ -24,6 +25,7 @@ return {
     {
         "echasnovski/mini.pairs",
         version = "*",
+        event = { "BufReadPre", "BufNewFile" },
         opts = {
             modes = {
                 insert = true,
@@ -35,6 +37,7 @@ return {
     {
         "echasnovski/mini.surround",
         version = "*",
+        event = { "BufReadPre", "BufNewFile" },
         opts = {
             mappings = {
                 add = "sa",
@@ -52,6 +55,7 @@ return {
     {
         "echasnovski/mini.move",
         version = "*",
+        event = { "BufReadPre", "BufNewFile" },
         opts = {
             options = {
                 reindent_linewise = false,

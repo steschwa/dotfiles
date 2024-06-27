@@ -2,11 +2,10 @@ local win_utils = require("steschw.utils.window")
 
 return {
     "stevearc/dressing.nvim",
-    event = "VeryLazy",
     opts = {
         input = {
             enabled = true,
-            default_prompt = "Input:",
+            default_prompt = "Input",
             title_pos = "left",
             insert_only = false,
             start_in_insert = true,

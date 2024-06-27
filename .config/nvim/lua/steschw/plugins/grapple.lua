@@ -8,9 +8,7 @@ end
 
 return {
     "cbochs/grapple.nvim",
-    dependencies = {
-        "nvim-tree/nvim-web-devicons",
-    },
+    event = { "BufReadPre", "BufNewFile" },
     keys = {
         {
             "mm",
@@ -32,6 +30,9 @@ return {
         select(7),
         select(8),
         select(9),
+    },
+    dependencies = {
+        "nvim-tree/nvim-web-devicons",
     },
     opts = {
         icons = true,

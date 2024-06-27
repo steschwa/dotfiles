@@ -1,10 +1,10 @@
 return {
     "folke/todo-comments.nvim",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     keys = {
         { "<leader>t", "<cmd>TodoQuickFix<cr>" },
     },
+    dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
         signs = false,
         merge_keywords = false,

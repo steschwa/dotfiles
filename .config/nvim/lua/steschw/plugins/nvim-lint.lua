@@ -3,10 +3,7 @@ local do_lint = require("steschw.utils.linting").lint
 
 return {
     "mfussenegger/nvim-lint",
-    event = {
-        "BufReadPre",
-        "BufNewFile",
-    },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
         -- MasonInstall revive
 

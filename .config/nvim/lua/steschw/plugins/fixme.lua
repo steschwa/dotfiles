@@ -54,7 +54,7 @@ end
 
 return {
     dir = "/Volumes/Projekte/fixme.nvim",
-    event = "VeryLazy",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
         require("fixme").setup({
             selectors = {

@@ -3,11 +3,20 @@ return {
         "nvim-treesitter/nvim-treesitter",
         version = false,
         build = ":TSUpdate",
-        cmd = { "TSUpdateSync" },
-        event = { "BufReadPost", "BufNewFile" },
+        event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            "nushell/tree-sitter-nu",
+            {
+                "nushell/tree-sitter-nu",
+                ft = { "nu" },
+            },
+            {
+                "windwp/nvim-ts-autotag",
+                config = true,
+            },
+            {
+                "JoosepAlviste/nvim-ts-context-commentstring",
+            },
         },
         config = function()
             local configs = require("nvim-treesitter.configs")
@@ -54,18 +63,5 @@ return {
                 },
             })
         end,
-    },
-    {
-        "JoosepAlviste/nvim-ts-context-commentstring",
-        config = function()
-            vim.g.skip_ts_context_commentstring_module = true
-
-            --- @diagnostic disable-next-line: missing-parameter
-            require("ts_context_commentstring").setup()
-        end,
-    },
-    {
-        "windwp/nvim-ts-autotag",
-        config = true,
     },
 }
