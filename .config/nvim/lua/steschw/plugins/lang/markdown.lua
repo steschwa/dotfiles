@@ -1,5 +1,3 @@
-local deps = require("steschw.utils.dependencies")
-
 -- MasonInstall marksman
 
 return {
@@ -9,5 +7,4 @@ return {
             opts.servers.marksman = {}
         end,
     },
-    deps.formatter("prettierd", { "markdown" }),
 }

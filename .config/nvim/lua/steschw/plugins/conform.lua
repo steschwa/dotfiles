@@ -4,23 +4,36 @@ return {
         "BufReadPre",
         "BufNewFile",
     },
-    opts = {
-        formatters_by_ft = {},
-    },
-    config = function(_, opts)
-        local conform = require("conform")
+    config = function()
+        -- MasonInstall prettierd
+        -- MasonInstall goimports
+        -- MasonInstall stylua
 
-        local prettierd = require("conform.formatters.prettierd")
+        local conform = require("conform")
 
         conform.setup({
             notify_on_error = false,
-            formatters_by_ft = opts.formatters_by_ft,
+            formatters_by_ft = {
+                css = { "prettierd" },
+                scss = { "prettierd" },
+                go = { "goimports" },
+                html = { "prettierd" },
+                json = { "prettierd" },
+                jsonc = { "prettierd" },
+                lua = { "stylua" },
+                markdown = { "prettierd" },
+                javascript = { "prettierd" },
+                javascriptreact = { "prettierd" },
+                typescript = { "prettierd" },
+                typescriptreact = { "prettierd" },
+                yaml = { "prettierd" },
+            },
             formatters = {
-                prettierd = vim.tbl_deep_extend("force", prettierd, {
+                prettierd = {
                     env = {
                         PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/dotfiles/.prettierrc"),
                     },
-                }),
+                },
             },
         })
     end,

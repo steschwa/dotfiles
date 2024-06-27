@@ -7,12 +7,17 @@ return {
         "BufReadPre",
         "BufNewFile",
     },
-    opts = {
-        linters_by_ft = {},
-    },
-    config = function(_, opts)
+    config = function()
+        -- MasonInstall revive
+
         local lint = require("lint")
-        lint.linters_by_ft = opts.linters_by_ft
+        lint.linters_by_ft = {
+            go = { "revive" },
+            javascript = { "eslint" },
+            javascriptreact = { "eslint" },
+            typescript = { "eslint" },
+            typescriptreact = { "eslint" },
+        }
 
         local revive_linter = lint.linters.revive
         revive_linter.args = { "-config", vim.fn.expand("~/.config/revive/revive.toml") }

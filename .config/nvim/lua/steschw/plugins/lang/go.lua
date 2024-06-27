@@ -1,5 +1,3 @@
-local deps = require("steschw.utils.dependencies")
-
 -- MasonInstall gopls
 
 return {
@@ -9,6 +7,4 @@ return {
             opts.servers.gopls = {}
         end,
     },
-    deps.formatter("goimports", { "go" }),
-    deps.linter("revive", { "go" }),
 }

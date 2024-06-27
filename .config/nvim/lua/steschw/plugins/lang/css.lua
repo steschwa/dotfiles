@@ -1,8 +1,5 @@
-local deps = require("steschw.utils.dependencies")
-
 -- MasonInstall css-lsp
 -- MasonInstall tailwindcss-language-server
--- MasonInstall prettierd
 
 return {
     {
@@ -12,5 +9,4 @@ return {
             opts.servers.tailwindcss = {}
         end,
     },
-    deps.formatter("prettierd", { "css", "scss" }),
 }

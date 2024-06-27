@@ -1,5 +1,3 @@
-local deps = require("steschw.utils.dependencies")
-
 -- MasonInstall json-lsp
 
 return {
@@ -19,5 +17,4 @@ return {
             }
         end,
     },
-    deps.formatter("prettierd", { "json", "jsonc" }),
 }

@@ -1,5 +1,3 @@
-local deps = require("steschw.utils.dependencies")
-
 -- MasonInstall lua-language-server
 
 return {
@@ -22,5 +20,4 @@ return {
             }
         end,
     },
-    deps.formatter("stylua", { "lua" }),
 }

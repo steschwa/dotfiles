@@ -1,5 +1,3 @@
-local deps = require("steschw.utils.dependencies")
-
 -- MasonInstall html-lsp
 
 return {
@@ -9,5 +7,4 @@ return {
             opts.servers.html = {}
         end,
     },
-    deps.formatter("prettierd", { "html" }),
 }

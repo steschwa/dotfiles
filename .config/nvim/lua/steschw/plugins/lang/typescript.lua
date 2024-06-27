@@ -1,4 +1,3 @@
-local deps = require("steschw.utils.dependencies")
 local keymap = require("steschw.utils.keys").keymap
 
 return {
@@ -26,16 +25,4 @@ return {
             })
         end,
     },
-    deps.formatter("prettierd", {
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-    }),
-    deps.linter("eslint", {
-        "javascript",
-        "javascriptreact",
-        "typescript",
-        "typescriptreact",
-    }, { install = false }),
 }
