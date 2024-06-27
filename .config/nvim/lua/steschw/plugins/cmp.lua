@@ -7,7 +7,7 @@ return {
         "hrsh7th/nvim-cmp",
         version = false,
         event = {
-            "InsertEnter",
+            "LspAttach",
         },
         dependencies = {
             "L3MON4D3/LuaSnip",
@@ -18,13 +18,11 @@ return {
         },
         config = function()
             local cmp = require("cmp")
-            local ls = require("luasnip")
-            local lspkind = require("lspkind")
 
             cmp.setup({
                 snippet = {
                     expand = function(args)
-                        ls.lsp_expand(args.body)
+                        require("luasnip").lsp_expand(args.body)
                     end,
                 },
                 mapping = {
@@ -43,7 +41,7 @@ return {
                 formatting = {
                     fields = { "abbr", "menu", "kind" },
                     expandable_indicator = false,
-                    format = lspkind.cmp_format({
+                    format = require("lspkind").cmp_format({
                         mode = "symbol_text",
                         preset = "codicons",
                     }),
@@ -69,6 +67,7 @@ return {
     {
         "L3MON4D3/LuaSnip",
         version = "v2.*",
+        lazy = true,
         config = function()
             local ls = require("luasnip")
             ls.setup()

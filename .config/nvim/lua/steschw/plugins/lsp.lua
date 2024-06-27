@@ -6,7 +6,10 @@ return {
             "BufNewFile",
         },
         dependencies = {
-            "williamboman/mason.nvim",
+            {
+                "williamboman/mason.nvim",
+                config = true,
+            },
             "williamboman/mason-lspconfig.nvim",
         },
         init = function()
@@ -84,30 +87,5 @@ return {
                 lspconfig[server].setup(final_opts)
             end
         end,
-    },
-    {
-        "williamboman/mason.nvim",
-        opts = {
-            tools = {},
-        },
-        config = function(_, opts)
-            require("mason").setup()
-
-            local registry = require("mason-registry")
-            registry.refresh(function()
-                for _, tool in ipairs(opts.tools) do
-                    if not registry.is_installed(tool) then
-                        vim.cmd("MasonInstall " .. tool)
-                    end
-                end
-            end)
-        end,
-    },
-    {
-        "williamboman/mason-lspconfig.nvim",
-        dependencies = {
-            "williamboman/mason.nvim",
-        },
-        config = true,
     },
 }
