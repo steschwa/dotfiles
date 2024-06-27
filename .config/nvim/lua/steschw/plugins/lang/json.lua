@@ -1,11 +1,12 @@
 local deps = require("steschw.utils.dependencies")
 
+-- MasonInstall json-lsp
+
 return {
     {
         "neovim/nvim-lspconfig",
         dependencies = {
             "b0o/schemastore.nvim",
-            deps.mason("json-lsp"),
         },
         opts = function(_, opts)
             opts.servers.jsonls = {
@@ -19,7 +20,4 @@ return {
         end,
     },
     deps.formatter("prettierd", { "json", "jsonc" }),
-    {
-        "b0o/schemastore.nvim",
-    },
 }

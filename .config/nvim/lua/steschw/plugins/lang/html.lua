@@ -1,11 +1,10 @@
 local deps = require("steschw.utils.dependencies")
 
+-- MasonInstall html-lsp
+
 return {
     {
         "neovim/nvim-lspconfig",
-        dependencies = {
-            deps.mason("html-lsp"),
-        },
         opts = function(_, opts)
             opts.servers.html = {}
         end,

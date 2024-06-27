@@ -1,11 +1,10 @@
 local deps = require("steschw.utils.dependencies")
 
+-- MasonInstall gopls
+
 return {
     {
         "neovim/nvim-lspconfig",
-        dependencies = {
-            deps.mason("gopls"),
-        },
         opts = function(_, opts)
             opts.servers.gopls = {}
         end,

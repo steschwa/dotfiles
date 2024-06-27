@@ -1,5 +1,7 @@
 local deps = require("steschw.utils.dependencies")
 
+-- MasonInstall lua-language-server
+
 return {
     {
         "folke/lazydev.nvim",
@@ -8,9 +10,6 @@ return {
     },
     {
         "neovim/nvim-lspconfig",
-        dependencies = {
-            deps.mason("lua-language-server"),
-        },
         opts = function(_, opts)
             opts.servers.lua_ls = {
                 settings = {
