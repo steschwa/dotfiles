@@ -4,7 +4,10 @@ return {
     keys = {
         { "<leader>t", "<cmd>TodoQuickFix<cr>" },
     },
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+        "nvim-lua/plenary.nvim",
+        "fixme.nvim",
+    },
     opts = {
         signs = false,
         merge_keywords = false,

@@ -54,6 +54,7 @@ end
 
 return {
     dir = "/Volumes/Projekte/fixme.nvim",
+    name = "fixme.nvim",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
         require("fixme").setup({
