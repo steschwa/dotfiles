@@ -54,6 +54,10 @@ function M.setup(config)
 		-- copy mode
 		{ key = "y", mods = "CMD", action = act.ActivateCopyMode },
 
+		-- scrolling
+		{ key = "k", mods = "CMD", action = act.ScrollByLine(-1) },
+		{ key = "j", mods = "CMD", action = act.ScrollByLine(1) },
+
 		-- TODO: removeme once `config.disable_default_key_bindings = true` is used
 		{
 			key = "-",
