@@ -31,7 +31,7 @@ export def "port kill" [
 ] {
     let pids = (lsof -ni $":($port)" | parse-lsof | get pid  | uniq)
 
-    for --numbered pid in $pids {
+    for pid in ($pids | enumerate) {
         let prefix = $"pid:($pid.item) - "
 
         try {
