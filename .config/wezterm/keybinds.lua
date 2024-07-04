@@ -57,6 +57,8 @@ function M.setup(config)
 		-- scrolling
 		{ key = "k", mods = "CMD", action = act.ScrollByLine(-1) },
 		{ key = "j", mods = "CMD", action = act.ScrollByLine(1) },
+		{ key = "k", mods = "CMD|CTRL", action = act.ScrollByPage(-0.5) },
+		{ key = "j", mods = "CMD|CTRL", action = act.ScrollByPage(0.5) },
 
 		-- TODO: removeme once `config.disable_default_key_bindings = true` is used
 		{
