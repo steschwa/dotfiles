@@ -55,6 +55,7 @@ end)
 -- formatting
 keymap("n", "gs", function()
     require("steschw.utils.formatting").format_write()
+    require("steschw.utils.linting").fix()
 end)
 
 -- linting

@@ -8,4 +8,8 @@ function M.lint()
     end)
 end
 
+function M.fix()
+    pcall(vim.cmd.EslintFixAll)
+end
+
 return M

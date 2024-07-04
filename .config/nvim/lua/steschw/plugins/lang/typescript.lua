@@ -19,7 +19,6 @@ return {
                     local keymap_opts = { buffer = bufnr }
 
                     keymap("n", "gu", "<cmd>TSToolsRemoveUnusedImports<cr>", keymap_opts)
-                    keymap("n", "go", "<cmd>TSToolsSortImports<cr>", keymap_opts)
                     keymap("n", "gi", "<cmd>TSToolsAddMissingImports<cr>", keymap_opts)
                 end,
             })
