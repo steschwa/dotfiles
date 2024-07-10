@@ -10,10 +10,6 @@ return {
         local lint = require("lint")
         lint.linters_by_ft = {
             go = { "revive" },
-            javascript = { "eslint" },
-            javascriptreact = { "eslint" },
-            typescript = { "eslint" },
-            typescriptreact = { "eslint" },
         }
 
         local revive_linter = lint.linters.revive
