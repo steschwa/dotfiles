@@ -18,6 +18,7 @@ return {
             changedelete = { text = sign },
             untracked = { text = sign },
         },
+        signs_staged_enable = false,
         update_debounce = 1000,
         current_line_blame = false,
     },
