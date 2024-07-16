@@ -10,7 +10,8 @@ return {
                 "go",
             },
             user_default_options = {
-                mode = "background",
+                mode = "virtualtext",
+                virtualtext = "■■",
                 RGB = true, -- #RGB hex codes
                 RRGGBB = true, -- #RRGGBB hex codes
                 names = true, -- "Name" codes like Blue or blue
