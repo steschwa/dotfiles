@@ -1,18 +1,13 @@
 local M = {}
 
-function M.format(bufnr)
-    pcall(require("conform").format, {
-        bufnr = bufnr,
-        async = true,
-    })
-end
-
-function M.format_write(bufnr)
-    pcall(require("conform").format, {
-        bufnr = bufnr,
-        async = true,
-    }, function()
-        pcall(vim.cmd.w)
+--- @param bufnr number 0 to use current buffer
+--- @param callback? fun()
+function M.format(bufnr, callback)
+    pcall(function()
+        require("conform").format({
+            bufnr = bufnr,
+            async = true,
+        }, callback)
     end)
 end
 
