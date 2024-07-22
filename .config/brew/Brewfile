@@ -1,7 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/services"
 tap "rsteube/homebrew-tap"
-tap "homebrew/cask-fonts"
 
 brew "bat"
 brew "docker"
@@ -18,7 +17,7 @@ brew "ripgrep"
 brew "starship"
 brew "rsteube/tap/carapace"
 brew "tree"
-brew "mrkai77/cask/loop"
+brew "loop"
 
 cask "wezterm"
 cask "font-iosevka-nerd-font"
