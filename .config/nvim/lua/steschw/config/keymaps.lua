@@ -54,10 +54,9 @@ end)
 
 -- formatting
 keymap("n", "gs", function()
-    require("steschw.utils.formatting").format(0, function()
-        require("steschw.utils.linting").fix()
-        vim.cmd("w")
-    end)
+    require("steschw.utils.formatting").format(0)
+    require("steschw.utils.linting").fix()
+    vim.cmd("w")
 end)
 
 -- linting
