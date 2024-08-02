@@ -15,6 +15,9 @@ keymap("n", "<leader>n", "<cmd>noh<cr>")
 keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 
+-- search in visual
+keymap("v", "/", "<esc>/\\%V")
+
 -- system clipboard helpers
 keymap({ "n", "v" }, "<C-c>", '"+')
 
@@ -32,7 +35,6 @@ keymap("n", "<C-l>", "<C-w>l")
 keymap("n", "<C-=>", "<cmd>resize +2<cr>")
 keymap("n", "<C-_>", "<cmd>resize -2<cr>")
 keymap("n", "<C-.>", "<cmd>vertical resize +5<cr>")
-keymap("n", "<C-,>", "<cmd>vertical resize -5<cr>")
 
 -- leave insert on jk
 keymap("i", "jk", "<esc>")
