@@ -21,3 +21,4 @@ brew "loop"
 
 cask "wezterm"
 cask "font-iosevka-nerd-font"
+cask "orbstack"
