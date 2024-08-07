@@ -1,9 +1,9 @@
 local M = {}
 
---- @param bufnr number 0 to use current buffer
+--- @param bufnr? number
 function M.format(bufnr)
     pcall(require("conform").format, {
-        bufnr = bufnr,
+        bufnr = bufnr or 0,
     })
 end
 
