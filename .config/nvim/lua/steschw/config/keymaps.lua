@@ -56,10 +56,9 @@ end)
 
 -- formatting
 keymap("n", "gs", function()
-    require("steschw.utils.formatting").format(0)
+    require("steschw.utils.formatting").format()
     require("steschw.utils.linting").fix()
-    --- @diagnostic disable-next-line: param-type-mismatch
-    pcall(vim.cmd, "w")
+    pcall(vim.cmd.w)
 end)
 
 -- linting
