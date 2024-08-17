@@ -32,6 +32,7 @@ return {
                 "nvim-telescope/telescope-fzf-native.nvim",
                 build = "make",
             },
+            "fixme.nvim",
         },
         keys = {
             { "<leader>p", "<cmd>Telescope find_files<cr>" },
