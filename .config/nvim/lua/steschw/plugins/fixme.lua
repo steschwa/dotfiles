@@ -42,10 +42,6 @@ local function provider_filename(item)
 end
 
 local function provider_text(item)
-    if item.text == "" then
-        return { text = "" }
-    end
-
     return {
         text = vim.trim(item.text),
         hl = "FixmeText",
