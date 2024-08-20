@@ -1,14 +1,17 @@
+local filetypes = {
+    "css",
+    "scss",
+    "dump",
+    "go",
+}
+
 return {
     "NvChad/nvim-colorizer.lua",
     event = { "BufReadPre", "BufNewFile" },
+    filetypes = filetypes,
     config = function()
         require("colorizer").setup({
-            filetypes = {
-                "css",
-                "scss",
-                "dump",
-                "go",
-            },
+            filetypes = filetypes,
             user_default_options = {
                 mode = "virtualtext",
                 virtualtext = "■■",

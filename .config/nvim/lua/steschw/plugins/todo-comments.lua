@@ -1,9 +1,7 @@
 return {
     "folke/todo-comments.nvim",
     event = { "BufReadPre", "BufNewFile" },
-    keys = {
-        { "<leader>t", "<cmd>TodoQuickFix<cr>" },
-    },
+    cmd = "TodoQuickFix",
     dependencies = {
         "nvim-lua/plenary.nvim",
         "fixme.nvim",
