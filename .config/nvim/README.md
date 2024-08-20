@@ -12,3 +12,4 @@
 1. `mkdir -p ~/.config`
 2. `cd ~/.config`
 3. `git clone git@github.com:steschwa/nvim-config.git nvim`
+4. (inside nvim): `:Lazy restore`
