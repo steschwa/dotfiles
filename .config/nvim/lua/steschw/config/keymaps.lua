@@ -87,3 +87,4 @@ end)
 keymap("n", "<leader>l", "<cmd>Lazy<cr>")
 
 keymap("n", "<leader>i", "<cmd>edit .ignore<cr>")
+keymap("n", "<leader>t", "<cmd>edit TODO.md<cr>")
