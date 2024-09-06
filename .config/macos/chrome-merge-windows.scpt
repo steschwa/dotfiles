@@ -1,6 +1,3 @@
--- re-open all tabs in the currently focused chrome window
--- in a second window
-
 tell application "System Events"
     set frontApp to name of first application process whose frontmost is true
 end tell
