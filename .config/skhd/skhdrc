@@ -4,3 +4,4 @@ cmd - return : osascript -e 'tell application "WezTerm" to activate'
 # chrome
 cmd + shift - return : osascript -e 'tell application "Chrome" to activate'
 cmd - m : osascript /Users/stefan/.config/macos/chrome-merge-windows.scpt
+cmd - d : osascript /Users/stefan/.config/macos/chrome-duplicate-tab.scpt
