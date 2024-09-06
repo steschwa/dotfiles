@@ -20,6 +20,7 @@ brew "starship"
 brew "tree"
 brew "sponge"
 brew "yadm"
+brew "koekeishiya/formulae/skhd"
 
 cask "font-iosevka-nerd-font"
 cask "google-chrome"
