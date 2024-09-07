@@ -1,8 +1,4 @@
-tell application "System Events"
-    set frontApp to name of first application process whose frontmost is true
-end tell
-
-if frontApp is "Google Chrome" then
+if application "Google Chrome" is frontmost
     tell application "Google Chrome"
         set windowCount to count of windows
 
