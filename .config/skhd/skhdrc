@@ -10,3 +10,7 @@ cmd - d [
 cmd + shift - c [
     "Finder" : osascript /Users/stefan/.config/macos/finder-copy-path.scpt
 ]
+
+# app shortcuts
+cmd + shift - t : osascript -e 'tell application "WezTerm" to activate'
+cmd + shift - s : osascript /Users/stefan/.config/macos/open-spotify.scpt
