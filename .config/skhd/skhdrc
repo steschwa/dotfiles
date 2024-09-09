@@ -12,5 +12,5 @@ cmd + shift - c [
 ]
 
 # app shortcuts
-cmd + shift - t : osascript -e 'tell application "WezTerm" to activate'
-cmd + shift - s : osascript /Users/stefan/.config/macos/open-spotify.scpt
+hyper - t : osascript -e 'tell application "WezTerm" to activate'
+hyper - s : osascript /Users/stefan/.config/macos/open-spotify.scpt
