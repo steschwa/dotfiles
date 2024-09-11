@@ -9,7 +9,7 @@ cmd - m [
     "Google Chrome" : osascript /Users/stefan/.config/macos/chrome-merge-windows.scpt
 ]
 cmd - d [
-    "Google Chrome" : osascript -l JavaScript /Users/stefan/.config/macos/chrome-duplicate-tab.js
+    "Google Chrome" : ~/.config/macos/chrome-duplicate-tab.js
 ]
 
 # finder
