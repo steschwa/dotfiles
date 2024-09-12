@@ -14,5 +14,5 @@ cmd - d [
 
 # finder
 cmd + shift - c [
-    "Finder" : osascript /Users/stefan/.config/macos/finder-copy-path.scpt
+    "Finder" : ~/.config/macos/finder-copy-path.js
 ]
