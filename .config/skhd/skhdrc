@@ -6,7 +6,7 @@ hyper - b : open -a 'Bear'
 
 # chrome
 cmd - m [
-    "Google Chrome" : osascript /Users/stefan/.config/macos/chrome-merge-windows.scpt
+    "Google Chrome" : ~/.config/macos/chrome-merge-windows.js
 ]
 cmd - d [
     "Google Chrome" : ~/.config/macos/chrome-duplicate-tab.js
