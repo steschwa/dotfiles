@@ -11,7 +11,11 @@ if (windows.length < 2) {
     throw `requires two windows, but got ${windows.length}`
 }
 
-const [sourceWindow, destinationWindow] = windows
+const normalWindows = windows.filter(window => {
+    return !window.name().startsWith("DevTools")
+})
+
+const [sourceWindow, destinationWindow] = normalWindows
 
 const urls = sourceWindow.tabs().map(tab => {
     return tab.url()
