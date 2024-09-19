@@ -16,11 +16,8 @@ return {
             vim.fn.expand("~/.config/revive/revive.toml"),
         }
 
-        lint.linters.yamllint.args = { "--format", "parsable", "-d", "relaxed", "-" }
-
         lint.linters_by_ft = {
             go = { "revive" },
-            yaml = { "yamllint" },
         }
 
         vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
