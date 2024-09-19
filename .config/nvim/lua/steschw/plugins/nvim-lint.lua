@@ -15,7 +15,7 @@ return {
         local revive_linter = lint.linters.revive
         revive_linter.args = { "-config", vim.fn.expand("~/.config/revive/revive.toml") }
 
-        vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+        vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
             group = augroup("lint"),
             callback = do_lint,
         })
