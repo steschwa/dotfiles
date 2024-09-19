@@ -4,7 +4,15 @@ return {
     {
         "neovim/nvim-lspconfig",
         opts = function(_, opts)
-            opts.servers.eslint = {}
+            opts.servers.eslint = {
+                settings = {
+                    codeAction = {
+                        showDocumentation = {
+                            enable = false,
+                        },
+                    },
+                },
+            }
         end,
     },
 }
