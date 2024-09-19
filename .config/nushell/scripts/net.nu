@@ -29,7 +29,7 @@ export def "port kill" [
     port: int # port to kill
     --signal (-s) = 9 # signal to send (default 9 => SIGKILL)
 ] {
-    let pids = (lsof -ni $":($port)" | parse-lsof | get pid  | uniq)
+    let pids = (lsof -ni $":($port)" | parse-lsof | get pid | uniq)
 
     for pid in ($pids | enumerate) {
         let prefix = $"pid:($pid.item) - "
