@@ -4,6 +4,7 @@ local M = {}
 function M.format()
     pcall(require("conform").format, {
         bufnr = 0,
+        lsp_format = "fallback",
     })
 end
 
