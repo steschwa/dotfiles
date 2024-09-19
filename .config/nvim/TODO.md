@@ -7,3 +7,7 @@
 
 -   list all schemas in telescope (use `require("schemastore").load() ...` to load all)
 -   copy url of selected item to clipboard
+
+# treesitter textobjects for functions
+
+-   select whole function (inner)

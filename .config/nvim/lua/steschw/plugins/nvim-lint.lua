@@ -8,14 +8,22 @@ return {
         -- MasonInstall revive
 
         local lint = require("lint")
-        lint.linters_by_ft = {
-            go = { "revive" },
+
+        lint.linters.revive.args = {
+            "-formatter",
+            "json",
+            "-config",
+            vim.fn.expand("~/.config/revive/revive.toml"),
         }
 
-        local revive_linter = lint.linters.revive
-        revive_linter.args = { "-config", vim.fn.expand("~/.config/revive/revive.toml") }
+        lint.linters.yamllint.args = { "--format", "parsable", "-d", "relaxed", "-" }
 
-        vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
+        lint.linters_by_ft = {
+            go = { "revive" },
+            yaml = { "yamllint" },
+        }
+
+        vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
             group = augroup("lint"),
             callback = do_lint,
         })
