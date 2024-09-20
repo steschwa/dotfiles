@@ -5,8 +5,6 @@ return {
     "mfussenegger/nvim-lint",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
-        -- MasonInstall revive
-
         local lint = require("lint")
 
         lint.linters.revive.args = {
@@ -16,6 +14,7 @@ return {
             vim.fn.expand("~/.config/revive/revive.toml"),
         }
 
+        -- MasonInstall revive
         lint.linters_by_ft = {
             go = { "revive" },
         }

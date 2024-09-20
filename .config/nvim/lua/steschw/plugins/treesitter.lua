@@ -33,6 +33,13 @@ return {
                     disable = { "yaml" },
                 },
                 textobjects = {
+                    select = {
+                        enable = true,
+                        keymaps = {
+                            ["af"] = "@function.outer",
+                            ["if"] = "@function.inner",
+                        },
+                    },
                     swap = {
                         enable = true,
                         swap_next = {
@@ -51,14 +58,6 @@ return {
                         goto_previous_start = {
                             ["]f"] = "@function.outer",
                         },
-                    },
-                },
-                incremental_selection = {
-                    enable = true,
-                    keymaps = {
-                        init_selection = "vv",
-                        node_incremental = "[v",
-                        node_decremental = "]v",
                     },
                 },
             })
