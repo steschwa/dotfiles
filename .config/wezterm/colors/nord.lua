@@ -31,15 +31,12 @@ Nord.titlebar_bg = Nord.palette.polar_night.nord0
 
 --- @type steschwa.ColorPaletteTabbar
 Nord.tabbar = {
-	inactive_bg = Nord.palette.polar_night.nord1,
 	inactive_fg = Nord.palette.snow_storm.nord4,
-	active_bg = Nord.palette.aurora.nord15,
 	active_fg = Nord.palette.polar_night.nord0,
 }
 
 --- @type steschwa.ColorPaletteRightStatus
 Nord.right_status = {
-	bg = Nord.palette.aurora.nord13,
 	fg = Nord.palette.polar_night.nord0,
 }
 
