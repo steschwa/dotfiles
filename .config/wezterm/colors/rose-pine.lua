@@ -22,16 +22,13 @@ RosePine.titlebar_bg = RosePine.palette.base
 
 --- @type steschwa.ColorPaletteTabbar
 RosePine.tabbar = {
-	inactive_bg = RosePine.palette.overlay,
-	inactive_fg = RosePine.palette.subtle,
-	active_bg = RosePine.palette.subtle,
-	active_fg = RosePine.palette.highlight_low,
+	inactive_fg = RosePine.palette.muted,
+	active_fg = RosePine.palette.text,
 }
 
 --- @type steschwa.ColorPaletteRightStatus
 RosePine.right_status = {
-	bg = RosePine.palette.gold,
-	fg = RosePine.palette.highlight_low,
+	fg = RosePine.palette.gold,
 }
 
 return RosePine

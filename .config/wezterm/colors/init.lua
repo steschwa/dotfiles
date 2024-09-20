@@ -5,13 +5,10 @@
 --- @field right_status steschwa.ColorPaletteRightStatus
 
 --- @class steschwa.ColorPaletteTabbar
---- @field inactive_bg string
 --- @field inactive_fg string
---- @field active_bg string
 --- @field active_fg string
 --
 --- @class steschwa.ColorPaletteRightStatus
---- @field bg string
 --- @field fg string
 
 -- local P = require("colors.nord")

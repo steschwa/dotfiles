@@ -1,8 +1,6 @@
 local wezterm = require("wezterm")
 local Palette = require("colors")
 
-local SEPARATOR = ""
-
 local M = {}
 
 function M.setup()
@@ -15,11 +13,6 @@ function M.setup()
 
 		local items = {}
 
-		table.insert(items, { Background = { Color = Palette.right_status.fg } })
-		table.insert(items, { Foreground = { Color = Palette.right_status.bg } })
-		table.insert(items, { Text = SEPARATOR })
-
-		table.insert(items, { Background = { Color = Palette.right_status.bg } })
 		table.insert(items, { Foreground = { Color = Palette.right_status.fg } })
 		table.insert(items, { Text = string.format("   %s ", name) })
 
