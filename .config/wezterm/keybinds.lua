@@ -73,8 +73,31 @@ function M.setup(config)
 		},
 	}
 
+	M.setup_copy_mode(config)
+	M.setup_search_mode(config)
+end
+
+function M.setup_copy_mode(config)
 	local copy_mode = wezterm.gui.default_key_tables().copy_mode
 	local copy_mode_keybinds = {
+		-- navigation
+		{
+			key = "`",
+			mods = "NONE",
+			action = act.CopyMode("MoveToStartOfLineContent"),
+		},
+		{
+			key = "%",
+			mods = "NONE",
+			action = act.CopyMode("PriorMatch"),
+		},
+
+		-- semantic zone
+		{
+			key = "z",
+			mods = "NONE",
+			action = act.CopyMode({ SetSelectionMode = "SemanticZone" }),
+		},
 		{
 			key = "p",
 			mods = "CTRL",
@@ -85,20 +108,61 @@ function M.setup(config)
 			mods = "CTRL",
 			action = act.CopyMode({ MoveForwardZoneOfType = "Output" }),
 		},
-		{
-			key = "z",
-			mods = "NONE",
-			action = act.CopyMode({ SetSelectionMode = "SemanticZone" }),
-		},
 	}
 
 	for _, keybind in ipairs(copy_mode_keybinds) do
 		table.insert(copy_mode, keybind)
 	end
 
-	config.key_tables = {
-		copy_mode = copy_mode,
-	}
+	config.key_tables = config.key_tables or {}
+	config.key_tables.copy_mode = copy_mode
+end
+
+-- TODO:
+-- https://wezfurlong.org/wezterm/config/lua/keyassignment/CopyMode/index.html
+-- https://wezfurlong.org/wezterm/copymode.html
+-- https://wezfurlong.org/wezterm/scrollback.html#searching-the-scrollback
+-- $ wezterm show-keys --lua --key-table search_mode
+-- $ wezterm show-keys --lua --key-table copy_mode
+function M.setup_search_mode(config)
+	-- 	local copy_mode = wezterm.gui.default_key_tables().copy_mode
+	-- 	local copy_mode_keybinds = {
+	-- 		-- navigation
+	-- 		{
+	-- 			key = "`",
+	-- 			mods = "NONE",
+	-- 			action = act.CopyMode("MoveToStartOfLineContent"),
+	-- 		},
+	-- 		{
+	-- 			key = "%",
+	-- 			mods = "NONE",
+	-- 			action = act.CopyMode("PriorMatch"),
+	-- 		},
+
+	-- 		-- semantic zone
+	-- 		{
+	-- 			key = "z",
+	-- 			mods = "NONE",
+	-- 			action = act.CopyMode({ SetSelectionMode = "SemanticZone" }),
+	-- 		},
+	-- 		{
+	-- 			key = "p",
+	-- 			mods = "CTRL",
+	-- 			action = act.CopyMode({ MoveBackwardZoneOfType = "Output" }),
+	-- 		},
+	-- 		{
+	-- 			key = "n",
+	-- 			mods = "CTRL",
+	-- 			action = act.CopyMode({ MoveForwardZoneOfType = "Output" }),
+	-- 		},
+	-- 	}
+
+	-- 	for _, keybind in ipairs(copy_mode_keybinds) do
+	-- 		table.insert(copy_mode, keybind)
+	-- 	end
+
+	-- config.key_tables = config.key_tables or {}
+	-- 	config.key_tables.copy_mode = copy_mode
 end
 
 return M
