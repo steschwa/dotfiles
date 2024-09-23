@@ -29,8 +29,8 @@ return {
                     ["<tab>"] = cmp.mapping.select_next_item(),
                     ["<s-tab>"] = cmp.mapping.select_prev_item(),
 
-                    ["<c-u>"] = cmp.mapping.scroll_docs(-5),
-                    ["<c-d>"] = cmp.mapping.scroll_docs(5),
+                    ["<c-u>"] = cmp.mapping.scroll_docs(-1),
+                    ["<c-d>"] = cmp.mapping.scroll_docs(1),
 
                     ["<c-space>"] = cmp.mapping.complete(),
                     ["<esc>"] = cmp.mapping.abort(),
