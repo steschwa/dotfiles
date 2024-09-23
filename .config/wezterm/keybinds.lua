@@ -60,6 +60,9 @@ function M.setup(config)
 		{ key = "k", mods = "CMD|CTRL", action = act.ScrollByPage(-0.5) },
 		{ key = "j", mods = "CMD|CTRL", action = act.ScrollByPage(0.5) },
 
+		-- search
+		{ key = "f", mods = "CMD", action = act.Search({ CaseSensitiveString = "" }) },
+
 		-- TODO: removeme once `config.disable_default_key_bindings = true` is used
 		{
 			key = "-",
@@ -79,38 +82,30 @@ end
 
 function M.setup_copy_mode(config)
 	local copy_mode = wezterm.gui.default_key_tables().copy_mode
-	local copy_mode_keybinds = {
-		-- navigation
+	local keybinds = {
 		{
 			key = "`",
 			mods = "NONE",
 			action = act.CopyMode("MoveToStartOfLineContent"),
 		},
 		{
-			key = "%",
-			mods = "NONE",
-			action = act.CopyMode("PriorMatch"),
-		},
-
-		-- semantic zone
-		{
-			key = "z",
-			mods = "NONE",
-			action = act.CopyMode({ SetSelectionMode = "SemanticZone" }),
+			key = "n",
+			mods = "CTRL",
+			action = act.CopyMode("NextMatch"),
 		},
 		{
 			key = "p",
 			mods = "CTRL",
-			action = act.CopyMode({ MoveBackwardZoneOfType = "Output" }),
+			action = act.CopyMode("PriorMatch"),
 		},
 		{
-			key = "n",
+			key = "w",
 			mods = "CTRL",
-			action = act.CopyMode({ MoveForwardZoneOfType = "Output" }),
+			action = act.CopyMode("ClearPattern"),
 		},
 	}
 
-	for _, keybind in ipairs(copy_mode_keybinds) do
+	for _, keybind in ipairs(keybinds) do
 		table.insert(copy_mode, keybind)
 	end
 
@@ -118,51 +113,38 @@ function M.setup_copy_mode(config)
 	config.key_tables.copy_mode = copy_mode
 end
 
--- TODO:
--- https://wezfurlong.org/wezterm/config/lua/keyassignment/CopyMode/index.html
--- https://wezfurlong.org/wezterm/copymode.html
--- https://wezfurlong.org/wezterm/scrollback.html#searching-the-scrollback
--- $ wezterm show-keys --lua --key-table search_mode
--- $ wezterm show-keys --lua --key-table copy_mode
 function M.setup_search_mode(config)
-	-- 	local copy_mode = wezterm.gui.default_key_tables().copy_mode
-	-- 	local copy_mode_keybinds = {
-	-- 		-- navigation
-	-- 		{
-	-- 			key = "`",
-	-- 			mods = "NONE",
-	-- 			action = act.CopyMode("MoveToStartOfLineContent"),
-	-- 		},
-	-- 		{
-	-- 			key = "%",
-	-- 			mods = "NONE",
-	-- 			action = act.CopyMode("PriorMatch"),
-	-- 		},
+	local keybinds = {
+		{
+			key = "Enter",
+			mods = "NONE",
+			action = act.CopyMode("AcceptPattern"),
+		},
+		{
+			key = "Escape",
+			mods = "NONE",
+			action = act.CopyMode("Close"),
+		},
 
-	-- 		-- semantic zone
-	-- 		{
-	-- 			key = "z",
-	-- 			mods = "NONE",
-	-- 			action = act.CopyMode({ SetSelectionMode = "SemanticZone" }),
-	-- 		},
-	-- 		{
-	-- 			key = "p",
-	-- 			mods = "CTRL",
-	-- 			action = act.CopyMode({ MoveBackwardZoneOfType = "Output" }),
-	-- 		},
-	-- 		{
-	-- 			key = "n",
-	-- 			mods = "CTRL",
-	-- 			action = act.CopyMode({ MoveForwardZoneOfType = "Output" }),
-	-- 		},
-	-- 	}
+		{
+			key = "n",
+			mods = "CTRL",
+			action = act.CopyMode("NextMatch"),
+		},
+		{
+			key = "p",
+			mods = "CTRL",
+			action = act.CopyMode("PriorMatch"),
+		},
+		{
+			key = "w",
+			mods = "CTRL",
+			action = act.CopyMode("ClearPattern"),
+		},
+	}
 
-	-- 	for _, keybind in ipairs(copy_mode_keybinds) do
-	-- 		table.insert(copy_mode, keybind)
-	-- 	end
-
-	-- config.key_tables = config.key_tables or {}
-	-- 	config.key_tables.copy_mode = copy_mode
+	config.key_tables = config.key_tables or {}
+	config.key_tables.search_mode = keybinds
 end
 
 return M
