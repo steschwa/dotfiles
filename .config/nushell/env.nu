@@ -21,8 +21,6 @@ path add '/usr/local/bin'
 path add '/opt/homebrew/bin'
 path add '/opt/homebrew/opt/openjdk/bin'
 path add $env.GOBIN
-path add ($env.HOME | path join '.local/bin')
 
 source-env ~/.config/nushell/scripts/starship.nu
 source ~/.config/nushell/scripts/carapace.nu
-source-env ~/.config/nushell/scripts/fnm.nu
