@@ -19,6 +19,17 @@ $env.config.history.max_size = 1_000
 $env.config.history.file_format = 'sqlite'
 $env.config.history.isolation = true
 
+let fnm_hook = {||
+    let is_node_dir = ([.node-version .nvmrc] | any { $in | path exists })
+    if $is_node_dir {
+        fnm use
+    }
+}
+
+$env.config.hooks.env_change.PWD = (
+    $env.config.hooks.env_change.PWD | append [$fnm_hook]
+)
+
 source ~/.cache/starship/init.nu
 source-env ~/.cache/carapace/init.nu
 
