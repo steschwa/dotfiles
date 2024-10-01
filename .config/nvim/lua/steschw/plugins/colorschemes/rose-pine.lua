@@ -38,7 +38,7 @@ return {
                 -- NOTE: prompt input line uses "CursorLine" highlight group,
                 TelescopePromptNormal =     { bg = "overlay" },
                 TelescopePromptBorder =     { bg = "overlay", fg = "gold" },
-                TelescopePromptTitle =      { bg = "overlay", fg = "foam" },
+                TelescopePromptTitle =      { bg = "overlay", fg = "subtle" },
                 TelescopeMultiIcon =        { fg = "gold" },
                 TelescopeMultiSelection =   { fg = "gold" },
                 TelescopeMatching =         { fg = "rose", underline = true },
