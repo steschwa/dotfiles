@@ -25,32 +25,6 @@ function M:get_bg()
     return self.active and utils_hl.get_bg("FelineActive") or utils_hl.get_bg("FelineInactive")
 end
 
---- @class steschw.feline.SeparatorParams
---- @field inset? boolean
---- @field color string
-
---- @param params steschw.feline.SeparatorParams
-function M:get_separator_left(params)
-    return {
-        str = "",
-        hl = {
-            bg = params.inset and params.color or self:get_bg(),
-            fg = params.inset and self:get_bg() or params.color,
-        },
-    }
-end
-
---- @param params steschw.feline.SeparatorParams
-function M:get_separator_right(params)
-    return {
-        str = "",
-        hl = {
-            bg = params.inset and params.color or self:get_bg(),
-            fg = params.inset and self:get_bg() or params.color,
-        },
-    }
-end
-
 --- @return string
 local function filename_quickfix()
     local res = vim.fn.getqflist({
@@ -115,7 +89,6 @@ function M:component_filename()
             bg = bg,
             fg = fg,
         },
-        right_sep = self:get_separator_right({ color = bg }),
     }
 end
 
@@ -145,7 +118,6 @@ function M:component_lazy_updates()
             bg = bg,
             fg = fg,
         },
-        left_sep = self:get_separator_left({ color = bg }),
     }
 end
 
@@ -187,8 +159,6 @@ function M:component_search_count()
             bg = bg,
             fg = fg,
         },
-        left_sep = self:get_separator_right({ inset = true, color = bg }),
-        right_sep = self:get_separator_right({ color = bg }),
     }
 end
 
@@ -285,8 +255,6 @@ function M:component_grapple()
             bg = bg,
             fg = fg,
         },
-        left_sep = self:get_separator_right({ inset = true, color = bg }),
-        right_sep = self:get_separator_right({ color = bg }),
     }
 end
 
@@ -320,8 +288,6 @@ function M:component_qf()
             bg = bg,
             fg = fg,
         },
-        left_sep = self:get_separator_right({ inset = true, color = bg }),
-        right_sep = self:get_separator_right({ color = bg }),
     }
 end
 

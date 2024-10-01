@@ -13,7 +13,6 @@ opt.expandtab = true
 opt.fileencoding = "utf-8"
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep --no-heading --smart-case"
-opt.guifont = "JetBrainsMono Nerd Font:h15"
 opt.history = 100
 opt.hlsearch = true
 opt.ignorecase = true
