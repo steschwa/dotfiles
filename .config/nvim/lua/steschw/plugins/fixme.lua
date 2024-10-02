@@ -41,6 +41,19 @@ local function provider_filename(item)
     }
 end
 
+local function provider_file_icon(item)
+    local path = vim.fn.bufname(item.bufnr)
+    local filename = vim.fn.fnamemodify(path, ":t")
+    local extension = vim.fn.fnamemodify(path, ":e")
+
+    local icon, hl = require("nvim-web-devicons").get_icon(filename, extension)
+
+    return {
+        text = string.format("%s ", icon or ""),
+        hl = hl,
+    }
+end
+
 local function provider_text(item)
     return {
         text = vim.trim(item.text),
@@ -58,7 +71,7 @@ return {
                 {
                     columns = {
                         { provider_severity },
-                        { provider_filename, provider_lnum },
+                        { provider_file_icon, provider_filename, provider_lnum },
                         { provider_text },
                     },
                     use = function(qf_id)
@@ -72,7 +85,7 @@ return {
                 },
                 {
                     columns = {
-                        { provider_filename, provider_lnum },
+                        { provider_file_icon, provider_filename, provider_lnum },
                         { provider_text },
                     },
                 },
