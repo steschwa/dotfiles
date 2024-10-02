@@ -17,7 +17,7 @@ local function provider_severity(item)
     })[severity]
 
     return {
-        text = string.format("%s", severity_name:upper()),
+        text = severity_name:upper(),
         hl = hl,
     }
 end
@@ -47,9 +47,12 @@ local function provider_file_icon(item)
     local extension = vim.fn.fnamemodify(path, ":e")
 
     local icon, hl = require("nvim-web-devicons").get_icon(filename, extension)
+    if icon ~= nil then
+        icon = string.format("%s ", icon)
+    end
 
     return {
-        text = string.format("%s ", icon or ""),
+        text = icon or "",
         hl = hl,
     }
 end
