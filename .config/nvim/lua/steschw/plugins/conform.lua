@@ -5,6 +5,7 @@ return {
         -- MasonInstall prettierd
         -- MasonInstall goimports
         -- MasonInstall stylua
+        -- MasonInstall ruff
 
         local conform = require("conform")
 
@@ -25,6 +26,7 @@ return {
                 typescript = { "prettierd" },
                 typescriptreact = { "prettierd" },
                 yaml = { "prettierd" },
+                python = { "ruff_format" },
             },
             formatters = {
                 prettierd = {
