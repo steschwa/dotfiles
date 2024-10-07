@@ -35,14 +35,12 @@ function M.setup(config)
 		{ key = "+", mods = "CMD", action = act.IncreaseFontSize },
 
 		-- panes
-		{ key = "d", mods = "CMD", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-		{ key = "d", mods = "CMD|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+		{ key = "s", mods = "CMD", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+		{ key = "s", mods = "CMD|SHIFT", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
 		{ key = "h", mods = "CMD|SHIFT", action = act.ActivatePaneDirection("Left") },
 		{ key = "l", mods = "CMD|SHIFT", action = act.ActivatePaneDirection("Right") },
 		{ key = "j", mods = "CMD|SHIFT", action = act.ActivatePaneDirection("Down") },
 		{ key = "k", mods = "CMD|SHIFT", action = act.ActivatePaneDirection("Up") },
-		{ key = "=", mods = "CMD|SHIFT", action = act.AdjustPaneSize({ "Left", 10 }) },
-		{ key = "-", mods = "CMD|SHIFT", action = act.AdjustPaneSize({ "Right", 10 }) },
 		{ key = "w", mods = "CMD", action = act.CloseCurrentPane({ confirm = true }) },
 
 		-- tabs
@@ -54,14 +52,21 @@ function M.setup(config)
 		-- copy mode
 		{ key = "y", mods = "CMD", action = act.ActivateCopyMode },
 
+		-- search
+		{ key = "f", mods = "CMD", action = act.Search({ CaseSensitiveString = "" }) },
+
+		-- key tables
+		{
+			key = "r",
+			mods = "LEADER",
+			action = act.ActivateKeyTable({ name = "resize_mode", one_shot = false, until_unknown = true }),
+		},
+
 		-- scrolling
 		{ key = "k", mods = "CMD", action = act.ScrollByLine(-1) },
 		{ key = "j", mods = "CMD", action = act.ScrollByLine(1) },
-		{ key = "k", mods = "CMD|CTRL", action = act.ScrollByPage(-0.5) },
-		{ key = "j", mods = "CMD|CTRL", action = act.ScrollByPage(0.5) },
-
-		-- search
-		{ key = "f", mods = "CMD", action = act.Search({ CaseSensitiveString = "" }) },
+		{ key = "u", mods = "CMD", action = act.ScrollByPage(-0.5) },
+		{ key = "d", mods = "CMD", action = act.ScrollByPage(0.5) },
 
 		-- TODO: removeme once `config.disable_default_key_bindings = true` is used
 		{
@@ -78,6 +83,7 @@ function M.setup(config)
 
 	M.setup_copy_mode(config)
 	M.setup_search_mode(config)
+	M.setup_resize_mode(config)
 end
 
 function M.setup_copy_mode(config)
@@ -115,36 +121,28 @@ end
 
 function M.setup_search_mode(config)
 	local keybinds = {
-		{
-			key = "Enter",
-			mods = "NONE",
-			action = act.CopyMode("AcceptPattern"),
-		},
-		{
-			key = "Escape",
-			mods = "NONE",
-			action = act.CopyMode("Close"),
-		},
-
-		{
-			key = "n",
-			mods = "CTRL",
-			action = act.CopyMode("NextMatch"),
-		},
-		{
-			key = "p",
-			mods = "CTRL",
-			action = act.CopyMode("PriorMatch"),
-		},
-		{
-			key = "w",
-			mods = "CTRL",
-			action = act.CopyMode("ClearPattern"),
-		},
+		{ key = "Enter", mods = "NONE", action = act.CopyMode("AcceptPattern") },
+		{ key = "Escape", mods = "NONE", action = act.CopyMode("Close") },
+		{ key = "n", mods = "CTRL", action = act.CopyMode("NextMatch") },
+		{ key = "p", mods = "CTRL", action = act.CopyMode("PriorMatch") },
+		{ key = "w", mods = "CTRL", action = act.CopyMode("ClearPattern") },
 	}
 
 	config.key_tables = config.key_tables or {}
 	config.key_tables.search_mode = keybinds
+end
+
+function M.setup_resize_mode(config)
+	local keybinds = {
+		{ key = "h", mods = "NONE", action = act.AdjustPaneSize({ "Left", 10 }) },
+		{ key = "l", mods = "NONE", action = act.AdjustPaneSize({ "Right", 10 }) },
+		{ key = "j", mods = "NONE", action = act.AdjustPaneSize({ "Down", 10 }) },
+		{ key = "k", mods = "NONE", action = act.AdjustPaneSize({ "Up", 10 }) },
+		{ key = "Escape", mods = "NONE", action = act.PopKeyTable },
+	}
+
+	config.key_tables = config.key_tables or {}
+	config.key_tables.resize_mode = keybinds
 end
 
 return M
