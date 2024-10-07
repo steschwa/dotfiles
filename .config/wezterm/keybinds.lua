@@ -67,6 +67,8 @@ function M.setup(config)
 		{ key = "j", mods = "CMD", action = act.ScrollByLine(1) },
 		{ key = "u", mods = "CMD", action = act.ScrollByPage(-0.5) },
 		{ key = "d", mods = "CMD", action = act.ScrollByPage(0.5) },
+		{ key = "u", mods = "CMD|SHIFT", action = act.ScrollToPrompt(-1) },
+		{ key = "d", mods = "CMD|SHIFT", action = act.ScrollToPrompt(1) },
 
 		-- TODO: removeme once `config.disable_default_key_bindings = true` is used
 		{
