@@ -2,7 +2,7 @@
 
 add_newline = true
 
-format = "$directory($git_branch)($golang)($nodejs)($python)$fill ($status)($cmd_duration)($time)\n$character"
+format = "$directory(${env_var.NU_OVERLAYS})($git_branch)($golang)($nodejs)($python)$fill ($status)($cmd_duration)($time)\n$character"
 
 [git_branch]
 symbol = ""
@@ -24,8 +24,13 @@ format = "[$duration]($style) "
 
 [time]
 disabled = false
-format = "at [$time]($style)"
+format = "[$time]($style)"
 
 [character]
 success_symbol = '[\$](green)'
 error_symbol = '[\$](red)'
+
+[env_var.NU_OVERLAYS]
+symbol = '  '
+format = 'using [$symbol$env_value ]($style)'
+style = 'red'
