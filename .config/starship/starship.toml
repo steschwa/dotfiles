@@ -2,7 +2,7 @@
 
 add_newline = true
 
-format = "$directory(${env_var.NU_OVERLAYS})($git_branch)($golang)($nodejs)($python)$fill ($status)($cmd_duration)($time)\n$character"
+format = "$directory($git_branch)(${env_var.NU_OVERLAYS})($golang)($nodejs)($python)$fill ($status)($cmd_duration)($time)\n$character"
 
 [git_branch]
 symbol = ""
