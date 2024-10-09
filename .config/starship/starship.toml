@@ -2,30 +2,15 @@
 
 add_newline = true
 
-format = """
-$directory\
-$git_branch\
-$golang\
-$nodejs\
-$python\
-$sudo\
-$fill\
-$status\
-$cmd_duration\
-$time
-$character
-"""
-
-[cmd_duration]
-min_time = 1_000
-format = "[$duration]($style) "
-
-[fill]
-symbol = " "
+format = "$directory($git_branch)($golang)($nodejs)($python)$fill ($status)($cmd_duration)($time)\n$character"
 
 [git_branch]
 symbol = ""
 format = "[$symbol $branch]($style) "
+
+[fill]
+symbol = "-"
+style = "fg:0"
 
 [status]
 disabled = false
@@ -33,8 +18,13 @@ symbol = "status"
 style = "bg:red fg:black"
 format = "[ $symbol $status ]($style) "
 
+[cmd_duration]
+min_time = 1_000
+format = "[$duration]($style) "
+
 [time]
 disabled = false
+format = "at [$time]($style)"
 
 [character]
 success_symbol = '[\$](green)'
