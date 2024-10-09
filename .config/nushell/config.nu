@@ -49,7 +49,6 @@ source-env ~/.cache/carapace/init.nu
 source ~/.config/nushell/scripts/alias.nu
 use ~/.config/nushell/scripts/fzf.nu *
 use ~/.config/nushell/scripts/net.nu *
-use ~/.config/nushell/scripts/firebase.nu *
 use ~/.config/nushell/scripts/goto.nu *
 
 source-env ~/.config/nushell/keymap.nu
