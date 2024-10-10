@@ -3,9 +3,8 @@ local s = ls.snippet
 local i = ls.insert_node
 local fmta = require("luasnip.extras.fmt").fmta
 
--- stylua: ignore start
 local snip = fmta(
-[[
+    [[
 import { <> } from "<>"
 ]],
     {
@@ -13,6 +12,5 @@ import { <> } from "<>"
         i(1),
     }
 )
--- stylua: ignore end
 
 return s("simp", snip)

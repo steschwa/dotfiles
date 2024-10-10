@@ -3,9 +3,8 @@ local s = ls.snippet
 local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 
--- stylua: ignore start
 local snip = fmt(
-[[
+    [[
 <!doctype html>
 <html lang="en">
     <head>
@@ -24,9 +23,8 @@ local snip = fmt(
 ]],
     {
         Title = i(1),
-        i(0)
+        i(0),
     }
 )
--- stylua: ignore end
 
 return s("sdoc", snip)
