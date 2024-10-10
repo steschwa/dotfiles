@@ -6,9 +6,8 @@ local fmta = require("luasnip.extras.fmt").fmta
 
 local Fs = require("steschw.plugins.snippets.fs")
 
--- stylua: ignore start
 local snip = fmta(
-[[
+    [[
 type <F>Props = {};
 
 export function <F>(props: <F>Props) {
@@ -20,6 +19,5 @@ export function <F>(props: <F>Props) {
         i(0, "null"),
     }
 )
--- stylua: ignore end
 
 return s("scomp", snip)

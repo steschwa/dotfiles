@@ -7,9 +7,8 @@ local fmta = require("luasnip.extras.fmt").fmta
 local Fs = require("steschw.plugins.snippets.fs")
 local Format = require("steschw.plugins.snippets.format")
 
--- stylua: ignore start
 local snip = fmta(
-[[
+    [[
 .<F> {
     <>
 }
@@ -21,6 +20,5 @@ local snip = fmta(
         i(0),
     }
 )
--- stylua: ignore end
 
 return s("sclass", snip)
