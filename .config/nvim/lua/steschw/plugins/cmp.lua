@@ -74,6 +74,7 @@ return {
             ls.add_snippets("typescript", require("steschw.plugins.snippets.typescript"))
             ls.add_snippets("scss", require("steschw.plugins.snippets.scss"))
             ls.add_snippets("html", require("steschw.plugins.snippets.html"))
+            ls.add_snippets("go", require("steschw.plugins.snippets.go"))
         end,
     },
 }
