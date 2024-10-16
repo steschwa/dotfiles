@@ -16,6 +16,7 @@ import { MigrationManager } from "../../utils/migrations";
 
 export const ^MigrationName$ = onRequest(
     {
+        invoker: "private",
         timeoutSeconds: 1800,
         memory: "8GiB",
         cpu: 2,
