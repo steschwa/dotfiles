@@ -49,6 +49,7 @@ vim.filetype.add({
         [".ignore"] = "conf",
         [".fdignore"] = "conf",
         [".rgignore"] = "conf",
+        [".nvimignore"] = "conf",
         ["Brewfile"] = "ruby",
     },
     extension = {
