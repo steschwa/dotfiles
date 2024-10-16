@@ -47,6 +47,8 @@ opt.splitkeep = "cursor"
 vim.filetype.add({
     filename = {
         [".ignore"] = "conf",
+        [".fdignore"] = "conf",
+        [".rgignore"] = "conf",
         ["Brewfile"] = "ruby",
     },
     extension = {
