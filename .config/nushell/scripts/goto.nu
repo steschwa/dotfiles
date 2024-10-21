@@ -3,7 +3,6 @@ export def --env main [] {
         '/Users/stefan/.config/': 1,
         '/Volumes/Projekte/': 1,
         '/Volumes/Projekte/FarmAct/': 1
-        '/Volumes/Projekte/doxspring/': 1
     }
 
     mut dirs = []
