@@ -23,7 +23,7 @@ keymap {
         cmd: "commandline edit (
             history
             | get command
-            | each {|l| $l | lines | str trim | str join ' '}
+            | each { lines | str trim | str join ' ' }
             | uniq
             | reverse
             | str join (char newline)
