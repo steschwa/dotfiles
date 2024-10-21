@@ -86,5 +86,13 @@ keymap("n", "<C-f>", function()
 end)
 keymap("n", "<leader>l", "<cmd>Lazy<cr>")
 
-keymap("n", "<leader>i", "<cmd>edit .ignore<cr>")
+keymap("n", "<leader>i", function()
+    local nvimignore_exists = vim.fn.filereadable(".nvimignore")
+    if nvimignore_exists == 1 then
+        vim.cmd("edit .nvimignore")
+        return
+    end
+
+    vim.cmd("edit .ignore")
+end)
 keymap("n", "<leader>t", "<cmd>edit TODO.md<cr>")
