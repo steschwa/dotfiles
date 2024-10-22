@@ -50,5 +50,6 @@ source ~/.config/nushell/scripts/alias.nu
 use ~/.config/nushell/scripts/fzf.nu *
 use ~/.config/nushell/scripts/net.nu *
 use ~/.config/nushell/scripts/goto.nu *
+use ~/.config/nushell/scripts/config.nu *
 
 source-env ~/.config/nushell/keymap.nu
