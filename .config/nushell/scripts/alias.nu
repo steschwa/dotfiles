@@ -2,11 +2,15 @@ alias jq = jq --indent 4
 alias bat = bat --theme=base16 --style numbers
 alias tree = tree --gitignore -C
 
-alias v = nvim
-alias vim = nvim
 alias python = python3
+
+# copy / paste
 alias copy = pbcopy
 alias paste = pbpaste
+
+# vim
+alias v = nvim
+alias vim = nvim
 
 # git
 alias gs = git status
@@ -26,11 +30,11 @@ alias dcdown = docker compose down
 # go
 alias gor = go run .
 
-alias isup = ping 1.1
-
-alias http = python3 -m http.server 8080 --bind 127.0.0.1
-
 # cd
 alias cdl = cd ~/Downloads
 alias cd.. = cd ..
 alias '..' = cd ..
+
+alias isup = ping 1.1
+
+alias http = python3 -m http.server 8080 --bind 127.0.0.1
