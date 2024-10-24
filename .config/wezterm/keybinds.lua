@@ -92,8 +92,8 @@ function M.setup_copy_mode(config)
 	local copy_mode = wezterm.gui.default_key_tables().copy_mode
 	local keybinds = {
 		{ key = "`", mods = "NONE", action = act.CopyMode("MoveToStartOfLineContent") },
-		{ key = "n", mods = "CMD", action = act.CopyMode("NextMatch") },
-		{ key = "p", mods = "CMD", action = act.CopyMode("PriorMatch") },
+		{ key = "n", mods = "NONE", action = act.CopyMode("NextMatch") },
+		{ key = "n", mods = "SHIFT", action = act.CopyMode("PriorMatch") },
 		{ key = "w", mods = "CMD", action = act.CopyMode("ClearPattern") },
 	}
 
@@ -109,8 +109,6 @@ function M.setup_search_mode(config)
 	local keybinds = {
 		{ key = "Enter", mods = "NONE", action = act.CopyMode("AcceptPattern") },
 		{ key = "Escape", mods = "NONE", action = act.CopyMode("Close") },
-		{ key = "n", mods = "CMD", action = act.CopyMode("NextMatch") },
-		{ key = "p", mods = "CMD", action = act.CopyMode("PriorMatch") },
 		{ key = "w", mods = "CMD", action = act.CopyMode("ClearPattern") },
 	}
 
