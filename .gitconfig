@@ -12,6 +12,8 @@
 
     rs = restore --staged
 
+    ca = commit --amend --no-edit
+
 [user]
 	name = Stefan Schwaighofer
 	email = ste.schwaighofer@gmail.com
