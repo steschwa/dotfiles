@@ -7,6 +7,7 @@ return {
             {
                 "williamboman/mason.nvim",
                 config = true,
+                event = { "CmdlineEnter" },
             },
             "williamboman/mason-lspconfig.nvim",
         },
