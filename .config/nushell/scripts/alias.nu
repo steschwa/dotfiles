@@ -34,8 +34,9 @@ alias gor = go run .
 # cd
 alias cdl = cd ~/Downloads
 alias cd.. = cd ..
-alias '..' = cd ..
 
 alias isup = ping 1.1
 
-alias http = python3 -m http.server 8080 --bind 127.0.0.1
+# REFACTOR: alias to 'http serve' (with whitespace instead of dash) when fixed
+# see https://github.com/nushell/nushell/issues/13853 
+alias http-server = python3 -m http.server 8080 --bind 127.0.0.1
