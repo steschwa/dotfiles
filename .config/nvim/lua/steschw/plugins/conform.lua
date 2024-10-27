@@ -31,7 +31,7 @@ return {
             formatters = {
                 prettierd = {
                     env = {
-                        PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/dotfiles/.prettierrc"),
+                        PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/prettier/.prettierrc"),
                     },
                 },
             },
