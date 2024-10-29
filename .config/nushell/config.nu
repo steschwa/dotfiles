@@ -46,6 +46,13 @@ $env.config.hooks.pre_prompt = (
 source ~/.cache/starship/init.nu
 source-env ~/.cache/carapace/init.nu
 
+$env.config.completions.external = {
+    enable: true,
+    completer: {|spans|
+        $spans | to json | save -f /tmp/spans.json
+    }
+}
+
 source ~/.config/nushell/scripts/alias.nu
 use ~/.config/nushell/scripts/fzf.nu *
 use ~/.config/nushell/scripts/net.nu *
