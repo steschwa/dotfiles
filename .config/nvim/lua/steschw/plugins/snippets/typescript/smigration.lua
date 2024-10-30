@@ -9,8 +9,7 @@ local Fs = require("steschw.plugins.snippets.fs")
 local snip = fmt(
     [[
 import { AppCompany } from "@farmact/model/src/model/AppCompany";
-import { CollectionReference, getFirestore } from "firebase-admin/firestore";
-import { log } from "firebase-functions/logger";
+import { getFirestore } from "firebase-admin/firestore";
 import { onRequest } from "firebase-functions/v2/https";
 import { MigrationManager } from "../../utils/migrations";
 
@@ -33,7 +32,6 @@ export const ^MigrationName$ = onRequest(
             const contextData = {
                 skipped: 0,
                 updated: 0,
-                orderNotFound: 0,
             };
 
             ^$
@@ -48,8 +46,13 @@ export const ^MigrationName$ = onRequest(
 ]],
     {
         MigrationName = f(function()
-            local migration_name = Fs.filename():sub(#"20240101_" + 1)
-            return migration_name
+            -- e.g. 20241030_migrateFoobar.ts -> migrateFoobar
+            local matches = Fs.filename():match("^%d+_(%w+)%.ts$")
+            if not matches then
+                return "INVALID_FILENAME"
+            end
+
+            return matches
         end),
         i(0),
     },
