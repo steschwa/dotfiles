@@ -20,6 +20,7 @@ brew "tree"
 brew "yadm"
 brew "just"
 brew "koekeishiya/formulae/skhd"
+brew "git-cliff"
 
 cask "font-iosevka-nerd-font"
 cask "google-chrome"
