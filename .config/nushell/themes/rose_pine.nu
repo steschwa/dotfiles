@@ -22,7 +22,7 @@ export def fzf [] {
     $fzf_colors.fg = $palette.subtle
     $fzf_colors.hl = $palette.gold
     $fzf_colors.fg_line = $palette.text
-    $fzf_colors.bg_line = $palette.surface
+    $fzf_colors.bg_line = $palette.base
     $fzf_colors.hl_line = $palette.gold
     $fzf_colors.prompt = $palette.iris
     $fzf_colors.pointer = $palette.iris
