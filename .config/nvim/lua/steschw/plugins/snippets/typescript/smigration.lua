@@ -46,8 +46,8 @@ export const ^MigrationName$ = onRequest(
 ]],
     {
         MigrationName = f(function()
-            -- e.g. 20241030_migrateFoobar.ts -> migrateFoobar
-            local matches = Fs.filename():match("^%d+_(%w+)%.ts$")
+            -- e.g. 20241030_migrateFoobar -> migrateFoobar
+            local matches = Fs.filename():match("^%d+_(%w+)$")
             if not matches then
                 return "INVALID_FILENAME"
             end
