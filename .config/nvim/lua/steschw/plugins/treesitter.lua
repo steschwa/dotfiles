@@ -7,10 +7,6 @@ return {
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
             {
-                "nushell/tree-sitter-nu",
-                ft = { "nu" },
-            },
-            {
                 "windwp/nvim-ts-autotag",
                 config = true,
             },
