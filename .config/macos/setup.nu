@@ -14,4 +14,10 @@ def "setup dock" [] {
     killall Dock
 }
 
+def "setup window" [] {
+    # allow dragging windows when holding ctrl+cmd
+    defaults write -g NSWindowShouldDragOnGesture -bool true
+}
+
 setup dock
+setup window
