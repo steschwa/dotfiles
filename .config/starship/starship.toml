@@ -30,6 +30,9 @@ format = "[$time]($style)"
 success_symbol = '[\$](green)'
 error_symbol = '[\$](red)'
 
+[nodejs]
+symbol = " "
+
 [env_var.NU_OVERLAYS]
 symbol = '  '
 format = 'using [$symbol$env_value ]($style)'
