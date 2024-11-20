@@ -6,6 +6,7 @@ return {
         -- MasonInstall goimports
         -- MasonInstall stylua
         -- MasonInstall ruff
+        -- MasonInstall sql-formatter
 
         local conform = require("conform")
 
@@ -22,16 +23,23 @@ return {
                 jsonc = { "prettierd" },
                 lua = { "stylua" },
                 markdown = { "prettierd" },
+                python = { "ruff_format" },
                 scss = { "prettierd" },
+                sql = { "sql_formatter" },
                 typescript = { "prettierd" },
                 typescriptreact = { "prettierd" },
                 yaml = { "prettierd" },
-                python = { "ruff_format" },
             },
             formatters = {
                 prettierd = {
                     env = {
                         PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/prettier/.prettierrc"),
+                    },
+                },
+                sql_formatter = {
+                    append_args = {
+                        "--config",
+                        vim.fn.expand("~/.config/sql-formatter/config.json"),
                     },
                 },
             },
