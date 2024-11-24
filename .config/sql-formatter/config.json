@@ -1,4 +1,5 @@
 {
+    "language": "sql | bigquery | db2 | db2i | hive | mariadb | mysql | tidb | n1ql | plsql | postgresql | redshift | singlestoredb | snowflake | spark | sqlite | transactsql | trino",
     "tabWidth": 4,
     "keywordCase": "upper",
     "dataTypeCase": "upper",
