@@ -24,8 +24,6 @@ alias ys = yadm status
 
 # docker
 alias d = docker
-alias dcup = docker compose up -d
-alias dcdown = docker compose down
 
 # go
 alias gor = go run .

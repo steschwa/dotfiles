@@ -1,4 +1,3 @@
-
 export def "config diff" [
     type: string@diff_type
 ] {
