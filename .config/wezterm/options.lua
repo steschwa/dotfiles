@@ -48,6 +48,8 @@ function M.setup(config)
 
 	-- config.disable_default_key_bindings = true
 	config.disable_default_mouse_bindings = true
+
+	config.send_composed_key_when_left_alt_is_pressed = true
 end
 
 return M

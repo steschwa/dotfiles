@@ -20,16 +20,6 @@ function M.setup(config)
 			}),
 		},
 
-		-- umlauts + special chars
-		{ key = "u", mods = "OPT", action = act.SendString("ü") },
-		{ key = "a", mods = "OPT", action = act.SendString("ä") },
-		{ key = "o", mods = "OPT", action = act.SendString("ö") },
-		{ key = "s", mods = "OPT", action = act.SendString("ß") },
-		{ key = "u", mods = "SHIFT|OPT", action = act.SendString("Ü") },
-		{ key = "a", mods = "SHIFT|OPT", action = act.SendString("Ä") },
-		{ key = "o", mods = "SHIFT|OPT", action = act.SendString("Ö") },
-		{ key = "e", mods = "OPT", action = act.SendString("€") },
-
 		-- font size
 		{ key = "-", mods = "CMD", action = act.DecreaseFontSize },
 		{ key = "+", mods = "CMD", action = act.IncreaseFontSize },
