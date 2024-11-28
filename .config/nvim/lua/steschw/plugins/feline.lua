@@ -291,6 +291,34 @@ function M:component_qf()
     }
 end
 
+function M:component_git_conflicts()
+    --- @return string
+    local function provider()
+        local git_conflict = require("git-conflict")
+        local count = git_conflict.conflict_count(0)
+
+        if count == 0 then
+            return ""
+        end
+
+        return string.format(" %d conflicts ", count)
+    end
+
+    local fg = self.active and utils_hl.get_fg("FelineGitConflictsActive")
+        or utils_hl.get_fg("FelineGitConflictsInactive")
+
+    return {
+        provider = provider,
+        enabled = function()
+            return provider() ~= ""
+        end,
+        hl = {
+            bg = self:get_bg(),
+            fg = fg,
+        },
+    }
+end
+
 function M:component_gap()
     return {
         hl = {
@@ -330,6 +358,7 @@ return {
                     active_factory:component_qf(),
                     active_factory:component_grapple(),
                     active_factory:component_search_count(),
+                    active_factory:component_git_conflicts(),
                     active_factory:component_diagnostics(s.ERROR),
                     active_factory:component_diagnostics(s.WARN),
                     active_factory:component_diagnostics(s.INFO),
