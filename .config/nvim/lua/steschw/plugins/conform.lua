@@ -36,12 +36,6 @@ return {
                         PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/prettier/.prettierrc"),
                     },
                 },
-                sql_formatter = {
-                    append_args = {
-                        "--config",
-                        vim.fn.expand("~/.config/sql-formatter/config.json"),
-                    },
-                },
             },
             default_format_opts = {
                 lsp_format = "fallback",
