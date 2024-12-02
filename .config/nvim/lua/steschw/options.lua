@@ -16,14 +16,15 @@ opt.grepprg = "rg --vimgrep --no-heading --smart-case"
 opt.history = 100
 opt.hlsearch = true
 opt.ignorecase = true
+opt.inccommand = "split"
 opt.iskeyword:append({ "-", "_" })
 opt.number = true
 opt.numberwidth = 4
 opt.pumheight = 10
 opt.relativenumber = true
 opt.scrolloff = 1
-opt.shiftwidth = 4
 opt.shiftround = true
+opt.shiftwidth = 4
 opt.shortmess:append({ a = true, W = true, s = true, S = true })
 opt.showmode = false
 opt.showtabline = 1
@@ -32,6 +33,7 @@ opt.signcolumn = "yes"
 opt.smartcase = true
 opt.smartindent = true
 opt.splitbelow = true
+opt.splitkeep = "cursor"
 opt.splitright = true
 opt.swapfile = false
 opt.tabstop = 4
@@ -42,7 +44,6 @@ opt.updatetime = 1000
 opt.whichwrap:append("<,>,[,],h,l")
 opt.wrap = false
 opt.writebackup = false
-opt.splitkeep = "cursor"
 
 vim.filetype.add({
     filename = {
