@@ -16,7 +16,7 @@ return {
             formatters_by_ft = {
                 css = { "biome", "prettierd", stop_after_first = true },
                 go = { "goimports" },
-                graphql = { "prettierd" },
+                graphql = { "biome", "prettierd", stop_after_first = true },
                 html = { "prettierd" },
                 javascript = { "biome", "prettierd", stop_after_first = true },
                 javascriptreact = { "biome", "prettierd", stop_after_first = true },
@@ -36,6 +36,9 @@ return {
                     env = {
                         PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/prettier/.prettierrc"),
                     },
+                },
+                biome = {
+                    require_cwd = true,
                 },
             },
             default_format_opts = {
