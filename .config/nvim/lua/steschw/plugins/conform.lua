@@ -7,27 +7,28 @@ return {
         -- MasonInstall stylua
         -- MasonInstall ruff
         -- MasonInstall sql-formatter
+        -- MasonInstall biome
 
         local conform = require("conform")
 
         conform.setup({
             notify_on_error = false,
             formatters_by_ft = {
-                css = { "prettierd" },
+                css = { "biome", "prettierd", stop_after_first = true },
                 go = { "goimports" },
                 graphql = { "prettierd" },
                 html = { "prettierd" },
-                javascript = { "prettierd" },
-                javascriptreact = { "prettierd" },
-                json = { "prettierd" },
-                jsonc = { "prettierd" },
+                javascript = { "biome", "prettierd", stop_after_first = true },
+                javascriptreact = { "biome", "prettierd", stop_after_first = true },
+                json = { "biome", "prettierd", stop_after_first = true },
+                jsonc = { "biome", "prettierd", stop_after_first = true },
                 lua = { "stylua" },
                 markdown = { "prettierd" },
                 python = { "ruff_format" },
                 scss = { "prettierd" },
                 sql = { "sql_formatter" },
-                typescript = { "prettierd" },
-                typescriptreact = { "prettierd" },
+                typescript = { "biome", "prettierd", stop_after_first = true },
+                typescriptreact = { "biome", "prettierd", stop_after_first = true },
                 yaml = { "prettierd" },
             },
             formatters = {
