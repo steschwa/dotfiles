@@ -18,6 +18,7 @@ opt.hlsearch = true
 opt.ignorecase = true
 opt.inccommand = "split"
 opt.iskeyword:append({ "-", "_" })
+opt.jumpoptions = "stack"
 opt.number = true
 opt.numberwidth = 4
 opt.pumheight = 10
