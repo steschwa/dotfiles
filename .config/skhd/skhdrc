@@ -6,10 +6,10 @@ hyper - b : open -a 'Bear'
 hyper - g : open -a 'Fork'
 
 # chrome
-cmd + shift - m [
+cmd - m [
     "Google Chrome" : ~/.config/macos/chrome-merge-windows.js
 ]
-cmd + shift - d [
+cmd - d [
     "Google Chrome" : ~/.config/macos/chrome-duplicate-tab.js
 ]
 
