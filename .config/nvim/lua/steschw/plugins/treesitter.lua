@@ -21,6 +21,17 @@ return {
                 sync_install = false,
                 highlight = {
                     enable = true,
+                    -- disable highlighting if the file is larger than 100 KB
+                    disable = function(_, buf)
+                        local max_filesize = 100 * 1024 -- 100 KB
+                        --- @diagnostic disable-next-line: undefined-field
+                        local ok, stats = pcall(vim.uv.fs_stat, vim.api.nvim_buf_get_name(buf))
+                        if not ok or not stats then
+                            return false
+                        end
+
+                        return stats.size > max_filesize
+                    end,
                     additional_vim_regex_highlighting = false,
                 },
                 indent = {
