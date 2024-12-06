@@ -1,7 +1,12 @@
 export def "init yarn" [] {
     yarn set version stable
+    echo "set yarn version"
+
     cp ~/.config/yarn/.yarnrc.yml .
+    echo "copied yarn config"
+
     yarn
+    echo "ran yarn install"
 
     # https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
     let git_ignore_yarn = (
@@ -18,11 +23,28 @@ export def "init yarn" [] {
     )
 
     $git_ignore_yarn | save --append .gitignore
+    echo "setup .gitignore"
 }
 
 export def "init prettier" [] {
     yarn add -D prettier
+    echo "installed prettier"
+
     cat package.json | jq '.scripts.format = "prettier -w ./**/*.{ts,tsx,js,jsx,css,scss,html,json,md}"' | save -f package.json
+    echo "added format script"
+}
+
+export def "init biome" [] {
+    yarn add -D @biomejs/biome
+    echo "installed biome"
+
+    cp ~/.config/biome/biome.json .
+
+    cat package.json | jq '.scripts.format = "biome format --write"' | save -f package.json
+    echo "added format script"
+
+    cat package.json | jq '.scripts.format = "biome lint --fix"' | save -f package.json
+    echo "added lint script"
 }
 
 export def "init sql-formatter" [] {
