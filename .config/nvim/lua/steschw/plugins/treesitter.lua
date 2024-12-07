@@ -5,13 +5,8 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
-            {
-                "windwp/nvim-ts-autotag",
-                config = true,
-            },
-            {
-                "JoosepAlviste/nvim-ts-context-commentstring",
-            },
+            "windwp/nvim-ts-autotag",
+            "JoosepAlviste/nvim-ts-context-commentstring",
         },
         config = function()
             local configs = require("nvim-treesitter.configs")
@@ -68,5 +63,19 @@ return {
                 },
             })
         end,
+    },
+    {
+        "windwp/nvim-ts-autotag",
+        config = true,
+    },
+    {
+        "JoosepAlviste/nvim-ts-context-commentstring",
+        opts = {
+            -- https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#minicomment
+            enable_autocmd = false,
+            languages = {
+                nu = "# %s",
+            },
+        },
     },
 }
