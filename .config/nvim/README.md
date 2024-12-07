@@ -2,7 +2,7 @@
 
 ## Requirements
 
--   Neovim v0.9+
+-   Neovim v0.10+
 -   [Nerd Font](https://github.com/ryanoasis/nerd-fonts)
 -   [fd](https://github.com/sharkdp/fd)
 -   [ripgrep](https://github.com/BurntSushi/ripgrep)
