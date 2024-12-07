@@ -1,4 +1,4 @@
-local win_utils = require("steschw.utils.window")
+local Win = require("steschw.utils.window")
 
 return {
     "stevearc/dressing.nvim",
@@ -14,6 +14,7 @@ return {
             mappings = {
                 n = {
                     ["<esc>"] = "Close",
+                    ["q"] = "Close",
                     ["<cr>"] = "Confirm",
                 },
                 i = {
@@ -27,16 +28,14 @@ return {
             backend = { "builtin" },
             trim_prompt = true,
             builtin = {
-                min_width = win_utils.calc_width({ percent = 0.4 }),
-                max_width = win_utils.calc_width({ percent = 0.8 }),
+                min_width = Win.calc_width({ percent = 0.4 }),
+                max_width = Win.calc_width({ percent = 0.8 }),
             },
             mappings = {
                 n = {
                     ["<esc>"] = "Close",
+                    ["q"] = "Close",
                     ["<cr>"] = "Confirm",
-                },
-                i = {
-                    ["<c-q>"] = "Close",
                 },
             },
         },
