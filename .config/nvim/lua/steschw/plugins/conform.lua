@@ -14,21 +14,21 @@ return {
         conform.setup({
             notify_on_error = false,
             formatters_by_ft = {
-                css = { "biome", "prettierd", stop_after_first = true },
+                css = { "biome-check", "prettierd", stop_after_first = true },
                 go = { "goimports" },
-                graphql = { "biome", "prettierd", stop_after_first = true },
+                graphql = { "biome-check", "prettierd", stop_after_first = true },
                 html = { "prettierd" },
-                javascript = { "biome", "prettierd", stop_after_first = true },
-                javascriptreact = { "biome", "prettierd", stop_after_first = true },
-                json = { "biome", "prettierd", stop_after_first = true },
-                jsonc = { "biome", "prettierd", stop_after_first = true },
+                javascript = { "biome-check", "prettierd", stop_after_first = true },
+                javascriptreact = { "biome-check", "prettierd", stop_after_first = true },
+                json = { "biome-check", "prettierd", stop_after_first = true },
+                jsonc = { "biome-check", "prettierd", stop_after_first = true },
                 lua = { "stylua" },
                 markdown = { "prettierd" },
                 python = { "ruff_format" },
                 scss = { "prettierd" },
                 sql = { "sql_formatter" },
-                typescript = { "biome", "prettierd", stop_after_first = true },
-                typescriptreact = { "biome", "prettierd", stop_after_first = true },
+                typescript = { "biome-check", "prettierd", stop_after_first = true },
+                typescriptreact = { "biome-check", "prettierd", stop_after_first = true },
                 yaml = { "prettierd" },
             },
             formatters = {
@@ -37,7 +37,7 @@ return {
                         PRETTIERD_DEFAULT_CONFIG = vim.fn.expand("~/.config/prettier/.prettierrc"),
                     },
                 },
-                biome = {
+                ["biome-check"] = {
                     require_cwd = true,
                 },
             },
