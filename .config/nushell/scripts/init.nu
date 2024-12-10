@@ -30,7 +30,8 @@ export def "init prettier" [] {
     yarn add -D prettier
     echo "installed prettier"
 
-    cat package.json | jq '.scripts.format = "prettier -w ./**/*.{ts,tsx,js,jsx,css,scss,html,json,md}"' | save -f package.json
+    let package_json = (cat package.json)
+    $package_json | jq '.scripts.format = "prettier -w ./**/*.{ts,tsx,js,jsx,css,scss,html,json,md}"' | save -f package.json
     echo "added format script"
 }
 
@@ -40,11 +41,14 @@ export def "init biome" [] {
 
     cp ~/.config/biome/biome.json .
 
-    cat package.json | jq '.scripts.format = "biome format --write"' | save -f package.json
+    mut package_json = (cat package.json)
+    $package_json = ($package_json | jq '.scripts.format = "biome format --write"')
     echo "added format script"
 
-    cat package.json | jq '.scripts.format = "biome lint --fix"' | save -f package.json
+    $package_json = ($package_json | jq '.scripts.lint = "biome lint --fix"')
     echo "added lint script"
+
+    $package_json | save -f package.json
 }
 
 export def "init sql-formatter" [] {
