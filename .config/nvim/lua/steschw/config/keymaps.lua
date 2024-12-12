@@ -46,14 +46,6 @@ keymap("v", "p", '"_dP')
 keymap("n", "<tab>", "<cmd>b#<cr>")
 keymap("n", "<C-i>", "<C-i>")
 
--- diagnostics
-keymap("n", "[d", function()
-    vim.diagnostic.goto_next({ float = false })
-end)
-keymap("n", "]d", function()
-    vim.diagnostic.goto_prev({ float = false })
-end)
-
 -- formatting
 keymap("n", "gs", function()
     require("steschw.utils.formatting").format()
