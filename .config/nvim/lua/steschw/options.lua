@@ -45,6 +45,10 @@ opt.updatetime = 1000
 opt.whichwrap:append("<,>,[,],h,l")
 opt.wrap = false
 opt.writebackup = false
+opt.fillchars:append({
+    diff = " ",
+    fold = " ",
+})
 
 vim.filetype.add({
     filename = {

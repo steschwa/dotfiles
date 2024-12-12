@@ -358,7 +358,10 @@ return {
             components = components,
             force_inactive = {},
             disable = {
-                filetypes = { "^DiffviewFiles$" },
+                filetypes = {
+                    "^DiffviewFiles$",
+                    "^DiffviewFileHistory$",
+                },
             },
         })
     end,
