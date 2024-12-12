@@ -38,6 +38,14 @@ return {
             { "<leader>h", "<cmd>Telescope help_tags<cr>" },
             { "<leader>b", "<cmd>Telescope buffers<cr>" },
             { "<leader>s", "<cmd>Telescope lsp_document_symbols<cr>" },
+            {
+                "<leader>c",
+                function()
+                    require("telescope.builtin").find_files({
+                        cwd = vim.fn.stdpath("config"),
+                    })
+                end,
+            },
             { "<leader><leader>", "<cmd>Telescope pickers<cr>" },
         },
         config = function()
