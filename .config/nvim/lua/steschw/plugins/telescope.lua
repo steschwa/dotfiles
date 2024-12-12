@@ -32,6 +32,7 @@ return {
             },
             "fixme.nvim",
         },
+        cmd = "Telescope",
         keys = {
             { "<leader>p", "<cmd>Telescope find_files<cr>" },
             { "<leader>f", "<cmd>Telescope live_grep<cr>" },
