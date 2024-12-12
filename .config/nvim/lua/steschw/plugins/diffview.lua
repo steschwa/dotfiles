@@ -1,6 +1,5 @@
 return {
-    dir = "/tmp/diffview.nvim",
-    -- "sindrets/diffview.nvim",
+    "sindrets/diffview.nvim",
     cmd = { "DiffviewOpen", "DiffviewFileHistory" },
     keys = {
         { "<leader>gc", "<cmd>DiffviewClose<cr>" },
