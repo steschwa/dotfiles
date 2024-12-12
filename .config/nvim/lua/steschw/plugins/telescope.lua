@@ -1,8 +1,9 @@
-local utils_path = require("steschw.utils.path")
+local Path = require("steschw.utils.path")
 
 local rg_cmd = {
     "rg",
-    "--color=never",
+    "--color",
+    "never",
     "--no-heading",
     "--with-filename",
     "--line-number",
@@ -13,7 +14,8 @@ local rg_cmd = {
 
 local fd_cmd = {
     "fd",
-    "--color=never",
+    "--color",
+    "never",
     "--hidden",
     "--type",
     "f",
@@ -56,7 +58,7 @@ return {
                     },
                     vimgrep_arguments = rg_cmd,
                     path_display = function(_, path)
-                        return utils_path.format_path_peak(path)
+                        return Path.format_path_peak(path)
                     end,
                     dynamic_preview_title = true,
                     results_title = false,
@@ -96,14 +98,11 @@ return {
                     },
                 },
                 extensions = {
-                    fzf = {
-                        fuzzy = true,
-                        override_generic_sorter = true,
-                        override_file_sorter = true,
-                        case_mode = "ignore_case",
-                    },
+                    fzf = {},
                 },
             })
+
+            telescope.load_extension("fzf")
         end,
     },
 }
