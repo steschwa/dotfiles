@@ -63,8 +63,8 @@ end)
 keymap("n", "<leader>q", function()
     vim.cmd("botright cw")
 end)
-keymap("n", "[q", "<cmd>cnext<cr>")
-keymap("n", "]q", "<cmd>cprevious<cr>")
+keymap("n", "[q", "<cmd>cprevious<cr>")
+keymap("n", "]q", "<cmd>cnext<cr>")
 keymap("n", "<C-q>", "<cmd>cclose<cr>")
 
 -- misc
