@@ -6,8 +6,8 @@ return {
     keys = {
         { "gb", "<cmd>Gitsigns blame_line<cr>" },
         { "gp", "<cmd>Gitsigns preview_hunk<cr>" },
-        { "[g", "<cmd>Gitsigns next_hunk<cr>" },
-        { "]g", "<cmd>Gitsigns prev_hunk<cr>" },
+        { "]g", "<cmd>Gitsigns next_hunk<cr>" },
+        { "[g", "<cmd>Gitsigns prev_hunk<cr>" },
     },
     opts = {
         signs = {
