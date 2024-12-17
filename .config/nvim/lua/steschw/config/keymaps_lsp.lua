@@ -25,7 +25,7 @@ function M.diagnostics()
     }
 
     vim.fn.setqflist({}, " ", what)
-    vim.cmd("cw")
+    vim.cmd("botright cw")
 end
 
 function M.references()
@@ -40,8 +40,7 @@ function M.references()
         end, res.items)
 
         vim.fn.setqflist({}, " ", res)
-        vim.cmd("cw")
-        vim.cmd.wincmd("J")
+        vim.cmd("botright cw")
     end
 
     vim.lsp.buf.references({ includeDeclaration = false }, {
