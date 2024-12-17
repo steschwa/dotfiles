@@ -66,7 +66,11 @@ local function filename_buf()
         return " [No Name] "
     end
 
-    return string.format(" %s ", utils_path.format_path_peak(path))
+    if path:sub(1, 1) == "/" then
+        return string.format(" %s ", utils_path.format_path_peak(path))
+    end
+
+    return string.format(" %s ", path)
 end
 
 function M:component_filename()
