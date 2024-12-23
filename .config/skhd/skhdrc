@@ -12,6 +12,9 @@ cmd - m [
 cmd - d [
     "Google Chrome" : ~/.config/macos/chrome-duplicate-tab.js
 ]
+cmd - p [
+    "Google Chrome" : ~/.config/macos/chrome-open-github-in-gopkg.js
+]
 
 # finder
 cmd + shift - c [
