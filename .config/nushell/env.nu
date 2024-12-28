@@ -15,7 +15,7 @@ $env.GOPATH = ($env.HOME | path join 'go')
 $env.GOBIN = ($env.GOPATH | path join 'bin')
 $env.EDITOR = 'nvim'
 $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
-$env.LESS = "--ignore-case --tilde --mouse --use-color --quit-if-one-screen -R"
+$env.LESS = "--ignore-case --tabs=4 --tilde --mouse --use-color --quit-if-one-screen --raw-control-chars"
 
 path add '/usr/local/bin'
 path add '/opt/homebrew/bin'
