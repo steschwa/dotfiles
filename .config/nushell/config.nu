@@ -27,6 +27,7 @@ use ~/.config/nushell/scripts/fzf.nu *
 use ~/.config/nushell/scripts/net.nu *
 use ~/.config/nushell/scripts/goto.nu *
 use ~/.config/nushell/scripts/config.nu *
+use ~/.config/nushell/scripts/title.nu *
 use ~/.config/nushell/scripts/init.nu *
 
 source-env ~/.config/nushell/hooks.nu
