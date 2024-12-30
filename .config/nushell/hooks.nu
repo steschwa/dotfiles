@@ -5,9 +5,9 @@ let fnm_hook = {||
     }
 }
 
-$env.config.hooks.env_change.PWD = (
-    $env.config.hooks.env_change.PWD | append [$fnm_hook]
-)
+$env.config.hooks.env_change = {
+    PWD: [$fnm_hook]
+}
 
 let nu_overlays_hook = {||
     let overlays = overlay list | range 1..
@@ -18,6 +18,4 @@ let nu_overlays_hook = {||
     }
 }
 
-$env.config.hooks.pre_prompt = (
-    $env.config.hooks.pre_prompt | append [$nu_overlays_hook]
-)
+$env.config.hooks.pre_prompt ++= [$nu_overlays_hook]

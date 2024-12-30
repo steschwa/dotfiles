@@ -1,13 +1,7 @@
-use std ['path add']
-
-source-env ~/.config/nushell/default/env.nu
-
-# USER CONFIG
-
 $env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
 
-$env.PATH = ($env.PATH | split row (char esep))
+# $env.PATH = ($env.PATH | split row (char esep))
 $env.CONFIG_DIR = ($env.HOME | path join '.config')
 $env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
 
@@ -17,10 +11,12 @@ $env.EDITOR = 'nvim'
 $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
 $env.LESS = "--ignore-case --tabs=4 --tilde --mouse --use-color --quit-if-one-screen --raw-control-chars"
 
-path add '/usr/local/bin'
-path add '/opt/homebrew/bin'
-path add '/opt/homebrew/opt/openjdk/bin'
-path add $env.GOBIN
+$env.PATH ++= [
+    "/usr/local/bin",
+    "/opt/homebrew/bin",
+    "/opt/homebrew/opt/openjdk/bin",
+    $env.GOBIN
+]
 
 source-env ~/.config/nushell/scripts/starship.nu
 source ~/.config/nushell/scripts/carapace.nu

@@ -1,12 +1,12 @@
 export def "init yarn" [] {
-    yarn set version stable
     echo "set yarn version"
+    yarn set version stable
 
+    echo "copy yarn config"
     cp ~/.config/yarn/.yarnrc.yml .
-    echo "copied yarn config"
 
+    echo "run yarn install"
     yarn
-    echo "ran yarn install"
 
     # https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored
     let git_ignore_yarn = (
@@ -22,31 +22,31 @@ export def "init yarn" [] {
         | str join "\n"
     )
 
-    $git_ignore_yarn | save --append .gitignore
     echo "setup .gitignore"
+    $git_ignore_yarn | save --append .gitignore
 }
 
 export def "init prettier" [] {
+    echo "install prettier"
     yarn add -D prettier
-    echo "installed prettier"
 
+    echo "add format script"
     let package_json = (cat package.json)
     $package_json | jq '.scripts.format = "prettier -w ./**/*.{ts,tsx,js,jsx,css,scss,html,json,md}"' | save -f package.json
-    echo "added format script"
 }
 
 export def "init biome" [] {
+    echo "install biome"
     yarn add -D @biomejs/biome
-    echo "installed biome"
 
     cp ~/.config/biome/biome.json .
 
+    echo "add format script"
     mut package_json = (cat package.json)
     $package_json = ($package_json | jq '.scripts.format = "biome format --write"')
-    echo "added format script"
 
+    echo "add lint script"
     $package_json = ($package_json | jq '.scripts.lint = "biome lint --fix"')
-    echo "added lint script"
 
     $package_json | save -f package.json
 }
