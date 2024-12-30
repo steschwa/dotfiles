@@ -1,6 +1,7 @@
 alias jq = jq --indent 4
 alias bat = bat --theme=base16 --style numbers
 alias tree = tree --gitignore -C
+alias rg  = rg --smart-case
 
 alias python = python3
 
