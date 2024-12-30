@@ -19,3 +19,9 @@ keybind = cmd+shift+right=move_tab:1
 
 keybind = opt+shift+l=goto_split:right
 keybind = opt+shift+h=goto_split:left
+
+keybind = cmd+shift+u=scroll_page_fractional:-0.5
+keybind = cmd+shift+d=scroll_page_fractional:0.5
+
+keybind = cmd+shift+k=jump_to_prompt:-2
+keybind = cmd+shift+j=jump_to_prompt:2
