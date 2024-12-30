@@ -1,5 +1,5 @@
 theme = rose-pine-moon
-font-family = Iosevka Term
+font-family = Iosevka Fixed
 font-size = 16
 command = /opt/homebrew/bin/nu --config ~/.config/nushell/config.nu --env-config ~/.config/nushell/env.nu
 
