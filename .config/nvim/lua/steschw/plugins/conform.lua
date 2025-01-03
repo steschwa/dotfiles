@@ -8,12 +8,15 @@ return {
         -- MasonInstall ruff
         -- MasonInstall sql-formatter
         -- MasonInstall biome
+        -- MasonInstall bibtex-tidy
+        -- MasonInstall tex-fmt
 
         local conform = require("conform")
 
         conform.setup({
             notify_on_error = false,
             formatters_by_ft = {
+                bib = { "bibtex-tidy" },
                 css = { "biome-check", "prettierd", stop_after_first = true },
                 go = { "goimports" },
                 graphql = { "biome-check", "prettierd", stop_after_first = true },
@@ -27,6 +30,7 @@ return {
                 python = { "ruff_format" },
                 scss = { "prettierd" },
                 sql = { "sql_formatter" },
+                tex = { "tex-fmt" },
                 typescript = { "biome-check", "prettierd", stop_after_first = true },
                 typescriptreact = { "biome-check", "prettierd", stop_after_first = true },
                 yaml = { "prettierd" },
@@ -39,6 +43,18 @@ return {
                 },
                 ["biome-check"] = {
                     require_cwd = true,
+                },
+                ["bibtex-tidy"] = {
+                    prepend_args = {
+                        "--numeric",
+                        "--space=4",
+                        "--blank-lines",
+                        "--strip-enclosing-braces",
+                        "--trailing-commas",
+                    },
+                },
+                ["tex-fmt"] = {
+                    prepend_args = { "--tabsize=4" },
                 },
             },
             default_format_opts = {
