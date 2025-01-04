@@ -9,6 +9,8 @@ macos-titlebar-proxy-icon = hidden
 selection-background = #6e6a86
 selection-foreground = #e0def4
 
+resize-overlay = never
+
 # KEYBINDS
 
 keybind = cmd+shift+l=next_tab
