@@ -61,5 +61,6 @@ vim.filetype.add({
     extension = {
         env = "sh",
         hurl = "hurl",
+        tex = "tex",
     },
 })
