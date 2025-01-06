@@ -34,3 +34,6 @@ alias cdl = cd ~/Downloads
 alias cd.. = cd ..
 
 alias isup = ping 1.1
+
+# title
+alias t = title
