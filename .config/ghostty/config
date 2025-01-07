@@ -24,6 +24,7 @@ keybind = opt+shift+h=goto_split:left
 
 keybind = cmd+shift+u=scroll_page_fractional:-0.5
 keybind = cmd+shift+d=scroll_page_fractional:0.5
-
-keybind = cmd+shift+k=jump_to_prompt:-2
-keybind = cmd+shift+j=jump_to_prompt:2
+keybind = cmd+shift+k=scroll_page_lines:-1
+keybind = cmd+shift+j=scroll_page_lines:1
+keybind = cmd+shift+p=jump_to_prompt:-2
+keybind = cmd+shift+n=jump_to_prompt:2
