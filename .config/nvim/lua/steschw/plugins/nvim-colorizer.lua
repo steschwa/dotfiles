@@ -13,7 +13,7 @@ return {
             filetypes = filetypes,
             user_default_options = {
                 mode = "virtualtext",
-                virtualtext = "■■",
+                virtualtext = " ",
                 css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
             },
         })
