@@ -20,7 +20,6 @@ source-env ~/.cache/carapace/init.nu
 use ~/.config/nushell/scripts/fzf.nu *
 use ~/.config/nushell/scripts/net.nu *
 use ~/.config/nushell/scripts/goto.nu *
-use ~/.config/nushell/scripts/title.nu *
 use ~/.config/nushell/scripts/init.nu *
 
 source ~/.config/nushell/scripts/alias.nu
