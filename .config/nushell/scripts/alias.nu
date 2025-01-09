@@ -2,6 +2,7 @@ alias jq = jq --indent 4
 alias bat = bat --theme=base16 --style numbers
 alias tree = tree --gitignore -C
 alias rg  = rg --smart-case
+alias icat = kitten icat
 
 alias python = python3
 
@@ -34,4 +35,3 @@ alias cdl = cd ~/Downloads
 alias cd.. = cd ..
 
 alias isup = ping 1.1
-
