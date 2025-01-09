@@ -3,6 +3,7 @@ alias bat = bat --theme=base16 --style numbers
 alias tree = tree --gitignore -C
 alias rg  = rg --smart-case
 alias icat = kitten icat
+alias task = pueue
 
 alias python = python3
 
