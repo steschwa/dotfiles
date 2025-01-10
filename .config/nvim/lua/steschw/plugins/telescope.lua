@@ -22,6 +22,9 @@ local fd_cmd = {
     "--strip-cwd-prefix",
 }
 
+local border_bottom = { " ", " ", "▁", " ", " ", " ", "▁", "▁" }
+local border_none = { " ", " ", " ", " ", " ", " ", " ", " " }
+
 return {
     {
         "nvim-telescope/telescope.nvim",
@@ -57,13 +60,13 @@ return {
 
             telescope.setup({
                 defaults = {
-                    prompt_prefix = " ",
-                    selection_caret = " ",
-                    multi_icon = " ",
+                    prompt_prefix = "  ",
+                    selection_caret = "  ",
+                    multi_icon = " ",
                     borderchars = {
-                        preview = { " ", " ", "▁", " ", " ", " ", "▁", "▁" },
-                        results = { " ", " ", "▁", " ", " ", " ", "▁", "▁" },
-                        prompt = { " ", " ", " ", " ", " ", " ", " ", " " },
+                        preview = border_bottom,
+                        results = border_bottom,
+                        prompt = border_none,
                     },
                     vimgrep_arguments = rg_cmd,
                     path_display = function(_, path)
