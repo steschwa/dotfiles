@@ -10,6 +10,7 @@ return {
     filetypes = filetypes,
     config = function()
         require("colorizer").setup({
+            lazy_load = true,
             filetypes = filetypes,
             user_default_options = {
                 mode = "virtualtext",
