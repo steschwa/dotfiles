@@ -3,7 +3,6 @@ alias bat = bat --theme=base16 --style numbers
 alias tree = tree --gitignore -C
 alias rg  = rg --smart-case
 alias icat = kitten icat
-alias task = pueue
 
 alias python = python3
 
@@ -16,6 +15,7 @@ alias v = nvim
 alias vim = nvim
 
 # git
+alias g = git
 alias gs = git status
 alias gd = git diff HEAD
 alias gc = git commit -m
@@ -36,3 +36,6 @@ alias cdl = cd ~/Downloads
 alias cd.. = cd ..
 
 alias isup = ping 1.1
+
+# pueue
+alias p = pueue
