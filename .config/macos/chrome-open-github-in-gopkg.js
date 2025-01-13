@@ -21,7 +21,21 @@ if (!activeTabUrl.startsWith("https://github.com")) {
     throw `not on github. aborting`
 }
 
-const pkgUrl = activeTabUrl.substring("https://".length)
+const repoUrl = activeTabUrl.substring("https://".length)
+// repoUrl = github.com/foo/bar/xxx/yyy
+
+const repoParts = repoUrl.split("/")
+// repoParts = [
+//   github.com
+//   foo
+//   bar
+//   xxx
+//   yyy
+// ]
+
+const pkgUrl = repoParts.slice(0, 3).join("/")
+// pkgUrl = github.com/foo/bar
+
 const pkgTab = new chrome.Tab({ url: `https://pkg.go.dev/${pkgUrl}` })
 
 window.tabs.push(pkgTab)
