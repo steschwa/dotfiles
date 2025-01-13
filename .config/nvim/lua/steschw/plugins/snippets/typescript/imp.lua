@@ -13,4 +13,4 @@ import { <> } from "<>"
     }
 )
 
-return s("simp", snip)
+return s("imp", snip)
