@@ -361,12 +361,6 @@ return {
         f.setup({
             components = components,
             force_inactive = {},
-            disable = {
-                filetypes = {
-                    "^DiffviewFiles$",
-                    "^DiffviewFileHistory$",
-                },
-            },
         })
     end,
 }

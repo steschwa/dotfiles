@@ -3,6 +3,7 @@ return {
     name = "rose-pine",
     priority = 1000,
     config = function()
+        ---@diagnostic disable-next-line: missing-fields
         require("rose-pine").setup({
             variant = "auto",
             dark_variant = "moon",
@@ -69,13 +70,6 @@ return {
                 FelineQfInactive = { bg = "highlight_high", fg = "text" },
                 FelineGitConflictsActive = { fg = "iris" },
                 FelineGitConflictsInactive = { fg = "highlight_low" },
-
-                DiffviewStatusModified = { fg = "rose" },
-                DiffviewStatusAdded = { fg = "foam" },
-                DiffviewStatusDeleted = { fg = "love" },
-                DiffviewStatusRenamed = { fg = "iris" },
-                DiffviewFilePanelInsertions = { fg = "foam" },
-                DiffviewFilePanelDeletions = { fg = "love" },
             },
         })
         vim.cmd("colorscheme rose-pine")
