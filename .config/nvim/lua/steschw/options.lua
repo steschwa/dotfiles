@@ -10,6 +10,7 @@ opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 0
 opt.cursorline = true
 opt.expandtab = true
+opt.exrc = true
 opt.fileencoding = "utf-8"
 opt.grepformat = "%f:%l:%c:%m"
 opt.grepprg = "rg --vimgrep --no-heading --smart-case"
