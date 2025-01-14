@@ -8,6 +8,8 @@
 	precomposeunicode = false
 
 [alias]
+    a = add
+    d = diff
     l = log --pretty='tformat:%C(green)[%ad]%C(reset) %C(yellow)%h%C(reset) %C(blue)%ae%C(reset)%C(red)%d%C(reset) %s' --date='format:%d.%m.%y %H:%M'
 
     rs = restore --staged
