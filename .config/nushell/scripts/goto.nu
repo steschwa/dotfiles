@@ -1,8 +1,9 @@
 export def --env main [] {
     let search_dirs = {
-        '/Users/stefan/.config/': 1,
-        '/Volumes/Projekte/': 1,
-        '/Volumes/Projekte/FarmAct/': 1
+        "/Users/stefan/.config/": 1,
+        "/Volumes/Projekte/": 1,
+        "/Volumes/Projekte/FarmAct/": 1
+        "/Users/stefan/Documents/Studium/Masterarbeit/": 1
     }
 
     mut dirs = []
