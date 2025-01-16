@@ -11,6 +11,8 @@ $env.EDITOR = 'nvim'
 $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
 $env.LESS = "--ignore-case --tabs=4 --tilde --use-color --quit-if-one-screen --raw-control-chars"
 
+$env.UV_LINK_MODE = "copy" 
+
 $env.PATH ++= [
     "/usr/local/bin",
     "/opt/homebrew/bin",
