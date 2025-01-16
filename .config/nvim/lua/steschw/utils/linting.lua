@@ -10,6 +10,7 @@ end
 
 function M.fix()
     pcall(vim.cmd.EslintFixAll)
+    pcall(vim.cmd.PyrightOrganizeImports)
 end
 
 return M
