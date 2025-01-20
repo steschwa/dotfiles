@@ -10,6 +10,7 @@ return {
         -- MasonInstall biome
         -- MasonInstall bibtex-tidy
         -- MasonInstall tex-fmt
+        -- rustup component add rustfmt
 
         local conform = require("conform")
 
@@ -28,6 +29,7 @@ return {
                 lua = { "stylua" },
                 markdown = { "prettierd" },
                 python = { "ruff_format" },
+                rust = { "rustfmt" },
                 scss = { "prettierd" },
                 sql = { "sql_formatter" },
                 tex = { "tex-fmt" },
