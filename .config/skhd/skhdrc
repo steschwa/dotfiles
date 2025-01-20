@@ -4,15 +4,16 @@ hyper - s : open -a 'Spotify'
 hyper - f : open -a 'Finder'
 hyper - b : open -a 'Bear'
 hyper - g : open -a 'Fork'
+hyper - 0x27 : open -a 'BoltAI' # 0x27 = '
 
 # chrome
-cmd - m [
+cmd + shift - m [
     "Google Chrome" : ~/.config/macos/chrome-merge-windows.js
 ]
-cmd - d [
+cmd + shift - d [
     "Google Chrome" : ~/.config/macos/chrome-duplicate-tab.js
 ]
-cmd - p [
+cmd + shift - p [
     "Google Chrome" : ~/.config/macos/chrome-open-github-in-gopkg.js
 ]
 
