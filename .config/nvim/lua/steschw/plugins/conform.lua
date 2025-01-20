@@ -11,6 +11,7 @@ return {
         -- MasonInstall bibtex-tidy
         -- MasonInstall tex-fmt
         -- rustup component add rustfmt
+        -- MasonInstall taplo
 
         local conform = require("conform")
 
@@ -33,6 +34,7 @@ return {
                 scss = { "prettierd" },
                 sql = { "sql_formatter" },
                 tex = { "tex-fmt" },
+                toml = { "taplo" },
                 typescript = { "biome-check", "prettierd", stop_after_first = true },
                 typescriptreact = { "biome-check", "prettierd", stop_after_first = true },
                 yaml = { "prettierd" },
