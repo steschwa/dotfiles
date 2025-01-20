@@ -1,13 +1,18 @@
 $env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
 
-# $env.PATH = ($env.PATH | split row (char esep))
-$env.CONFIG_DIR = ($env.HOME | path join '.config')
-$env.XDG_CONFIG_HOME = ($env.HOME | path join '.config')
+$env.CONFIG_DIR = ($env.HOME | path join ".config")
+$env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
 
-$env.GOPATH = ($env.HOME | path join 'go')
-$env.GOBIN = ($env.GOPATH | path join 'bin')
-$env.EDITOR = 'nvim'
+# go
+$env.GOPATH = ($env.HOME | path join "go")
+$env.GOBIN = ($env.GOPATH | path join "bin")
+
+# rust
+$env.RUSTPATH = ($env.HOME | path join ".cargo")
+$env.RUSTBIN = ($env.RUSTPATH | path join "bin")
+
+$env.EDITOR = "nvim"
 $env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
 $env.LESS = "--ignore-case --tabs=4 --tilde --use-color --quit-if-one-screen --raw-control-chars"
 
@@ -17,7 +22,8 @@ $env.PATH ++= [
     "/usr/local/bin",
     "/opt/homebrew/bin",
     "/opt/homebrew/opt/openjdk/bin",
-    $env.GOBIN
+    $env.GOBIN,
+    $env.RUSTBIN,
 ]
 
 source-env ~/.config/nushell/scripts/starship.nu
