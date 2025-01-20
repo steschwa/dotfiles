@@ -4,11 +4,7 @@ return {
         version = "*",
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            {
-                "williamboman/mason.nvim",
-                config = true,
-                event = { "CmdlineEnter" },
-            },
+            "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
         },
         init = function()
@@ -86,5 +82,10 @@ return {
                 lspconfig[server].setup(final_opts)
             end
         end,
+    },
+    {
+        "williamboman/mason.nvim",
+        event = { "CmdlineEnter" },
+        config = true,
     },
 }

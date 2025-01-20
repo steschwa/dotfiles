@@ -8,6 +8,7 @@ return {
         },
         opts = function(_, opts)
             opts.servers.yamlls = {
+                filetypes = { "yaml", "yaml.docker-compose", "yaml.github-action" },
                 settings = {
                     yaml = {
                         schemaStore = { enable = false, url = "" },

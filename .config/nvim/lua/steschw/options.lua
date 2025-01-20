@@ -64,4 +64,8 @@ vim.filetype.add({
         hurl = "hurl",
         tex = "tex",
     },
+    pattern = {
+        [".*/.github/workflows/.*%.yml"] = "yaml.github-action",
+        [".*/.github/workflows/.*%.yaml"] = "yaml.github-action",
+    },
 })

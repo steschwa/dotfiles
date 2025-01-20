@@ -6,6 +6,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     config = function()
         -- MasonInstall revive
+        -- MasonInstall actionlint
 
         local lint = require("lint")
 
@@ -18,6 +19,7 @@ return {
 
         lint.linters_by_ft = {
             go = { "revive" },
+            ["yaml.github-action"] = { "actionlint" },
         }
 
         vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
