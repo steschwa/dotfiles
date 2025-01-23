@@ -66,10 +66,12 @@ return {
     },
     {
         "windwp/nvim-ts-autotag",
+        lazy = true,
         config = true,
     },
     {
         "JoosepAlviste/nvim-ts-context-commentstring",
+        lazy = true,
         opts = {
             -- https://github.com/JoosepAlviste/nvim-ts-context-commentstring/wiki/Integrations#minicomment
             enable_autocmd = false,

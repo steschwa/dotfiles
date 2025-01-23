@@ -26,13 +26,7 @@ return {
         "echasnovski/mini.pairs",
         version = "*",
         event = { "BufReadPre", "BufNewFile" },
-        opts = {
-            modes = {
-                insert = true,
-                command = false,
-                terminal = false,
-            },
-        },
+        config = true,
     },
     {
         "echasnovski/mini.surround",
@@ -49,29 +43,6 @@ return {
                 highlight = "",
                 suffix_last = "",
                 suffix_next = "",
-            },
-        },
-    },
-    {
-        "echasnovski/mini.move",
-        version = "*",
-        event = { "BufReadPre", "BufNewFile" },
-        opts = {
-            options = {
-                reindent_linewise = false,
-            },
-            mappings = {
-                -- visual mode
-                left = "<S-h>",
-                right = "<S-l>",
-                down = "<S-j>",
-                up = "<S-k>",
-
-                -- normal mode
-                line_left = "",
-                line_right = "",
-                line_down = "",
-                line_up = "",
             },
         },
     },
