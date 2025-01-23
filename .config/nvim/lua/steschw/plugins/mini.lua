@@ -46,4 +46,31 @@ return {
             },
         },
     },
+    {
+        "echasnovski/mini.diff",
+        version = "*",
+        event = { "BufReadPre", "BufNewFile" },
+        keys = {
+            {
+                "gp",
+                function()
+                    require("mini.diff").toggle_overlay(0)
+                end,
+            },
+        },
+        opts = {
+            view = {
+                style = "sign",
+            },
+            mappings = {
+                apply = "",
+                reset = "",
+                textobject = "",
+                goto_first = "",
+                goto_prev = "[h",
+                goto_next = "]h",
+                goto_last = "",
+            },
+        },
+    },
 }
