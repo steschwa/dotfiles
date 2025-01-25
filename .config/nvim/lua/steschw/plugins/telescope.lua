@@ -1,9 +1,9 @@
 local Path = require("steschw.utils.path")
 
+-- see :h telescope.defaults.vimgrep_arguments
 local rg_cmd = {
     "rg",
-    "--color",
-    "never",
+    "--color=never",
     "--no-heading",
     "--with-filename",
     "--line-number",
@@ -29,10 +29,7 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         dependencies = {
-            {
-                "nvim-telescope/telescope-fzf-native.nvim",
-                build = "make",
-            },
+            "nvim-telescope/telescope-fzf-native.nvim",
             "fixme.nvim",
         },
         cmd = "Telescope",
@@ -40,7 +37,16 @@ return {
             { "<leader>p", "<cmd>Telescope find_files<cr>" },
             { "<leader>f", "<cmd>Telescope live_grep<cr>" },
             { "<leader>h", "<cmd>Telescope help_tags<cr>" },
-            { "<leader>b", "<cmd>Telescope buffers<cr>" },
+            {
+                "<leader>b",
+                function()
+                    require("telescope.builtin").buffers({
+                        preview = false,
+                        ignore_current_buffer = true,
+                        sort_mru = true,
+                    })
+                end,
+            },
             { "<leader>s", "<cmd>Telescope lsp_document_symbols<cr>" },
             {
                 "<leader>c",
@@ -108,6 +114,12 @@ return {
                     lsp_document_symbols = {
                         symbol_width = 0.5,
                     },
+                    buffers = {
+                        previewer = false,
+                        layout_config = {
+                            height = 20,
+                        },
+                    },
                 },
                 extensions = {
                     fzf = {},
@@ -116,5 +128,10 @@ return {
 
             telescope.load_extension("fzf")
         end,
+    },
+    {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "make",
+        lazy = true,
     },
 }
