@@ -1,12 +1,9 @@
-local augroup = require("steschw.utils.autocmd").augroup
-
 return {
     "akinsho/git-conflict.nvim",
     version = "*",
     init = function()
         -- disable diagnostics if git conflicts are present
         vim.api.nvim_create_autocmd("User", {
-            group = augroup("git_conflict_detected"),
             pattern = "GitConflictDetected",
             callback = function(event)
                 vim.diagnostic.enable(false)
@@ -23,7 +20,6 @@ return {
 
         -- enable diagnostics once all git conflicts are resolved
         vim.api.nvim_create_autocmd("User", {
-            group = augroup("git_conflict_resolved"),
             pattern = "GitConflictResolved",
             callback = function()
                 vim.diagnostic.enable(true)

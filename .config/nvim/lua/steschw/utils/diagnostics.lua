@@ -1,13 +1,13 @@
 local M = {}
 
---- @class DiagnosticSign
+--- @class steschw.DiagnosticSign
 --- @field name string
 --- @field numhl string
 --- @field text string
 --- @field texthl string
 
 --- @param name string
---- @return DiagnosticSign?
+--- @return steschw.DiagnosticSign?
 function M.get_sign_by_name(name)
     local sign = vim.fn.sign_getdefined(name)
     if type(sign) ~= "table" then
@@ -17,11 +17,11 @@ function M.get_sign_by_name(name)
         return
     end
 
-    return sign[1]
+    return sign[1] --[[@as steschw.DiagnosticSign]]
 end
 
---- @param severity number
---- @return DiagnosticSign?
+--- @param severity vim.diagnostic.Severity
+--- @return steschw.DiagnosticSign?
 function M.get_sign_by_severity(severity)
     local type = ({
         [vim.diagnostic.severity.ERROR] = "Error",

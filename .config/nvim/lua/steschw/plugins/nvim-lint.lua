@@ -1,4 +1,3 @@
-local augroup = require("steschw.utils.autocmd").augroup
 local do_lint = require("steschw.utils.linting").lint
 
 return {
@@ -23,7 +22,6 @@ return {
         }
 
         vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
-            group = augroup("lint"),
             callback = do_lint,
         })
     end,
