@@ -51,6 +51,9 @@ opt.fillchars:append({
     fold = " ",
 })
 
+vim.g.qf_disable_statusline = true
+opt.statusline = "%{%v:lua.require'steschw.statusline'.create()%}"
+
 vim.filetype.add({
     filename = {
         [".ignore"] = "conf",
