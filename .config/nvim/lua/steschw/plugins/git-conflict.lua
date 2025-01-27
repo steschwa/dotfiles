@@ -1,12 +1,12 @@
 return {
     "akinsho/git-conflict.nvim",
     version = "*",
+    event = { "BufReadPre", "BufNewFile" },
     init = function()
-        -- disable diagnostics if git conflicts are present
         vim.api.nvim_create_autocmd("User", {
             pattern = "GitConflictDetected",
             callback = function(event)
-                vim.diagnostic.enable(false)
+                vim.diagnostic.enable(false, { bufnr = event.buf })
 
                 local opts = { buffer = event.buf }
 
@@ -18,11 +18,10 @@ return {
             end,
         })
 
-        -- enable diagnostics once all git conflicts are resolved
         vim.api.nvim_create_autocmd("User", {
             pattern = "GitConflictResolved",
-            callback = function()
-                vim.diagnostic.enable(true)
+            callback = function(event)
+                vim.diagnostic.enable(false, { bufnr = event.buf })
             end,
         })
     end,
