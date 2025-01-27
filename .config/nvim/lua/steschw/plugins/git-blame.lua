@@ -1,25 +1,24 @@
-local function provider_sha(blame)
-    return { text = blame.sha:sub(1, 10), hl = "Comment" }
+---@type git-blame.Provider
+local provider_sha = function(blame)
+    local formatted_sha = blame.sha:sub(1, 10)
+    return { text = string.format(" @ %s", formatted_sha), hl = "Comment" }
 end
 
-local function provider_time(blame)
+---@type git-blame.Provider
+local provider_time = function(blame)
     local formatted_time = vim.fn.strftime("%d.%m.%Y %H:%M", blame.timestamp)
     return { text = formatted_time, hl = "GitBlameTime" }
 end
 
-local function provider_author(blame)
+---@type git-blame.Provider
+local provider_author = function(blame)
     local formatted_author = string.format("%s %s", blame.author, blame.author_email)
     return { text = formatted_author, hl = "GitBlameAuthor" }
 end
 
-local function provider_message(blame)
+---@type git-blame.Provider
+local provider_message = function(blame)
     return { text = blame.message, hl = "GitBlameMessage" }
-end
-
-local function provider_separator(separator)
-    return function()
-        return { text = separator, hl = "Comment" }
-    end
 end
 
 return {
@@ -31,7 +30,7 @@ return {
     },
     opts = {
         lines = {
-            { provider_time, provider_separator(" @ "), provider_sha },
+            { provider_time, provider_sha },
             { provider_author },
             {},
             { provider_message },
