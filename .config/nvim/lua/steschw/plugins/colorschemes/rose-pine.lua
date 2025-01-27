@@ -72,10 +72,8 @@ return {
                 StatusLineDiagnosticInfo = { bg = "overlay", fg = "foam" },
                 StatusLineDiagnosticHint = { bg = "overlay", fg = "iris" },
 
-                GitBlameSha = { link = "Comment" },
-                GitBlameDate = { link = "Comment" },
-                GitBlameAuthor = { fg = "gold" },
-                GitBlameAuthorEmail = { fg = "gold" },
+                GitBlameTime = { fg = "foam" },
+                GitBlameAuthor = { fg = "iris" },
                 GitBlameMessage = { fg = "text" },
             },
         })
