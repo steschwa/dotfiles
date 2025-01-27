@@ -13,8 +13,8 @@ return {
                 vim.keymap.set("n", "co", "<cmd>GitConflictChooseOurs<cr>", opts)
                 vim.keymap.set("n", "ct", "<cmd>GitConflictChooseTheirs<cr>", opts)
                 vim.keymap.set("n", "cb", "<cmd>GitConflictChooseBoth<cr>", opts)
-                vim.keymap.set("n", "[x", "<cmd>GitConflictNextConflict<cr>", opts)
-                vim.keymap.set("n", "]x", "<cmd>GitConflictPrevConflict<cr>", opts)
+                vim.keymap.set("n", "]x", "<cmd>GitConflictNextConflict<cr>", opts)
+                vim.keymap.set("n", "[x", "<cmd>GitConflictPrevConflict<cr>", opts)
             end,
         })
 
