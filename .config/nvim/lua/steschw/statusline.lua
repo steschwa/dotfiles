@@ -143,10 +143,7 @@ end
 
 ---@return string
 local function item_lazy_updates()
-    local ok, ls = pcall(require, "lazy.status")
-    if not ok then
-        return ""
-    end
+    local ls = require("lazy.status")
     if not ls.has_updates() then
         return ""
     end
@@ -160,27 +157,27 @@ local M = {}
 function M.active()
     return table.concat({
         "%#Statusline#",
-        "%#FelineFileChangesActive#",
+        "%#StatusLineFileChangesActive#",
         item_file_changes(),
-        "%#FelineFilenameActive#",
+        "%#StatusLineFilenameActive#",
         item_filename(),
-        "%#FelineQfActive#",
+        "%#StatusLineQfActive#",
         item_qf(),
-        "%#FelineGrappleActive#",
+        "%#StatusLineGrappleActive#",
         item_grapple(),
-        "%#FelineSearchCount#",
+        "%#StatusLineSearchCount#",
         item_search_count(),
-        "%#FelineDiagnosticError#",
+        "%#StatusLineDiagnosticError#",
         item_diagnostics(vim.diagnostic.severity.ERROR),
-        "%#FelineDiagnosticWarn#",
+        "%#StatusLineDiagnosticWarn#",
         item_diagnostics(vim.diagnostic.severity.WARN),
-        "%#FelineDiagnosticInfo#",
+        "%#StatusLineDiagnosticInfo#",
         item_diagnostics(vim.diagnostic.severity.INFO),
-        "%#FelineDiagnosticHint#",
+        "%#StatusLineDiagnosticHint#",
         item_diagnostics(vim.diagnostic.severity.HINT),
         "%#Statusline#",
         "%=",
-        "%#FelineLazyUpdates#",
+        "%#StatusLineLazyUpdates#",
         item_lazy_updates(),
         "%#Statusline#",
     })
@@ -190,13 +187,13 @@ end
 function M.inactive()
     return table.concat({
         "%#StatuslineNC#",
-        "%#FelineFileChangesInactive#",
+        "%#StatusLineFileChangesInactive#",
         item_file_changes(),
-        "%#FelineFilenameInactive#",
+        "%#StatusLineFilenameInactive#",
         item_filename(),
-        "%#FelineQfInactive#",
+        "%#StatusLineQfInactive#",
         item_qf(),
-        "%#FelineGrappleInactive#",
+        "%#StatusLineGrappleInactive#",
         item_grapple(),
         "%#StatuslineNC#",
     })
