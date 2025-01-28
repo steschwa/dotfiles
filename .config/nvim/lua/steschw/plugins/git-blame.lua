@@ -22,8 +22,7 @@ local provider_message = function(blame)
 end
 
 return {
-    dir = "/Volumes/Projekte/git-blame.nvim",
-    name = "git-blame.nvim",
+    "steschwa/git-blame.nvim",
     cmd = "GitBlameLine",
     keys = {
         { "gb", "<cmd>GitBlameLine<cr>" },
