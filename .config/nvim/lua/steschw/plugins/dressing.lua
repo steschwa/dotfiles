@@ -2,6 +2,7 @@ local Win = require("steschw.utils.window")
 
 return {
     "stevearc/dressing.nvim",
+    event = "VeryLazy",
     opts = {
         input = {
             enabled = true,

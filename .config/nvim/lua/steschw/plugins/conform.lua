@@ -1,6 +1,6 @@
 return {
     "stevearc/conform.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    lazy = true,
     config = function()
         -- MasonInstall prettierd
         -- MasonInstall goimports

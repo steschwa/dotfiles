@@ -2,7 +2,12 @@ local do_lint = require("steschw.utils.linting").lint
 
 return {
     "mfussenegger/nvim-lint",
-    event = { "BufReadPre", "BufNewFile" },
+    lazy = true,
+    init = function()
+        vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
+            callback = do_lint,
+        })
+    end,
     config = function()
         -- MasonInstall revive
         -- MasonInstall actionlint
@@ -20,9 +25,5 @@ return {
             go = { "revive" },
             ["yaml.github-action"] = { "actionlint" },
         }
-
-        vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
-            callback = do_lint,
-        })
     end,
 }

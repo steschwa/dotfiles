@@ -93,10 +93,12 @@ end
 
 ---@return string
 local function item_grapple()
-    local ok, g = pcall(require, "grapple")
-    if not ok then
+    local ft = vim.bo.filetype
+    if ft == "" then
         return ""
     end
+
+    local g = require("grapple")
     if not g.exists() then
         return ""
     end

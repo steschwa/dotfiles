@@ -6,7 +6,7 @@ local filetypes = {
 
 return {
     "catgoose/nvim-colorizer.lua",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "BufRead",
     filetypes = filetypes,
     config = function()
         require("colorizer").setup({

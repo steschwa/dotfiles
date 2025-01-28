@@ -2,7 +2,10 @@ return {
     {
         "echasnovski/mini.comment",
         version = "*",
-        event = { "BufReadPre", "BufNewFile" },
+        keys = {
+            { "gc" },
+            { "gcc" },
+        },
         dependencies = {
             "JoosepAlviste/nvim-ts-context-commentstring",
         },
@@ -25,13 +28,17 @@ return {
     {
         "echasnovski/mini.pairs",
         version = "*",
-        event = { "BufReadPre", "BufNewFile" },
+        event = "InsertEnter",
         config = true,
     },
     {
         "echasnovski/mini.surround",
         version = "*",
-        event = { "BufReadPre", "BufNewFile" },
+        keys = {
+            { "sa" },
+            { "sd" },
+            { "sr" },
+        },
         opts = {
             mappings = {
                 add = "sa",
@@ -49,7 +56,7 @@ return {
     {
         "echasnovski/mini.diff",
         version = "*",
-        event = { "BufReadPre", "BufNewFile" },
+        event = "BufRead",
         keys = {
             {
                 "gp",

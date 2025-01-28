@@ -8,7 +8,7 @@ end
 
 return {
     "cbochs/grapple.nvim",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "BufRead",
     keys = {
         {
             "mm",

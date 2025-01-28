@@ -1,7 +1,7 @@
 return {
     "akinsho/git-conflict.nvim",
     version = "*",
-    event = { "BufReadPre", "BufNewFile" },
+    event = "BufRead",
     init = function()
         vim.api.nvim_create_autocmd("User", {
             pattern = "GitConflictDetected",
