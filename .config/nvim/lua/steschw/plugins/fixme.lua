@@ -1,4 +1,4 @@
-local function provider_severity(item)
+local function cell_severity(item)
     local severity = vim.diagnostic.severity[item.type]
     if not severity then
         return { text = "" }
@@ -22,7 +22,7 @@ local function provider_severity(item)
     }
 end
 
-local function provider_lnum(item)
+local function cell_lnum(item)
     local lnum = item.lnum or item.end_lnum
 
     return {
@@ -31,7 +31,7 @@ local function provider_lnum(item)
     }
 end
 
-local function provider_filename(item)
+local function cell_filename(item)
     local path = vim.fn.bufname(item.bufnr)
     local filename = vim.fn.fnamemodify(path, ":t")
 
@@ -41,7 +41,7 @@ local function provider_filename(item)
     }
 end
 
-local function provider_file_icon(item)
+local function cell_file_icon(item)
     local path = vim.fn.bufname(item.bufnr)
     local filename = vim.fn.fnamemodify(path, ":t")
     local extension = vim.fn.fnamemodify(path, ":e")
@@ -52,17 +52,27 @@ local function provider_file_icon(item)
     end
 
     return {
-        text = icon or "",
-        hl = hl,
+        text = icon or " ",
+        hl = hl or "Comment",
     }
 end
 
-local function provider_text(item)
+local function cell_text(item)
     return {
         text = vim.trim(item.text),
         hl = "FixmeText",
     }
 end
+
+local COLUMNS_DIAGNOSTICS = {
+    { cell_severity },
+    { cell_file_icon, cell_filename, cell_lnum },
+    { cell_text },
+}
+local COLUMNS_NORMAL = {
+    { cell_file_icon, cell_filename, cell_lnum },
+    { cell_text },
+}
 
 return {
     dir = "/Volumes/Projekte/fixme.nvim",
@@ -70,30 +80,19 @@ return {
     ft = "qf",
     config = function()
         require("fixme").setup({
-            selectors = {
-                {
-                    columns = {
-                        { provider_severity },
-                        { provider_file_icon, provider_filename, provider_lnum },
-                        { provider_text },
-                    },
-                    use = function(qf_id)
-                        local context = vim.fn.getqflist({
-                            id = qf_id,
-                            context = true,
-                        }).context
+            columns = function(qf_id)
+                local context = vim.fn.getqflist({
+                    id = qf_id,
+                    context = true,
+                }).context
 
-                        return context == "diagnostics"
-                    end,
-                },
-                {
-                    columns = {
-                        { provider_file_icon, provider_filename, provider_lnum },
-                        { provider_text },
-                    },
-                },
-            },
-            column_separator = " | ",
+                if context == "diagnostics" then
+                    return COLUMNS_DIAGNOSTICS
+                end
+
+                return COLUMNS_NORMAL
+            end,
+            column_separator = " │ ",
             cell_separator = " ",
         })
     end,
