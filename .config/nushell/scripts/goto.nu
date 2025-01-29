@@ -19,5 +19,10 @@ export def --env main [] {
     }
 
     cd $selection
+    set-tab-title ($selection | path basename)
     clear
+}
+
+def set-tab-title [title: string] {
+    print -n $"(ansi title)($title)(ansi st)" 
 }
