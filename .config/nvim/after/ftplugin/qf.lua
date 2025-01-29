@@ -1,5 +1,8 @@
 local keymap = require("steschw.utils.keys").keymap
 
+vim.wo.relativenumber = false
+vim.wo.number = false
+
 keymap("n", "dd", function()
     local list = vim.fn.getqflist()
     if #list == 0 then
