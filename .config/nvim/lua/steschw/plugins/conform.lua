@@ -57,9 +57,6 @@ return {
                         "--trailing-commas",
                     },
                 },
-                ["tex-fmt"] = {
-                    prepend_args = { "--tabsize=4" },
-                },
             },
             default_format_opts = {
                 lsp_format = "fallback",
