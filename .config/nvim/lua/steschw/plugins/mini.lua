@@ -61,7 +61,12 @@ return {
             {
                 "gp",
                 function()
-                    require("mini.diff").toggle_overlay(0)
+                    local mini = require("mini.diff")
+
+                    local buf_data = mini.get_buf_data(0)
+                    if buf_data then
+                        mini.toggle_overlay(0)
+                    end
                 end,
             },
         },
