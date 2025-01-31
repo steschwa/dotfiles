@@ -75,25 +75,22 @@ local COLUMNS_NORMAL = {
 }
 
 return {
-    dir = "/Volumes/Projekte/fixme.nvim",
-    name = "fixme.nvim",
+    "steschwa/fixme.nvim",
     ft = "qf",
-    config = function()
-        require("fixme").setup({
-            columns = function(qf_id)
-                local context = vim.fn.getqflist({
-                    id = qf_id,
-                    context = true,
-                }).context
+    opts = {
+        columns = function(qf_id)
+            local context = vim.fn.getqflist({
+                id = qf_id,
+                context = true,
+            }).context
 
-                if context == "diagnostics" then
-                    return COLUMNS_DIAGNOSTICS
-                end
+            if context == "diagnostics" then
+                return COLUMNS_DIAGNOSTICS
+            end
 
-                return COLUMNS_NORMAL
-            end,
-            column_separator = " │ ",
-            cell_separator = " ",
-        })
-    end,
+            return COLUMNS_NORMAL
+        end,
+        column_separator = " │ ",
+        cell_separator = " ",
+    },
 }
