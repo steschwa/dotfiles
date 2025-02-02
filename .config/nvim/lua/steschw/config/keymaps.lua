@@ -34,7 +34,9 @@ keymap("n", "<C-j>", "<C-w>j")
 keymap("n", "<C-k>", "<C-w>k")
 keymap("n", "<C-l>", "<C-w>l")
 keymap("n", "<C-=>", "<cmd>resize +2<cr>")
-keymap("n", "<C-_>", "<cmd>resize -2<cr>")
+keymap("n", "<C-->", "<cmd>resize -2<cr>")
+keymap("n", "<S-C-=>", "<cmd>vertical resize +4<cr>")
+keymap("n", "<S-C-->", "<cmd>vertical resize -4<cr>")
 
 -- leave insert on jk
 keymap("i", "jk", "<esc>")
