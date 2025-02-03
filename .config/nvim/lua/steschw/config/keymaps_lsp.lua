@@ -36,7 +36,11 @@ function M.references()
         res.nr = "$"
 
         res.items = vim.tbl_filter(function(item)
-            return item.text:sub(1, #"import") ~= "import"
+            if type(vim.g.lsp_references_filter) == "function" then
+                return vim.g.lsp_references_filter(item)
+            end
+
+            return true
         end, res.items)
 
         vim.fn.setqflist({}, " ", res)
