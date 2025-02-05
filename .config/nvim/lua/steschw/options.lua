@@ -61,6 +61,7 @@ vim.filetype.add({
         [".rgignore"] = "conf",
         [".nvimignore"] = "conf",
         ["Brewfile"] = "ruby",
+        ["docker-compose.yml"] = "yaml.docker-compose",
     },
     extension = {
         env = "sh",
