@@ -56,11 +56,13 @@ return {
                     })
                 end,
             },
+            { "<leader>w", "<cmd>Telescope quickfixhistory<cr>" },
             { "<leader><leader>", "<cmd>Telescope pickers<cr>" },
         },
         config = function()
             local telescope = require("telescope")
             local actions = require("telescope.actions")
+            local action_state = require("telescope.actions.state")
 
             local action_qflist = actions.smart_send_to_qflist + actions.open_qflist
 
@@ -118,6 +120,23 @@ return {
                         previewer = false,
                         layout_config = {
                             height = 20,
+                        },
+                    },
+                    quickfixhistory = {
+                        previewer = false,
+                        layout_config = {
+                            height = 15,
+                            width = 0.3,
+                        },
+                        mappings = {
+                            n = {
+                                ["<cr>"] = function(prompt_bufnr)
+                                    local qf_nr = action_state.get_selected_entry().nr
+                                    actions.close(prompt_bufnr)
+                                    vim.cmd(qf_nr .. "chi")
+                                    actions.open_qflist(prompt_bufnr)
+                                end,
+                            },
                         },
                     },
                 },
