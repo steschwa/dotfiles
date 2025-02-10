@@ -38,6 +38,7 @@ return {
                 typescript = { "biome-check", "prettierd", stop_after_first = true },
                 typescriptreact = { "biome-check", "prettierd", stop_after_first = true },
                 yaml = { "prettierd" },
+                d2 = { "d2" },
             },
             formatters = {
                 prettierd = {
