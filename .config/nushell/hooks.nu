@@ -10,7 +10,7 @@ $env.config.hooks.env_change = {
 }
 
 let nu_overlays_hook = {||
-    let overlays = overlay list | range 1..
+    let overlays = overlay list | slice 1..
     if ($overlays | is-empty) {
         $env.NU_OVERLAYS = null
     } else {
