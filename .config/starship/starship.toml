@@ -5,11 +5,31 @@ add_newline = true
 format = "$directory($git_branch)(${env_var.NU_OVERLAYS})($golang)($nodejs)($python)$fill ($status)($cmd_duration)($time)\n$character"
 
 [git_branch]
-symbol = ""
-format = "[$symbol $branch]($style) "
+symbol = " "
+format = "[$symbol$branch]($style) "
+
+[env_var.NU_OVERLAYS]
+symbol = ' '
+format = '[$symbol$env_value]($style) '
+style = 'red'
+
+[golang]
+symbol = "󰟓 "
+format = "[$symbol$version]($style) "
+version_format = "$raw"
+
+[nodejs]
+symbol = " "
+format = "[$symbol$version]($style) "
+version_format = "$raw"
+
+[python]
+symbol = " "
+format = "[$symbol$version]($style) "
+version_format = "$raw"
 
 [fill]
-symbol = "-"
+symbol = "─"
 style = "fg:0"
 
 [status]
@@ -19,7 +39,7 @@ style = "bg:red fg:black"
 format = "[ $symbol $status ]($style) "
 
 [cmd_duration]
-min_time = 1_000
+min_time = 100
 format = "[$duration]($style) "
 
 [time]
@@ -29,11 +49,3 @@ format = "[$time]($style)"
 [character]
 success_symbol = '[\$](green)'
 error_symbol = '[\$](red)'
-
-[nodejs]
-symbol = " "
-
-[env_var.NU_OVERLAYS]
-symbol = '  '
-format = 'using [$symbol$env_value ]($style)'
-style = 'red'
