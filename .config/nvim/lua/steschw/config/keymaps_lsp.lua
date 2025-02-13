@@ -26,6 +26,7 @@ function M.diagnostics()
 
     vim.fn.setqflist({}, " ", what)
     vim.cmd("botright cw")
+    vim.cmd("cfirst")
 end
 
 function M.references()
@@ -45,6 +46,7 @@ function M.references()
 
         vim.fn.setqflist({}, " ", res)
         vim.cmd("botright cw")
+        vim.cmd("cfirst")
     end
 
     vim.lsp.buf.references({ includeDeclaration = false }, {
