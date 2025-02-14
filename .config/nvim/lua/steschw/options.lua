@@ -55,10 +55,10 @@ opt.statusline = "%{%v:lua.require'steschw.statusline'.create()%}"
 
 vim.filetype.add({
     filename = {
-        [".ignore"] = "conf",
-        [".fdignore"] = "conf",
-        [".rgignore"] = "conf",
-        [".nvimignore"] = "conf",
+        [".ignore"] = "gitignore",
+        [".fdignore"] = "gitignore",
+        [".rgignore"] = "gitignore",
+        [".nvimignore"] = "gitignore",
         ["Brewfile"] = "ruby",
         ["docker-compose.yml"] = "yaml.docker-compose",
     },
@@ -73,3 +73,5 @@ vim.filetype.add({
         [".*/.github/workflows/.*%.yaml"] = "yaml.github-action",
     },
 })
+
+vim.cmd("syntax off")
