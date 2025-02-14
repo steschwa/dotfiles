@@ -17,7 +17,6 @@ opt.grepprg = "rg --vimgrep --no-heading --smart-case"
 opt.history = 100
 opt.hlsearch = true
 opt.ignorecase = true
-opt.inccommand = "split"
 opt.iskeyword:append({ "-", "_" })
 opt.jumpoptions = "stack"
 opt.number = true
