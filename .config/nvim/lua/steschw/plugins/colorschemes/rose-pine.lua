@@ -75,6 +75,8 @@ return {
                 GitBlameTime = { fg = "foam" },
                 GitBlameAuthor = { fg = "iris" },
                 GitBlameMessage = { fg = "text" },
+
+                MiniDiffSignChange = { fg = "gold" },
             },
         })
         vim.cmd("colorscheme rose-pine")
