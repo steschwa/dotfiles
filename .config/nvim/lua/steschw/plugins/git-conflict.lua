@@ -1,3 +1,11 @@
+local keymaps = {
+    { "n", "co", "<cmd>GitConflictChooseOurs<cr>" },
+    { "n", "ct", "<cmd>GitConflictChooseTheirs<cr>" },
+    { "n", "cb", "<cmd>GitConflictChooseBoth<cr>" },
+    { "n", "]x", "<cmd>GitConflictNextConflict<cr>" },
+    { "n", "[x", "<cmd>GitConflictPrevConflict<cr>" },
+}
+
 return {
     "akinsho/git-conflict.nvim",
     version = "*",
@@ -8,13 +16,9 @@ return {
             callback = function(event)
                 vim.diagnostic.enable(false, { bufnr = event.buf })
 
-                local opts = { buffer = event.buf }
-
-                vim.keymap.set("n", "co", "<cmd>GitConflictChooseOurs<cr>", opts)
-                vim.keymap.set("n", "ct", "<cmd>GitConflictChooseTheirs<cr>", opts)
-                vim.keymap.set("n", "cb", "<cmd>GitConflictChooseBoth<cr>", opts)
-                vim.keymap.set("n", "]x", "<cmd>GitConflictNextConflict<cr>", opts)
-                vim.keymap.set("n", "[x", "<cmd>GitConflictPrevConflict<cr>", opts)
+                for _, def in ipairs(keymaps) do
+                    vim.keymap.set(def[1], def[2], def[3], { buffer = event.buf })
+                end
             end,
         })
 
@@ -22,6 +26,10 @@ return {
             pattern = "GitConflictResolved",
             callback = function(event)
                 vim.diagnostic.enable(false, { bufnr = event.buf })
+
+                for _, def in ipairs(keymaps) do
+                    vim.keymap.del(def[1], def[2], { buffer = event.buf })
+                end
             end,
         })
     end,
