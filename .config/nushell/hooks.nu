@@ -14,7 +14,7 @@ let nu_overlays_hook = {||
     if ($overlays | is-empty) {
         $env.NU_OVERLAYS = null
     } else {
-        $env.NU_OVERLAYS = $overlays | str join ", "
+        $env.NU_OVERLAYS = $overlays | str join ","
     }
 }
 
