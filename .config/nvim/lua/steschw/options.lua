@@ -55,10 +55,10 @@ opt.statusline = "%{%v:lua.require'steschw.statusline'.create()%}"
 
 vim.filetype.add({
     filename = {
-        [".ignore"] = "gitignore",
-        [".fdignore"] = "gitignore",
-        [".rgignore"] = "gitignore",
-        [".nvimignore"] = "gitignore",
+        [".ignore"] = "sh",
+        [".fdignore"] = "sh",
+        [".rgignore"] = "sh",
+        [".nvimignore"] = "sh",
         ["Brewfile"] = "ruby",
         ["docker-compose.yml"] = "yaml.docker-compose",
     },
