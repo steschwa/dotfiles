@@ -6,17 +6,17 @@ hyper - g : open -a 'Fork'
 hyper - 0x27 : open -a 'BoltAI' # 0x27 = '
 
 # chrome
-hyper - m [
+cmd + alt + ctrl - m [
     "Google Chrome" : ~/.config/macos/chrome-merge-windows.js
 ]
-hyper - d [
+cmd + alt + ctrl - d [
     "Google Chrome" : ~/.config/macos/chrome-duplicate-tab.js
 ]
-hyper - p [
+cmd + alt + ctrl - p [
     "Google Chrome" : ~/.config/macos/chrome-open-github-in-gopkg.js
 ]
 
 # finder
-hyper - c [
+cmd + alt + ctrl - c [
     "Finder" : ~/.config/macos/finder-copy-path.js
 ]
