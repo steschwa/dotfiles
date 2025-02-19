@@ -73,5 +73,3 @@ vim.filetype.add({
         [".*/.github/workflows/.*%.yaml"] = "yaml.github-action",
     },
 })
-
-vim.cmd("syntax off")
