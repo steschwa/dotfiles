@@ -49,6 +49,9 @@ return {
                 CmpDocsNormal = { link = "FloatNormal" },
                 CmpDocsBorder = { bg = "surface", fg = "base" },
 
+                BlinkCmpDoc = { link = "FloatNormal" },
+                BlinkCmpDocBorder = { link = "FloatNormal" },
+
                 FixmeFilepath = { fg = "text" },
                 FixmeText = { fg = "subtle" },
                 FixmeColumnSeparator = { fg = "overlay" },
