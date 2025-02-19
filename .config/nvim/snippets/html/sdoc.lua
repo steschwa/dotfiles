@@ -27,4 +27,4 @@ local snip = fmt(
     }
 )
 
-return s("sdoc", snip)
+return { s("sdoc", snip) }

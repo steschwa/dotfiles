@@ -4,7 +4,7 @@ local i = ls.insert_node
 local f = ls.function_node
 local fmta = require("luasnip.extras.fmt").fmta
 
-local Fs = require("steschw.plugins.snippets.fs")
+local Fs = require("steschw.utils.fs")
 
 local snip = fmta(
     [[
@@ -20,4 +20,4 @@ export function <F>(props: <F>Props) {
     }
 )
 
-return s("scomp", snip)
+return { s("scomp", snip) }

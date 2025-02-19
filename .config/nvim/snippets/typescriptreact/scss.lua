@@ -3,7 +3,7 @@ local s = ls.snippet
 local f = ls.function_node
 local fmta = require("luasnip.extras.fmt").fmta
 
-local Fs = require("steschw.plugins.snippets.fs")
+local Fs = require("steschw.utils.fs")
 
 local snip = fmta('import "./<CSSFilename>.scss";', {
     CSSFilename = f(function()
@@ -13,4 +13,4 @@ local snip = fmta('import "./<CSSFilename>.scss";', {
     end),
 })
 
-return s("scss", snip)
+return { s("scss", snip) }

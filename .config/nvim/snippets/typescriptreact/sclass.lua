@@ -2,8 +2,8 @@ local ls = require("luasnip")
 local s = ls.snippet
 local f = ls.function_node
 
-local Fs = require("steschw.plugins.snippets.fs")
-local Format = require("steschw.plugins.snippets.format")
+local Fs = require("steschw.utils.fs")
+local Format = require("steschw.utils.format")
 
 local snip = {
     f(function()
@@ -11,4 +11,4 @@ local snip = {
     end),
 }
 
-return s("sclass", snip)
+return { s("sclass", snip) }

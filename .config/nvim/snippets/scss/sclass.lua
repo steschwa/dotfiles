@@ -4,8 +4,8 @@ local i = ls.insert_node
 local f = ls.function_node
 local fmta = require("luasnip.extras.fmt").fmta
 
-local Fs = require("steschw.plugins.snippets.fs")
-local Format = require("steschw.plugins.snippets.format")
+local Fs = require("steschw.utils.fs")
+local Format = require("steschw.utils.format")
 
 local snip = fmta(
     [[
@@ -21,4 +21,4 @@ local snip = fmta(
     }
 )
 
-return s("sclass", snip)
+return { s("sclass", snip) }
