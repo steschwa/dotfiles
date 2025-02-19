@@ -1,9 +1,8 @@
 local ls = require("luasnip")
-local s = ls.snippet
 local i = ls.insert_node
 local fmt = require("luasnip.extras.fmt").fmt
 
-local snip = fmt(
+return fmt(
     [[
 <!doctype html>
 <html lang="en">
@@ -26,5 +25,3 @@ local snip = fmt(
         i(0),
     }
 )
-
-return { s("sdoc", snip) }
