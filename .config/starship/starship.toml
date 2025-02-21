@@ -39,7 +39,7 @@ style = "bg:red fg:black"
 format = "[ $symbol $status ]($style) "
 
 [cmd_duration]
-min_time = 100
+min_time = 1000
 format = "[$duration]($style) "
 
 [time]
