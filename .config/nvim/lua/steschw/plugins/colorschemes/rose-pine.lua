@@ -43,12 +43,6 @@ return {
                 TelescopeMultiSelection = { fg = "gold" },
                 TelescopeMatching = { fg = "rose", underline = true },
 
-                CmpCursorLine = { link = "Selection" },
-                CmpNormal = { link = "FloatNormal" },
-                CmpBorder = { bg = "surface", fg = "base" },
-                CmpDocsNormal = { link = "FloatNormal" },
-                CmpDocsBorder = { bg = "surface", fg = "base" },
-
                 BlinkCmpDoc = { link = "FloatNormal" },
                 BlinkCmpDocBorder = { link = "FloatNormal" },
 
