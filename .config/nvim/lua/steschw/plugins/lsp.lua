@@ -1,3 +1,5 @@
+local LspUtils = require("steschw.utils.lsp")
+
 return {
     {
         "neovim/nvim-lspconfig",
@@ -9,13 +11,6 @@ return {
             "saghen/blink.cmp",
         },
         init = function()
-            vim.api.nvim_create_autocmd("LspAttach", {
-                callback = function(args)
-                    local keymaps_lsp = require("steschw.config.keymaps_lsp")
-                    keymaps_lsp.set(args.buf)
-                end,
-            })
-
             local signs = {
                 { name = "DiagnosticSignError", text = "E", texthl = "DiagnosticSignError" },
                 { name = "DiagnosticSignWarn", text = "W", texthl = "DiagnosticSignWarn" },
@@ -70,14 +65,8 @@ return {
             servers = {},
         },
         config = function(_, opts)
-            local server_options = {
-                capabilities = require("blink.cmp").get_lsp_capabilities(),
-            }
-
-            local lspconfig = require("lspconfig")
             for server, config in pairs(opts.servers) do
-                local final_opts = vim.tbl_deep_extend("force", config, server_options)
-                lspconfig[server].setup(final_opts)
+                LspUtils.setup_server(server, config)
             end
         end,
     },

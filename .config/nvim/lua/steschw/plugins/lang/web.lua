@@ -4,31 +4,43 @@
 -- MasonInstall tailwindcss-language-server
 -- MasonInstall eslint-lsp
 -- MasonInstall biome
+-- MasonInstall vtsls
 
 local keymap = require("steschw.utils.keys").keymap
+local LspUtils = require("steschw.utils.lsp")
 
 return {
     {
-        "pmizio/typescript-tools.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "neovim/nvim-lspconfig",
-        },
+        "yioneko/nvim-vtsls",
         ft = {
             "javascript",
             "javascriptreact",
             "typescript",
             "typescriptreact",
         },
+        dependencies = {
+            "neovim/nvim-lspconfig",
+        },
         config = function()
-            require("typescript-tools").setup({
+            local vtsls = require("vtsls")
+            vtsls.config({})
+
+            local vtsls_lspconfig = vim.tbl_deep_extend("force", vtsls.lspconfig, {
+                settings = {
+                    vtsls = {
+                        autoUseWorkspaceTsdk = true,
+                    },
+                },
+                ---@type vim.lsp.client.on_attach_cb
                 on_attach = function(_, bufnr)
                     local keymap_opts = { buffer = bufnr }
 
-                    keymap("n", "gu", "<cmd>TSToolsRemoveUnusedImports<cr>", keymap_opts)
-                    keymap("n", "gi", "<cmd>TSToolsAddMissingImports<cr>", keymap_opts)
+                    keymap("n", "gu", "<cmd>VtsExec remove_unused_imports<cr>", keymap_opts)
+                    keymap("n", "gi", "<cmd>VtsExec add_missing_imports<cr>", keymap_opts)
                 end,
             })
+
+            LspUtils.setup_server("vtsls", vtsls_lspconfig)
         end,
     },
     {
