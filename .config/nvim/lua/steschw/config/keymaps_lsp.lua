@@ -5,7 +5,7 @@ local M = {}
 function M.set(buf)
     keymap("n", "<leader>d", M.diagnostics, { buffer = buf })
     keymap("n", "gr", M.references, { buffer = buf })
-    keymap("n", "gd", vim.lsp.buf.definition, { buffer = buf })
+    keymap("n", "gd", M.definition, { buffer = buf })
     keymap({ "n", "i" }, "<C-s>", vim.lsp.buf.signature_help, { buffer = buf })
     keymap("n", "gh", vim.lsp.buf.hover, { buffer = buf })
     keymap("n", "gH", vim.diagnostic.open_float, { buffer = buf })
@@ -32,11 +32,6 @@ function M.references()
     local word = vim.fn.expand("<cword>")
 
     local function on_list(res)
-        if #res.items == 0 then
-            vim.notify(string.format("no references found for '%s'", word), vim.log.levels.INFO)
-            return
-        end
-
         res.title = string.format('References "%s"', word)
         res.nr = "$"
 
@@ -50,7 +45,7 @@ function M.references()
 
         if #res.items == 0 then
             vim.notify(
-                "all references where filtered by `vim.g.lsp_references_filter`",
+                "[LSP] all references where filtered by `vim.g.lsp_references_filter`",
                 vim.log.levels.INFO
             )
             return
@@ -61,6 +56,24 @@ function M.references()
     end
 
     vim.lsp.buf.references({ includeDeclaration = false }, {
+        on_list = on_list,
+    })
+end
+
+function M.definition()
+    -- always jump to first definition
+    local function on_list(res)
+        local item = res.items[1]
+
+        local is_current_buf = vim.api.nvim_buf_get_name(0) == item.filename
+        if not is_current_buf then
+            vim.cmd.edit(item.filename)
+        end
+
+        vim.fn.cursor(item.lnum, item.col)
+    end
+
+    vim.lsp.buf.definition({
         on_list = on_list,
     })
 end
