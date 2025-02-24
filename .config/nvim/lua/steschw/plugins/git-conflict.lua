@@ -28,7 +28,7 @@ return {
                 vim.diagnostic.enable(false, { bufnr = event.buf })
 
                 for _, def in ipairs(keymaps) do
-                    vim.keymap.del(def[1], def[2], { buffer = event.buf })
+                    pcall(vim.keymap.del, def[1], def[2], { buffer = event.buf })
                 end
             end,
         })
