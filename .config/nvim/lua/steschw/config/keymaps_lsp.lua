@@ -60,7 +60,7 @@ function M.references()
         vim.cmd("botright cw")
     end
 
-    vim.lsp.buf.references(nil, {
+    vim.lsp.buf.references({ includeDeclaration = false }, {
         on_list = on_list,
     })
 end
