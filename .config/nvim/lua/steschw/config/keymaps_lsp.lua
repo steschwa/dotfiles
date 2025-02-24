@@ -32,6 +32,11 @@ function M.references()
     local word = vim.fn.expand("<cword>")
 
     local function on_list(res)
+        if #res.items == 0 then
+            vim.notify(string.format("no references found for '%s'", word), vim.log.levels.INFO)
+            return
+        end
+
         res.title = string.format('References "%s"', word)
         res.nr = "$"
 
@@ -43,11 +48,19 @@ function M.references()
             return true
         end, res.items)
 
+        if #res.items == 0 then
+            vim.notify(
+                "all references where filtered by `vim.g.lsp_references_filter`",
+                vim.log.levels.INFO
+            )
+            return
+        end
+
         vim.fn.setqflist({}, " ", res)
         vim.cmd("botright cw")
     end
 
-    vim.lsp.buf.references({ includeDeclaration = false }, {
+    vim.lsp.buf.references(nil, {
         on_list = on_list,
     })
 end
