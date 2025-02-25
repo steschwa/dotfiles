@@ -39,16 +39,4 @@ function M.get_sign_by_severity(severity)
     return M.get_sign_by_name(name)
 end
 
---- @param severity number
---- @return string
-function M.get_hl_name_by_severity(severity)
-    local sign = M.get_sign_by_severity(severity)
-    if not sign then
-        vim.notify_once("could not find sign by severity: " .. severity, vim.log.levels.DEBUG)
-        return ""
-    end
-
-    return sign.texthl
-end
-
 return M
