@@ -13,4 +13,11 @@ function M.to_title_case(str)
     return res
 end
 
+--- @param str string
+--- @return string
+function M.to_camel_case(str)
+    local res, _ = str:gsub("^%u", string.lower)
+    return res
+end
+
 return M
