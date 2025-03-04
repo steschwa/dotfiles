@@ -1,24 +1,18 @@
 {
     "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
     "vcs": {
-        "enabled": true,
+        "enabled": false,
         "clientKind": "git",
-        "useIgnoreFile": true
+        "useIgnoreFile": false
     },
     "files": {
-        "ignoreUnknown": true,
-        "ignore": ["**/.git", "node_modules/", "dist/", ".yarn/"]
+        "ignoreUnknown": false,
+        "ignore": []
     },
     "formatter": {
         "enabled": true,
-        "useEditorconfig": false,
-        "formatWithErrors": false,
         "indentStyle": "space",
-        "indentWidth": 4,
-        "lineEnding": "lf",
-        "lineWidth": 100,
-        "attributePosition": "auto",
-        "bracketSpacing": true
+        "indentWidth": 4
     },
     "organizeImports": {
         "enabled": true
@@ -26,23 +20,14 @@
     "linter": {
         "enabled": true,
         "rules": {
-            "recommended": true,
-            "a11y": {
-                "noAutofocus": "off"
-            }
+            "recommended": true
         }
     },
     "javascript": {
         "formatter": {
-            "jsxQuoteStyle": "double",
-            "quoteProperties": "asNeeded",
-            "trailingCommas": "all",
             "semicolons": "asNeeded",
             "arrowParentheses": "asNeeded",
-            "bracketSameLine": true,
-            "quoteStyle": "double",
-            "attributePosition": "auto",
-            "bracketSpacing": true
+            "bracketSameLine": true
         }
     }
 }
