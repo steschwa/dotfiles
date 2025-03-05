@@ -65,6 +65,9 @@ function M.definition()
     local function on_list(res)
         local item = res.items[1]
 
+        -- add current location to jumplist
+        vim.cmd("mark '")
+
         local is_current_buf = vim.api.nvim_buf_get_name(0) == item.filename
         if not is_current_buf then
             vim.cmd.edit(item.filename)
