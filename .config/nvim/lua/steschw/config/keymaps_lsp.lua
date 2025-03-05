@@ -61,8 +61,19 @@ function M.references()
 end
 
 function M.definition()
-    -- always jump to first definition
+    local word = vim.fn.expand("<cword>")
+
+    -- jump to first definition
     local function on_list(res)
+        if #res.items > 1 then
+            res.title = string.format('Definition "%s"', word)
+            res.nr = "$"
+
+            vim.fn.setqflist({}, " ", res)
+            vim.cmd("botright cw")
+            return
+        end
+
         local item = res.items[1]
 
         -- add current location to jumplist
