@@ -1,9 +1,9 @@
+# most of the options are from https://blog.gitbutler.com/how-git-core-devs-configure-git
+
 [core]
     excludesfile = ~/.gitignore
-
     # http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
     trustctime = false
-
     # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
 
@@ -14,6 +14,7 @@
 
     rs = restore --staged
 
+    c = commit
     ca = commit --amend --no-edit
 
 [user]
@@ -33,6 +34,7 @@
 
 [commit]
 	gpgsign = true
+	verbose = true
 
 [pull]
 	rebase = true
@@ -43,3 +45,35 @@
 	process = git-lfs filter-process
 	required = true
 
+[branch]
+	sort = -committerdate
+
+[tag]
+	sort = version:refname
+
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+
+[push]
+	autoSetupRemote = true
+	followTags = true
+
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+
+[help]
+	autocorrect = prompt
+
+[rerere]
+	enabled = true
+	autoupdate = true
+
+[rebase]
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
