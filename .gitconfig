@@ -14,7 +14,7 @@
 
     rs = restore --staged
 
-    c = commit
+    cm = commit --message
     ca = commit --amend --no-edit
 
 [user]
