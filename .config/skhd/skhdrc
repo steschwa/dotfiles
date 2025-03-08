@@ -3,7 +3,7 @@ hyper - t : open -a 'kitty'
 hyper - s : open -a 'Spotify'
 hyper - f : open -a 'Finder'
 hyper - g : open -a 'Fork'
-hyper - 0x27 : open -a 'BoltAI' # 0x27 = '
+hyper - 0x27 : open -a 'LobeChat' # 0x27 = '
 
 # chrome
 meh - m [
