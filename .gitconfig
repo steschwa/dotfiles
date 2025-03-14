@@ -17,6 +17,8 @@
     cm = commit --message
     ca = commit --amend --no-edit
 
+    s = status
+
 [user]
 	name = Stefan Schwaighofer
 	email = ste.schwaighofer@gmail.com
