@@ -1,6 +1,0 @@
-# yaml-language-server: $schema=https://carapace.sh/schemas/command.json
-name: fq
-description: firestore query tool
-parsing: disabled
-completion:
-    positionalany: ["$carapace.bridge.Carapace([fq])"]
