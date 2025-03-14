@@ -9,6 +9,7 @@ opt.cmdheight = 1
 opt.completeopt = "menu,menuone,noselect"
 opt.conceallevel = 0
 opt.cursorline = true
+opt.errorformat = "%f:%l"
 opt.expandtab = true
 opt.exrc = true
 opt.fileencoding = "utf-8"

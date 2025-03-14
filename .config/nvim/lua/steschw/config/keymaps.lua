@@ -75,6 +75,10 @@ keymap("n", "<C-t>", function()
 end)
 keymap("n", "<C-f>", function()
     local filepath = vim.fn.fnamemodify(vim.fn.expand("%"), ":p")
+    if vim.startswith(filepath, "oil://") then
+        filepath = filepath:sub(#"oil://" + 1)
+    end
+
     vim.print(filepath)
     vim.fn.setreg("+", filepath)
 end)

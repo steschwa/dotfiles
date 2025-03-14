@@ -12,6 +12,7 @@ return {
             local configs = require("nvim-treesitter.configs")
 
             local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+            ---@diagnostic disable-next-line: inject-field
             parser_config.d2 = {
                 install_info = {
                     url = "https://github.com/ravsii/tree-sitter-d2",
