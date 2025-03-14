@@ -1,5 +1,5 @@
 alias jq = jq --indent 4
-alias bat = bat --theme=base16 --style numbers
+alias bat = bat --theme base16 --style numbers
 alias tree = tree --gitignore -C
 alias rg  = rg --smart-case
 alias icat = kitten icat
@@ -16,14 +16,9 @@ alias vim = nvim
 
 # git
 alias g = git
-alias gs = git status
-alias gd = git diff HEAD
-alias gc = git commit -m
 
 # yadm
 alias yup = yadm commit -m 'build(nvim): update plugins'
-alias yc = yadm commit -m
-alias ys = yadm status
 
 # docker
 alias d = docker
