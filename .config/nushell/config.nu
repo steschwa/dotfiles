@@ -24,3 +24,4 @@ use ~/.config/nushell/scripts/init.nu *
 source ~/.config/nushell/scripts/alias.nu
 source-env ~/.config/nushell/hooks.nu
 source-env ~/.config/nushell/keymap.nu
+
