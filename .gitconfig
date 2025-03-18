@@ -12,12 +12,15 @@
     d = diff
     l = log --pretty='tformat:%C(green)[%ad]%C(reset) %C(yellow)%h%C(reset) %C(blue)%ae%C(reset)%C(red)%d%C(reset) %s' --date='format:%d.%m.%y %H:%M'
 
+    r = restore
     rs = restore --staged
 
     cm = commit --message
     ca = commit --amend --no-edit
 
     s = status
+
+    p = push
 
 [user]
 	name = Stefan Schwaighofer
