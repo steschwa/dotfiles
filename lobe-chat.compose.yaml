@@ -1,7 +1,6 @@
 services:
     lobe-chat:
-        image: lobehub/lobe-chat
-        pull_policy: always
+        image: lobehub/lobe-chat:1.72.1
         container_name: lobe-chat
         restart: always
         ports:
