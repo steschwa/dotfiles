@@ -29,6 +29,11 @@ return {
                 settings = {
                     vtsls = {
                         autoUseWorkspaceTsdk = true,
+                        typescript = {
+                            preferences = {
+                                mportModuleSpecifier = "non-relative",
+                            },
+                        },
                     },
                 },
                 ---@type vim.lsp.client.on_attach_cb
