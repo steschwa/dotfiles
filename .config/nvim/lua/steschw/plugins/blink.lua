@@ -41,6 +41,9 @@ return {
                 },
             },
         },
+        fuzzy = {
+            sorts = { "exact", "score", "sort_text" },
+        },
         snippets = { preset = "luasnip" },
         sources = {
             default = { "lazydev", "lsp", "snippets", "path" },
@@ -51,6 +54,18 @@ return {
                     score_offset = 100,
                 },
             },
+        },
+        keymap = {
+            preset = "none",
+            ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+            ["<esc>"] = { "hide", "fallback" },
+            ["<C-y>"] = { "select_and_accept" },
+
+            ["<C-p>"] = { "select_prev", "fallback_to_mappings" },
+            ["<C-n>"] = { "select_next", "fallback_to_mappings" },
+
+            ["<C-b>"] = { "scroll_documentation_up", "fallback" },
+            ["<C-f>"] = { "scroll_documentation_down", "fallback" },
         },
     },
 }
