@@ -1,4 +1,5 @@
 local LspUtils = require("steschw.utils.lsp")
+local Diagnostics = require("steschw.utils.diagnostics")
 
 return {
     {
@@ -11,16 +12,6 @@ return {
             "saghen/blink.cmp",
         },
         init = function()
-            local signs = {
-                { name = "DiagnosticSignError", text = "E", texthl = "DiagnosticSignError" },
-                { name = "DiagnosticSignWarn", text = "W", texthl = "DiagnosticSignWarn" },
-                { name = "DiagnosticSignInfo", text = "I", texthl = "DiagnosticSignInfo" },
-                { name = "DiagnosticSignHint", text = "H", texthl = "DiagnosticSignHint" },
-            }
-            for _, sign in ipairs(signs) do
-                vim.fn.sign_define(sign.name, sign)
-            end
-
             vim.diagnostic.config({
                 virtual_text = {
                     prefix = "",
@@ -34,6 +25,9 @@ return {
                     border = "rounded",
                     source = true,
                     header = "",
+                },
+                signs = {
+                    text = Diagnostics.get_signs(),
                 },
             })
         end,

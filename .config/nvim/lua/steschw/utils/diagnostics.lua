@@ -1,42 +1,21 @@
 local M = {}
 
---- @class steschw.DiagnosticSign
---- @field name string
---- @field numhl string
---- @field text string
---- @field texthl string
+---@type table<vim.diagnostic.Severity, string>
+local SIGN_TEXTS = {
+    [vim.diagnostic.severity.ERROR] = "E",
+    [vim.diagnostic.severity.WARN] = "W",
+    [vim.diagnostic.severity.INFO] = "I",
+    [vim.diagnostic.severity.HINT] = "H",
+}
 
---- @param name string
---- @return steschw.DiagnosticSign?
-function M.get_sign_by_name(name)
-    local sign = vim.fn.sign_getdefined(name)
-    if type(sign) ~= "table" then
-        return
-    end
-    if #sign < 1 then
-        return
-    end
-
-    return sign[1] --[[@as steschw.DiagnosticSign]]
+function M.get_signs()
+    return SIGN_TEXTS
 end
 
---- @param severity vim.diagnostic.Severity
---- @return steschw.DiagnosticSign?
-function M.get_sign_by_severity(severity)
-    local type = ({
-        [vim.diagnostic.severity.ERROR] = "Error",
-        [vim.diagnostic.severity.WARN] = "Warn",
-        [vim.diagnostic.severity.INFO] = "Info",
-        [vim.diagnostic.severity.HINT] = "Hint",
-    })[severity]
-
-    if not type then
-        vim.notify_once("invalid sign severity: " .. severity, vim.log.levels.WARN)
-        return
-    end
-
-    local name = "DiagnosticSign" .. type
-    return M.get_sign_by_name(name)
+---@param severity vim.diagnostic.Severity
+---@return string
+function M.get_sign_text(severity)
+    return SIGN_TEXTS[severity]
 end
 
 return M

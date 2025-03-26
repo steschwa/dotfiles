@@ -132,8 +132,8 @@ end
 ---@param severity vim.diagnostic.Severity
 ---@return string
 local function item_diagnostics(severity)
-    local sign = Diagnostics.get_sign_by_severity(severity)
-    local sign_prefix = vim.trim(sign and sign.text or "")
+    local sign = Diagnostics.get_sign_text(severity)
+    local sign_prefix = vim.trim(sign)
 
     local diagnostics = vim.diagnostic.get(0, { severity = severity })
     if #diagnostics == 0 then
