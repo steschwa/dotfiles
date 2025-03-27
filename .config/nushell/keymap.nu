@@ -15,7 +15,7 @@ $env.config.keybindings ++= [
         keycode: char_r
         mode: [emacs, vi_insert, vi_normal]
         event: {
-            send: ExecuteHostCommand
+            send: executehostcommand
             cmd: "commandline edit (
                 history
                 | get command
