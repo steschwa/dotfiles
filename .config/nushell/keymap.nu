@@ -26,5 +26,15 @@ $env.config.keybindings ++= [
                 | fzf --scheme=history --height=20 --layout=reverse -q (commandline)
             )"
         }
+    },
+    {
+        name: goto
+        modifier: control
+        keycode: char_g
+        mode: [emacs, vi_insert, vi_normal]
+        event: {
+            send: executehostcommand
+            cmd: goto
+        }
     }
 ]
