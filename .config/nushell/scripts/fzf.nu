@@ -1,7 +1,3 @@
-use ../themes/rose_pine.nu fzf
-
-let colors = fzf
-
 let fzf_opts = [
     "--border=none"
     "--info=hidden"
@@ -9,16 +5,14 @@ let fzf_opts = [
     "--padding=0,1"
     "--no-scrollbar"
     "--no-separator"
-    "--color=bg:-1"
     "--pointer=''"
     "--prompt=' '"
-    $"--color=fg:($colors.fg)"
-    $"--color=hl:($colors.hl)"
-    $"--color=current-fg:($colors.fg_line)"
-    $"--color=current-bg:($colors.bg_line)"
-    $"--color=current-hl:($colors.hl_line)"
-    $"--color=prompt:($colors.prompt)"
-    $"--color=pointer:($colors.pointer)"
+    "--color=fg:gray"
+    "--color=bg:-1"
+    "--color=hl:yellow"
+    "--color=current-fg:-1"
+    "--color=current-bg:-1"
+    "--color=current-hl:yellow"
     "--color=gutter:-1"
 ]
 
