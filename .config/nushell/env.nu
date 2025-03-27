@@ -13,7 +13,8 @@ $env.RUSTPATH = ($env.HOME | path join ".cargo")
 $env.RUSTBIN = ($env.RUSTPATH | path join "bin")
 
 $env.EDITOR = "nvim"
-$env.MANPAGER = "sh -c 'col -bx | bat -l man -p'"
+$env.BAT_THEME = "ansi"
+$env.MANPAGER = $"sh -c 'col -bx | bat --language man --plain --theme ($env.BAT_THEME)'"
 $env.LESS = "--ignore-case --tabs=4 --tilde --use-color --quit-if-one-screen --raw-control-chars"
 
 $env.UV_LINK_MODE = "copy" 
