@@ -14,6 +14,7 @@ let fzf_opts = [
     "--color=current-bg:-1"
     "--color=current-hl:yellow"
     "--color=gutter:-1"
+    "--bind=ctrl-y:accept"
 ]
 
 $env.FZF_DEFAULT_COMMAND = 'fd --type f --hidden'
