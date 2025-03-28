@@ -1,3 +1,7 @@
+-- MasonInstall actionlint
+-- MasonInstall revive
+-- MasonInstall sqruff
+
 local do_lint = require("steschw.utils.linting").lint
 
 return {
@@ -9,10 +13,6 @@ return {
         })
     end,
     config = function()
-        -- MasonInstall revive
-        -- MasonInstall actionlint
-        -- MasonInstall sqruff
-
         local lint = require("lint")
 
         lint.linters.revive.args = {

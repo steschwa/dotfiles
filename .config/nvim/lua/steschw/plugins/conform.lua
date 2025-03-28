@@ -1,18 +1,18 @@
+-- MasonInstall bibtex-tidy
+-- MasonInstall biome
+-- MasonInstall goimports
+-- MasonInstall prettierd
+-- MasonInstall ruff
+-- MasonInstall sqruff
+-- MasonInstall stylua
+-- MasonInstall taplo
+-- MasonInstall tex-fmt
+-- rustup component add rustfmt
+
 return {
     "stevearc/conform.nvim",
     lazy = true,
     config = function()
-        -- MasonInstall prettierd
-        -- MasonInstall goimports
-        -- MasonInstall stylua
-        -- MasonInstall ruff
-        -- MasonInstall sqruff
-        -- MasonInstall biome
-        -- MasonInstall bibtex-tidy
-        -- MasonInstall tex-fmt
-        -- rustup component add rustfmt
-        -- MasonInstall taplo
-
         local conform = require("conform")
 
         conform.setup({
