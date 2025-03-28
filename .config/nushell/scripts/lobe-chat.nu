@@ -5,22 +5,28 @@ export def upgrade [] {
     let tag = get_latest_container_tag
 
     if ($tag == $current_tag) {
-        print "already at latest tag"
+        print $"(ansi green)already at latest tag(ansi reset)"
         return
     }
 
-    print $"upgrading lobe-chat to ($tag)"
+    print $"(ansi green)upgrading lobe-chat from ($current_tag) to ($tag)(ansi reset)"
 
-    print "stopping lobe-chat container"
+    print $"(ansi green)stopping lobe-chat container(ansi reset)"
     docker compose -f $COMPOSE_FILE down
 
-    set_container_tag $tag
+    print $"(ansi green)pulling lobehub/lobe-chat image(ansi reset)"
+    docker image pull $"lobehub/lobe-chat:($tag)"
 
-    print "starting lobe-chat container"
+    set_container_tag $tag
+    print $"(ansi green)starting lobe-chat container(ansi reset)"
     docker compose -f $COMPOSE_FILE up -d
 
-    print "deleting old lobe-chat image"
+    print $"(ansi green)deleting old lobe-chat image(ansi reset)"
     docker image rm $"lobehub/lobe-chat:($current_tag)"
+
+    print $"(ansi green)commiting changes(ansi reset)"
+    yadm add ~/lobe-chat.compose.yaml
+    yadm cm $"chore\(lobe-chat\): upgrade to ($tag)"
 }
 
 def get_latest_container_tag []: nothing -> string {
