@@ -11,6 +11,7 @@ return {
     config = function()
         -- MasonInstall revive
         -- MasonInstall actionlint
+        -- MasonInstall sqruff
 
         local lint = require("lint")
 
@@ -23,6 +24,7 @@ return {
 
         lint.linters_by_ft = {
             go = { "revive" },
+            sql = { "sqruff" },
             ["yaml.github-action"] = { "actionlint" },
         }
     end,
