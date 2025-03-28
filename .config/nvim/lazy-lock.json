@@ -2,6 +2,7 @@
   "LuaSnip": { "branch": "master", "commit": "03c8e67eb7293c404845b3982db895d59c0d1538" },
   "blink.cmp": { "branch": "main", "commit": "49f211fe5d729df53df4c042d7c3464cf47d199e" },
   "conform.nvim": { "branch": "master", "commit": "f9ef25a7ef00267b7d13bfc00b0dea22d78702d5" },
+  "css-tools.nvim": { "branch": "main", "commit": "66839f8d6463f7a81d72521d4eeec3187ff91467" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "fixme.nvim": { "branch": "main", "commit": "593d924ebe73413f37d520aec7701c0bdaeffdd6" },
   "git-blame.nvim": { "branch": "main", "commit": "f988999447436a4f47a485c8009490f7f5e93a1f" },

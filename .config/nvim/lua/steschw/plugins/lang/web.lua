@@ -49,6 +49,15 @@ return {
         end,
     },
     {
+        "steschwa/css-tools.nvim",
+        ft = { "css" },
+        opts = {
+            customData = {
+                "/Users/stefan/.config/nvim/customData/tailwind.css-data.json",
+            },
+        },
+    },
+    {
         "neovim/nvim-lspconfig",
         dependencies = {
             "b0o/schemastore.nvim",
