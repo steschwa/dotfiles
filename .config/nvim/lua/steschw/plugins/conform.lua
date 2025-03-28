@@ -6,7 +6,7 @@ return {
         -- MasonInstall goimports
         -- MasonInstall stylua
         -- MasonInstall ruff
-        -- MasonInstall sql-formatter
+        -- MasonInstall sqruff
         -- MasonInstall biome
         -- MasonInstall bibtex-tidy
         -- MasonInstall tex-fmt
@@ -32,7 +32,7 @@ return {
                 python = { "ruff_format" },
                 rust = { "rustfmt" },
                 scss = { "prettierd" },
-                sql = { "sql_formatter" },
+                sql = { "sqruff" },
                 tex = { "tex-fmt" },
                 toml = { "taplo" },
                 typescript = { "biome-check", "prettierd", stop_after_first = true },
