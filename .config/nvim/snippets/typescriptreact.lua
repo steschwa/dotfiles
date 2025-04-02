@@ -6,7 +6,7 @@ return {
     s("log", require("steschw.snippets.typescript.console-log")),
     s("hook", require("steschw.snippets.typescript.react-hook")),
 
-    s("comp", require("steschw.snippets.react.component")),
+    s("scomp", require("steschw.snippets.react.component")),
     s("sclass", require("steschw.snippets.react.component-classname")),
     s("scss", require("steschw.snippets.react.component-scss")),
     s("sprops", require("steschw.snippets.react.component-props")),
