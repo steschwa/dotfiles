@@ -1,20 +1,18 @@
-local ls = require("luasnip")
-local i = ls.insert_node
-local f = ls.function_node
-local fmta = require("luasnip.extras.fmt").fmta
-
 local Fs = require("steschw.utils.fs")
 
-return fmta(
-    [[
-type <F>Props = {};
+return function()
+    local filename = Fs.filename()
 
-export function <F>(props: <F>Props) {
-    return <>;
+    return string.format(
+        [[
+type %sProps = {};
+
+export function %s(props: %sProps) {
+    return ${0:null};
 }
 ]],
-    {
-        F = f(Fs.filename),
-        i(0, "null"),
-    }
-)
+        filename,
+        filename,
+        filename
+    )
+end
