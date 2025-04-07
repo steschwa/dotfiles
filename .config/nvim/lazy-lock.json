@@ -1,5 +1,5 @@
 {
-  "blink.cmp": { "branch": "main", "commit": "9632d20905f2b9b8d874846e50fb2d26367e56eb" },
+  "blink.cmp": { "branch": "main", "commit": "cb5e346d9e0efa7a3eee7fd4da0b690c48d2a98e" },
   "conform.nvim": { "branch": "master", "commit": "eebc724d12c5579d733d1f801386e0ceb909d001" },
   "css-tools.nvim": { "branch": "main", "commit": "92a018722ecc0b5b732a6c0a5cbbf28bd8e15a71" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
