@@ -103,6 +103,9 @@ return {
                     { "scss", require("steschw.snippets.react.component-scss") },
                     { "sprops", require("steschw.snippets.react.component-props") },
                 },
+                tex = {
+                    { "info", require("steschw.snippets.latex.info") },
+                },
             },
         },
     },
