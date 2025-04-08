@@ -76,6 +76,7 @@ local COLUMNS_NORMAL = {
 
 return {
     "steschwa/fixme.nvim",
+    version = "*",
     ft = "qf",
     opts = {
         columns = function(qf_id)

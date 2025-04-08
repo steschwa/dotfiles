@@ -23,6 +23,7 @@ end
 
 return {
     "steschwa/git-blame.nvim",
+    version = "*",
     cmd = "GitBlameLine",
     keys = {
         { "gb", "<cmd>GitBlameLine<cr>" },

@@ -77,6 +77,7 @@ return {
     },
     {
         "steschwa/snipman.nvim",
+        version = "*",
         opts = {
             snippets_by_ft = {
                 go = {

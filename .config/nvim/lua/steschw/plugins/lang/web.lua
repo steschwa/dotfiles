@@ -50,6 +50,7 @@ return {
     },
     {
         "steschwa/css-tools.nvim",
+        version = "*",
         ft = { "css" },
         opts = {
             customData = {
