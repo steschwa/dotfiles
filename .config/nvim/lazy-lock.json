@@ -1,10 +1,10 @@
 {
   "blink.cmp": { "branch": "main", "commit": "cb5e346d9e0efa7a3eee7fd4da0b690c48d2a98e" },
   "conform.nvim": { "branch": "master", "commit": "eebc724d12c5579d733d1f801386e0ceb909d001" },
-  "css-tools.nvim": { "branch": "main", "commit": "c601838633390a7482888f5ac309928338b1f3d0" },
+  "css-tools.nvim": { "branch": "main", "commit": "806e0b8a339625ead6f64e424b76d546cc98b328" },
   "dressing.nvim": { "branch": "master", "commit": "2d7c2db2507fa3c4956142ee607431ddb2828639" },
   "fixme.nvim": { "branch": "main", "commit": "593d924ebe73413f37d520aec7701c0bdaeffdd6" },
-  "git-blame.nvim": { "branch": "main", "commit": "f988999447436a4f47a485c8009490f7f5e93a1f" },
+  "git-blame.nvim": { "branch": "main", "commit": "962b66647b4ef594b3c823e2968e7971ba40c51a" },
   "git-conflict.nvim": { "branch": "main", "commit": "4bbfdd92d547d2862a75b4e80afaf30e73f7bbb4" },
   "grapple.nvim": { "branch": "main", "commit": "b41ddfc1c39f87f3d1799b99c2f0f1daa524c5f7" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
@@ -28,7 +28,7 @@
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
   "rose-pine": { "branch": "main", "commit": "96ff3993a67356ee85d1cdab9be652cdc1c5d1ac" },
   "schemastore.nvim": { "branch": "main", "commit": "c61a74033522c3efbb8465fe6e9c75b27f5c3667" },
-  "snipman.nvim": { "branch": "main", "commit": "68fc3aedd24a313b7ccaf4bc50989498745b69c3" },
+  "snipman.nvim": { "branch": "main", "commit": "f59498ac2e7db0e8380cf5112a3e255ae02b092e" },
   "telescope-fzf-native.nvim": { "branch": "main", "commit": "1f08ed60cafc8f6168b72b80be2b2ea149813e55" },
   "telescope.nvim": { "branch": "master", "commit": "a4ed82509cecc56df1c7138920a1aeaf246c0ac5" },
   "todo-comments.nvim": { "branch": "main", "commit": "304a8d204ee787d2544d8bc23cd38d2f929e7cc5" }

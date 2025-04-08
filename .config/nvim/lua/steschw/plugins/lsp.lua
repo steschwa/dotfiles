@@ -13,11 +13,8 @@ return {
         },
         init = function()
             vim.diagnostic.config({
-                virtual_text = {
-                    prefix = "",
-                },
+                virtual_text = true,
                 update_in_insert = false,
-                underline = true,
                 severity_sort = true,
                 float = {
                     focusable = true,
