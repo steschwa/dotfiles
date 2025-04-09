@@ -6,7 +6,11 @@ function M.set(buf)
     keymap("n", "<leader>d", M.diagnostics, { buffer = buf })
     keymap("n", "gr", M.references, { buffer = buf })
     keymap("n", "gd", M.definition, { buffer = buf })
-    keymap({ "n", "i" }, "<C-s>", vim.lsp.buf.signature_help, { buffer = buf })
+    keymap({ "n", "i" }, "<C-s>", function()
+        vim.lsp.buf.signature_help({
+            title = "",
+        })
+    end, { buffer = buf })
     keymap("n", "gh", vim.lsp.buf.hover, { buffer = buf })
     keymap("n", "gH", vim.diagnostic.open_float, { buffer = buf })
     keymap("n", "gR", vim.lsp.buf.rename, { buffer = buf })
