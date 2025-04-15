@@ -14,7 +14,7 @@ function M.set(buf)
     keymap("n", "gh", vim.lsp.buf.hover, { buffer = buf })
     keymap("n", "gH", vim.diagnostic.open_float, { buffer = buf })
     keymap("n", "gR", vim.lsp.buf.rename, { buffer = buf })
-    keymap("n", "ga", vim.lsp.buf.code_action, { buffer = buf })
+    keymap("n", "ga", M.code_action, { buffer = buf })
 end
 
 function M.diagnostics()
@@ -93,6 +93,12 @@ function M.definition()
 
     vim.lsp.buf.definition({
         on_list = on_list,
+    })
+end
+
+function M.code_action()
+    vim.lsp.buf.code_action({
+        filter = vim.g.lsp_code_actions_filter,
     })
 end
 
