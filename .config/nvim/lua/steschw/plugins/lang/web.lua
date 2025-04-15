@@ -31,7 +31,7 @@ return {
                         autoUseWorkspaceTsdk = true,
                         typescript = {
                             preferences = {
-                                mportModuleSpecifier = "non-relative",
+                                importModuleSpecifier = "non-relative",
                             },
                         },
                     },
