@@ -46,7 +46,7 @@ opt.updatetime = 1000
 opt.whichwrap:append("<,>,[,],h,l")
 opt.wrap = false
 opt.writebackup = false
-opt.winborder = "single"
+-- opt.winborder = "single"
 opt.fillchars:append({
     diff = " ",
     fold = " ",
