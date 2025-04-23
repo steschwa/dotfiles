@@ -28,5 +28,5 @@ $env.PATH ++= [
 ]
 
 source-env ~/.config/nushell/scripts/starship.nu
-source ~/.config/nushell/scripts/carapace.nu
+source-env ~/.config/nushell/scripts/carapace.nu
 source-env ~/.config/nushell/scripts/fnm.nu
