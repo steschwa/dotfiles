@@ -46,9 +46,13 @@ return {
             vim.lsp.enable("jsonls")
             vim.lsp.enable("eslint")
             vim.lsp.enable("biome")
+            vim.lsp.enable("vtsls")
 
             vim.lsp.config("*", {
                 capabilities = require("blink.cmp").get_lsp_capabilities(),
+                on_attach = function(_, buf)
+                    require("steschw.config.keymaps_lsp").set(buf)
+                end,
             })
         end,
     },

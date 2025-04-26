@@ -2,6 +2,7 @@ local keymap = require("steschw.utils.keys").keymap
 
 local M = {}
 
+---@param buf number
 function M.set(buf)
     keymap("n", "<leader>d", M.diagnostics, { buffer = buf })
     keymap("n", "gr", M.references, { buffer = buf })
