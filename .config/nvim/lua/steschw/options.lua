@@ -1,59 +1,57 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-local opt = vim.opt
-
-opt.backup = false
-opt.clipboard = ""
-opt.cmdheight = 1
-opt.completeopt = "menu,menuone,noselect"
-opt.conceallevel = 0
-opt.cursorline = true
-opt.errorformat = "%f:%l"
-opt.expandtab = true
-opt.exrc = true
-opt.fileencoding = "utf-8"
-opt.grepformat = "%f:%l:%c:%m"
-opt.grepprg = "rg --vimgrep --no-heading --smart-case --no-ignore"
-opt.history = 100
-opt.hlsearch = true
-opt.ignorecase = true
-opt.iskeyword:append({ "-", "_" })
-opt.jumpoptions = "stack"
-opt.number = true
-opt.numberwidth = 4
-opt.pumheight = 10
-opt.relativenumber = true
-opt.scrolloff = 1
-opt.shiftround = true
-opt.shiftwidth = 4
-opt.shortmess:append({ a = true, W = true, s = true, S = true })
-opt.showmode = false
-opt.showtabline = 1
-opt.sidescrolloff = 8
-opt.signcolumn = "yes"
-opt.smartcase = true
-opt.smartindent = true
-opt.splitbelow = true
-opt.splitkeep = "cursor"
-opt.splitright = true
-opt.swapfile = false
-opt.tabstop = 4
-opt.termguicolors = true
-opt.timeoutlen = 500
-opt.undofile = true
-opt.updatetime = 1000
-opt.whichwrap:append("<,>,[,],h,l")
-opt.wrap = false
-opt.writebackup = false
--- opt.winborder = "single"
-opt.fillchars:append({
+vim.opt.backup = false
+vim.opt.clipboard = ""
+vim.opt.cmdheight = 1
+vim.opt.completeopt = "menu,menuone,noselect"
+vim.opt.conceallevel = 0
+vim.opt.cursorline = true
+vim.opt.errorformat = "%f:%l"
+vim.opt.expandtab = true
+vim.opt.exrc = true
+vim.opt.fileencoding = "utf-8"
+vim.opt.grepformat = "%f:%l:%c:%m"
+vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case --no-ignore"
+vim.opt.history = 100
+vim.opt.hlsearch = true
+vim.opt.ignorecase = true
+vim.opt.iskeyword:append({ "-", "_" })
+vim.opt.jumpoptions = "stack"
+vim.opt.number = true
+vim.opt.numberwidth = 4
+vim.opt.pumheight = 10
+vim.opt.relativenumber = true
+vim.opt.scrolloff = 1
+vim.opt.shiftround = true
+vim.opt.shiftwidth = 4
+vim.opt.shortmess:append({ a = true, W = true, s = true, S = true })
+vim.opt.showmode = false
+vim.opt.showtabline = 1
+vim.opt.sidescrolloff = 8
+vim.opt.signcolumn = "yes"
+vim.opt.smartcase = true
+vim.opt.smartindent = true
+vim.opt.splitbelow = true
+vim.opt.splitkeep = "cursor"
+vim.opt.splitright = true
+vim.opt.swapfile = false
+vim.opt.tabstop = 4
+vim.opt.termguicolors = true
+vim.opt.timeoutlen = 500
+vim.opt.undofile = true
+vim.opt.updatetime = 1000
+vim.opt.whichwrap:append("<,>,[,],h,l")
+vim.opt.wrap = false
+vim.opt.writebackup = false
+-- vim.opt.winborder = "single"
+vim.opt.fillchars:append({
     diff = " ",
     fold = " ",
 })
+vim.opt.statusline = "%{%v:lua.require'steschw.statusline'.create()%}"
 
 vim.g.qf_disable_statusline = true
-opt.statusline = "%{%v:lua.require'steschw.statusline'.create()%}"
 
 vim.filetype.add({
     filename = {
@@ -74,5 +72,21 @@ vim.filetype.add({
         [".*/.github/workflows/.*%.yml"] = "yaml.github-action",
         [".*/.github/workflows/.*%.yaml"] = "yaml.github-action",
         [".*%.compose%.yaml"] = "yaml.docker-compose",
+    },
+})
+
+vim.diagnostic.config({
+    virtual_text = true,
+    update_in_insert = false,
+    severity_sort = true,
+    float = {
+        focusable = true,
+        style = "minimal",
+        border = "rounded",
+        source = true,
+        header = "",
+    },
+    signs = {
+        text = require("steschw.utils.diagnostics").get_signs(),
     },
 })
