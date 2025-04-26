@@ -28,7 +28,7 @@ return {
             -- MasonInstall biome
             -- MasonInstall vtsls
 
-            vim.lsp.enable({
+            local servers = {
                 "yamlls",
                 "taplo",
                 "texlab",
@@ -48,7 +48,17 @@ return {
                 "eslint",
                 "biome",
                 "vtsls",
-            })
+            }
+
+            servers = vim.tbl_filter(function(server)
+                if type(vim.g.lsp_server_filter) == "function" then
+                    return vim.g.lsp_server_filter(server)
+                end
+
+                return true
+            end, servers)
+
+            vim.lsp.enable(servers)
 
             vim.lsp.config("*", {
                 capabilities = require("blink.cmp").get_lsp_capabilities(),
