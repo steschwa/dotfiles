@@ -28,25 +28,27 @@ return {
             -- MasonInstall biome
             -- MasonInstall vtsls
 
-            vim.lsp.enable("dockerls")
-            vim.lsp.enable("docker_compose_language_service")
-            vim.lsp.enable("gopls")
-            vim.lsp.enable("lua_ls")
-            vim.lsp.enable("marksman")
-            vim.lsp.enable("nushell")
-            vim.lsp.enable("pyright")
-            vim.lsp.enable("ruff")
-            vim.lsp.enable("postgres_lsp")
-            vim.lsp.enable("texlab")
-            vim.lsp.enable("taplo")
-            vim.lsp.enable("yamlls")
-            vim.lsp.enable("html")
-            vim.lsp.enable("cssls")
-            vim.lsp.enable("tailwindcss")
-            vim.lsp.enable("jsonls")
-            vim.lsp.enable("eslint")
-            vim.lsp.enable("biome")
-            vim.lsp.enable("vtsls")
+            vim.lsp.enable({
+                "yamlls",
+                "taplo",
+                "texlab",
+                "postgres_lsp",
+                "ruff",
+                "pyright",
+                "nushell",
+                "marksman",
+                "lua_ls",
+                "gopls",
+                "docker_compose_language_service",
+                "dockerls",
+                "html",
+                "cssls",
+                "tailwindcss",
+                "jsonls",
+                "eslint",
+                "biome",
+                "vtsls",
+            })
 
             vim.lsp.config("*", {
                 capabilities = require("blink.cmp").get_lsp_capabilities(),
