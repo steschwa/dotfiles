@@ -27,7 +27,7 @@ local function fix_pyright()
     end
 
     local client = clients[1]
-    client.request_sync("workspace/executeCommand", {
+    client:request_sync("workspace/executeCommand", {
         command = "pyright.organizeimports",
         arguments = { vim.uri_from_bufnr(0) },
     }, 500, bufnr)

@@ -2,14 +2,12 @@
 -- MasonInstall revive
 -- MasonInstall sqruff
 
-local do_lint = require("steschw.utils.linting").lint
-
 return {
     "mfussenegger/nvim-lint",
     lazy = true,
     init = function()
         vim.api.nvim_create_autocmd({ "BufWritePost", "BufEnter", "InsertLeave" }, {
-            callback = do_lint,
+            callback = require("steschw.utils.linting").lint,
         })
     end,
     config = function()
