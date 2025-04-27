@@ -48,14 +48,6 @@ return {
                 "vtsls",
             }
 
-            servers = vim.tbl_filter(function(server)
-                if type(vim.g.lsp_filter) == "function" then
-                    return vim.g.lsp_filter(server)
-                end
-
-                return true
-            end, servers)
-
             vim.lsp.enable(servers)
         end,
     },
