@@ -4,7 +4,6 @@ return {
         version = "*",
         dependencies = {
             "williamboman/mason.nvim",
-            "williamboman/mason-lspconfig.nvim",
         },
         config = function()
             -- MasonInstall dockerfile-language-server
