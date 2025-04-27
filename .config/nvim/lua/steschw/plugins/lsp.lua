@@ -2,11 +2,9 @@ return {
     {
         "neovim/nvim-lspconfig",
         version = "*",
-        event = "VeryLazy",
         dependencies = {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
-            "saghen/blink.cmp",
         },
         config = function()
             -- MasonInstall dockerfile-language-server
@@ -51,21 +49,14 @@ return {
             }
 
             servers = vim.tbl_filter(function(server)
-                if type(vim.g.lsp_server_filter) == "function" then
-                    return vim.g.lsp_server_filter(server)
+                if type(vim.g.lsp_filter) == "function" then
+                    return vim.g.lsp_filter(server)
                 end
 
                 return true
             end, servers)
 
             vim.lsp.enable(servers)
-
-            vim.lsp.config("*", {
-                capabilities = require("blink.cmp").get_lsp_capabilities(),
-                on_attach = function(_, buf)
-                    require("steschw.config.keymaps_lsp").set(buf)
-                end,
-            })
         end,
     },
     {

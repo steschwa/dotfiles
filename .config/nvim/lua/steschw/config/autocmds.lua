@@ -46,3 +46,9 @@ vim.api.nvim_create_autocmd("WinLeave", {
         vim.wo.cursorline = false
     end,
 })
+
+vim.api.nvim_create_autocmd("LspAttach", {
+    callback = function(event)
+        require("steschw.config.keymaps_lsp").set(event.buf)
+    end,
+})

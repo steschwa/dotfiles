@@ -3,7 +3,7 @@
 return {
     "saghen/blink.cmp",
     version = "*",
-    event = "CmdlineEnter",
+    event = { "CmdlineEnter", "InsertEnter" },
     dependencies = {
         "steschwa/snipman.nvim",
     },
