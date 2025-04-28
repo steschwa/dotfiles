@@ -1,6 +1,6 @@
 services:
   lobe-chat:
-    image: lobehub/lobe-chat:1.81.9
+    image: lobehub/lobe-chat:1.83.8
     container_name: lobe-chat
     restart: always
     ports:
