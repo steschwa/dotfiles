@@ -13,7 +13,7 @@ function M.lint()
 end
 
 local function fix_eslint()
-    vim.cmd.EslintFixAll()
+    vim.cmd.LspEslintFixAll()
 end
 
 local function fix_pyright()
