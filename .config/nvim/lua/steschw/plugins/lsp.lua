@@ -6,48 +6,46 @@ return {
             "williamboman/mason.nvim",
         },
         config = function()
-            -- MasonInstall dockerfile-language-server
+            -- MasonInstall biome
+            -- MasonInstall css-lsp
             -- MasonInstall docker-compose-language-server
+            -- MasonInstall dockerfile-language-server
+            -- MasonInstall eslint-lsp
             -- MasonInstall gopls
+            -- MasonInstall html-lsp
+            -- MasonInstall json-lsp
             -- MasonInstall lua-language-server
             -- MasonInstall marksman
+            -- MasonInstall postgrestools
             -- MasonInstall pyright
             -- MasonInstall ruff
-            -- MasonInstall postgrestools
-            -- MasonInstall texlab
-            -- MasonInstall taplo
-            -- MasonInstall yamlls
-            -- MasonInstall json-lsp
-            -- MasonInstall html-lsp
-            -- MasonInstall css-lsp
             -- MasonInstall tailwindcss-language-server
-            -- MasonInstall eslint-lsp
-            -- MasonInstall biome
+            -- MasonInstall taplo
+            -- MasonInstall texlab
             -- MasonInstall vtsls
+            -- MasonInstall yamlls
 
-            local servers = {
-                "yamlls",
-                "taplo",
-                "texlab",
-                "postgres_lsp",
-                "ruff",
-                "pyright",
-                "nushell",
-                "marksman",
-                "lua_ls",
-                "gopls",
+            vim.lsp.enable({
+                "biome",
+                "cssls",
                 "docker_compose_language_service",
                 "dockerls",
-                "html",
-                "cssls",
-                "tailwindcss",
-                "jsonls",
                 "eslint",
-                "biome",
+                "gopls",
+                "html",
+                "jsonls",
+                "lua_ls",
+                "marksman",
+                "nushell",
+                "postgres_lsp",
+                "pyright",
+                "ruff",
+                "tailwindcss",
+                "taplo",
+                "texlab",
                 "vtsls",
-            }
-
-            vim.lsp.enable(servers)
+                "yamlls",
+            })
         end,
     },
     {
