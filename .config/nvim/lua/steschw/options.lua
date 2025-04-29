@@ -76,7 +76,10 @@ vim.filetype.add({
 })
 
 vim.diagnostic.config({
-    virtual_text = true,
+    virtual_text = {
+        source = "if_many",
+        prefix = "",
+    },
     update_in_insert = false,
     severity_sort = true,
     float = {
