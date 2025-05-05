@@ -1,8 +1,8 @@
-let fnm_hook = {||
-    let is_node_dir = [.node-version .nvmrc] | any { path exists }
-    if $is_node_dir {
-        fnm use
-    }
+let fnm_hook = {
+    condition: {||
+        [.node-version .nvmrc] | any { path exists }
+    },
+    code: "fnm --log-level quiet use"
 }
 
 $env.config.hooks.env_change = {
