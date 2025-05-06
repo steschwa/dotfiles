@@ -35,5 +35,8 @@ return {
             {},
             { provider_message },
         },
+        window = {
+            border = "solid",
+        },
     },
 }
