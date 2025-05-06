@@ -49,7 +49,6 @@ return {
                 FixmeFilepath = { fg = "text" },
                 FixmeText = { fg = "subtle" },
                 FixmeColumnSeparator = { fg = "overlay" },
-                QuickFixLine = { bg = "highlight_med" },
 
                 StatusLine = { bg = "overlay" },
                 StatusLineNC = { bg = "surface" },
