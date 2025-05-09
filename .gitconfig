@@ -6,6 +6,7 @@
     trustctime = false
     # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
 	precomposeunicode = false
+    pager = delta
 
 [alias]
     a = add
@@ -27,6 +28,9 @@
 	email = ste.schwaighofer@gmail.com
 
 	signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6jsA2NuV4zBZzvR8q/FgKJA7tEwSOBcbTPvZYFIWLschZQnTjiJTU96CIw6oooetxFVkDCuTypVdMZqejg9IFi9y260DRl0+OC1SEcdSKt+OJ3nmFlED6U8i0myNaU/kkoxdzYiY7hB3OCeV5xR6ofsDk8ET/QkYzovizcEhRgIrY/XbmITW9AU3iL8uYSNW64ejdQPdSGT+XokmhdJ8JledHjHsDLg+A0yeTA78m8s4vhqfnhi0LCMVYeMj3zOYrMncj7LWznk5NuUW7szkvmISoyhscgV7EtIsFd29YBjWEppbsedU45ntG33XhDyWXpetiCAq6ZNX42D2FiNn88l3R3fjcmosqtPyieHr1tl2jssEBUCgxfceJzuW6PVMqM8LJJY9scZLSk00tm68wj+yC3OaeMsPhzoFFnwEZs8JigXP51gGULn/jRvlgG/nPwksr4Z8ZEto30d+8WBn3tZ4KsrQEW1tsOjqKI+poljdd3jiyDMznSAdglE1malUHE5Xda7KxYCtKknntLJvSm5gAGO9i2vgvWKdl60Qg0hCUhdIyexnGKIZg5CLPJmcMrWMJnYDCMGf47XKvtU0o3bl1HAM52AosmUhPrNu60wMGLL1DFdb+uzCl8JLWb9c2Uw+oe9ePhk1ggzLtaPZgnTvY7B+XHE8zfgX0Yi64BQ==
+
+[include]
+    path = ~/.config/delta/themes.gitconfig
 
 [init]
 	defaultBranch = main
@@ -82,3 +86,15 @@
 	autoSquash = true
 	autoStash = true
 	updateRefs = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    features = mellow-barbet
+    ; features = arctic-fox
+    navigate = true
+    side-by-side = true
