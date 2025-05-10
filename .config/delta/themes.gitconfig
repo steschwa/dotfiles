@@ -663,3 +663,39 @@
     hunk-header-file-style = darkgoldenrod
     hunk-header-line-number-style = orange
     hunk-header-style = file line-number purple
+
+[delta "theme-steschw"]
+    dark = true
+    line-numbers = true
+    side-by-side = true
+    file-style = yellow
+    file-decoration-style = yellow ul
+    file-added-label = A
+    file-copied-label = C
+    file-modified-label = M
+    file-removed-label = R
+    file-renamed-label = RN
+    hunk-header-style = omit
+    plus-style = green black
+    plus-emph-style = black green
+    minus-style = red black
+    minus-emph-style = black red
+    line-numbers-minus-style = red
+    line-numbers-plus-style = green
+    line-numbers-left-style = black
+    line-numbers-right-style = black
+    line-numbers-zero-style = brightblack
+    line-numbers-left-format = "{nm:<4}"
+    line-numbers-right-format = "{np:<4}"
+    zero-style = syntax
+    whitespace-error-style = black bold
+
+    blame-code-style = syntax
+    blame-palette = "#161617" "#1b1b1d" "#2a2a2d" "#3e3e43"
+
+    merge-conflict-begin-symbol = ~
+    merge-conflict-end-symbol = ~
+    merge-conflict-ours-diff-header-style = yellow bold
+    merge-conflict-ours-diff-header-decoration-style = "#3e3e43" box
+    merge-conflict-theirs-diff-header-style = yellow bold
+    merge-conflict-theirs-diff-header-decoration-style = "#3e3e43" box

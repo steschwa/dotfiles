@@ -94,7 +94,6 @@
     diffFilter = delta --color-only
 
 [delta]
-    features = mellow-barbet
-    ; features = arctic-fox
+    features = theme-steschw
     navigate = true
     side-by-side = true
