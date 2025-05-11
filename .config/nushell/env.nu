@@ -1,16 +1,12 @@
 $env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
 
-$env.CONFIG_DIR = ($env.HOME | path join ".config")
-$env.XDG_CONFIG_HOME = ($env.HOME | path join ".config")
+$env.CONFIG_DIR = $env.HOME | path join ".config"
+$env.XDG_CONFIG_HOME = $env.CONFIG_DIR
 
 # go
-$env.GOPATH = ($env.HOME | path join "go")
-$env.GOBIN = ($env.GOPATH | path join "bin")
-
-# rust
-$env.RUSTPATH = ($env.HOME | path join ".cargo")
-$env.RUSTBIN = ($env.RUSTPATH | path join "bin")
+$env.GOPATH = $env.HOME | path join "go"
+$env.GOBIN = $env.GOPATH | path join "bin"
 
 $env.EDITOR = "nvim"
 $env.BAT_THEME = "ansi"
@@ -24,7 +20,6 @@ $env.PATH ++= [
     "/opt/homebrew/bin",
     "/opt/homebrew/opt/openjdk/bin",
     $env.GOBIN,
-    $env.RUSTBIN,
 ]
 
 source-env ~/.config/nushell/scripts/starship.nu
