@@ -7,7 +7,6 @@
 -- MasonInstall stylua
 -- MasonInstall taplo
 -- MasonInstall tex-fmt
--- rustup component add rustfmt
 
 return {
     "stevearc/conform.nvim",
@@ -30,7 +29,6 @@ return {
                 lua = { "stylua" },
                 markdown = { "prettierd" },
                 python = { "ruff_format" },
-                rust = { "rustfmt" },
                 scss = { "prettierd" },
                 sql = { "sqruff" },
                 tex = { "tex-fmt" },
