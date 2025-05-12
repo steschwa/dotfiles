@@ -686,12 +686,14 @@
     line-numbers-right-style = black
     line-numbers-zero-style = brightblack
     line-numbers-left-format = "{nm:<4}"
-    line-numbers-right-format = "{np:<4}"
+    line-numbers-right-format = "│{np:<4}"
     zero-style = syntax
     whitespace-error-style = black bold
 
     blame-code-style = syntax
-    blame-palette = "#161617" "#1b1b1d" "#2a2a2d" "#3e3e43"
+    blame-separator-format = "│{n:<4}"
+    blame-separator-style = black 
+    blame-palette = "#2a283e" "#44415a" # rose-pine highlight low + med
 
     merge-conflict-begin-symbol = ~
     merge-conflict-end-symbol = ~
