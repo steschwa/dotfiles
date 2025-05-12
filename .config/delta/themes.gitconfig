@@ -691,8 +691,10 @@
     whitespace-error-style = black bold
 
     blame-code-style = syntax
+    blame-format = "[{timestamp}] {author:<20.20} {commit:8.8}"
     blame-separator-format = "│{n:<4}"
     blame-separator-style = black 
+    blame-timestamp-output-format = "%d.%m.%Y %H:%M"
     blame-palette = "#2a283e" "#44415a" # rose-pine highlight low + med
 
     merge-conflict-begin-symbol = ~
