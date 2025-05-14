@@ -99,8 +99,6 @@ return {
                             ["<C-q>"] = action_qflist,
                         },
                         i = {
-                            ["<C-j>"] = actions.move_selection_next,
-                            ["<C-k>"] = actions.move_selection_previous,
                             ["<C-q>"] = action_qflist,
                         },
                     },
