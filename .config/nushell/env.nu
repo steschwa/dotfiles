@@ -20,6 +20,7 @@ $env.PATH ++= [
     "/opt/homebrew/bin",
     "/opt/homebrew/opt/openjdk/bin",
     $env.GOBIN,
+    ($env.HOME | path join ".bun/bin"), # bun
 ]
 
 source-env ~/.config/nushell/scripts/starship.nu
