@@ -1,4 +1,4 @@
-const COMPOSE_FILE = "~/lobe-chat.compose.yaml" | path expand 
+const COMPOSE_FILE = "~/.config/lobe-chat/lobe-chat.compose.yaml" | path expand 
 
 export def upgrade [] {
     let current_tag = get_container_tag 
