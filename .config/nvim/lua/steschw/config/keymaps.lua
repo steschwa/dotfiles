@@ -98,3 +98,8 @@ keymap("n", "<leader>i", function()
     vim.cmd("edit .ignore")
 end)
 keymap("n", "<leader>t", "<cmd>edit TODO.md<cr>")
+
+keymap("n", "go", function()
+    local filepath = vim.fn.fnamemodify(vim.fn.expand("%"), ":p")
+    vim.system({ "open", "-R", filepath }, { detach = true })
+end)
