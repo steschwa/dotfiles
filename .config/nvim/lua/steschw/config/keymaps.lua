@@ -67,6 +67,12 @@ keymap("n", "<leader>q", function()
 end)
 keymap("n", "<C-q>", "<cmd>cclose<cr>")
 
+-- options
+keymap("n", "gw", function()
+    ---@diagnostic disable-next-line: undefined-field
+    vim.opt_local.wrap = not vim.opt_local.wrap:get()
+end)
+
 -- misc
 keymap("n", "<C-t>", function()
     vim.print(vim.bo.filetype)
