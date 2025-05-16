@@ -66,6 +66,7 @@ vim.filetype.add({
         env = "sh",
         hurl = "hurl",
         d2 = "d2",
+        tex = "tex", -- .tex is sometimes detected as ft=plaintex
     },
     pattern = {
         [".*/.github/workflows/.*%.yml"] = "yaml.github-action",
