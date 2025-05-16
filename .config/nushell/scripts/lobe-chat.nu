@@ -25,7 +25,7 @@ export def upgrade [] {
     docker image rm $"lobehub/lobe-chat:($current_tag)"
 
     print $"(ansi green)commiting changes(ansi reset)"
-    yadm add ~/lobe-chat.compose.yaml
+    yadm add $COMPOSE_FILE
     yadm cm $"chore\(lobe-chat\): upgrade to ($tag)"
 }
 
