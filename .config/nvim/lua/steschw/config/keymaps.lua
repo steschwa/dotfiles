@@ -7,6 +7,10 @@ keymap({ "n", "v" }, "`", "^")
 keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "<C-d>", "<C-d>zz")
 
+-- scrolling
+keymap("n", "zl", "zL")
+keymap("n", "zh", "zH")
+
 -- clear search with <esc>
 keymap({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
 keymap("n", "<leader>n", "<cmd>noh<cr>")
