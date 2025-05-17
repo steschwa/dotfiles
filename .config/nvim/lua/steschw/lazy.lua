@@ -20,7 +20,7 @@ require("lazy").setup({
         version = false,
     },
     ui = {
-        border = "rounded",
+        border = "single",
         backdrop = 100,
     },
     checker = {
