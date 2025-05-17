@@ -25,6 +25,9 @@ return {
                 border = "single",
                 title_pos = "left",
                 width = 50,
+                bo = {
+                    buftype = "nofile",
+                },
             },
         },
     },
