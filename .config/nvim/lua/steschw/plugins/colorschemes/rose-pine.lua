@@ -73,6 +73,8 @@ return {
                 GitBlameMessage = { fg = "text" },
 
                 MiniDiffSignChange = { fg = "gold" },
+
+                SnacksInputBorder = { fg = "overlay" },
             },
         })
         vim.cmd("colorscheme rose-pine")
