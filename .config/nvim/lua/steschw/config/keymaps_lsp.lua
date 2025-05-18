@@ -8,14 +8,15 @@ function M.set(buf)
     keymap("n", "gr", M.references, { buffer = buf })
     keymap("n", "gd", M.definition, { buffer = buf })
     keymap({ "n", "i" }, "<C-s>", function()
-        vim.lsp.buf.signature_help({
-            title = "",
-        })
+        vim.lsp.buf.signature_help({ border = "single", title = "" })
     end, { buffer = buf })
     keymap("n", "gh", vim.lsp.buf.hover, { buffer = buf })
     keymap("n", "gH", vim.diagnostic.open_float, { buffer = buf })
     keymap("n", "gR", vim.lsp.buf.rename, { buffer = buf })
     keymap("n", "ga", M.code_action, { buffer = buf })
+    keymap("n", "K", function()
+        vim.lsp.buf.hover({ border = "single" })
+    end)
 end
 
 function M.diagnostics()
