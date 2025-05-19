@@ -81,6 +81,8 @@ return {
                 GitConflictAncestorLabel = { fg = "muted" },
 
                 SnacksInputBorder = { fg = "overlay" },
+                SnacksPickerInputBorder = { fg = "base", bg = "overlay" },
+                SnacksPickerInput = { bg = "overlay" },
             },
         })
         vim.cmd("colorscheme rose-pine")

@@ -2,21 +2,40 @@
 
 return {
     "folke/snacks.nvim",
-    priority = 1000,
-    lazy = false,
     ---@type snacks.Config
     opts = {
         input = {
             enabled = true,
             icon = "",
         },
-        -- picker = { enabled = true },
-        -- notifier = { enabled = true },
-        -- quickfile = { enabled = true },
-        -- scope = { enabled = true },
-        -- scroll = { enabled = true },
-        -- statuscolumn = { enabled = true },
-        -- words = { enabled = true },
+        picker = {
+            enabled = true,
+            prompt = " ",
+            layouts = {
+                select = {
+                    hidden = { "preview" },
+                    layout = {
+                        box = "vertical",
+                        backdrop = false,
+                        width = 0.4,
+                        min_width = 80,
+                        border = "none",
+                        title = "{title}",
+                        title_pos = "center",
+                        {
+                            win = "input",
+                            height = 1,
+                            border = { " ", " ", " ", " ", "▁", "▁", "▁", " " },
+                        },
+                        {
+                            win = "list",
+                            border = "solid",
+                        },
+                    },
+                },
+            },
+        },
+
         styles = {
             input = {
                 relative = "cursor",
