@@ -74,6 +74,12 @@ return {
 
                 MiniDiffSignChange = { fg = "gold" },
 
+                GitConflictCurrentLabel = { bg = "foam", fg = "overlay" },
+                GitConflictCurrent = { bg = "foam", blend = 25 },
+                GitConflictIncomingLabel = { bg = "rose", fg = "overlay" },
+                GitConflictIncoming = { bg = "rose", blend = 25 },
+                GitConflictAncestorLabel = { fg = "muted" },
+
                 SnacksInputBorder = { fg = "overlay" },
             },
         })
