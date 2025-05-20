@@ -2,9 +2,6 @@ return {
     {
         "neovim/nvim-lspconfig",
         version = "*",
-        dependencies = {
-            "williamboman/mason.nvim",
-        },
         config = function()
             -- MasonInstall biome
             -- MasonInstall css-lsp
@@ -49,9 +46,10 @@ return {
         end,
     },
     {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         cmd = "Mason",
-        config = true,
+        event = "FileType",
+        opts = {},
     },
     {
         "b0o/schemastore.nvim",
@@ -62,7 +60,7 @@ return {
     {
         "folke/lazydev.nvim",
         ft = "lua",
-        config = true,
+        opts = {},
     },
 
     -- CSS
