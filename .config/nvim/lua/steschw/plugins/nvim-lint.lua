@@ -1,5 +1,5 @@
 -- MasonInstall actionlint
--- MasonInstall revive
+-- MasonInstall golangci-lint
 -- MasonInstall sqruff
 
 return {
@@ -13,15 +13,8 @@ return {
     config = function()
         local lint = require("lint")
 
-        lint.linters.revive.args = {
-            "-formatter",
-            "json",
-            "-config",
-            vim.fn.expand("~/.config/revive/revive.toml"),
-        }
-
         lint.linters_by_ft = {
-            go = { "revive" },
+            go = { "golangcilint" },
             sql = { "sqruff" },
             ["yaml.github-action"] = { "actionlint" },
         }
