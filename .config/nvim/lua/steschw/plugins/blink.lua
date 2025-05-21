@@ -71,13 +71,13 @@ return {
 
             ["<C-u>"] = {
                 function(cmp)
-                    cmp.scroll_documentation_up(2)
+                    return cmp.scroll_documentation_up(2)
                 end,
                 "fallback",
             },
             ["<C-d>"] = {
                 function(cmp)
-                    cmp.scroll_documentation_down(2)
+                    return cmp.scroll_documentation_down(2)
                 end,
                 "fallback",
             },
