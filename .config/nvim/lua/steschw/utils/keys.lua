@@ -3,6 +3,7 @@
 --- @field silent? boolean
 --- @field nowait? boolean
 --- @field buffer? number
+--- @field expr? boolean
 
 --- @type KeymapOpts
 local DEFAULT_OPTS = {
