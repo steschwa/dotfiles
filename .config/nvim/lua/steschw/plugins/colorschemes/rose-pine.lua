@@ -79,10 +79,6 @@ return {
                 GitConflictIncomingLabel = { bg = "rose", fg = "overlay" },
                 GitConflictIncoming = { bg = "rose", blend = 25 },
                 GitConflictAncestorLabel = { fg = "muted" },
-
-                SnacksInputBorder = { fg = "overlay" },
-                SnacksPickerInputBorder = { fg = "base", bg = "overlay" },
-                SnacksPickerInput = { bg = "overlay" },
             },
         })
         vim.cmd("colorscheme rose-pine")
