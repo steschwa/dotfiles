@@ -62,7 +62,7 @@ return {
         },
         keymap = {
             preset = "none",
-            ["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
+            ["<C-space>"] = { "show", "hide" },
             ["<esc>"] = { "hide", "fallback" },
             ["<C-y>"] = { "select_and_accept" },
 
@@ -80,6 +80,15 @@ return {
                     return cmp.scroll_documentation_down(2)
                 end,
                 "fallback",
+            },
+        },
+        cmdline = {
+            keymap = {
+                preset = "none",
+                ["<C-space>"] = { "show", "hide" },
+                ["<C-p>"] = { "select_prev" },
+                ["<C-n>"] = { "select_next" },
+                ["<C-y>"] = { "select_and_accept" },
             },
         },
     },

@@ -77,6 +77,10 @@ keymap("n", "gw", function()
     vim.opt_local.wrap = not vim.opt_local.wrap:get()
 end)
 
+-- command line
+keymap("c", "<C-a>", "<Home>", { silent = false })
+keymap("c", "<C-e>", "<End>", { silent = false })
+
 -- misc
 keymap("n", "<C-t>", function()
     vim.print(vim.bo.filetype)
