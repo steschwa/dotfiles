@@ -1,6 +1,6 @@
 -- MasonInstall bibtex-tidy
 -- MasonInstall biome
--- MasonInstall goimports
+-- MasonInstall golangci-lint
 -- MasonInstall prettierd
 -- MasonInstall ruff
 -- MasonInstall sqruff
@@ -19,7 +19,7 @@ return {
             formatters_by_ft = {
                 bib = { "bibtex-tidy" },
                 css = { "biome-check", "prettierd", stop_after_first = true },
-                go = { "goimports" },
+                go = { "golangci-lint" },
                 graphql = { "biome-check", "prettierd", stop_after_first = true },
                 html = { "prettierd" },
                 javascript = { "biome-check", "prettierd", stop_after_first = true },
