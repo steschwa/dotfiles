@@ -11,7 +11,6 @@ return {
     opts = {
         enabled = function()
             local disabled_filetypes = {
-                "DressingInput",
                 "grapple",
                 "TelescopePrompt",
             }
