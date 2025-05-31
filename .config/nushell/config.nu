@@ -22,6 +22,7 @@ source-env ~/.config/nushell/hooks.nu
 source-env ~/.config/nushell/keymap.nu
 source-env ~/.config/nushell/scripts/fzf.nu
 source ~/.config/nushell/scripts/goto.nu
+source ~/.config/nushell/scripts/ansi.nu
 
 use ~/.config/nushell/scripts/net.nu *
 use ~/.config/nushell/scripts/lobe-chat.nu
