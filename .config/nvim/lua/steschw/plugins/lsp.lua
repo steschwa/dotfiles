@@ -19,7 +19,6 @@ return {
                 "pyright",
                 "ruff",
                 "tailwindcss",
-                "taplo",
                 "texlab",
                 "vtsls",
                 "yamlls",
