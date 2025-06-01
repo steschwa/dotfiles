@@ -1,7 +1,3 @@
--- MasonInstall actionlint
--- MasonInstall golangci-lint
--- MasonInstall sqruff
-
 return {
     "mfussenegger/nvim-lint",
     lazy = true,
@@ -14,7 +10,6 @@ return {
         local lint = require("lint")
 
         lint.linters_by_ft = {
-            go = { "golangcilint" },
             sql = { "sqruff" },
             ["yaml.github-action"] = { "actionlint" },
         }

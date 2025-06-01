@@ -3,25 +3,6 @@ return {
         "neovim/nvim-lspconfig",
         version = "*",
         config = function()
-            -- MasonInstall biome
-            -- MasonInstall css-lsp
-            -- MasonInstall docker-compose-language-server
-            -- MasonInstall dockerfile-language-server
-            -- MasonInstall eslint-lsp
-            -- MasonInstall gopls
-            -- MasonInstall html-lsp
-            -- MasonInstall json-lsp
-            -- MasonInstall lua-language-server
-            -- MasonInstall marksman
-            -- MasonInstall postgrestools
-            -- MasonInstall pyright
-            -- MasonInstall ruff
-            -- MasonInstall tailwindcss-language-server
-            -- MasonInstall taplo
-            -- MasonInstall texlab
-            -- MasonInstall vtsls
-            -- MasonInstall yamlls
-
             vim.lsp.enable({
                 "biome",
                 "cssls",
@@ -42,6 +23,7 @@ return {
                 "texlab",
                 "vtsls",
                 "yamlls",
+                "golangci_lint_ls",
             })
         end,
     },

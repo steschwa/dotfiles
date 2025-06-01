@@ -1,13 +1,3 @@
--- MasonInstall bibtex-tidy
--- MasonInstall biome
--- MasonInstall golangci-lint
--- MasonInstall prettierd
--- MasonInstall ruff
--- MasonInstall sqruff
--- MasonInstall stylua
--- MasonInstall taplo
--- MasonInstall tex-fmt
-
 return {
     "stevearc/conform.nvim",
     lazy = true,
