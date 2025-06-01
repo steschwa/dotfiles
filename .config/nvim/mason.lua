@@ -8,7 +8,7 @@ local function install_package(name)
     end
 
     vim.cmd.MasonInstall(name)
-    vim.print(string.format("⌛ %s installed", name))
+    vim.print(string.format("⌛ %s installed just now", name))
 end
 
 -- LSPs
