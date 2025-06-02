@@ -17,20 +17,7 @@ local function fix_eslint()
 end
 
 local function fix_pyright()
-    local bufnr = vim.api.nvim_get_current_buf()
-    local clients = vim.lsp.get_clients({
-        bufnr = bufnr,
-        name = "pyright",
-    })
-    if #clients == 0 then
-        return
-    end
-
-    local client = clients[1]
-    client:request_sync("workspace/executeCommand", {
-        command = "pyright.organizeimports",
-        arguments = { vim.uri_from_bufnr(0) },
-    }, 500, bufnr)
+    vim.cmd.LspPyrightOrganizeImports()
 end
 
 function M.fix()

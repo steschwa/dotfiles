@@ -54,9 +54,10 @@ keymap("n", "<C-i>", "<C-i>")
 
 -- formatting
 keymap("n", "gs", function()
-    require("steschw.utils.formatting").format()
     require("steschw.utils.linting").fix()
-    pcall(vim.cmd.w)
+    require("steschw.utils.formatting").format(function()
+        pcall(vim.cmd.w)
+    end)
 end)
 
 -- linting
