@@ -23,6 +23,7 @@ return {
                 "vtsls",
                 "yamlls",
                 "golangci_lint_ls",
+                "tombi",
             })
         end,
     },
