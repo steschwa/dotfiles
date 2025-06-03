@@ -3,7 +3,7 @@ return {
     dependencies = {
         "nvim-tree/nvim-web-devicons",
     },
-    event = "VeryLazy",
+    lazy = false,
     keys = {
         { "-", "<cmd>Oil<cr>" },
     },
