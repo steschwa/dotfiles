@@ -78,4 +78,6 @@ def show_changelog [current_tag: string, next_tag: string] {
 
     print $"(ansi green)changelog from ($current_tag) to ($next_tag)(ansi reset)"
     rg --fixed-strings --invert-match --line-regexp --no-line-number --file $CHANGELOG_CURRENT $CHANGELOG_NEXT
+
+    rm $CHANGELOG_CURRENT $CHANGELOG_NEXT
 }
