@@ -25,4 +25,3 @@ source ~/.config/nushell/scripts/goto.nu
 source ~/.config/nushell/scripts/ansi.nu
 
 use ~/.config/nushell/scripts/net.nu *
-use ~/.config/nushell/scripts/lobe-chat.nu
