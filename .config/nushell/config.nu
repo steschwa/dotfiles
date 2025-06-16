@@ -2,6 +2,7 @@ $env.config.show_banner = false
 $env.config.edit_mode = "vi"
 $env.config.rm.always_trash = true
 $env.config.table.index_mode = "always"
+$env.config.table.mode = "single"
 $env.config.use_kitty_protocol = true
 
 $env.config.cursor_shape.vi_insert = "line"
