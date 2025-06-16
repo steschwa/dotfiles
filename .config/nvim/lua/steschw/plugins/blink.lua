@@ -28,10 +28,18 @@ return {
             },
             menu = {
                 draw = {
-                    columns = {
-                        { "label", "label_description", gap = 1 },
-                        { "kind_icon", "kind", gap = 1 },
-                    },
+                    columns = function(ctx)
+                        if ctx.mode == "cmdline" then
+                            return {
+                                { "label" },
+                            }
+                        end
+
+                        return {
+                            { "label", "label_description", gap = 1 },
+                            { "kind_icon", "kind", gap = 1 },
+                        }
+                    end,
                 },
             },
             documentation = {
