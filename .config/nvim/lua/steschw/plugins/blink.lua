@@ -88,5 +88,14 @@ return {
                 "fallback",
             },
         },
+        cmdline = {
+            keymap = {
+                preset = "cmdline",
+                -- <C-e> should jump to end of line
+                ["<C-e>"] = false,
+                -- use <C-x> instead of <C-e> to abort
+                ["<C-x>"] = { "cancel" },
+            },
+        },
     },
 }
