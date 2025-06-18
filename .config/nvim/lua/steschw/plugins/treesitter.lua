@@ -125,11 +125,10 @@ return {
             },
         },
     },
-    -- {
-    --     "windwp/nvim-ts-autotag",
-    --     lazy = true,
-    --     config = true,
-    -- },
+    {
+        "windwp/nvim-ts-autotag",
+        opts = {},
+    },
     -- {
     --     "JoosepAlviste/nvim-ts-context-commentstring",
     --     lazy = true,
