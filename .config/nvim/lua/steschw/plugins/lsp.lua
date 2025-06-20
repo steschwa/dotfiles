@@ -19,7 +19,6 @@ return {
                 "pyright",
                 "ruff",
                 "tailwindcss",
-                "texlab",
                 "vtsls",
                 "yamlls",
                 "golangci_lint_ls",
