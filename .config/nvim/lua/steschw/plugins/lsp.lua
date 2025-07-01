@@ -19,7 +19,8 @@ return {
                 -- "pyright",
                 -- "ruff",
                 "tailwindcss",
-                "vtsls",
+                "ts_ls",
+                -- "vtsls",
                 "yamlls",
                 -- "golangci_lint_ls",
                 -- "tombi",
@@ -54,19 +55,5 @@ return {
                 "/Users/stefanschwaighofer/.config/nvim/customData/tailwind.css-data.json",
             },
         },
-    },
-
-    -- TS/JS
-    {
-        "yioneko/nvim-vtsls",
-        ft = {
-            "javascript",
-            "javascriptreact",
-            "typescript",
-            "typescriptreact",
-        },
-        config = function()
-            require("vtsls").config({})
-        end,
     },
 }
