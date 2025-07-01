@@ -4,10 +4,10 @@ return {
         version = "*",
         config = function()
             vim.lsp.enable({
-                "biome",
-                "cssls",
-                "docker_compose_language_service",
-                "dockerls",
+                -- "biome",
+                -- "cssls",
+                -- "docker_compose_language_service",
+                -- "dockerls",
                 "eslint",
                 "gopls",
                 "html",
@@ -15,14 +15,14 @@ return {
                 "lua_ls",
                 "marksman",
                 "nushell",
-                "postgres_lsp",
-                "pyright",
-                "ruff",
+                -- "postgres_lsp",
+                -- "pyright",
+                -- "ruff",
                 "tailwindcss",
                 "vtsls",
                 "yamlls",
-                "golangci_lint_ls",
-                "tombi",
+                -- "golangci_lint_ls",
+                -- "tombi",
             })
         end,
     },
@@ -51,7 +51,7 @@ return {
         ft = "css",
         opts = {
             customData = {
-                "/Users/stefan/.config/nvim/customData/tailwind.css-data.json",
+                "/Users/stefanschwaighofer/.config/nvim/customData/tailwind.css-data.json",
             },
         },
     },
