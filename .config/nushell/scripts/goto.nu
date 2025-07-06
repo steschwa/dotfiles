@@ -1,9 +1,7 @@
 def --env goto [] {
     let dirs = [
         ...(subdirs "/Users/stefan/.config"),
-        ...(subdirs "/Volumes/Projekte"),
-        "/Volumes/Projekte/FarmAct/farmact",
-        "/Users/stefan/Documents/Studium/Masterarbeit/Latex",
+        ...(subdirs "/Users/stefan/projects"),
     ]
 
     let selection = $dirs | to text | fzf --reverse --height=20
