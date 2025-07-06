@@ -54,9 +54,11 @@ keymap("n", "<C-i>", "<C-i>")
 
 -- formatting
 keymap("n", "gs", function()
+    local buf = vim.api.nvim_get_current_buf()
+
     require("steschw.utils.linting").fix()
     require("steschw.utils.formatting").format(function()
-        pcall(vim.cmd.w)
+        pcall(vim.api.nvim_buf_call, buf, function() vim.cmd.write() end)
     end)
 end)
 
