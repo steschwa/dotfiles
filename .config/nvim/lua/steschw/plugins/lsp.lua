@@ -46,16 +46,4 @@ return {
         ft = "lua",
         opts = {},
     },
-
-    -- CSS
-    {
-        "steschwa/css-tools.nvim",
-        version = "*",
-        ft = "css",
-        opts = {
-            customData = {
-                "/Users/stefanschwaighofer/.config/nvim/customData/tailwind.css-data.json",
-            },
-        },
-    },
 }
