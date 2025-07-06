@@ -19,11 +19,11 @@ $env.PATH ++= [
     "/usr/local/bin",
     "/opt/homebrew/bin",
     "/opt/homebrew/opt/openjdk/bin",
+    "/opt/homebrew/opt/node@20/bin",
     $env.GOBIN,
-    ($env.HOME | path join ".bun/bin"), # bun
+    # ($env.HOME | path join ".bun/bin"), # bun
     ($env.HOME | path join ".cargo/bin") # rust
 ]
 
 source-env ~/.config/nushell/scripts/starship.nu
 source-env ~/.config/nushell/scripts/carapace.nu
-source-env ~/.config/nushell/scripts/fnm.nu
