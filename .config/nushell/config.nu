@@ -24,5 +24,7 @@ source-env ~/.config/nushell/keymap.nu
 source-env ~/.config/nushell/scripts/fzf.nu
 source ~/.config/nushell/scripts/goto.nu
 source ~/.config/nushell/scripts/ansi.nu
+source ./scripts/from.nu
+source ./scripts/into.nu
 
 use ~/.config/nushell/scripts/net.nu *
