@@ -8,6 +8,9 @@ $env.XDG_CONFIG_HOME = $env.CONFIG_DIR
 $env.GOPATH = $env.HOME | path join "go"
 $env.GOBIN = $env.GOPATH | path join "bin"
 
+# pnpm
+$env.PNPM_HOME = "/Users/stefan/Library/pnpm"
+
 $env.EDITOR = "nvim"
 $env.BAT_THEME = "ansi"
 $env.MANPAGER = $"sh -c 'col -bx | bat --language man --plain --theme ($env.BAT_THEME)'"
@@ -23,8 +26,10 @@ $env.PATH ++= [
     "/opt/homebrew/opt/node@20/bin",
     $env.GOBIN,
     # ($env.HOME | path join ".bun/bin"), # bun
-    ($env.HOME | path join ".cargo/bin") # rust
+    ($env.HOME | path join ".cargo/bin"), # rust
+    $env.PNPM_HOME, # pnpm
 ]
 
 source-env ~/.config/nushell/scripts/starship.nu
 source-env ~/.config/nushell/scripts/carapace.nu
+
