@@ -1,14 +1,3 @@
-# let fnm_hook = {
-#     condition: {||
-#         [.node-version .nvmrc] | any { path exists }
-#     },
-#     code: "fnm --log-level quiet use"
-# }
-#
-# $env.config.hooks.env_change = {
-#     PWD: [$fnm_hook]
-# }
-
 let nu_overlays_hook = {||
     let overlays = overlay list | slice 1..
     if ($overlays | is-empty) {
