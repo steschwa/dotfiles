@@ -11,12 +11,11 @@ $env.GOBIN = $env.GOPATH | path join "bin"
 # pnpm
 $env.PNPM_HOME = "/Users/stefan/Library/pnpm"
 
-$env.EDITOR = "nvim"
 $env.BAT_THEME = "ansi"
-$env.MANPAGER = $"sh -c 'col -bx | bat --language man --plain --theme ($env.BAT_THEME)'"
+$env.EDITOR = "nvim"
 $env.LESS = "--ignore-case --tabs=4 --tilde --use-color --quit-if-one-screen --raw-control-chars"
+$env.MANPAGER = $"sh -c 'col -bx | bat --language man --plain --theme ($env.BAT_THEME)'"
 $env.RIPGREP_CONFIG_PATH = $env.HOME | path join ".ripgreprc"
-
 $env.UV_LINK_MODE = "copy" 
 
 $env.PATH ++= [
@@ -32,4 +31,3 @@ $env.PATH ++= [
 
 source-env ~/.config/nushell/scripts/starship.nu
 source-env ~/.config/nushell/scripts/carapace.nu
-
