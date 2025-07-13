@@ -29,5 +29,9 @@ $env.PATH ++= [
     $env.PNPM_HOME, # pnpm
 ]
 
+$env.NU_LIB_DIRS = [
+    "~/.nu_scripts" 
+]
+
 source-env ~/.config/nushell/scripts/starship.nu
 source-env ~/.config/nushell/scripts/carapace.nu
