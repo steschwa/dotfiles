@@ -1,0 +1,15 @@
+{
+    "name": "vanilla-ts",
+    "scripts": {
+        "dev": "vite",
+        "format": "biome format --write",
+        "lint": "biome lint --write"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "2.1.1",
+        "@tailwindcss/vite": "^4.1.11",
+        "tailwindcss": "^4.1.11",
+        "typescript": "^5.8.3",
+        "vite": "^7.0.4"
+    }
+}
