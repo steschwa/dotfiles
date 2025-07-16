@@ -24,7 +24,7 @@ $env.PATH ++= [
     "/opt/homebrew/opt/openjdk/bin",
     "/opt/homebrew/opt/node@20/bin",
     $env.GOBIN,
-    # ($env.HOME | path join ".bun/bin"), # bun
+    ($env.HOME | path join ".bun/bin"), # bun
     ($env.HOME | path join ".cargo/bin"), # rust
     $env.PNPM_HOME, # pnpm
 ]
