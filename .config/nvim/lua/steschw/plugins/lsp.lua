@@ -15,6 +15,7 @@ return {
                 "marksman",
                 "nushell",
                 "prismals",
+                "rust_analyzer",
                 "tailwindcss",
                 "ts_ls",
                 "yamlls",
