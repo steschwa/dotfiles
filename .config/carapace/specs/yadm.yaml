@@ -1,3 +1,4 @@
 # yaml-language-server: $schema=https://carapace.sh/schemas/command.json
 name: yadm
-run: "[git, --git-dir, /Users/stefan/.local/share/yadm/repo.git]"
+completion:
+    positionalany: ["$carapace.bridge.CarapaceBin([git, --git-dir, /Users/stefan/.local/share/yadm/repo.git, --work-tree, /Users/stefan])"]
