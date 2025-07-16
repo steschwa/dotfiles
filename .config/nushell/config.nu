@@ -25,6 +25,6 @@ source-env ~/.config/nushell/scripts/fzf.nu
 source ~/.config/nushell/scripts/goto.nu
 source ~/.config/nushell/scripts/ansi.nu
 source ./scripts/from.nu
-source ./scripts/into.nu
+source ./scripts/to.nu
 
 use ~/.config/nushell/scripts/net.nu *

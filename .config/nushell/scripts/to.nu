@@ -1,5 +1,5 @@
-# converts a table into a VIM command to load as a quickfix list
-export def "into quickfix" []: table -> nothing {
+# Convert a table into a VIM command to load as a quickfix list
+export def "to quickfix" []: table -> nothing {
     let table = $in
     let cfile = $"/tmp/(random chars)"
 
