@@ -1,11 +1,4 @@
---- @class KeymapOpts
---- @field remap? boolean
---- @field silent? boolean
---- @field nowait? boolean
---- @field buffer? number
---- @field expr? boolean
-
---- @type KeymapOpts
+--- @type vim.keymap.set.Opts
 local DEFAULT_OPTS = {
     remap = false,
     silent = true,
@@ -17,7 +10,7 @@ local M = {}
 --- @param mode string|string[]
 --- @param lhs string
 --- @param rhs string|function
---- @param opts? KeymapOpts
+--- @param opts? vim.keymap.set.Opts
 function M.keymap(mode, lhs, rhs, opts)
     opts = opts or {}
     opts = vim.tbl_extend("force", DEFAULT_OPTS, opts)
