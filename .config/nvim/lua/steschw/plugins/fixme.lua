@@ -59,7 +59,7 @@ end
 
 local function cell_text(item)
     return {
-        text = vim.trim(item.text),
+        text = vim.trim(item.text):sub(1, 100),
         hl = "FixmeText",
     }
 end
