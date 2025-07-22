@@ -30,13 +30,12 @@ return {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "nvim-telescope/telescope-fzf-native.nvim",
-            "fdschmidt93/telescope-egrepify.nvim",
             "fixme.nvim",
         },
         cmd = "Telescope",
         keys = {
             { "<leader>p", "<cmd>Telescope find_files<cr>" },
-            { "<leader>f", "<cmd>Telescope egrepify<cr>" },
+            { "<leader>f", "<cmd>Telescope live_grep<cr>" },
             { "<leader>h", "<cmd>Telescope help_tags<cr>" },
             {
                 "<leader>b",
@@ -141,32 +140,15 @@ return {
                 },
                 extensions = {
                     fzf = {},
-                    egrepify = {
-                        AND = false,
-                        lnum = false,
-                        results_ts_hl = false,
-                        prefixes = {
-                            ["@"] = {
-                                flag = "glob",
-                                cb = function(value)
-                                    return string.format("*.{%s}", value)
-                                end,
-                            },
-                        },
-                    },
                 },
             })
 
             telescope.load_extension("fzf")
-            telescope.load_extension("egrepify")
         end,
     },
     {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
         lazy = true,
-    },
-    {
-        "fdschmidt93/telescope-egrepify.nvim",
     },
 }
