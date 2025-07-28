@@ -11,6 +11,7 @@
 [alias]
     a = add
     b = branch
+    bb = branch -vv
     ca = commit --amend --no-edit
     cm = commit --message
     d = diff
