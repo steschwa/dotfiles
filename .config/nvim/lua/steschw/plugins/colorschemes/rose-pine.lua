@@ -23,7 +23,7 @@ return {
                 Selection = { fg = "rose", reverse = true },
                 FloatNormal = { bg = "surface" },
                 FloatBorder = { bg = "surface", fg = "surface" },
-                FloatTitle = { bg = "surface", fg = "foam" },
+                FloatTitle = { bg = "overlay", fg = "text" },
                 FloatFooter = { bg = "surface", fg = "surface" },
 
                 Pmenu = { link = "FloatNormal" },
@@ -32,7 +32,7 @@ return {
 
                 TelescopePreviewNormal = { link = "FloatNormal" },
                 TelescopePreviewBorder = { bg = "surface", fg = "base" },
-                TelescopePreviewTitle = { bg = "overlay", fg = "text" },
+                TelescopePreviewTitle = { link = "FloatTitle" },
                 TelescopeResultsNormal = { link = "FloatNormal" },
                 TelescopeResultsBorder = { bg = "surface", fg = "base" },
                 -- NOTE: prompt input line u ses "CursorLine" highlight group,
@@ -44,7 +44,8 @@ return {
                 TelescopeMatching = { fg = "rose", underline = true },
 
                 BlinkCmpDoc = { link = "FloatNormal" },
-                BlinkCmpDocBorder = { link = "FloatNormal" },
+                BlinkCmpDocBorder = { link = "FloatBorder" },
+                BlinkCmpDocSeparator = { link = "FloatBorder" },
 
                 FixmeFilepath = { fg = "text" },
                 FixmeText = { fg = "subtle" },

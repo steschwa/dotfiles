@@ -37,7 +37,7 @@ return {
 
                         return {
                             { "label", "label_description", gap = 1 },
-                            { "kind_icon", "kind", gap = 1 },
+                            { "kind" },
                         }
                     end,
                 },
@@ -46,7 +46,8 @@ return {
                 auto_show = true,
                 auto_show_delay_ms = 250,
                 window = {
-                    max_width = vim.o.columns,
+                    border = "single",
+                    max_height = math.floor(vim.o.lines * 0.5),
                 },
             },
         },
