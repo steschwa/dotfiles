@@ -72,8 +72,6 @@ return {
                 GitBlameAuthor = { fg = "iris" },
                 GitBlameMessage = { fg = "text" },
 
-                MiniDiffSignChange = { fg = "gold" },
-
                 GitConflictCurrentLabel = { bg = "foam", fg = "overlay" },
                 GitConflictCurrent = { bg = "foam", blend = 25 },
                 GitConflictIncomingLabel = { bg = "rose", fg = "overlay" },
