@@ -53,36 +53,4 @@ return {
             },
         },
     },
-    {
-        "echasnovski/mini.diff",
-        version = "*",
-        event = "BufRead",
-        keys = {
-            {
-                "gp",
-                function()
-                    local mini = require("mini.diff")
-
-                    local buf_data = mini.get_buf_data(0)
-                    if buf_data then
-                        mini.toggle_overlay(0)
-                    end
-                end,
-            },
-        },
-        opts = {
-            view = {
-                style = "sign",
-            },
-            mappings = {
-                apply = "",
-                reset = "",
-                textobject = "",
-                goto_first = "",
-                goto_prev = "[h",
-                goto_next = "]h",
-                goto_last = "",
-            },
-        },
-    },
 }
