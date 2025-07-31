@@ -7,6 +7,7 @@ vim.opt.cmdheight = 1
 vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.conceallevel = 0
 vim.opt.cursorline = true
+vim.opt.diffopt:remove("linematch:40")
 vim.opt.errorformat = { "%f:%l", "%f:%l:%m" }
 vim.opt.expandtab = true
 vim.opt.exrc = true
