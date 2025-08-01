@@ -21,6 +21,7 @@ return {
             },
             highlight_groups = {
                 Selection = { fg = "rose", reverse = true },
+                SnippetTabstop = {},
                 FloatNormal = { bg = "surface" },
                 FloatBorder = { bg = "surface", fg = "surface" },
                 FloatTitle = { bg = "overlay", fg = "text" },
