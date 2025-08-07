@@ -1,11 +1,20 @@
 #!/usr/bin/env nu
 
-git branch --format '%(refname:short)@@@%(upstream:track,nobracket)@@@%(upstream:short)@@@%(contents:subject)'
+git branch --format '%(refname:short)@@@%(HEAD)@@@%(upstream:track,nobracket)@@@%(upstream:short)@@@%(contents:subject)'
 | lines
-| split column '@@@' branch status upstream msg
+| split column '@@@' branch current status upstream msg
+| update branch {|row|
+    if $row.current == "*" {
+        $"(ansi green)($in)(ansi reset)" 
+    } else {
+        $in
+    }
+}
 | update status {
     if ($in | is-empty) {
-        $"(ansi green)up-to-date(ansi reset)"
+        $"(ansi dark_gray)up-to-date(ansi reset)"
+    } else if ($in == "gone") {
+        $"(ansi red)($in)(ansi reset)"
     } else {
         $"(ansi yellow)($in)(ansi reset)"
     }
@@ -17,3 +26,4 @@ git branch --format '%(refname:short)@@@%(upstream:track,nobracket)@@@%(upstream
         $in
     }
 }
+| reject current
