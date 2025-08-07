@@ -1,8 +1,6 @@
 $env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
 
-$env.XDG_CONFIG_HOME = $env.HOME | path join ".config"
-
 # go
 $env.GOPATH = $env.HOME | path join "go"
 $env.GOBIN = $env.GOPATH | path join "bin"
