@@ -11,7 +11,7 @@
 [alias]
     a = add
     b = branch
-    bb = !~/.nu_scripts/git/list-branches.nu
+    bb = !nu -l -c 'source ~/.nu_scripts/git/list-branches.nu'
     ca = commit --amend --no-edit
     cm = commit --message
     d = diff
