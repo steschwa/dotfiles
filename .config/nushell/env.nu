@@ -3,10 +3,6 @@ $env.PROMPT_INDICATOR_VI_NORMAL = ""
 
 $env.XDG_CONFIG_HOME = $env.HOME | path join ".config"
 
-# nushell
-$env.NU_CONFIG_PATH = "/Users/stefan/.config/nushell/config.nu"
-$env.NU_ENV_PATH = "/Users/stefan/.config/nushell/env.nu"
-
 # go
 $env.GOPATH = $env.HOME | path join "go"
 $env.GOBIN = $env.GOPATH | path join "bin"
