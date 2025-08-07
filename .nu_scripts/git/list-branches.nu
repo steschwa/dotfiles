@@ -15,8 +15,12 @@ git branch --format '%(refname:short)@@@%(HEAD)@@@%(upstream:track,nobracket)@@@
         $"(ansi dark_gray)up-to-date(ansi reset)"
     } else if ($in == "gone") {
         $"(ansi red)($in)(ansi reset)"
-    } else {
+    } else if ($in starts-with "ahead") {
+        $"(ansi magenta)($in)(ansi reset)"
+    } else if ($in starts-with "behind") {
         $"(ansi yellow)($in)(ansi reset)"
+    } else {
+        $in
     }
 }
 | update upstream {
