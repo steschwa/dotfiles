@@ -1,27 +1,5 @@
 local Path = require("steschw.utils.path")
 
--- see :h telescope.defaults.vimgrep_arguments
-local rg_cmd = {
-    "rg",
-    "--color=never",
-    "--no-heading",
-    "--with-filename",
-    "--line-number",
-    "--column",
-    "--smart-case",
-    "--trim",
-}
-
-local fd_cmd = {
-    "fd",
-    "--color",
-    "never",
-    "--hidden",
-    "--type",
-    "f",
-    "--strip-cwd-prefix",
-}
-
 local border_bottom = { " ", " ", "▁", " ", " ", " ", "▁", "▁" }
 local border_none = { " ", " ", " ", " ", " ", " ", " ", " " }
 
@@ -70,13 +48,22 @@ return {
                 defaults = {
                     prompt_prefix = "  ",
                     selection_caret = "  ",
-                    multi_icon = " ",
                     borderchars = {
                         preview = border_bottom,
                         results = border_bottom,
                         prompt = border_none,
                     },
-                    vimgrep_arguments = rg_cmd,
+                    -- see :h telescope.defaults.vimgrep_arguments
+                    vimgrep_arguments = {
+                        "rg",
+                        "--color=never",
+                        "--no-heading",
+                        "--with-filename",
+                        "--line-number",
+                        "--column",
+                        "--smart-case",
+                        "--trim",
+                    },
                     path_display = function(_, path)
                         return Path.format_path_peak(path)
                     end,
@@ -105,7 +92,15 @@ return {
                 },
                 pickers = {
                     find_files = {
-                        find_command = fd_cmd,
+                        find_command = {
+                            "fd",
+                            "--color",
+                            "never",
+                            "--hidden",
+                            "--type",
+                            "f",
+                            "--strip-cwd-prefix",
+                        },
                     },
                     live_grep = {
                         max_results = 20,
