@@ -1,3 +1,5 @@
+#!/usr/bin/env nu --config ~/.config/nushell/config.nu
+
 git branch --format '%(refname:short)@@@%(HEAD)@@@%(upstream:track,nobracket)@@@%(upstream:short)@@@%(contents:subject)'
 | lines
 | split column '@@@' branch current raw_status upstream msg
