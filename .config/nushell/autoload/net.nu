@@ -3,10 +3,9 @@ export def ip [] {
     ifconfig en0 
     | lines 
     | str trim 
-    | find -r 'inet\s' 
+    | find --no-highlight --regex 'inet\s' 
     | parse --regex 'inet (?<ip>[\d\.]+)' 
-    | first 
-    | get ip
+    | get ip.0 
 }
 
 # check if a given port is open (listening for connections)

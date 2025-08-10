@@ -1,3 +1,7 @@
+# -------------------------------------------
+# ENV
+# -------------------------------------------
+
 $env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
 
@@ -7,6 +11,13 @@ $env.GOBIN = $env.GOPATH | path join "bin"
 
 # pnpm
 $env.PNPM_HOME = $env.HOME | path join "Library/pnpm"
+
+# starship
+$env.STARSHIP_SHELL = "nu"
+$env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join "starship/starship.toml")
+
+# carapace
+$env.CARAPACE_ENV = 0
 
 $env.BAT_THEME = "ansi"
 $env.EDITOR = "nvim"
@@ -30,6 +41,10 @@ $env.NU_LIB_DIRS = [
     "~/.nu_scripts" 
 ]
 
+# -------------------------------------------
+# CONFIG
+# -------------------------------------------
+
 $env.config.show_banner = false
 $env.config.edit_mode = "vi"
 $env.config.rm.always_trash = true
@@ -47,16 +62,16 @@ $env.config.history.max_size = 1_000
 $env.config.history.file_format = "sqlite"
 $env.config.history.isolation = true
 
-source ~/.cache/starship/init.nu
-source-env ~/.cache/carapace/init.nu
+# -------------------------------------------
+# STARSHIP
+# -------------------------------------------
 
-source ~/.config/nushell/scripts/alias.nu
-source-env ~/.config/nushell/hooks.nu
-source-env ~/.config/nushell/keymap.nu
-source-env ~/.config/nushell/scripts/fzf.nu
-source ~/.config/nushell/scripts/goto.nu
-source ~/.config/nushell/scripts/ansi.nu
-source ./scripts/from.nu
-source ./scripts/to.nu
+mkdir ~/.cache/starship
+starship init nu | save -f ~/.cache/starship/init.nu
 
-use ~/.config/nushell/scripts/net.nu *
+# -------------------------------------------
+# CARAPACE
+# -------------------------------------------
+
+mkdir ~/.cache/carapace
+carapace _carapace nushell | save -f ~/.cache/carapace/init.nu

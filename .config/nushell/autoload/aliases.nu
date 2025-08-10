@@ -1,7 +1,7 @@
 alias jq = jq --indent 4
 alias bat = bat --theme $env.BAT_THEME --style numbers
 alias tree = tree --gitignore -C
-alias rg  = rg --smart-case
+alias rg  = rg --smart-case --line-number
 alias icat = kitten icat
 
 alias python = python3
@@ -17,9 +17,6 @@ alias vim = nvim
 # git
 alias g = git
 
-# yadm
-alias yup = yadm commit -m 'build(nvim): update plugins'
-
 # docker
 alias d = docker
 
@@ -28,9 +25,5 @@ alias gor = go run .
 
 # cd
 alias cdl = cd ~/Downloads
-alias cd.. = cd ..
 
 alias isup = ping 1.1
-
-# pueue
-alias p = pueue
