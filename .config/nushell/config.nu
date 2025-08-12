@@ -23,7 +23,6 @@ $env.BAT_THEME = "ansi"
 $env.EDITOR = "nvim"
 $env.LESS = "--ignore-case --tabs=4 --tilde --use-color --quit-if-one-screen --raw-control-chars"
 $env.MANPAGER = $"sh -c 'col -bx | bat --language man --plain --theme ($env.BAT_THEME)'"
-$env.RIPGREP_CONFIG_PATH = $env.HOME | path join ".ripgreprc"
 $env.UV_LINK_MODE = "copy" 
 
 $env.PATH ++= [
