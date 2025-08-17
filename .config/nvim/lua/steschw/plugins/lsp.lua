@@ -4,6 +4,7 @@ return {
         version = "*",
         config = function()
             vim.lsp.enable({
+                "bashls",
                 "biome",
                 "cssls",
                 "eslint",
