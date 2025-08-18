@@ -1,6 +1,6 @@
 return {
     "stevearc/conform.nvim",
-    lazy = true,
+    cmd = "ConformInfo",
     config = function()
         local conform = require("conform")
 
@@ -27,7 +27,7 @@ return {
                 sh = { "shfmt" },
                 typescript = { "biome-check", "prettierd" },
                 typescriptreact = { "biome-check", "prettierd" },
-                yaml = { "prettierd" },
+                yaml = { "yamlfmt" },
                 rust = { "rustfmt" },
             },
             default_format_opts = {
