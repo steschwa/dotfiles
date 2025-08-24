@@ -26,12 +26,6 @@ return {
         },
     },
     {
-        "echasnovski/mini.pairs",
-        version = "*",
-        event = "InsertEnter",
-        config = true,
-    },
-    {
         "echasnovski/mini.surround",
         version = "*",
         keys = {
