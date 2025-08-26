@@ -10,6 +10,7 @@
 
 [alias]
     a = add
+    aa = add -A
     b = branch
     bb = !~/.nu_scripts/git/list-branches.nu
     ca = commit --amend --no-edit
