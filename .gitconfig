@@ -77,7 +77,7 @@
 	all = true
 
 [help]
-	autocorrect = prompt
+	autocorrect = never
 
 [rerere]
 	enabled = true
