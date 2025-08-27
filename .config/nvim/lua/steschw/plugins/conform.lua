@@ -11,7 +11,12 @@ return {
             },
             formatters_by_ft = {
                 -- go = { "golangci-lint" },
-                -- python = { "ruff_format" },
+                python = {
+                    "ruff_fix",
+                    "ruff_organize_imports",
+                    "ruff_format",
+                    stop_after_first = false,
+                },
                 -- sql = { "sqruff" },
                 bash = { "shfmt" },
                 css = { "biome-check", "prettierd" },
