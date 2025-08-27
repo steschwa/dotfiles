@@ -21,9 +21,9 @@ return {
                 "tailwindcss",
                 "ts_ls",
                 "yamlls",
+                "pyrefly",
                 -- "golangci_lint_ls",
                 -- "postgres_lsp",
-                -- "pyright",
                 -- "ruff",
                 -- "tombi",
             })
