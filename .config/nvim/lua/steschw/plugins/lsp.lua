@@ -22,6 +22,7 @@ return {
                 "ts_ls",
                 "yamlls",
                 "pyrefly",
+                "ruff",
                 -- "golangci_lint_ls",
                 -- "postgres_lsp",
                 -- "ruff",
