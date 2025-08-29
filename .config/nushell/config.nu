@@ -23,6 +23,7 @@ $env.EDITOR = "nvim"
 $env.LESS = "--ignore-case --tabs=4 --tilde --use-color --quit-if-one-screen --raw-control-chars"
 $env.MANPAGER = $"sh -c 'col -bx | bat --language man --plain'"
 $env.UV_LINK_MODE = "copy" 
+$env.RIPGREP_CONFIG_PATH = ($env.XDG_CONFIG_HOME | path join "ripgrep/config")
 
 $env.PATH ++= [
     "/usr/local/bin",

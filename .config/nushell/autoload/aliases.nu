@@ -1,6 +1,5 @@
 alias jq = jq --indent 4
 alias tree = tree --gitignore -C
-alias rg  = rg --smart-case --line-number
 alias icat = kitten icat
 alias dot = git -C /Users/stefan --git-dir /Users/stefan/dot.git --work-tree /Users/stefan
 
