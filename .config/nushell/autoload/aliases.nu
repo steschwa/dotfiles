@@ -1,5 +1,4 @@
 alias jq = jq --indent 4
-alias bat = bat --theme $env.BAT_THEME --style numbers
 alias tree = tree --gitignore -C
 alias rg  = rg --smart-case --line-number
 alias icat = kitten icat
