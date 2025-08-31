@@ -3,8 +3,6 @@
 # run `bat --help` to get a list of all possible configuration options.
 
 # Run `bat --list-themes` for a list of all available themes
-# Run `bat cache --build` to pick up custom themes from (BAT_CONFIG_DIR)/themes
-# --theme="ansi"
---theme="rose-pine-moon"
+--theme="ansi"
 
 --style="numbers"
