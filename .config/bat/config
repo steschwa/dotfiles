@@ -2,7 +2,4 @@
 # a command-line option that you want to pass to `bat` by default. You can
 # run `bat --help` to get a list of all possible configuration options.
 
-# Run `bat --list-themes` for a list of all available themes
---theme="ansi"
-
 --style="numbers"
