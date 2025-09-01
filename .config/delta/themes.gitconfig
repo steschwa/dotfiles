@@ -664,7 +664,7 @@
     hunk-header-line-number-style = orange
     hunk-header-style = file line-number purple
 
-[delta "theme-steschw"]
+[delta "theme-steschwa"]
     dark = true
     line-numbers = true
     side-by-side = true

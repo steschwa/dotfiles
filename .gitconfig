@@ -96,6 +96,6 @@
     diffFilter = delta --color-only
 
 [delta]
-    features = theme-steschw
+    features = theme-steschwa
     navigate = true
     side-by-side = true
