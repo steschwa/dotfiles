@@ -1,0 +1,7 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/google/yamlfmt/main/schema.json
+formatter:
+    type: basic
+    indent: 4
+    trim_trailing_whitespace: true
+    force_array_style: block
+    retain_line_breaks_single: true
