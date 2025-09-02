@@ -24,7 +24,7 @@ return {
                 "tailwindcss",
                 "ts_ls",
                 "yamlls",
-                -- "golangci_lint_ls",
+                "golangci_lint_ls",
                 -- "postgres_lsp",
                 -- "ruff",
                 -- "tombi",
