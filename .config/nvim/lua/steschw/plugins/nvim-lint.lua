@@ -10,7 +10,6 @@ return {
         local lint = require("lint")
 
         lint.linters_by_ft = {
-            sql = { "sqruff" },
             ["yaml.github-action"] = { "actionlint" },
         }
     end,
