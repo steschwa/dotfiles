@@ -10,7 +10,7 @@ return {
                 prettierd = { require_cwd = true },
             },
             formatters_by_ft = {
-                go = { lsp_format = "prefer" },
+                go = { "golangci-lint" },
                 python = {
                     "ruff_fix",
                     "ruff_organize_imports",
