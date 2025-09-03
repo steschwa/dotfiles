@@ -1,0 +1,13 @@
+version: "2"
+
+linters:
+    settings:
+        errcheck:
+            check-type-assertions: true
+            exclude-functions:
+                - (io.Closer).Close
+
+formatters:
+    enable:
+        - gci
+        - golines
