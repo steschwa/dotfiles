@@ -1,6 +1,17 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- indenting
+vim.o.autoindent = true
+vim.o.smartindent = true
+vim.o.shiftwidth = 4
+vim.o.softtabstop = -1 -- use same value as 'shiftwidth'
+vim.o.expandtab = true
+
+-- do not set options for yaml filetypes
+-- see /opt/homebrew/Cellar/neovim/0.11.3/share/nvim/runtime/ftplugin/yaml.vim
+vim.g.yaml_recommended_style = false
+
 vim.opt.backup = false
 vim.opt.clipboard = ""
 vim.opt.cmdheight = 1
@@ -9,7 +20,6 @@ vim.opt.conceallevel = 0
 vim.opt.cursorline = true
 vim.opt.diffopt:remove("linematch:40")
 vim.opt.errorformat = { "%f:%l", "%f:%l:%m" }
-vim.opt.expandtab = true
 vim.opt.exrc = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.grepformat = "%f:%l:%c:%m"
@@ -25,19 +35,16 @@ vim.opt.pumheight = 10
 vim.opt.relativenumber = true
 vim.opt.scrolloff = 1
 vim.opt.shiftround = true
-vim.opt.shiftwidth = 4
 vim.opt.shortmess:append({ a = true, W = true, s = true, S = true })
 vim.opt.showmode = false
 vim.opt.showtabline = 1
 vim.opt.sidescrolloff = 8
 vim.opt.signcolumn = "yes"
 vim.opt.smartcase = true
-vim.opt.smartindent = true
 vim.opt.splitbelow = true
 vim.opt.splitkeep = "cursor"
 vim.opt.splitright = true
 vim.opt.swapfile = false
-vim.opt.tabstop = 4
 vim.opt.termguicolors = true
 vim.opt.timeoutlen = 500
 vim.opt.undofile = true
