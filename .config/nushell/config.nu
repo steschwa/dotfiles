@@ -22,6 +22,7 @@ $env.MANPAGER = $"sh -c 'col -bx | bat --language man --plain'"
 $env.UV_LINK_MODE = "copy" 
 $env.RIPGREP_CONFIG_PATH = ($env.XDG_CONFIG_HOME | path join "ripgrep/config")
 $env.BAT_THEME = "ansi"
+$env.SSH_AUTH_SOCK = $env.HOME | path join "Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 $env.PATH ++= [
     "/usr/local/bin",
