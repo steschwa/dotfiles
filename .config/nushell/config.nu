@@ -9,9 +9,6 @@ $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.GOPATH = $env.HOME | path join "go"
 $env.GOBIN = $env.GOPATH | path join "bin"
 
-# pnpm
-$env.PNPM_HOME = $env.HOME | path join "Library/pnpm"
-
 # starship
 $env.STARSHIP_SHELL = "nu"
 $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join "starship/starship.toml")
@@ -34,7 +31,7 @@ $env.PATH ++= [
     $env.GOBIN,
     ($env.HOME | path join ".bun/bin"), # bun
     ($env.HOME | path join ".cargo/bin"), # rust
-    $env.PNPM_HOME,
+    ($env.HOME | path join ".local/bin") # uv tools
 ]
 
 $env.NU_LIB_DIRS = [
