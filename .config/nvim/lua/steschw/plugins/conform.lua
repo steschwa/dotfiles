@@ -17,7 +17,6 @@ return {
                     "ruff_format",
                     stop_after_first = false,
                 },
-                sql = { "sqruff" },
                 bash = { "shfmt" },
                 css = { "biome-check", "prettierd" },
                 graphql = { "biome-check", "prettierd" },
