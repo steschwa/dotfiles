@@ -8,9 +8,9 @@ vim.o.shiftwidth = 4
 vim.o.softtabstop = -1 -- use same value as 'shiftwidth'
 vim.o.expandtab = true
 
--- do not set options for yaml filetypes
--- see /opt/homebrew/Cellar/neovim/0.11.3/share/nvim/runtime/ftplugin/yaml.vim
-vim.g.yaml_recommended_style = false
+-- disable default styles for some filetypes
+vim.g.yaml_recommended_style = false -- see $VIMRUNTIME/ftplugin/yaml.vim
+vim.g.go_recommended_style = false -- see $VIMRUNTIME/ftplugin/go.vim
 
 vim.opt.backup = false
 vim.opt.clipboard = ""
