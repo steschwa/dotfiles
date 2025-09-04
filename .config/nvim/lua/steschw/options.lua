@@ -63,16 +63,16 @@ vim.g.qf_disable_statusline = true
 
 vim.filetype.add({
     filename = {
-        [".ignore"] = "sh",
-        [".fdignore"] = "sh",
-        [".rgignore"] = "sh",
-        [".nvimignore"] = "sh",
-        ["Brewfile"] = "ruby",
+        [".ignore"] = "sh.ignore",
+        [".fdignore"] = "sh.ignore",
+        [".rgignore"] = "sh.ignore",
+        [".nvimignore"] = "sh.ignore",
+        ["Brewfile"] = "ruby.Brewfile",
         ["docker-compose.yml"] = "yaml.docker-compose",
         ["docker-compose.yaml"] = "yaml.docker-compose",
     },
     extension = {
-        env = "sh",
+        env = "sh.env",
         hurl = "hurl",
         d2 = "d2",
     },
