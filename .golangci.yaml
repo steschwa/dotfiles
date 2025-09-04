@@ -9,5 +9,6 @@ linters:
 
 formatters:
     enable:
-        - gci
+        - goimports
         - golines
+
