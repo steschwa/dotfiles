@@ -13,12 +13,12 @@
     aa = add -A
     b = branch
     bb = !~/.nu_scripts/git/list-branches.nu
-    history = !~/.nu_scripts/git/file-history.nu
     ca = commit --amend --no-edit
     cm = commit --message
     d = diff
     dd = diff --cached
     f = fetch
+    history = !~/.nu_scripts/git/file-history.nu
     l = log --pretty='tformat:%C(green)[%ad]%C(reset) %C(yellow)%h%C(reset) %C(blue)%ae%C(reset)%C(red)%d%C(reset) %s' --date='format:%d.%m.%y %H:%M'
     p = push
     r = restore
