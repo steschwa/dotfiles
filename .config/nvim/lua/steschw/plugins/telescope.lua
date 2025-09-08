@@ -1,5 +1,6 @@
 local Path = require("steschw.utils.path")
 
+-- { top, right, bottom, left, top-left, top-right, bottom-right, bottom-left }
 local border_bottom = { " ", " ", "▁", " ", " ", " ", "▁", "▁" }
 local border_none = { " ", " ", " ", " ", " ", " ", " ", " " }
 
