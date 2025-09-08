@@ -36,7 +36,7 @@ return {
                 TelescopePreviewTitle = { link = "FloatTitle" },
                 TelescopeResultsNormal = { link = "FloatNormal" },
                 TelescopeResultsBorder = { bg = "surface", fg = "base" },
-                -- NOTE: prompt input line u ses "CursorLine" highlight group,
+                -- NOTE: prompt input line uses "CursorLine" highlight group,
                 TelescopePromptNormal = { bg = "overlay" },
                 TelescopePromptBorder = { bg = "overlay", fg = "gold" },
                 TelescopePromptTitle = { bg = "overlay", fg = "subtle" },
