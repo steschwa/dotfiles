@@ -3,12 +3,15 @@ local Diagnostics = require("steschw.utils.diagnostics")
 
 ---@return string
 local function format_filename_quickfix()
-    local res = vim.fn.getqflist({
-        title = true,
-    })
+    local res = vim.fn.getqflist({ title = true })
 
     if res.title == "" or res.title == ":setqflist()" then
         return " Quickfix "
+    end
+
+    if vim.startswith(res.title, ":cfile ") then
+        local cfile = vim.trim(res.title:sub(#":cfile" + 1))
+        return string.format(" CFile %s ", cfile)
     end
 
     return string.format(" %s ", res.title)
