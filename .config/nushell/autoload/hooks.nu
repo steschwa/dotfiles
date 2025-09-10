@@ -1,9 +1,9 @@
 let nu_overlays_hook = {||
-    let overlays = overlay list | slice 1..
+    let overlays = overlay list | where active == true and name != "zero" 
     if ($overlays | is-empty) {
         $env.NU_OVERLAYS = null
     } else {
-        $env.NU_OVERLAYS = $overlays | str join ","
+        $env.NU_OVERLAYS = $overlays | get name | str join ","
     }
 }
 
