@@ -80,6 +80,7 @@ vim.filetype.add({
         [".*/.github/workflows/.*%.yaml"] = "yaml.github-action",
         ["compose%.yaml"] = "yaml.docker-compose",
         [".*%.compose%.yaml"] = "yaml.docker-compose",
+        [".*/kitty/.*%.conf"] = "kitty",
     },
 })
 
