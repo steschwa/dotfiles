@@ -17,4 +17,10 @@ export-env {
         max_results: 100,
         completer: $completer
     } 
+
+    $env.CARAPACE_LOG = true
+
+    let carapace_log_path = ($env.TMPDIR? | default --empty '/tmp' | path join 'carapace')
+    print --stderr $'(ansi green)carpace logging activated!(ansi reset)'
+    print --stderr $'logging to ($carapace_log_path)'
 }
