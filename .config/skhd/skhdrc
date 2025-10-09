@@ -2,7 +2,7 @@
 hyper - t : open -a 'kitty'
 hyper - s : open -a 'Spotify'
 hyper - f : open -a 'Finder'
-hyper - g : open -a 'Fork'
+hyper - k : open -a 'Slack'
 hyper - 0x27 : open -a 'ChatWise' # 0x27 = '
 
 # chrome
