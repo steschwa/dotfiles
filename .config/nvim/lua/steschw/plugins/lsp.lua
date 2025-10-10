@@ -15,6 +15,7 @@ return {
                 "html",
                 "jsonls",
                 "just",
+                "lemminx",
                 "lua_ls",
                 "marksman",
                 "nushell",
