@@ -7,6 +7,9 @@ keymap({ "n", "v" }, "`", "^")
 keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "<C-d>", "<C-d>zz")
 
+keymap("n", "j", "gj")
+keymap("n", "k", "gk")
+
 -- scrolling
 keymap("n", "zl", "zL")
 keymap("n", "zh", "zH")
@@ -58,7 +61,9 @@ keymap("n", "gs", function()
 
     require("steschw.utils.linting").fix()
     require("steschw.utils.formatting").format(function()
-        pcall(vim.api.nvim_buf_call, buf, function() vim.cmd.write() end)
+        pcall(vim.api.nvim_buf_call, buf, function()
+            vim.cmd.write()
+        end)
     end)
 end)
 
