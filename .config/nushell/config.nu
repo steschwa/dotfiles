@@ -25,10 +25,10 @@ $env.BAT_THEME = "ansi"
 $env.SSH_AUTH_SOCK = $env.HOME | path join "Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
 $env.PATH ++= [
-    "/usr/local/bin",
-    "/opt/homebrew/bin",
     "/opt/homebrew/opt/openjdk/bin",
     "/opt/homebrew/opt/node@20/bin",
+    "/usr/local/bin",
+    "/opt/homebrew/bin",
     $env.GOBIN,
     ($env.HOME | path join ".bun/bin"), # bun
     ($env.HOME | path join ".cargo/bin"), # rust
