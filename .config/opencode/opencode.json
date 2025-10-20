@@ -1,0 +1,15 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "theme": "rosepine",
+    "autoupdate": false,
+    "provider": {},
+    "permission": {
+        "bash": "ask"
+    },
+    "small_model": "openai/gpt-4.1-nano",
+    "model": "anthropic/claude-sonnet-4-5",
+    "keybinds": {
+        "input_newline": "enter",
+        "input_submit": "super+enter"
+    }
+}
