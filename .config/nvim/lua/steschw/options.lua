@@ -18,7 +18,7 @@ vim.opt.completeopt = "menu,menuone,noselect"
 vim.opt.conceallevel = 0
 vim.opt.cursorline = true
 vim.opt.diffopt:remove("linematch:40")
-vim.opt.errorformat = { "%f:%l", "%f:%l:%m" }
+vim.opt.errorformat = { "%f:%l:%m", "%f:%l", "%f" }
 vim.opt.exrc = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.grepformat = "%f:%l:%c:%m"
