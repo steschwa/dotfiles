@@ -27,6 +27,7 @@ $env.SSH_AUTH_SOCK = $env.HOME | path join "Library/Group Containers/2BUA8C4S2C.
 $env.PATH ++= [
     "/opt/homebrew/opt/openjdk/bin",
     "/opt/homebrew/opt/node@20/bin",
+    "/opt/homebrew/opt/postgresql@17/bin",
     "/usr/local/bin",
     "/opt/homebrew/bin",
     $env.GOBIN,
