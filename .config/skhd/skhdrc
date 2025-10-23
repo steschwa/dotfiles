@@ -7,13 +7,13 @@ hyper - 0x27 : open -a 'ChatWise' # 0x27 = '
 
 # chrome
 meh - m [
-    "Google Chrome" : ~/.config/skdh/scripts/chrome-merge-windows.js
+    "Google Chrome" : ~/.config/skhd/scripts/chrome-merge-windows.js
 ]
 meh - d [
-    "Google Chrome" : ~/.config/skdh/scripts/chrome-duplicate-tab.js
+    "Google Chrome" : ~/.config/skhd/scripts/chrome-duplicate-tab.js
 ]
 
 # finder
 meh - c [
-    "Finder" : ~/.config/skdh/scripts/finder-copy-path.js
+    "Finder" : ~/.config/skhd/scripts/finder-copy-path.js
 ]
