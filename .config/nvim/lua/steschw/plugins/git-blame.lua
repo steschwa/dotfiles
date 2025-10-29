@@ -1,3 +1,5 @@
+---@module "git-blame"
+
 ---@type git-blame.Provider
 local provider_sha = function(blame)
     local formatted_sha = blame.sha:sub(1, 10)
@@ -28,6 +30,7 @@ return {
     keys = {
         { "gb", "<cmd>GitBlameLine<cr>" },
     },
+    ---@type git-blame.Config
     opts = {
         lines = {
             { provider_time, provider_sha },
