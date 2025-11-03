@@ -23,13 +23,15 @@ export def main [
         --gap 1
         --gap-line "─"
         --pointer "▌"
+        --gutter " "
         --no-sort
-        --color "preview-fg:-1,pointer:3,border:0" 
-        --bind "q:abort,j:down,k:up,d:preview-half-page-down,u:preview-half-page-up" 
+        --color "preview-fg:-1,pointer:3,border:0,footer:-1,footer-border:-1" 
+        --bind "q:abort,d:preview-half-page-down,u:preview-half-page-up,j:preview-down,k:preview-up,g:preview-top,G:preview-bottom" 
         --bind "focus:transform-preview-label:echo {2..3} {1}"
         --preview $"git show {1}:($path_rel) | bat --language ($extension) --color always"
-        --preview-border sharp 
+        --border none
+        --preview-border none 
+        --footer-border bottom
         --footer $path_rel
-        --footer-border sharp
     )
 }
