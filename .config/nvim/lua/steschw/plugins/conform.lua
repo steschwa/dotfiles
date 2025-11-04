@@ -14,7 +14,7 @@ return {
                 css = { "biome-check", "prettierd" },
                 go = { "golangci-lint" },
                 graphql = { "biome-check", "prettierd" },
-                html = { "prettierd" },
+                html = { "biome-check", "prettierd" },
                 javascript = { "biome-check", "prettierd" },
                 javascriptreact = { "biome-check", "prettierd" },
                 json = { "biome-check", "prettierd" },
