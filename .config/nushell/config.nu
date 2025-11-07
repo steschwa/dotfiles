@@ -9,9 +9,6 @@ $env.PROMPT_INDICATOR_VI_NORMAL = ""
 $env.GOPATH = $env.HOME | path join "go"
 $env.GOBIN = $env.GOPATH | path join "bin"
 
-# node
-$env.NODE_OPTIONS = '--max-old-space-size=8192'
-
 # starship
 $env.STARSHIP_SHELL = "nu"
 $env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join "starship/starship.toml")
