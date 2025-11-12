@@ -6,21 +6,21 @@ return {
 
         conform.setup({
             notify_on_error = false,
-            formatters = {
-                prettierd = { require_cwd = true },
-            },
+            -- formatters = {
+            --     prettier = { require_cwd = true },
+            -- },
             formatters_by_ft = {
                 bash = { "shfmt" },
-                css = { "biome-check", "prettierd" },
+                css = { "biome-check", "prettier" },
                 go = { "golangci-lint" },
-                graphql = { "biome-check", "prettierd" },
-                html = { "biome-check", "prettierd" },
-                javascript = { "biome-check", "prettierd" },
-                javascriptreact = { "biome-check", "prettierd" },
-                json = { "biome-check", "prettierd" },
-                jsonc = { "biome-check", "prettierd" },
+                graphql = { "biome-check", "prettier" },
+                html = { "biome-check", "prettier" },
+                javascript = { "biome-check", "prettier" },
+                javascriptreact = { "biome-check", "prettier" },
+                json = { "biome-check", "prettier" },
+                jsonc = { "biome-check", "prettier" },
                 lua = { "stylua" },
-                markdown = { "prettierd" },
+                markdown = { "prettier" },
                 python = {
                     "ruff_fix",
                     "ruff_organize_imports",
@@ -28,11 +28,11 @@ return {
                     stop_after_first = false,
                 },
                 rust = { "rustfmt" },
-                scss = { "prettierd" },
+                scss = { "prettier" },
                 sh = { "shfmt" },
                 sql = { "sleek" },
-                typescript = { "biome-check", "prettierd" },
-                typescriptreact = { "biome-check", "prettierd" },
+                typescript = { "biome-check", "prettier" },
+                typescriptreact = { "biome-check", "prettier" },
                 yaml = { "yamlfmt" },
             },
             default_format_opts = {
