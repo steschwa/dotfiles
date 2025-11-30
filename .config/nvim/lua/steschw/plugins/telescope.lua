@@ -7,6 +7,7 @@ local border_none = { " ", " ", " ", " ", " ", " ", " ", " " }
 return {
     {
         "nvim-telescope/telescope.nvim",
+        version = "*",
         dependencies = {
             "nvim-telescope/telescope-fzf-native.nvim",
             "fixme.nvim",
