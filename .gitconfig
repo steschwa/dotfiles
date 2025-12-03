@@ -89,9 +89,6 @@
 	autoStash = true
 	updateRefs = true
 
-[merge]
-    conflictstyle = zdiff3
-
 [interactive]
     diffFilter = delta --color-only
 
