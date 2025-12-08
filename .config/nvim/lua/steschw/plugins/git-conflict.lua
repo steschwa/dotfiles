@@ -35,6 +35,6 @@ return {
     end,
     opts = {
         default_mappings = false,
-        disable_diagnostics = true,
+        disable_diagnostics = false,
     },
 }
