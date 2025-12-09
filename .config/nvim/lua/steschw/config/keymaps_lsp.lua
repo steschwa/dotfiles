@@ -22,14 +22,11 @@ function M.diagnostics()
     local filename = vim.fn.fnamemodify(vim.fn.expand("%"), ":t")
     local diagnostics = vim.diagnostic.get(0)
 
-    local what = {
+    vim.fn.setqflist({}, " ", {
         title = string.format("Diagnostics (%s)", filename),
-        context = "diagnostics",
-        nr = "$",
+        context = { "diagnostics" },
         items = vim.diagnostic.toqflist(diagnostics),
-    }
-
-    vim.fn.setqflist({}, " ", what)
+    })
     vim.cmd("botright cw")
 end
 

@@ -41,6 +41,15 @@ local function cell_filename(item)
     }
 end
 
+local function cell_filepath(item)
+    local path = vim.fn.bufname(item.bufnr)
+
+    return {
+        text = path,
+        hl = "FixmeFilepath",
+    }
+end
+
 local function cell_file_icon(item)
     local path = vim.fn.bufname(item.bufnr)
     local filename = vim.fn.fnamemodify(path, ":t")
@@ -69,6 +78,9 @@ local COLUMNS_DIAGNOSTICS = {
     { cell_file_icon, cell_filename, cell_lnum },
     { cell_text },
 }
+local COLUMNS_GIT_CONFLICTS = {
+    { cell_file_icon, cell_filepath },
+}
 local COLUMNS_NORMAL = {
     { cell_file_icon, cell_filename, cell_lnum },
     { cell_text },
@@ -85,8 +97,12 @@ return {
                 context = true,
             }).context
 
-            if context == "diagnostics" then
+            if context and context[1] == "diagnostics" then
                 return COLUMNS_DIAGNOSTICS
+            end
+
+            if context and context[1] == "git-conflicts" then
+                return COLUMNS_GIT_CONFLICTS
             end
 
             return COLUMNS_NORMAL

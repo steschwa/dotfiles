@@ -82,10 +82,15 @@ vim.api.nvim_create_user_command("GitConflicts", function()
             }
         end, lines)
 
+        if #lines == 0 then
+            return
+        end
+
         vim.schedule(function()
             vim.fn.setqflist({}, " ", {
                 title = "Git Conflicts",
                 items = qf_items,
+                context = { "git-conflicts" },
             })
             vim.cmd.copen()
         end)
