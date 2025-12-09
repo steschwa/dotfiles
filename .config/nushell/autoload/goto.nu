@@ -12,7 +12,7 @@ def --env goto [] {
     cd $selection
 
     let title = $selection | path basename
-    print -n $"(ansi title)($title)(ansi st)" 
+    print --no-newline $"(ansi title)($title)(ansi st)" 
 
     clear
 }
