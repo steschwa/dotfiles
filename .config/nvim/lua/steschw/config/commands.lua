@@ -10,7 +10,7 @@ vim.api.nvim_create_user_command("Dump", function(opts)
     vim.cmd("vsplit")
     vim.api.nvim_set_current_buf(bufid)
 end, {
-    force = false,
+    force = true,
     nargs = 1,
     complete = "command",
 })
@@ -60,6 +60,37 @@ vim.api.nvim_create_user_command("DumpHl", function()
     vim.cmd("vsplit")
     vim.api.nvim_set_current_buf(bufid)
 end, {
-    force = false,
+    force = true,
+    nargs = 0,
+})
+
+vim.api.nvim_create_user_command("GitConflicts", function()
+    local args = { "git", "diff", "--diff-filter=U", "--name-only" }
+
+    vim.system(args, { text = true }, function(out)
+        if not out.stdout then
+            return
+        end
+
+        local lines = vim.tbl_filter(function(value)
+            return #value > 0
+        end, vim.split(out.stdout, "\n"))
+        local qf_items = vim.tbl_map(function(file_path)
+            return {
+                filename = file_path,
+                lnum = 1,
+            }
+        end, lines)
+
+        vim.schedule(function()
+            vim.fn.setqflist({}, " ", {
+                title = "Git Conflicts",
+                items = qf_items,
+            })
+            vim.cmd.copen()
+        end)
+    end)
+end, {
+    force = true,
     nargs = 0,
 })
