@@ -1,3 +1,5 @@
+---@module "fixme"
+
 local function cell_severity(item)
     local severity = vim.diagnostic.severity[item.type]
     if not severity then
@@ -90,12 +92,13 @@ return {
     "steschwa/fixme.nvim",
     version = "*",
     ft = "qf",
+    ---@type fixme.Config
     opts = {
         columns = function(qf_id)
             local context = vim.fn.getqflist({
                 id = qf_id,
                 context = true,
-            }).context
+            }).context --[[@as string[]|nil]]
 
             if context and context[1] == "diagnostics" then
                 return COLUMNS_DIAGNOSTICS
