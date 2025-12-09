@@ -18,6 +18,7 @@ brew "openjdk"
 brew "ripgrep"
 brew "sd"
 brew "starship"
+brew "stu" # s3 client
 brew "tree"
 brew "tree-sitter-cli"
 brew "uv"
