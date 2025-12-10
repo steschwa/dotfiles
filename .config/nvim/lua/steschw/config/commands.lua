@@ -83,6 +83,7 @@ vim.api.nvim_create_user_command("GitConflicts", function()
         end, lines)
 
         if #lines == 0 then
+            vim.notify("[Git Conflicts] no conflicting files found")
             return
         end
 
