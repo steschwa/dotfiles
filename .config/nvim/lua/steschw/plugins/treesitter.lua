@@ -9,6 +9,7 @@ return {
         dependencies = { "nvim-treesitter/nvim-treesitter" },
         version = "*",
         build = "make nvim-install",
+        ft = "d2",
     },
     {
         "nvim-treesitter/nvim-treesitter-textobjects",
