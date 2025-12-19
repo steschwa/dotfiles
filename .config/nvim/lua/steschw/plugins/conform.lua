@@ -12,6 +12,7 @@ return {
             formatters_by_ft = {
                 bash = { "shfmt" },
                 css = { "biome-check", "prettier" },
+                d2 = { "d2" },
                 go = { "golangci-lint" },
                 graphql = { "biome-check", "prettier" },
                 html = { "biome-check", "prettier" },
