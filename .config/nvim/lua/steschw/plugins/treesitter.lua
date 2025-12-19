@@ -5,6 +5,12 @@ return {
         build = ":TSUpdate",
     },
     {
+        "ravsii/tree-sitter-d2",
+        dependencies = { "nvim-treesitter/nvim-treesitter" },
+        version = "*",
+        build = "make nvim-install",
+    },
+    {
         "nvim-treesitter/nvim-treesitter-textobjects",
         branch = "main",
         keys = {
