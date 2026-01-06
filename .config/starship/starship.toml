@@ -2,7 +2,7 @@
 
 add_newline = true
 
-format = "$directory($git_branch)(${env_var.NU_OVERLAYS})($docker_context)($golang)($nodejs)($bun)($python)$fill ($status)($cmd_duration)($time)\n$character"
+format = "$directory($git_branch)(${env_var.NU_OVERLAYS})($golang)($nodejs)($bun)($python)$fill ($status)($cmd_duration)($time)\n$character"
 
 [git_branch]
 symbol = " "
@@ -12,12 +12,6 @@ format = "[$symbol$branch]($style) "
 symbol = ' '
 format = '[$symbol$env_value]($style) '
 style = 'red'
-
-[docker_context]
-symbol = " "
-format = "[$symbol$context]($style) "
-style = "blue"
-only_with_files = false
 
 [golang]
 symbol = "󰟓 "
