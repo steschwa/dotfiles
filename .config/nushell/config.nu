@@ -27,7 +27,7 @@ $env.RIPGREP_CONFIG_PATH = ($env.XDG_CONFIG_HOME | path join 'ripgrep/config')
 $env.BAT_THEME = 'ansi'
 $env.SSH_AUTH_SOCK = $env.HOME | path join 'Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock'
 
-$env.PATH ++= [
+$env.PATH = [
     '/opt/homebrew/opt/openjdk/bin',
     '/opt/homebrew/opt/node@20/bin',
     '/opt/homebrew/opt/postgresql@17/bin',
@@ -36,7 +36,8 @@ $env.PATH ++= [
     $env.GOBIN,
     ($env.HOME | path join '.bun/bin'), # bun
     ($env.HOME | path join '.cargo/bin'), # rust
-    ($env.HOME | path join '.local/bin') # uv tools
+    ($env.HOME | path join '.local/bin'), # uv tools
+    ...$env.PATH
 ]
 
 $env.NU_LIB_DIRS = [
