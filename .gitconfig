@@ -14,6 +14,7 @@
     b = branch
     bb = !~/.nu_scripts/git/list-branches.nu
     ca = commit --amend --no-edit
+    ce = commit --amend --edit
     cm = commit --message
     d = diff
     dd = diff --cached
