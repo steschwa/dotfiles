@@ -156,28 +156,6 @@ local function item_lazy_updates()
     return string.format(" %s ", ls.updates())
 end
 
----@return string
-local function item_git_conflicts()
-    local filepath = vim.api.nvim_buf_get_name(0)
-    if filepath == "" then
-        return ""
-    end
-
-    local result = vim.system({ "git", "ls-files", "-u", filepath }):wait()
-    if result.code ~= 0 then
-        return ""
-    end
-
-    local lines = vim.split(result.stdout, "\n", { trimempty = true })
-    local conflict_count = math.floor(#lines / 3)
-
-    if conflict_count == 0 then
-        return ""
-    end
-
-    return string.format("   %d ", conflict_count)
-end
-
 local M = {}
 
 ---@return string
@@ -202,8 +180,6 @@ function M.active()
         item_diagnostics(vim.diagnostic.severity.INFO),
         "%#StatusLineDiagnosticHint#",
         item_diagnostics(vim.diagnostic.severity.HINT),
-        "%#StatusLineGitConflicts#",
-        item_git_conflicts(),
         "%#Statusline#",
         "%=",
         "%#StatusLineLazyUpdates#",
