@@ -23,6 +23,8 @@ brew "stu" # s3 client
 brew "tree"
 brew "tree-sitter-cli"
 brew "uv"
+brew "postgres@17"
+brew "pgvector"
 
 cask "1password"
 cask "font-iosevka"
