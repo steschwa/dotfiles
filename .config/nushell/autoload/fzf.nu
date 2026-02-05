@@ -7,13 +7,7 @@ let fzf_opts = [
     "--no-separator"
     "--pointer=''"
     "--prompt=' '"
-    "--color=fg:gray"
-    "--color=bg:-1"
-    "--color=hl:yellow"
-    "--color=current-fg:-1"
-    "--color=current-bg:-1"
-    "--color=current-hl:yellow"
-    "--color=gutter:-1"
+    "--color=fg:gray,bg:-1,hl:6,current-fg:-1,current-bg:-1,current-hl:6,gutter:-1"
     "--bind=ctrl-y:accept"
 ]
 

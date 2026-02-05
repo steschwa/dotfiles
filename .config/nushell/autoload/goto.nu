@@ -4,7 +4,8 @@ def --env goto [] {
         ...(subdirs "/Users/stefan/projects"),
     ]
 
-    let selection = $dirs | to text | fzf --reverse --height=20
+
+    let selection = $dirs | to text | fzf --reverse --marker='' --prompt='goto directory: ' --separator=' ' --padding=1 --color=prompt:2
     if ($selection | is-empty) {
         return
     }
