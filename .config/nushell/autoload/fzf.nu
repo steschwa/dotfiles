@@ -7,7 +7,7 @@ let fzf_opts = [
     "--no-separator",
     "--pointer=''",
     "--prompt=' '",
-    "--color=fg:gray,bg:-1,hl:6,current-fg:-1,current-bg:-1,current-hl:6,gutter:-1,prompt:2",
+    "--color=fg:gray,fg+:-1,bg:-1,bg+:-1,hl:6,hl+:-1,gutter:-1,prompt:2",
     "--bind=ctrl-y:accept",
     "--marker=''",
     "--reverse",
