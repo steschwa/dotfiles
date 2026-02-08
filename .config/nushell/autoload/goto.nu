@@ -5,7 +5,7 @@ def --env goto [] {
     ]
 
 
-    let selection = $dirs | to text | fzf --reverse --marker='' --prompt='goto directory: ' --separator=' ' --padding=1 --color=prompt:2
+    let selection = $dirs | to text | fzf --prompt='goto directory: '
     if ($selection | is-empty) {
         return
     }
