@@ -1,11 +1,17 @@
 # get the device's ipv4 address
 export def ip [] {
-    ifconfig en0 
+    let address = ifconfig en0 
     | lines 
     | str trim 
     | find --no-highlight --regex 'inet\s' 
     | parse --regex 'inet (?<ip>[\d\.]+)' 
-    | get ip.0 
+    | get ip.0 --optional
+
+    if $address == null {
+        error make --unspanned 'could not determine network address'
+    }
+
+    $address
 }
 
 # check if a given port is open (listening for connections)
