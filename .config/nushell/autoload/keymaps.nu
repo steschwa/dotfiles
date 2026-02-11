@@ -1,15 +1,5 @@
 $env.config.keybindings ++= [
     {
-        name: help_menu
-        modifier: control
-        keycode: char_h
-        mode: [emacs, vi_insert, vi_normal]
-        event: {
-            send: menu,
-            name: help_menu 
-        }
-    },
-    {
         name: history_menu
         modifier: control
         keycode: char_r
@@ -35,6 +25,15 @@ $env.config.keybindings ++= [
         event: {
             send: executehostcommand
             cmd: goto
+        }
+    },
+    {
+        name: clear_line
+        modifier: control
+        keycode: char_u
+        mode: [emacs, vi_insert]
+        event: {
+            edit: clear
         }
     }
 ]
