@@ -27,7 +27,6 @@ def get_session_name(tab: TabBarData, max_length: int) -> str | None:
 def draw_right_status(screen: Screen, tab: TabBarData) -> int:
     max_length = screen.columns - screen.cursor.x
     text = get_session_name(tab, max_length)
-    print("text:", text)
     if text is None:
         return screen.cursor.x
 
