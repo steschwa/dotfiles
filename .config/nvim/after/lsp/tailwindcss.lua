@@ -13,6 +13,8 @@ return {
             },
             classFunctions = {
                 "clsx",
+                "cn",
+                "cva",
             },
         },
     },
