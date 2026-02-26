@@ -1,7 +1,6 @@
 # -------------------------------------------
 # ENV
 # -------------------------------------------
-
 $env.PROMPT_INDICATOR_VI_INSERT = ''
 $env.PROMPT_INDICATOR_VI_NORMAL = ''
 
@@ -66,16 +65,17 @@ $env.config.history.max_size = 1_000
 $env.config.history.file_format = 'sqlite'
 $env.config.history.isolation = true
 
+const SESSION_TEMP_PATH = [$nu.temp-dir, $'nushell-($nu.pid)'] | path join
+mkdir $SESSION_TEMP_PATH
+
 # -------------------------------------------
 # STARSHIP
 # -------------------------------------------
 
-mkdir ~/.cache/starship
-starship init nu | save -f ~/.cache/starship/init.nu
+starship init nu | save -f ($SESSION_TEMP_PATH | path join 'starship.nu')
 
 # -------------------------------------------
 # CARAPACE
 # -------------------------------------------
 
-mkdir ~/.cache/carapace
-carapace _carapace nushell | save -f ~/.cache/carapace/init.nu
+carapace _carapace nushell | save -f ($SESSION_TEMP_PATH | path join 'carapace.nu')
