@@ -3,6 +3,7 @@ export-env {
         # if the current command is an alias, get it's expansion
         let expanded_alias = scope aliases | where name == $spans.0 | get --optional 0?.expansion?
 
+
         mut spans = $spans
         if $expanded_alias != null  {
             # put the first word of the expanded alias first in the span
