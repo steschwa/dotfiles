@@ -58,7 +58,7 @@ def draw_tab(
     boss = get_boss()
     ls = boss.call_remote_control(None, ("ls", f"--match-tab=id:{tab.tab_id}"))
 
-    ls = json.loads(ls)
+    ls = json.loads(str(ls))
     win_groups = ls[0]["tabs"][0]["groups"]
 
     windows_count = max(list(map(lambda group: len(group["windows"]), win_groups)))
