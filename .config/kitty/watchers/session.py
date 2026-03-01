@@ -1,8 +1,8 @@
 import json
-import os
 from typing import Any
 
 from kitty.boss import Boss
+from kitty.child import getpid
 from kitty.window import Window
 
 
@@ -17,9 +17,6 @@ def on_tab_bar_dirty(boss: Boss, window: Window, data: dict[str, Any]) -> None:
 
         session_to_tabs[session] = tab_names
 
-    pid = os.environ.get("KITTY_PID")
-    if pid is None:
-        return
-
+    pid = getpid()
     with open(f"/tmp/kitty-{pid}-sessions.json", "w") as file:
         json.dump(session_to_tabs, file)
