@@ -1,5 +1,9 @@
-new_tab
-cd ~
+new_tab kitty
+cd /Users/stefan/.config/kitty
+launch --dont-take-focus
+
+new_tab nushell
+cd /Users/stefan/.config/nushell
 launch --dont-take-focus
 
 focus_tab 0
