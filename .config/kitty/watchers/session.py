@@ -19,4 +19,10 @@ def on_tab_bar_dirty(boss: Boss, window: Window, data: dict[str, Any]) -> None:
 
     pid = getpid()
     with open(f"/tmp/kitty-{pid}-sessions.json", "w") as file:
-        json.dump(session_to_tabs, file)
+        json.dump(
+            {
+                "active_session": boss.active_session,
+                "sessions": session_to_tabs,
+            },
+            file,
+        )
