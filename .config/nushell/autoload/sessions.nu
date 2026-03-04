@@ -11,18 +11,11 @@ export def 'session activate' [] {
     | where $it not-in ($active_sessions.name)
 
     let session_to_activate = [
-        ...($active_sessions | each {|it| 
-            let tab_names = $it.tabs | str join ', '
-            [
-                $"($it.name) \(active\)",    
-                $'tabs: ($tab_names)'
-            ] 
-            | str join "\n"
-        })
+        ...($active_sessions | each {|it| $"($it.name) \(active\)" })
         ...$inactive_sessions
     ]
-    | str join (char nul)
-    | fzf --read0 --ansi --prompt 'activate session: ' --ghost (_get_active_session_name) --gap --gap-line ' '
+    | to text
+    | fzf --prompt 'activate session: ' --ghost (_get_active_session_name)
 
     kitten @ action goto_session ($sessions_dir | path join $'($session_to_activate).kitty-session')
 }
@@ -46,10 +39,4 @@ def _get_active_session_name []: nothing -> string {
 
 def _get_active_sessions [] {
     _open_session_file | get sessions | transpose name tabs
-}
-
-def _get_tabs_by_session [
-    session_name: string
-]: nothing -> list<string> {
-    _open_session_file | get sessions | get --optional $session_name | default []
 }
