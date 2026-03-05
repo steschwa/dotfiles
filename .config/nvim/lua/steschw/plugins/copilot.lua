@@ -10,8 +10,8 @@ return {
         suggestion = {
             auto_trigger = true,
             keymap = {
-                accept = "<C-Cr>",
-                dismiss = "<C-Esc>",
+                accept = "<C-y>",
+                dismiss = "<C-e>",
                 toggle_auto_trigger = "<C-Tab>",
             },
         },
