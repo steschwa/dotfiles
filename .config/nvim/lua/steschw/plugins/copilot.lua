@@ -7,12 +7,14 @@ return {
     event = "InsertEnter",
     opts = {
         copilot_node_command = "/opt/homebrew/bin/node",
+        panel = {
+            enabled = true,
+        },
         suggestion = {
             auto_trigger = true,
             keymap = {
                 accept = "<C-y>",
                 dismiss = "<C-e>",
-                toggle_auto_trigger = "<C-Tab>",
             },
         },
     },
