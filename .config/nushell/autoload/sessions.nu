@@ -20,6 +20,11 @@ export def 'session activate' [] {
     kitten @ action goto_session ($sessions_dir | path join $'($session_to_activate).kitty-session')
 }
 
+# list all currently active sessions
+export def 'session list' [] {
+    _get_active_sessions | get name
+}
+
 def _open_session_file [] {
     if ('KITTY_PID' not-in $env) {
         error make 'missing KITTY_PID environment variable' 
