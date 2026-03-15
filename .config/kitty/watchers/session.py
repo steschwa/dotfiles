@@ -9,24 +9,20 @@ NONE_SESSION_NAME = "<none>"
 
 
 def on_tab_bar_dirty(boss: Boss, window: Window, data: dict[str, Any]) -> None:
-    session_to_tabs = {}
+    sessions = set()
 
     for tab in boss.all_tabs:
-        session = (
-            tab.active_session_name or tab.created_in_session_name or NONE_SESSION_NAME
-        )
+        session = tab.active_session_name or tab.created_in_session_name
+        if not session:
+            continue
 
-        tab_names = session_to_tabs[session] if session in session_to_tabs else []
-        tab_names.append(tab.effective_title)
+        sessions.add(session)
 
-        session_to_tabs[session] = tab_names
-
-    pid = getpid()
-    with open(f"/tmp/kitty-{pid}-sessions.json", "w") as file:
+    with open(f"/tmp/kitty-{getpid()}-sessions.json", "w") as file:
         json.dump(
             {
-                "active_session": boss.active_session or NONE_SESSION_NAME,
-                "sessions": session_to_tabs,
+                "active_session": boss.active_session,
+                "sessions": list(sessions),
                 "tabs": boss.active_tab_manager
                 and list(
                     map(
