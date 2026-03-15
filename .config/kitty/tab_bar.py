@@ -5,9 +5,6 @@ from kitty.fast_data_types import Screen, get_boss, get_options
 from kitty.tab_bar import TabBarData, as_rgb, draw_title
 from kitty.utils import color_as_int
 
-INDICATOR_NORMAL = "○"
-INDICATOR_OVERLAY = "●"
-
 opts = get_options()
 
 
@@ -74,14 +71,7 @@ def draw_tab(
     draw_win_indicator = len(win_groups) > 1 or windows_count > 1
 
     if draw_win_indicator:
-        indicators = list(
-            map(
-                lambda group: (
-                    INDICATOR_OVERLAY if len(group["windows"]) > 1 else INDICATOR_NORMAL
-                ),
-                win_groups,
-            )
-        )
+        indicators = list("●" if len(g["windows"]) > 1 else "○" for g in win_groups)
         screen.draw(" " + "".join(indicators))
 
     if is_last:
