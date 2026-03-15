@@ -18,7 +18,7 @@ export def 'session activate' [] {
 
 # list all currently active sessions
 export def 'session list' [] {
-    _get_active_sessions | get name
+    _get_active_sessions
 }
 
 # create a new (empty) kitty session
