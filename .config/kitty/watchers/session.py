@@ -5,18 +5,13 @@ from kitty.boss import Boss
 from kitty.child import getpid
 from kitty.window import Window
 
-NONE_SESSION_NAME = "<none>"
-
 
 def on_tab_bar_dirty(boss: Boss, window: Window, data: dict[str, Any]) -> None:
-    sessions = set()
-
-    for tab in boss.all_tabs:
-        session = tab.active_session_name or tab.created_in_session_name
-        if not session:
-            continue
-
-        sessions.add(session)
+    sessions = set(
+        t.active_session_name or t.created_in_session_name
+        for t in boss.all_tabs
+        if t.active_session_name or t.created_in_session_name
+    )
 
     with open(f"/tmp/kitty-{getpid()}-sessions.json", "w") as file:
         json.dump(
