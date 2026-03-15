@@ -1,3 +1,4 @@
+
 # go to an already existing kitty session
 export def 'session activate' [] {
     let active_session = _get_active_session
@@ -23,19 +24,27 @@ export def 'session list' [] {
 
 # create a new (empty) kitty session
 export def 'session create' [] {
+    let templates_dir = '~/.config/kitty/sessions' | path expand 
+
+    let template = glob $'($templates_dir)/*.kitty-session' 
+    | path parse 
+    | get stem 
+    | to text
+    | fzf --prompt 'session template: ' --ghost 'default'
+
+    let template_file = $templates_dir | path join $'($template).kitty-session'
     let name = input 'name of new session: ' 
+
+    if not ($template_file | path exists) {
+        error make $'invalid session template: ($template_file)'
+    }
 
     let session_file = $'/tmp/($name).kitty-session'
     if ($session_file | path exists) {
-        error make 'session file already exists'
+        error make $'session file ($session_file) already exists'
     }
 
-    [
-        'new_tab',
-        'launch'
-    ] 
-    | save -f $session_file
-
+    cp $template_file $session_file
     kitten @ action goto_session $session_file
     rm $session_file
 }
