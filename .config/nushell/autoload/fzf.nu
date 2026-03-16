@@ -11,7 +11,8 @@ let fzf_opts = [
     "--bind=ctrl-y:accept",
     "--marker=''",
     "--reverse",
-    "--separator=' '"
+    "--separator=' '",
+    "--prompt='search: '",
 ]
 
 $env.FZF_DEFAULT_COMMAND = 'fd --type f --hidden'
