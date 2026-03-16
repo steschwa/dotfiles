@@ -1,28 +1,31 @@
 
-# go to an already existing kitty session
+# go to an existing kitty session
 export def 'session activate' [] {
-    let active_session = _get_active_session
+    let data = _open_session_file 
 
-    let session_to_activate = _get_active_sessions
-    | each {|session| 
-        if $session == $active_session {
-            $"($session) \(active\)"
-        } else {
-            $session
-        } 
-    }
+    let inactive_sessions = $data.sessions | where $it != $data.active_session
+
+    let session_to_activate = [
+        $"($data.active_session) \(active\)",
+        ...$inactive_sessions
+    ]
     | to text
-    | fzf --prompt 'activate session: ' --ghost $active_session
+    | fzf --prompt 'activate session: ' --ghost $data.active_session
 
     kitten @ action goto_session $session_to_activate
 }
 
-# list all currently active sessions
+# list all currently created sessions
 export def 'session list' [] {
-    _get_active_sessions
+    let data = _open_session_file 
+
+    $data.sessions
+    | wrap session
+    | insert is_active {|it| $it.session == $data.active_session }
+    | sort-by --reverse is_active
 }
 
-# create a new (empty) kitty session
+# create a new kitty session
 export def 'session create' [] {
     let templates_dir = '~/.config/kitty/sessions' | path expand 
 
@@ -46,7 +49,7 @@ export def 'session create' [] {
 
     cp $template_file $session_file
     kitten @ action goto_session $session_file
-    rm $session_file
+    rm --permanent $session_file
 }
 
 # close the current kitty session
@@ -65,12 +68,4 @@ def _open_session_file [] {
     }
 
     open $filename
-}
-
-def _get_active_session []: nothing -> string {
-    _open_session_file | get active_session
-}
-
-def _get_active_sessions [] {
-    _open_session_file | get sessions
 }

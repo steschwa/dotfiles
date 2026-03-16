@@ -18,14 +18,6 @@ def on_tab_bar_dirty(boss: Boss, window: Window, data: dict[str, Any]) -> None:
             {
                 "active_session": boss.active_session,
                 "sessions": list(sessions),
-                "tabs": boss.active_tab_manager
-                and list(
-                    map(
-                        lambda t: t.effective_title,
-                        boss.active_tab_manager.tabs_to_be_shown_in_tab_bar,
-                    )
-                )
-                or [],
             },
             file,
         )
