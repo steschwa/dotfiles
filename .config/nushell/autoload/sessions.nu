@@ -36,7 +36,7 @@ export def 'session create' [] {
     | fzf --prompt 'session template: ' --ghost 'default'
 
     let template_file = $templates_dir | path join $'($template).kitty-session'
-    let name = input 'name of new session: ' 
+    let name = input --default $template 'name of new session: ' 
 
     if not ($template_file | path exists) {
         error make $'invalid session template: ($template_file)'
