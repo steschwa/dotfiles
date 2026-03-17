@@ -41,6 +41,8 @@ def draw_right_status(screen: Screen, tab: TabBarData) -> int:
         screen.draw(" " * spaces)
 
     screen.cursor.fg = as_rgb(color_as_int(opts.inactive_tab_foreground))
+    screen.cursor.bold = False
+    screen.cursor.italic = False
     screen.draw(text)
 
     if screen.columns - screen.cursor.x > len(text):
