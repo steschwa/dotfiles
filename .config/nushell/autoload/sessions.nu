@@ -1,4 +1,3 @@
-
 # go to an existing kitty session
 export def 'session activate' [] {
     let data = _open_session_file 
@@ -21,8 +20,13 @@ export def 'session list' [] {
 
     $data.sessions
     | wrap session
-    | insert is_active {|it| $it.session == $data.active_session }
-    | sort-by --reverse is_active
+    | insert is_active {|it| 
+        if $it.session == $data.active_session {
+            '✅'
+        } else {
+            '❌'
+        }
+    }
 }
 
 # create a new kitty session
@@ -57,7 +61,7 @@ export def 'session close' [] {
     kitten @ action close_session .
 }
 
-def _open_session_file [] {
+def _open_session_file []: nothing -> record<active_session: string, sessions: list<string>> {
     if ('KITTY_PID' not-in $env) {
         error make 'missing KITTY_PID environment variable' 
     }
