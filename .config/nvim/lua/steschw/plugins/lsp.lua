@@ -15,10 +15,10 @@ return {
                 "html",
                 "jsonls",
                 "just",
-                -- "lemminx", -- xml
                 "lua_ls",
                 "marksman",
                 "nushell",
+                "oxlint",
                 "prismals",
                 "ruff",
                 "rust_analyzer",
@@ -26,6 +26,7 @@ return {
                 "ts_ls",
                 "ty",
                 "yamlls",
+                -- "lemminx", -- xml
             })
         end,
     },
