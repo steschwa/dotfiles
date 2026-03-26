@@ -31,16 +31,8 @@ export def 'session list' [] {
 
 # create a new kitty session
 export def 'session create' [] {
-    let templates_dir = '~/.config/kitty/sessions' | path expand 
-
-    let template = glob $'($templates_dir)/*.kitty-session' 
-    | path parse 
-    | get stem 
-    | to text
-    | fzf --prompt 'session template: ' --ghost 'default'
-
-    let template_file = $templates_dir | path join $'($template).kitty-session'
-    let name = input --default $template 'name of new session: ' 
+    let template_file = '~/.config/kitty/sessions/default.kitty-session'
+    let name = input --default 'default' 'name of new session: ' 
 
     if not ($template_file | path exists) {
         error make $'invalid session template: ($template_file)'
