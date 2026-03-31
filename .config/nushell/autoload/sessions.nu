@@ -31,7 +31,7 @@ export def 'session list' [] {
 
 # create a new kitty session
 export def 'session create' [] {
-    let template_file = '~/.config/kitty/sessions/default.kitty-session'
+    let template_file = '~/.config/kitty/sessions/default.kitty-session' | path expand
     let name = input --default 'default' 'name of new session: ' 
 
     if not ($template_file | path exists) {
@@ -51,6 +51,10 @@ export def 'session create' [] {
 # close the current kitty session
 export def 'session close' [] {
     kitten @ action close_session .
+}
+
+export def 'session file' [] {
+    _open_session_file
 }
 
 def _open_session_file []: nothing -> record<active_session: string, sessions: list<string>> {
