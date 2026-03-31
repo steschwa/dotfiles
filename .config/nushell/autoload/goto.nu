@@ -16,6 +16,7 @@ def --env goto [
     if $create_session {
         let session_file_content = [
             $'new_tab ($title)',
+            $'cd ($selection)',
             'launch'
         ]  
 
