@@ -1,23 +1,36 @@
-def --env goto [] {
+def --env goto [
+    --create-session
+] {
     let dirs = [
-        ...(subdirs "/Users/stefan/.config"),
-        ...(subdirs "/Users/stefan/projects"),
+        ...(_subdirs "/Users/stefan/.config"),
+        ...(_subdirs "/Users/stefan/projects"),
     ]
-
 
     let selection = $dirs | to text | fzf --prompt='goto directory: '
     if ($selection | is-empty) {
         return
     }
 
-    cd $selection
-
     let title = $selection | path basename
-    print --no-newline $"(ansi title)($title)(ansi st)" 
 
-    clear
+    if $create_session {
+        let session_file_content = [
+            $'new_tab ($title)',
+            'launch'
+        ]  
+
+        let session_file_path = $'/tmp/($title).kitty-session'
+        $session_file_content | str join "\n" | save -f $session_file_path
+
+        kitten @ action goto_session $session_file_path
+        rm $session_file_path
+    } else {
+        cd $selection
+        print --no-newline $"(ansi title)($title)(ansi st)" 
+        clear
+    }
 }
 
-def subdirs [root: string]: nothing -> list<string> {
+def _subdirs [root: string]: nothing -> list<string> {
     ls $root | where type == "dir" | get name
 }
