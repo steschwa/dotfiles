@@ -67,12 +67,6 @@ keymap("n", "gs", function()
     end)
 end)
 
--- linting
-keymap("n", "gl", function()
-    vim.diagnostic.reset()
-    require("steschw.utils.linting").lint()
-end)
-
 -- quickfix
 keymap("n", "<leader>q", function()
     vim.cmd("botright cw")
