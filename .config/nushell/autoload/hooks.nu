@@ -27,7 +27,7 @@ let reonic_overlay_hide_hook = {
     condition: {|before, after|
         (is_reonic_dir $before) and not (is_reonic_dir $after) and ('reonic' in (overlay list).name)
     }
-    code: 'overlay hide reonic'
+    code: 'overlay hide --keep-env [ PWD ] reonic'
 }
 
 $env.config.hooks.pre_prompt ++= [$nu_overlays_hook]
