@@ -6,7 +6,7 @@ from kitty.child import getpid
 from kitty.window import Window
 
 
-def on_tab_bar_dirty(boss: Boss, window: Window, data: dict[str, Any]) -> None:
+def on_tab_bar_dirty(boss: Boss, _window: Window, _data: dict[str, Any]) -> None:
     sessions = set(
         t.active_session_name or t.created_in_session_name
         for t in boss.all_tabs
