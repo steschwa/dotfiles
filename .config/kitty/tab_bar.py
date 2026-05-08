@@ -65,18 +65,13 @@ def draw_tab(
     ls = get_boss().call_remote_control(None, ("ls", f"--match-tab=id:{tab.tab_id}"))
 
     ls = json.loads(str(ls))
-    win_groups = ls[0]["tabs"][0]["groups"]
+    ls_tab = ls[0]["tabs"][0]
 
-    windows_count = 0
-    for group in win_groups:
-        windows_count = max(windows_count, len(group["windows"]))
-
-    draw_win_indicator = len(win_groups) > 1 or windows_count > 1
-
+    draw_win_indicator = len(ls_tab["groups"]) > 1
     if draw_win_indicator:
         indicators = []
-        for group in win_groups:
-            indicators.append("●" if len(group["windows"]) > 1 else "○")
+        for window in ls_tab["windows"]:
+            indicators.append("■" if window["is_active"] else "·")
 
         screen.draw(" " + "".join(indicators))
 
