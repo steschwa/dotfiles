@@ -1,4 +1,3 @@
-# pyright: reportMissingImports=false
 import json
 
 from kitty.fast_data_types import Screen, get_boss, get_options
@@ -63,17 +62,22 @@ def draw_tab(
 ) -> int:
     draw_title(draw_data, screen, tab, index, max_tab_length)
 
-    boss = get_boss()
-    ls = boss.call_remote_control(None, ("ls", f"--match-tab=id:{tab.tab_id}"))
+    ls = get_boss().call_remote_control(None, ("ls", f"--match-tab=id:{tab.tab_id}"))
 
     ls = json.loads(str(ls))
     win_groups = ls[0]["tabs"][0]["groups"]
 
-    windows_count = max(list(map(lambda group: len(group["windows"]), win_groups)))
+    windows_count = 0
+    for group in win_groups:
+        windows_count = max(windows_count, len(group["windows"]))
+
     draw_win_indicator = len(win_groups) > 1 or windows_count > 1
 
     if draw_win_indicator:
-        indicators = list("●" if len(g["windows"]) > 1 else "○" for g in win_groups)
+        indicators = []
+        for group in win_groups:
+            indicators.append("●" if len(group["windows"]) > 1 else "○")
+
         screen.draw(" " + "".join(indicators))
 
     if is_last:
