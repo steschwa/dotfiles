@@ -11,6 +11,6 @@ def --wrapped claude [...rest] {
         CLAUDE_CONFIG_DIR: $claude_config_dir,
         CLAUDE_CODE_DISABLE_TERMINAL_TITLE: 1
     } {
-        ^claude ...$rest
+        ^claude ...$rest --plugin-dir ~/.config/claude/plugins/set-kitty-status
     }
 }
