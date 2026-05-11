@@ -1,5 +1,0 @@
-@_default:
-    just --list
-
-generate-hooks:
-    ./scripts/generate-hooks.nu
