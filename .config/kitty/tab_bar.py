@@ -26,14 +26,7 @@ def draw_right_status(screen: Screen, tab: TabBarData) -> int:
     if session_name is None:
         return screen.cursor.x
 
-    sessions = set(
-        t.active_session_name or t.created_in_session_name
-        for t in get_boss().all_tabs
-        if t.active_session_name or t.created_in_session_name
-    )
-
-    session_index = list(sessions).index(session_name)
-    text = f"{session_name} {session_index + 1}/{len(sessions)}"
+    text = f"({session_name})"
 
     spaces = screen.columns - screen.cursor.x - len(text)
     if spaces > 0:
