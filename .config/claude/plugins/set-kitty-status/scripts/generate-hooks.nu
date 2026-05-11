@@ -31,40 +31,34 @@ const BLOCKED = [
     'UserPromptExpansion'
 ]
 
-def generate_hook_by_event [event: string, status: string] {
+def generate_hooks [events: list<string>, status: string] {
   let command_path = $HOOKS_DIR | path join set-kitty-status.nu
 
-  let hook = [
-    {
-      hooks: [
-        {
-          type: command,
-          command: $'($command_path) ($status)'
-        }
-      ]
-    }
-  ]  
+  $events
+  | each {|event|
+    let hook = [
+      {
+        hooks: [
+          {
+            type: command,
+            command: $'($command_path) ($status)'
+          }
+        ]
+      }
+    ]  
 
-  { $event: $hook } 
+    { $event: $hook } 
+  }
+  | reduce --fold {} {|it, acc| $acc | merge $it }
 }
 
-let idle_hooks = $IDLE 
-  | each { generate_hook_by_event $in 'idle' } 
-  | reduce --fold {} {|it, acc| $acc | merge $it }
-
-let working_hooks = $WORKING 
-  | each { generate_hook_by_event $in 'working' } 
-  | reduce --fold {} {|it, acc| $acc | merge $it }
-
-let blocked_hooks = $BLOCKED 
-  | each { generate_hook_by_event $in 'blocked' } 
-  | reduce --fold {} {|it, acc| $acc | merge $it }
-
-let hooks_file_path = $HOOKS_DIR | path join hooks.json
+let idle_hooks = generate_hooks $IDLE 'idle'
+let working_hooks = generate_hooks $WORKING 'working'
+let blocked_hooks = generate_hooks $BLOCKED 'blocked'
 
 $idle_hooks 
 | merge $working_hooks 
 | merge $blocked_hooks
 | wrap hooks
 | to json
-| save -f $hooks_file_path
+| save -f ($HOOKS_DIR | path join hooks.json)
