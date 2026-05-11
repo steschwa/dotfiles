@@ -1,6 +1,7 @@
 #!/usr/bin/env nu
 
-const HOOKS_DIR = path self | path dirname | path join ../hooks | path expand
+const PLUGIN_ROOT_DIR = path self | path dirname | path join .. | path expand
+const HOOKS_DIR = $PLUGIN_ROOT_DIR | path join hooks | path expand
 
 const IDLE = [
     'SessionStart',
@@ -64,5 +65,6 @@ let hooks_file_path = $HOOKS_DIR | path join hooks.json
 $idle_hooks 
 | merge $working_hooks 
 | merge $blocked_hooks
+| wrap hooks
 | to json
 | save -f $hooks_file_path

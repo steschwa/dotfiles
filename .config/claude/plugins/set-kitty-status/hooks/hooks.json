@@ -1,192 +1,194 @@
 {
-  "SessionStart": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu idle"
-        }
-      ]
-    }
-  ],
-  "Stop": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu idle"
-        }
-      ]
-    }
-  ],
-  "SessionEnd": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu idle"
-        }
-      ]
-    }
-  ],
-  "PreToolUse": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "PostToolUse": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "PostToolUseFailure": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "PostToolBatch": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "PreCompact": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "PostCompact": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "SubagentStart": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "SubagentStop": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "TaskCreated": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "TaskCompleted": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "UserPromptSubmit": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "WorktreeCreate": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "WorktreeRemove": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
-        }
-      ]
-    }
-  ],
-  "PermissionRequest": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu blocked"
-        }
-      ]
-    }
-  ],
-  "PermissionDenied": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu blocked"
-        }
-      ]
-    }
-  ],
-  "UserPromptExpansion": [
-    {
-      "hooks": [
-        {
-          "type": "command",
-          "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu blocked"
-        }
-      ]
-    }
-  ]
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu idle"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu idle"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu idle"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "PostToolBatch": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "PostCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "TaskCreated": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "TaskCompleted": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "WorktreeCreate": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "WorktreeRemove": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu working"
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu blocked"
+          }
+        ]
+      }
+    ],
+    "PermissionDenied": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu blocked"
+          }
+        ]
+      }
+    ],
+    "UserPromptExpansion": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "/Users/stefan/.config/claude/plugins/set-kitty-status/hooks/set-kitty-status.nu blocked"
+          }
+        ]
+      }
+    ]
+  }
 }
