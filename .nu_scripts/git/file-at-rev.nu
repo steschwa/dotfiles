@@ -1,13 +1,11 @@
 #!/usr/bin/env nu --config ~/.config/nushell/config.nu
 
 export def main [] {
-    let branch = [
-        ...(
-            git branch --remotes --format '%(refname:short)' 
-            | lines 
-            | where $it has '/'
-        )
-    ]
+    let remotes = git remote | lines
+
+    let branch = git branch --all --format '%(refname:short)' 
+    | lines 
+    | where $it not-in $remotes
     | to text
     | fzf --prompt 'branch: '
 
