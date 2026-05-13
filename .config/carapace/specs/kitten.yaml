@@ -1,7 +1,12 @@
 # yaml-language-server: $schema=https://carapace.sh/schemas/command.json
 name: kitten
 commands:
-  - name: ssh
-    completion:
-      positional:
-        - ["$carapace.net.ssh.Hosts"]
+    - name: ssh
+      completion:
+        positional:
+            - - "$carapace.net.ssh.Hosts"
+
+    - name: icat
+      completion:
+        positionalany:
+            - "$files([.png, .jpeg, .jpg])"
