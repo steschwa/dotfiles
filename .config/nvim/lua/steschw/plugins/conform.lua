@@ -19,7 +19,7 @@ return {
                 javascript = { "biome-check", "oxfmt", "prettier" },
                 javascriptreact = { "biome-check", "oxfmt", "prettier" },
                 json = { "biome-check", "oxfmt", "prettier" },
-                jsonc = { "biome-check", "prettier" },
+                jsonc = { "biome-check", "oxfmt", "prettier" },
                 lua = { "stylua" },
                 markdown = { "prettier" },
                 python = {
