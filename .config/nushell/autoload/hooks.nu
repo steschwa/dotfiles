@@ -31,6 +31,7 @@ let reonic_overlay_hide_hook = {
 }
 
 $env.config.hooks.pre_prompt ++= [$nu_overlays_hook]
-$env.config.hooks.env_change = {
-    PWD: [$reonic_overlay_activate_hook, $reonic_overlay_hide_hook]
-}
+$env.config.hooks.env_change.PWD = (
+  $env.config.hooks.env_change.PWD? 
+  | append [$reonic_overlay_activate_hook, $reonic_overlay_hide_hook]
+)
