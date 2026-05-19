@@ -16,4 +16,4 @@ let fzf_opts = [
 ]
 
 $env.FZF_DEFAULT_COMMAND = 'fd --type f --hidden'
-$env.FZF_DEFAULT_OPTS = ($fzf_opts | str join ' ')
+$env.FZF_DEFAULT_OPTS = $fzf_opts | str join ' '

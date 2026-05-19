@@ -13,7 +13,7 @@ $env.NODE_OPTIONS = '--max-old-space-size=8192'
 
 # starship
 $env.STARSHIP_SHELL = 'nu'
-$env.STARSHIP_CONFIG = ($env.XDG_CONFIG_HOME | path join 'starship/starship.toml')
+$env.STARSHIP_CONFIG = $env.XDG_CONFIG_HOME | path join 'starship/starship.toml'
 
 # carapace
 $env.CARAPACE_ENV = 0
@@ -22,14 +22,12 @@ $env.CARAPACE_ENV = 0
 # $env.LESS = "--ignore-case --tabs=4 --tilde --use-color --quit-if-one-screen --raw-control-chars"
 $env.MANPAGER = $"sh -c 'col -bx | bat --language man --plain'"
 $env.UV_LINK_MODE = 'copy'
-$env.RIPGREP_CONFIG_PATH = ($env.XDG_CONFIG_HOME | path join 'ripgrep/config')
+$env.RIPGREP_CONFIG_PATH = $env.XDG_CONFIG_HOME | path join 'ripgrep/config'
 $env.BAT_THEME = 'ansi'
 $env.SSH_AUTH_SOCK = $env.HOME | path join 'Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock'
 
 $env.PATH = [
     '/opt/homebrew/opt/openjdk/bin',
-    # '/opt/homebrew/opt/node@24/bin', # node 24
-    '/opt/homebrew/opt/node@20/bin', # node 20
     '/opt/homebrew/opt/postgresql@17/bin',
     '/usr/local/bin',
     '/opt/homebrew/bin',
