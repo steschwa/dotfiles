@@ -15,7 +15,7 @@ return {
                 d2 = { "d2" },
                 go = { "golangci-lint" },
                 graphql = { "biome-check", "prettier" },
-                html = { "biome-check", "prettier" },
+                html = { "biome-check", "oxfmt", "prettier" },
                 javascript = { "biome-check", "oxfmt", "prettier" },
                 javascriptreact = { "biome-check", "oxfmt", "prettier" },
                 json = { "biome-check", "oxfmt", "prettier" },
