@@ -5,7 +5,6 @@ return {
         config = function()
             vim.lsp.enable({
                 "bashls",
-                "biome",
                 "cssls",
                 "docker_language_server",
                 "eslint",
