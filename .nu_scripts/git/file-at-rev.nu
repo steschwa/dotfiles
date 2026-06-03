@@ -9,14 +9,10 @@ export def main [] {
     | to text
     | fzf --prompt 'branch: '
 
-    let file = (
-        git ls-tree -r --name-only $branch 
-        | lines 
-        | to text 
-        | fzf --prompt 'file: '
-    )
+    let file = git ls-tree -r --name-only $branch 
+    | lines 
+    | to text 
+    | fzf --prompt 'file: '
 
-    let extension = $file | path parse | get extension
-
-    git show $'($branch):($file)' | bat --language $extension
+    git show $'($branch):($file)' | bat --file-name $file
 }
