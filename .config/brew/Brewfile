@@ -1,6 +1,5 @@
 tap "koekeishiya/formulae"
 
-brew "1password-cli"
 brew "bat"
 brew "carapace"
 brew "dbmate"
