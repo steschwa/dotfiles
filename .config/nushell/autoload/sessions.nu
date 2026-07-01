@@ -2,6 +2,11 @@
 export def 'session activate' [] {
     let data = _open_session_file 
 
+    let active_session_index = $data.sessions 
+    | enumerate
+    | where $it.item == $data.active_session
+    | get 0.index
+
     let session_to_activate = $data.sessions
     | each {|session|
       if $session == $data.active_session {
@@ -11,7 +16,7 @@ export def 'session activate' [] {
       }
     }
     | to text
-    | fzf --prompt 'activate session: ' --ghost $data.active_session
+    | fzf --prompt 'activate session: ' --ghost $data.active_session --bind $"load:pos\(($active_session_index + 1)\)"
 
     kitten @ action goto_session $session_to_activate
 }
