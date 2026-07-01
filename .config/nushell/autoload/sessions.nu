@@ -2,12 +2,14 @@
 export def 'session activate' [] {
     let data = _open_session_file 
 
-    let inactive_sessions = $data.sessions | where $it != $data.active_session
-
-    let session_to_activate = [
-        $"($data.active_session) \(active\)",
-        ...$inactive_sessions
-    ]
+    let session_to_activate = $data.sessions
+    | each {|session|
+      if $session == $data.active_session {
+        $"($session) \(active\)"
+      } else {
+        $session
+      }
+    }
     | to text
     | fzf --prompt 'activate session: ' --ghost $data.active_session
 
