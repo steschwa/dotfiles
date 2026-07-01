@@ -16,7 +16,12 @@ export def 'session activate' [] {
       }
     }
     | to text
-    | fzf --prompt 'activate session: ' --ghost $data.active_session --bind $"load:pos\(($active_session_index + 1)\)"
+    | (fzf 
+       --prompt 'activate session: ' 
+       --ghost $data.active_session 
+       --bind $"load:pos\(($active_session_index + 1)\)"
+       --bind 'change:first'
+      )
 
     kitten @ action goto_session $session_to_activate
 }
@@ -58,10 +63,6 @@ export def 'session create' [] {
 # close the current kitty session
 export def 'session close' [] {
     kitten @ action close_session .
-}
-
-export def 'session file' [] {
-    _open_session_file
 }
 
 def _open_session_file []: nothing -> record<active_session: string, sessions: list<string>> {
