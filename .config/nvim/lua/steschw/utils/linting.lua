@@ -12,17 +12,12 @@ function M.lint()
     end)
 end
 
-local function fix_eslint()
-    vim.cmd.LspEslintFixAll()
-end
-
-local function fix_pyright()
-    vim.cmd.LspPyrightOrganizeImports()
+local function fix_oxlint()
+    vim.cmd.LspOxlintFixAll()
 end
 
 function M.fix()
-    pcall(fix_eslint)
-    pcall(fix_pyright)
+    pcall(fix_oxlint)
 end
 
 return M
