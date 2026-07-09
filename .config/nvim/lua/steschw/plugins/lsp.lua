@@ -7,7 +7,6 @@ return {
                 "bashls",
                 "cssls",
                 "docker_language_server",
-                "eslint",
                 "golangci_lint_ls",
                 "gopls",
                 "graphql",
