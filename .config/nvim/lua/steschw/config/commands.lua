@@ -100,3 +100,43 @@ end, {
     force = true,
     nargs = 0,
 })
+
+vim.api.nvim_create_user_command("GitChangedFiles", function()
+    local args = { "git", "status", "--porcelain", "--untracked-files=all" }
+
+    vim.system(args, { text = true }, function(out)
+        if not out.stdout then
+            return
+        end
+
+        local lines = vim.tbl_filter(function(value)
+            return #value > 0
+        end, vim.split(out.stdout, "\n"))
+        local qf_items = vim.tbl_map(function(line)
+            -- porcelain format: "XY <path>" (or "XY <old> -> <new>" for renames)
+            local file_path = line:sub(4)
+            local renamed = file_path:match("^.* %-> (.*)$")
+            return {
+                filename = renamed or file_path,
+                lnum = 1,
+            }
+        end, lines)
+
+        if #lines == 0 then
+            vim.notify("[Git Changed Files] no changed files found")
+            return
+        end
+
+        vim.schedule(function()
+            vim.fn.setqflist({}, " ", {
+                title = "Git Changed Files",
+                items = qf_items,
+                context = { "git-changed-files" },
+            })
+            vim.cmd.copen()
+        end)
+    end)
+end, {
+    force = true,
+    nargs = 0,
+})
