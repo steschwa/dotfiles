@@ -6,6 +6,7 @@ local function insert_log()
     editing.insert_after_cursor(
         string.format('%sconsole.log("%s:", %s);', editing.get_indentation(), text, text)
     )
+    vim.cmd("normal! <esc>")
 end
 
 keymap("n", "gl", insert_log, { buffer = 0 })
