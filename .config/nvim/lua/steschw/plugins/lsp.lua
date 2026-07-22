@@ -22,6 +22,7 @@ return {
                 "rust_analyzer",
                 "tailwindcss",
                 "ts_ls",
+                -- "tsgo",
                 "ty",
                 "yamlls",
                 -- "lemminx", -- xml
