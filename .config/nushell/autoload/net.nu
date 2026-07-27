@@ -20,6 +20,9 @@ export def "port open" [
     --host = "localhost" # host to connect to
 ] {
     nc -vz $host $port
+    | complete
+    | get exit_code
+    | $in == 0
 }
 
 # check if the given port is in use
