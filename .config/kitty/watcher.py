@@ -13,11 +13,17 @@ def on_tab_bar_dirty(boss: Boss, _window: Window, _data: dict[str, Any]) -> None
         if t.active_session_name or t.created_in_session_name
     )
 
+    session_windows = {}
+    for t in boss.all_tabs:
+        session_name = t.active_session_name or t.created_in_session_name
+        session_windows.setdefault(session_name, []).extend(w.id for w in t.windows)
+
     with open(f"/tmp/kitty-{getpid()}-sessions.json", "w") as file:
         json.dump(
             {
                 "active_session": boss.active_session,
                 "sessions": list(sessions),
+                "session_windows": session_windows,
             },
             file,
         )
