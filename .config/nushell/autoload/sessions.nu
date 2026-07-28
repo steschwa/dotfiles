@@ -1,29 +1,86 @@
 # go to an existing kitty session
 export def 'session activate' [] {
-    let data = _open_session_file 
+    let windows = kitten @ ls 
+    | from json 
+    | get 0.tabs.windows 
+    | flatten
 
-    let active_session_index = $data.sessions 
+    let sessions = $windows 
+    | get session_name 
+    | uniq
+
+    let active_session_name = $windows 
+    | where is_self == true 
+    | get session_name.0
+
+    let active_session_index = $sessions
     | enumerate
-    | where $it.item == $data.active_session
+    | where $it.item == $active_session_name
     | get 0.index
 
-    let session_to_activate = $data.sessions
+    $sessions
     | each {|session|
-      if $session == $data.active_session {
-        $"($session) \(active\)"
-      } else {
-        $session
+      let session_windows = $windows | where session_name == $session
+
+      {
+        name: $session,
+        active: ($session == $active_session_name),
+        claude_status: (
+          $session_windows
+          | get user_vars.claude-status?
+          | each {
+            match $in {
+              'idle' => '🟢',
+              'working' => '🟡',
+              'blocked' => '🔴'
+            }
+          }
+        ),
+        devserver_running: (
+          $session_windows
+          | get user_vars.reonic-devserver?
+          | where $it == 'true'
+          | is-not-empty
+        )
       }
     }
-    | to text
-    | (fzf 
-       --prompt 'activate session: ' 
-       --ghost $data.active_session 
-       --bind $"load:pos\(($active_session_index + 1)\)"
-       --bind 'change:first'
-      )
+    | each {|it|
+      let header = if $it.active {
+        $"($it.name) \(active\)" 
+      } else { 
+        $'($it.name) '
+      }
 
-    kitten @ action goto_session $session_to_activate
+      let claude_footer = if ($it.claude_status | is-not-empty) {
+        $"claude: ($it.claude_status | str join '')"
+      } 
+      let devserver_footer = if $it.devserver_running {
+        $"devserver: ✅"
+      }
+
+      let footer = [$claude_footer, $devserver_footer]
+      | where ($it | is-not-empty)
+      | str join ' '
+
+      [$header, $footer]
+      | where ($it | is-not-empty) 
+      | str join (char newline)
+    }
+    | str join (char nul)
+    | (
+      fzf
+      --read0
+      --delimiter ' '
+      --accept-nth 1
+      --nth 1
+      --prompt 'activate session: ' 
+      --ghost $active_session_name
+      --bind $"load:pos\(($active_session_index + 1)\)"
+      --bind 'change:first'
+      --gap 1
+      --gap-line ' '
+    )
+    | kitten @ action goto_session $in
 }
 
 # list all currently created sessions
@@ -63,6 +120,10 @@ export def 'session create' [] {
 # close the current kitty session
 export def 'session close' [] {
     kitten @ action close_session .
+}
+
+export def 'session file' [] {
+    _open_session_file 
 }
 
 def _open_session_file []: nothing -> record<active_session: string, sessions: list<string>> {
