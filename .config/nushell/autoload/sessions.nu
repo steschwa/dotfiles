@@ -30,9 +30,9 @@ export def 'session activate' [] {
           | get user_vars.claude-status?
           | each {
             match $in {
-              'idle' => '🟢',
-              'working' => '🟡',
-              'blocked' => '🔴'
+              'idle' => $'(ansi green)●(ansi reset)',
+              'working' => $'(ansi yellow)●(ansi reset)',
+              'blocked' => $'(ansi red)●(ansi reset)'
             }
           }
         ),
@@ -51,14 +51,8 @@ export def 'session activate' [] {
         $'($it.name) '
       }
 
-      let claude_footer = if ($it.claude_status | is-not-empty) {
-        $"claude: ($it.claude_status | str join '')"
-      } 
-      let devserver_footer = if $it.devserver_running {
-        $"devserver: ✅"
-      }
-
-      let footer = [$claude_footer, $devserver_footer]
+      let footer = $it.claude_status
+      | append (if $it.devserver_running { $'(ansi green)►(ansi reset)' })
       | where ($it | is-not-empty)
       | str join ' '
 
@@ -69,6 +63,7 @@ export def 'session activate' [] {
     | str join (char nul)
     | (
       fzf
+      --ansi
       --read0
       --delimiter ' '
       --accept-nth 1
