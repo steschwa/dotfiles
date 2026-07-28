@@ -6,14 +6,47 @@ from kitty.utils import color_as_int
 
 opts = get_options()
 
+# ansi palette entries, so the indicators follow whatever theme is loaded
+CLAUDE_STATUS_COLORS = {
+    "idle": "color2",
+    "working": "color3",
+    "blocked": "color1",
+}
+DEVSERVER_COLOR = "color2"
+
+
+def session_indicators(session_name: str) -> list[tuple[str, str]]:
+    windows = [
+        window
+        for os_window in json.loads(
+            str(get_boss().call_remote_control(None, ("ls",)))
+        )
+        for tab in os_window["tabs"]
+        for window in tab["windows"]
+        if window["session_name"] == session_name
+    ]
+
+    indicators = []
+    for window in windows:
+        color = CLAUDE_STATUS_COLORS.get(window["user_vars"].get("claude-status"))
+        if color is not None:
+            indicators.append(("●", color))
+
+    if any(w["user_vars"].get("reonic-devserver") == "true" for w in windows):
+        indicators.append(("►", DEVSERVER_COLOR))
+
+    return indicators
+
 
 def draw_right_status(screen: Screen) -> int:
     tab = get_boss().active_tab
     if tab is None:
         return screen.cursor.x
 
+    indicators = session_indicators(tab.created_in_session_name)
     text = f"({tab.created_in_session_name})"
-    text_length = len(text)
+    # each indicator is a glyph plus a trailing space
+    text_length = len(text) + len(indicators) * 2
 
     spaces = screen.columns - screen.cursor.x - text_length
     if spaces > 0:
@@ -22,9 +55,11 @@ def draw_right_status(screen: Screen) -> int:
     screen.cursor.bold = False
     screen.cursor.italic = False
 
+    for glyph, color in indicators:
+        screen.cursor.fg = as_rgb(color_as_int(getattr(opts, color)))
+        screen.draw(glyph + " ")
+
     screen.cursor.fg = as_rgb(color_as_int(opts.inactive_tab_foreground))
-    screen.cursor.bold = False
-    screen.cursor.italic = False
     screen.draw(text)
 
     if screen.columns - screen.cursor.x > text_length:
