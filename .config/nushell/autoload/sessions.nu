@@ -80,16 +80,25 @@ export def 'session activate' [] {
 
 # list all currently created sessions
 export def 'session list' [] {
-    let data = _open_session_file 
+    let windows = kitten @ ls 
+    | from json 
+    | get 0.tabs.windows 
+    | flatten
 
-    $data.sessions
+    let active_session_name = $windows 
+    | where is_self == true 
+    | get session_name.0
+
+    $windows 
+    | get session_name 
+    | uniq   
     | wrap session
-    | insert is_active {|it| 
-        if $it.session == $data.active_session {
-            '✅'
-        } else {
-            '❌'
-        }
+    | insert is_active {|it|
+      if $it.session == $active_session_name {
+        '✅'
+      } else {
+        '❌'
+      }
     }
 }
 
@@ -115,21 +124,4 @@ export def 'session create' [] {
 # close the current kitty session
 export def 'session close' [] {
     kitten @ action close_session .
-}
-
-export def 'session file' [] {
-    _open_session_file 
-}
-
-def _open_session_file []: nothing -> record<active_session: string, sessions: list<string>> {
-    if ('KITTY_PID' not-in $env) {
-        error make 'missing KITTY_PID environment variable' 
-    }
-
-    let filename = $'/tmp/kitty-($env.KITTY_PID)-sessions.json'
-    if not ($filename | path exists) {
-        error make 'sessions file does not exist'
-    }
-
-    open $filename
 }
