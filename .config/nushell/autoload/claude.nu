@@ -5,7 +5,7 @@ def --wrapped claude [...rest] {
     try {
       caffeinate -s claude ...$rest
     } finally {
-      kitten @ set-user-vars claude-status
+      kitten @ set-user-vars --match $'id:($env.KITTY_WINDOW_ID)' claude-status
     }
   }
 }
