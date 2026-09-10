@@ -1,4 +1,4 @@
-$env.config.keybindings ++= [
+$env.config.keybindings = [
     {
         name: history_menu
         modifier: control
