@@ -21,6 +21,7 @@
     dd = diff --cached
     f = fetch
     history = !~/.nu_scripts/git/file-history.nu
+    hours = !~/.nu_scripts/git/by-hours.nu
     l = log --pretty='tformat:%C(green)[%ad]%C(reset) %C(yellow)%h%C(reset) %C(blue)%ae%C(reset)%C(red)%d%C(reset) %s' --date='format:%d.%m.%y %H:%M'
     p = push
     r = restore
