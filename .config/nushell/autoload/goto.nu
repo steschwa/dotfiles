@@ -1,7 +1,7 @@
 def --env goto [] {
     let dirs = [
-      ...(_subdirs "/Users/stefan/.config"),
       ...(_subdirs "/Users/stefan/projects"),
+      ...(_subdirs "/Users/stefan/.config"),
     ]
 
     let selection = $dirs | to text | fzf --prompt='goto directory: '
