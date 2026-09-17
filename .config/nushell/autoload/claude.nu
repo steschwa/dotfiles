@@ -3,9 +3,9 @@ def --wrapped claude [...rest] {
 
   let is_reonic_dir = pwd | path parse | get stem | str starts-with 'reonic'
   let flags = if $is_reonic_dir {
-    ['--add-dir ~/.config/reonic/claude'] 
+    ['--add-dir' ($nu.home-dir | path join '.config' 'reonic')]
   } else {
-    [] 
+    []
   }
 
   with-env {
