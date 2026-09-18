@@ -1,0 +1,47 @@
+# name: rose-pine-moon
+# description: soho vibes on a muted violet base, low contrast and calm
+# author: stefan
+
+chroma-style = rose-pine-moon
+# iris
+color-accent = #c4a7e7
+# muted
+color-border = #6e6a86
+# text
+color-normal = #e0def4
+# muted
+color-muted = #6e6a86
+# base
+color-selected-fg = #232136
+# iris
+color-selected-bg = #c4a7e7
+# gold
+color-annotation = #f6c177
+# foam
+color-cursor-fg = #9ccfd8
+# base
+color-cursor-bg = #232136
+# leaf
+color-add-fg = #95b1ac
+# leaf over base
+color-add-bg = #3c4150
+# love
+color-remove-fg = #eb6f92
+# love over base
+color-remove-bg = #4f324a
+# rose
+color-modify-fg = #ea9a97
+# gold over base
+color-modify-bg = #514444
+# base
+color-tree-bg = #232136
+# base
+color-diff-bg = #232136
+# base
+color-status-fg = #232136
+# iris
+color-status-bg = #c4a7e7
+# base
+color-search-fg = #232136
+# gold
+color-search-bg = #f6c177
