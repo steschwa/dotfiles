@@ -23,12 +23,12 @@ color-cursor-fg = #9ccfd8
 color-cursor-bg = #232136
 # pine (delta: plus green)
 color-add-fg = #3e8fb0
-# overlay (delta: plus bg black)
-color-add-bg = #393552
+# muted green tint on base
+color-add-bg = #2a3d35
 # love (delta: minus red)
 color-remove-fg = #eb6f92
-# overlay (delta: minus bg black)
-color-remove-bg = #393552
+# muted red tint on base
+color-remove-bg = #402a38
 # pine (delta: plus-emph black green)
 color-word-add-bg = #3e8fb0
 # love (delta: minus-emph black red)
