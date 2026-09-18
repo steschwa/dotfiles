@@ -16,7 +16,7 @@
 
 ; hide the status bar
 ; no-status-bar = false
-; no-status-bar = true
+no-status-bar = true
 
 ; skip confirmation prompt when discarding annotations with Q
 ; no-confirm-discard = false
