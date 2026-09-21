@@ -3,7 +3,6 @@ tap "abue-ammar/tinycast"
 
 brew "bat"
 brew "carapace"
-brew "dbmate"
 brew "fd"
 brew "fnm"
 brew "fzf"
