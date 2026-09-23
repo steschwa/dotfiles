@@ -5,10 +5,10 @@ local function remove_unused_imports()
         context = {
             diagnostics = {},
             ---@diagnostic disable-next-line: assign-type-mismatch
-            only = { "source.removeUnusedImports.ts" },
+            only = { "source.removeUnusedImports" },
         },
         filter = function(action)
-            return action.kind == "source.removeUnusedImports.ts"
+            return action.kind == "source.removeUnusedImports"
         end,
         apply = true,
     })

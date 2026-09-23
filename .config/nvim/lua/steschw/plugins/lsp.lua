@@ -21,8 +21,8 @@ return {
                 "ruff",
                 "rust_analyzer",
                 "tailwindcss",
-                "ts_ls",
-                -- "tsgo",
+                -- "ts_ls",
+                "tsc",
                 "ty",
                 "yamlls",
                 -- "lemminx", -- xml
