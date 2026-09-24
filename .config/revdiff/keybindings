@@ -1,0 +1,66 @@
+# Navigation
+map down down
+map j down
+map k up
+map up up
+map pgdown page_down
+map pgup page_up
+map ctrl+d half_page_down
+map ctrl+u half_page_up
+map home home
+map end end
+map left scroll_left
+map right scroll_right
+map J scroll_diff_down
+map K scroll_diff_up
+
+# File/Hunk
+map n next_item
+map N prev_item
+map p prev_item
+map P jump_file
+map ] next_hunk
+map [ prev_hunk
+map e open_file_in_editor
+
+# Pane
+map tab toggle_pane
+map h focus_tree
+map l focus_diff
+
+# Search
+map / search
+
+# Annotations
+map a confirm
+map enter confirm
+map A annotate_file
+map d delete_annotation
+map @ annot_list
+map ctrl+e open_editor
+map } next_annotation
+map { prev_annotation
+map O flush_output
+
+# View
+map v toggle_collapsed
+map C toggle_compact
+map w toggle_wrap
+map t toggle_tree
+map L toggle_line_numbers
+map B toggle_blame
+map W toggle_word_diff
+map . toggle_hunk
+map u toggle_untracked
+map space mark_reviewed
+map F filter_unreviewed
+map f filter
+map T theme_select
+map i info
+map R reload
+
+# Quit
+map q quit
+map Q discard_quit
+map ? help
+map esc dismiss
