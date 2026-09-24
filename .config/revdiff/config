@@ -1,3 +1,5 @@
+; vim:ft=ini
+
 [Application Options]
 ; show staged changes
 ; staged = false
